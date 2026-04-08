@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code Mastery Pro — Làm chủ AI bằng Vibe Coding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap');
+
+        * { scroll-behavior: smooth; }
+
+        body { font-family: 'Inter', sans-serif; }
+
+        .code-font { font-family: 'Fira Code', monospace; }
+
+        .glass {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #818cf8, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-text-gold {
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .prompt-box {
+            border-left: 4px solid #6366f1;
+            background: #1e1e2e;
+        }
+
+        .glow-indigo { box-shadow: 0 0 40px rgba(99,102,241,0.25); }
+        .glow-emerald { box-shadow: 0 0 40px rgba(52,211,153,0.2); }
+
+        .card-hover { transition: transform 0.3s ease, border-color 0.3s ease; }
+        .card-hover:hover { transform: translateY(-4px); }
+
+        .price-line { text-decoration: line-through; }
+
+        .badge-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating { animation: float 4s ease-in-out infinite; }
+
+        /* Form styles */
+        .form-input {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+        }
+        .form-input::placeholder { color: rgba(255,255,255,0.3); }
+
+        /* Timeline connector */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 23px;
+            top: 48px;
+            bottom: -48px;
+            width: 2px;
+            background: linear-gradient(to bottom, #6366f1, transparent);
+        }
+
+        /* Countdown */
+        .countdown-box {
+            background: rgba(99,102,241,0.1);
+            border: 1px solid rgba(99,102,241,0.3);
+        }
+
+        /* Bonus card */
+        .bonus-card {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(52,211,153,0.05));
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+    </style>
+</head>
+
+<body class="bg-[#0b0e14] text-slate-300">
+
+<!-- ===== STICKY NAV ===== -->
+<nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#0b0e14]/90 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-indigo-600 rounded flex items-center justify-center shadow-[0_0_15px_rgba(79,70,229,0.5)]">
+                <i class="fas fa-terminal text-white text-sm"></i>
+            </div>
+            <span class="font-black text-white tracking-tighter uppercase">Claude Code <span class="text-indigo-400">Pro</span></span>
+        </div>
+        <div class="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
+            <a href="#curriculum" class="hover:text-indigo-400 transition">Lộ trình</a>
+            <a href="#value" class="hover:text-indigo-400 transition">Giá trị</a>
+            <a href="#bonus" class="hover:text-indigo-400 transition">Quà tặng</a>
+            <a href="#pricing" class="hover:text-indigo-400 transition">Học phí</a>
+            <a href="#register" class="hover:text-indigo-400 transition">Đăng ký</a>
+        </div>
+        <a href="#register" class="hidden md:block px-5 py-2 bg-indigo-600 text-white text-xs font-black uppercase tracking-widest rounded-xl hover:bg-indigo-500 transition shadow-lg shadow-indigo-600/30">
+            Đăng ký ngay
+        </a>
+    </div>
+</nav>
+
+
+<!-- ===== HERO ===== -->
+<header class="pt-32 pb-24 px-6 relative overflow-hidden">
+    <!-- Background glows -->
+    <div class="absolute -top-32 -right-32 w-[600px] h-[600px] bg-indigo-600/15 blur-[140px] rounded-full pointer-events-none"></div>
+    <div class="absolute -bottom-32 -left-32 w-[400px] h-[400px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto text-center relative z-10">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-400 text-[10px] font-black uppercase tracking-[0.2em] mb-8 badge-pulse">
+            <span class="w-1.5 h-1.5 bg-indigo-400 rounded-full"></span>
+            Live Zoom · 3 Buổi · Khai giảng sắp tới
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.05]">
+            Làm chủ AI bằng<br>
+            <span class="gradient-text italic">"Vibe Coding"</span>
+        </h1>
+
+        <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-4 font-medium leading-relaxed">
+            Từ <strong class="text-white">Zero → Deploy</strong> trong 3 buổi Zoom thực chiến.<br>
+            Biến Claude Code thành đội ngũ kỹ sư hùng hậu của riêng bạn.
+        </p>
+
+        <!-- Social proof bar -->
+        <div class="flex flex-wrap justify-center gap-6 mb-10 text-sm">
+            <div class="flex items-center gap-2 text-slate-400">
+                <i class="fas fa-users text-indigo-400"></i>
+                <span><strong class="text-white">247+</strong> học viên</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-400">
+                <div class="flex text-amber-400 text-xs">★★★★★</div>
+                <span><strong class="text-white">4.9/5</strong> đánh giá</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-400">
+                <i class="fas fa-video text-emerald-400"></i>
+                <span>Học qua <strong class="text-white">Zoom</strong> trực tiếp</span>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#register" class="px-10 py-4 bg-indigo-600 text-white font-black rounded-2xl hover:bg-indigo-500 transition shadow-xl shadow-indigo-600/30 text-base uppercase tracking-widest">
+                Đăng ký — 5.000.000đ
+            </a>
+            <a href="#curriculum" class="px-10 py-4 glass text-white font-bold rounded-2xl border border-white/10 hover:border-white/20 transition text-base">
+                <i class="fas fa-play-circle mr-2 text-indigo-400"></i> Xem lộ trình
+            </a>
+        </div>
+
+        <!-- Urgency -->
+        <p class="mt-6 text-xs text-rose-400 font-bold uppercase tracking-widest">
+            <i class="fas fa-fire mr-1"></i> Chỉ còn 12 suất — Lớp đang lấp đầy nhanh
+        </p>
+    </div>
+</header>
+
+
+<!-- ===== FOR WHO ===== -->
+<section class="py-20 px-6 border-y border-white/5">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+            <p class="text-[10px] font-black text-indigo-400 uppercase tracking-[0.3em] mb-3">Khóa học này dành cho</p>
+            <h2 class="text-3xl font-black text-white">Bạn có đang gặp những điều này?</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+                <i class="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
+                <p class="text-sm text-slate-300 font-medium">Dùng ChatGPT / Claude để "hỏi vặt" mà chưa thực sự build được sản phẩm hoàn chỉnh?</p>
+            </div>
+            <div class="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+                <i class="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
+                <p class="text-sm text-slate-300 font-medium">Copy code từ AI về rồi không biết chỉnh, lỗi một cái là bó tay?</p>
+            </div>
+            <div class="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+                <i class="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
+                <p class="text-sm text-slate-300 font-medium">Muốn build tool, automation cho công việc nhưng không có background kỹ thuật?</p>
+            </div>
+            <div class="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+                <i class="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
+                <p class="text-sm text-slate-300 font-medium">AI cho ra code nhưng context bị "ngáo" sau vài lần chat, phải bắt đầu lại từ đầu?</p>
+            </div>
+            <div class="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+                <i class="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
+                <p class="text-sm text-slate-300 font-medium">Thấy người ta "Vibe Coding" build app trong vài giờ còn mình cả ngày chưa xong?</p>
+            </div>
+            <div class="glass p-6 rounded-2xl border-l-4 border-emerald-500/50 card-hover bg-emerald-500/5">
+                <i class="fas fa-check-circle text-emerald-400 text-xl mb-3"></i>
+                <p class="text-sm text-emerald-300 font-bold">Nếu bạn gật đầu với 2+ điều trên — khóa học này được thiết kế đặc biệt cho bạn.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== WHAT YOU GET (VALUE) ===== -->
+<section id="value" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <p class="text-[10px] font-black text-emerald-400 uppercase tracking-[0.3em] mb-3">Sau khóa học</p>
+            <h2 class="text-4xl font-black text-white mb-4">Bạn nhận được <span class="gradient-text">giá trị gì?</span></h2>
+            <p class="text-slate-500 max-w-xl mx-auto">Không chỉ học kỹ năng — bạn sẽ có tư duy và hệ thống để làm việc với AI hiệu quả mãi mãi.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Value 1 -->
+            <div class="glass p-8 rounded-3xl card-hover group">
+                <div class="w-12 h-12 bg-indigo-600/20 border border-indigo-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-indigo-600/40 transition">
+                    <i class="fas fa-brain text-indigo-400 text-lg"></i>
+                </div>
+                <h3 class="text-lg font-black text-white mb-3">Tư duy Director Mindset</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Không còn là "user" nhập lệnh — bạn trở thành <strong class="text-white">Director</strong> điều phối AI như đội ngũ kỹ sư chuyên nghiệp.</p>
+            </div>
+
+            <!-- Value 2 -->
+            <div class="glass p-8 rounded-3xl card-hover group">
+                <div class="w-12 h-12 bg-emerald-500/20 border border-emerald-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-emerald-500/40 transition">
+                    <i class="fas fa-rocket text-emerald-400 text-lg"></i>
+                </div>
+                <h3 class="text-lg font-black text-white mb-3">Build & Deploy sản phẩm thực</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Trong 3 buổi, bạn sẽ <strong class="text-white">build hoàn chỉnh</strong> 1 website AI Agency có form liên hệ, hệ thống log và deploy lên production.</p>
+            </div>
+
+            <!-- Value 3 -->
+            <div class="glass p-8 rounded-3xl card-hover group">
+                <div class="w-12 h-12 bg-amber-500/20 border border-amber-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-amber-500/40 transition">
+                    <i class="fas fa-robot text-amber-400 text-lg"></i>
+                </div>
+                <h3 class="text-lg font-black text-white mb-3">Kiến trúc Sub-agent hùng hậu</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Nắm vững cách phân bổ context, tạo Sub-agent (Researcher, Reviewer, QA) để dự án <strong class="text-white">không bao giờ bị "ngáo"</strong>.</p>
+            </div>
+
+            <!-- Value 4 -->
+            <div class="glass p-8 rounded-3xl card-hover group">
+                <div class="w-12 h-12 bg-purple-500/20 border border-purple-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-purple-500/40 transition">
+                    <i class="fas fa-file-code text-purple-400 text-lg"></i>
+                </div>
+                <h3 class="text-lg font-black text-white mb-3">Bộ Prompt System cá nhân</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Sở hữu bộ <strong class="text-white">50+ prompt templates</strong> theo từng giai đoạn: Init → Plan → Build → Verify → Deploy, tái sử dụng cho mọi dự án.</p>
+            </div>
+
+            <!-- Value 5 -->
+            <div class="glass p-8 rounded-3xl card-hover group">
+                <div class="w-12 h-12 bg-blue-500/20 border border-blue-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-blue-500/40 transition">
+                    <i class="fas fa-bolt text-blue-400 text-lg"></i>
+                </div>
+                <h3 class="text-lg font-black text-white mb-3">Automation & Hooks nâng cao</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Thiết lập Hooks, Skills, Sub-agents để hệ thống tự động — <strong class="text-white">rảnh tay làm việc quan trọng hơn</strong> thay vì canh màn hình.</p>
+            </div>
+
+            <!-- Value 6 -->
+            <div class="glass p-8 rounded-3xl card-hover group">
+                <div class="w-12 h-12 bg-rose-500/20 border border-rose-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-rose-500/40 transition">
+                    <i class="fas fa-infinity text-rose-400 text-lg"></i>
+                </div>
+                <h3 class="text-lg font-black text-white mb-3">Framework tái sử dụng mãi mãi</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Phương pháp này apply được cho <strong class="text-white">mọi dự án tương lai</strong> — dù AI thay đổi, tư duy Director vẫn bất biến.</p>
+            </div>
+        </div>
+
+        <!-- Transformation statement -->
+        <div class="mt-16 bg-gradient-to-r from-indigo-600/10 to-emerald-500/10 border border-white/10 rounded-3xl p-10 text-center">
+            <p class="text-2xl font-black text-white leading-relaxed">
+                "Sau 3 buổi, bạn sẽ build được sản phẩm chạy thật,<br>
+                <span class="gradient-text">không cần biết code từ trước."</span>
+            </p>
+            <p class="text-slate-500 mt-3 text-sm">Điều kiện duy nhất: Có máy tính + kết nối internet + sẵn sàng thực hành.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== CURRICULUM (3 BUỔI ZOOM) ===== -->
+<section id="curriculum" class="py-24 px-6 border-t border-white/5">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+            <p class="text-[10px] font-black text-indigo-400 uppercase tracking-[0.3em] mb-3">Hình thức học</p>
+            <h2 class="text-4xl font-black text-white mb-4">Lộ trình <span class="gradient-text">3 Buổi Zoom</span></h2>
+            <div class="flex flex-wrap justify-center gap-4 mt-6">
+                <div class="flex items-center gap-2 px-4 py-2 glass rounded-full text-sm">
+                    <i class="fas fa-video text-indigo-400"></i>
+                    <span>Zoom Live Interactive</span>
+                </div>
+                <div class="flex items-center gap-2 px-4 py-2 glass rounded-full text-sm">
+                    <i class="fas fa-clock text-emerald-400"></i>
+                    <span>3 buổi × 3 giờ</span>
+                </div>
+                <div class="flex items-center gap-2 px-4 py-2 glass rounded-full text-sm">
+                    <i class="fas fa-record-vinyl text-rose-400"></i>
+                    <span>Có recording xem lại</span>
+                </div>
+                <div class="flex items-center gap-2 px-4 py-2 glass rounded-full text-sm">
+                    <i class="fas fa-comments text-amber-400"></i>
+                    <span>Q&A trực tiếp</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-8">
+
+            <!-- Buổi 1 -->
+            <div class="relative pl-20 timeline-line">
+                <div class="absolute left-0 top-0 w-12 h-12 bg-indigo-600 rounded-2xl flex flex-col items-center justify-center text-white shadow-[0_0_20px_rgba(79,70,229,0.5)] border border-indigo-400">
+                    <span class="text-[9px] font-black uppercase leading-none">Buổi</span>
+                    <span class="text-xl font-black leading-none">1</span>
+                </div>
+                <div class="glass p-8 rounded-3xl card-hover border-l-4 border-indigo-500">
+                    <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+                        <div>
+                            <span class="text-[10px] font-black text-indigo-400 uppercase tracking-widest">Foundation + Setup</span>
+                            <h3 class="text-2xl font-black text-white mt-1">Director Mindset & Khởi tạo Dự án</h3>
+                        </div>
+                        <span class="px-3 py-1 bg-indigo-500/10 border border-indigo-500/25 text-indigo-400 text-xs font-bold rounded-full whitespace-nowrap">3 giờ</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Cài đặt & cấu hình Claude Code từ A→Z</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Tư duy "Director vs User" — thay đổi cách tiếp cận AI</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Tạo CLAUDE.md chuẩn với ảnh tham chiếu</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Plan Mode (Shift+Tab) — ép AI tư duy trước khi code</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Kỹ thuật Prompt 4 bước: Init → Plan → Refine → Verify</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400"><strong class="text-white">Thực hành:</strong> Build skeleton AI Agency Website</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buổi 2 -->
+            <div class="relative pl-20 timeline-line">
+                <div class="absolute left-0 top-0 w-12 h-12 bg-emerald-600 rounded-2xl flex flex-col items-center justify-center text-white shadow-[0_0_20px_rgba(52,211,153,0.4)] border border-emerald-400">
+                    <span class="text-[9px] font-black uppercase leading-none">Buổi</span>
+                    <span class="text-xl font-black leading-none">2</span>
+                </div>
+                <div class="glass p-8 rounded-3xl card-hover border-l-4 border-emerald-500">
+                    <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+                        <div>
+                            <span class="text-[10px] font-black text-emerald-400 uppercase tracking-widest">Build + Automation</span>
+                            <h3 class="text-2xl font-black text-white mt-1">Sub-agent Architecture & Hooks System</h3>
+                        </div>
+                        <span class="px-3 py-1 bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-bold rounded-full whitespace-nowrap">3 giờ</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Context window management — tránh "ngáo" giữa dự án</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Tạo Sub-agents: Researcher, Code Reviewer, QA Tester</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Thiết lập Skills trong settings.json</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Hooks: Stop, PostToolUse, Notification — rảnh tay làm việc</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Self-verification: chụp screenshot & tự debug</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400"><strong class="text-white">Thực hành:</strong> Thêm Contact Form + Log System</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buổi 3 -->
+            <div class="relative pl-20">
+                <div class="absolute left-0 top-0 w-12 h-12 bg-amber-500 rounded-2xl flex flex-col items-center justify-center text-white shadow-[0_0_20px_rgba(245,158,11,0.4)] border border-amber-400">
+                    <span class="text-[9px] font-black uppercase leading-none">Buổi</span>
+                    <span class="text-xl font-black leading-none">3</span>
+                </div>
+                <div class="glass p-8 rounded-3xl card-hover border-l-4 border-amber-500">
+                    <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+                        <div>
+                            <span class="text-[10px] font-black text-amber-400 uppercase tracking-widest">Deploy + Thực chiến</span>
+                            <h3 class="text-2xl font-black text-white mt-1">Deploy Production & Case Study Hoàn Chỉnh</h3>
+                        </div>
+                        <span class="px-3 py-1 bg-amber-500/10 border border-amber-500/25 text-amber-400 text-xs font-bold rounded-full whitespace-nowrap">3 giờ</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Deploy website tĩnh lên Netlify — 1 câu lệnh</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Deploy Backend/API lên Modal — biến Skill thành Endpoint</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Kết nối Make.com / n8n Automation</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Review code toàn bộ dự án với Sub-agent</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Template Framework tái dùng cho mọi dự án tiếp theo</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400"><strong class="text-white">Hoàn thành:</strong> Website AI Agency live trên internet</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== BONUS & GIFTS ===== -->
+<section id="bonus" class="py-24 px-6 border-t border-white/5">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+            <p class="text-[10px] font-black text-amber-400 uppercase tracking-[0.3em] mb-3">Không chỉ là khóa học</p>
+            <h2 class="text-4xl font-black text-white mb-4">Combo <span class="gradient-text-gold">Quà tặng</span> đi kèm</h2>
+            <p class="text-slate-500">Tổng giá trị quà tặng: <strong class="text-white">3.500.000đ</strong> — tặng kèm 100% khi đăng ký</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+
+            <!-- Gift 1 - Prompt Vault -->
+            <div class="bonus-card p-8 rounded-3xl card-hover relative overflow-hidden">
+                <div class="absolute top-4 right-4 px-2 py-0.5 bg-amber-500/20 border border-amber-500/40 text-amber-400 text-[9px] font-black uppercase rounded-full">
+                    Trị giá 800.000đ
+                </div>
+                <div class="w-12 h-12 bg-indigo-600/20 rounded-2xl flex items-center justify-center mb-5">
+                    <i class="fas fa-scroll text-indigo-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-black text-white mb-3">Prompt Vault — 50+ Templates</h3>
+                <p class="text-sm text-slate-400 mb-4 leading-relaxed">Bộ tài liệu Prompt đã được kiểm thử thực tế theo 5 giai đoạn: Init, Plan Mode, Refinement, Verify, Deploy. Copy-paste và tùy chỉnh ngay.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2 py-1 bg-indigo-500/10 text-indigo-400 text-[10px] font-bold rounded-lg">50+ Prompts</span>
+                    <span class="px-2 py-1 bg-indigo-500/10 text-indigo-400 text-[10px] font-bold rounded-lg">File PDF + Notion</span>
+                    <span class="px-2 py-1 bg-indigo-500/10 text-indigo-400 text-[10px] font-bold rounded-lg">Update vĩnh viễn</span>
+                </div>
+            </div>
+
+            <!-- Gift 2 - CLAUDE.md Templates -->
+            <div class="bonus-card p-8 rounded-3xl card-hover relative overflow-hidden">
+                <div class="absolute top-4 right-4 px-2 py-0.5 bg-amber-500/20 border border-amber-500/40 text-amber-400 text-[9px] font-black uppercase rounded-full">
+                    Trị giá 600.000đ
+                </div>
+                <div class="w-12 h-12 bg-emerald-600/20 rounded-2xl flex items-center justify-center mb-5">
+                    <i class="fas fa-file-alt text-emerald-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-black text-white mb-3">10 CLAUDE.md Templates Chuyên ngành</h3>
+                <p class="text-sm text-slate-400 mb-4 leading-relaxed">Templates CLAUDE.md được tinh chỉnh cho 10 loại dự án: Landing Page, SaaS, E-commerce, Automation, Portfolio, API, Dashboard...</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2 py-1 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold rounded-lg">10 Templates</span>
+                    <span class="px-2 py-1 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold rounded-lg">Plug & Play</span>
+                    <span class="px-2 py-1 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold rounded-lg">Mọi stack</span>
+                </div>
+            </div>
+
+            <!-- Gift 3 - Skills Pack -->
+            <div class="bonus-card p-8 rounded-3xl card-hover relative overflow-hidden">
+                <div class="absolute top-4 right-4 px-2 py-0.5 bg-amber-500/20 border border-amber-500/40 text-amber-400 text-[9px] font-black uppercase rounded-full">
+                    Trị giá 700.000đ
+                </div>
+                <div class="w-12 h-12 bg-purple-600/20 rounded-2xl flex items-center justify-center mb-5">
+                    <i class="fas fa-puzzle-piece text-purple-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-black text-white mb-3">Skills Pack — Sub-agent Ready</h3>
+                <p class="text-sm text-slate-400 mb-4 leading-relaxed">Bộ 5 Skills đóng gói sẵn (Orchestrator, Researcher, Code Reviewer, QA Tester, Vibe Coding Course) — install một lần, dùng mãi mãi.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2 py-1 bg-purple-500/10 text-purple-400 text-[10px] font-bold rounded-lg">5 Skills</span>
+                    <span class="px-2 py-1 bg-purple-500/10 text-purple-400 text-[10px] font-bold rounded-lg">Project-level</span>
+                    <span class="px-2 py-1 bg-purple-500/10 text-purple-400 text-[10px] font-bold rounded-lg">Source code</span>
+                </div>
+            </div>
+
+            <!-- Gift 4 - Community -->
+            <div class="bonus-card p-8 rounded-3xl card-hover relative overflow-hidden">
+                <div class="absolute top-4 right-4 px-2 py-0.5 bg-amber-500/20 border border-amber-500/40 text-amber-400 text-[9px] font-black uppercase rounded-full">
+                    Trị giá 1.400.000đ
+                </div>
+                <div class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-5">
+                    <i class="fas fa-users text-blue-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-black text-white mb-3">Group Hỗ trợ Trọn đời</h3>
+                <p class="text-sm text-slate-400 mb-4 leading-relaxed">Tham gia cộng đồng Director Mindset — nhận hỗ trợ kỹ thuật, chia sẻ case study, update khi Claude Code ra tính năng mới.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2 py-1 bg-blue-500/10 text-blue-400 text-[10px] font-bold rounded-lg">Trọn đời</span>
+                    <span class="px-2 py-1 bg-blue-500/10 text-blue-400 text-[10px] font-bold rounded-lg">Q&A hàng tuần</span>
+                    <span class="px-2 py-1 bg-blue-500/10 text-blue-400 text-[10px] font-bold rounded-lg">Update miễn phí</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bonus total bar -->
+        <div class="bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/20 rounded-2xl p-6 flex flex-wrap items-center justify-between gap-4">
+            <div>
+                <p class="text-sm text-slate-400">Tổng giá trị nhận được</p>
+                <p class="text-3xl font-black text-white">8.500.000đ <span class="text-base font-normal text-slate-500 price-line">nếu mua riêng lẻ</span></p>
+            </div>
+            <div class="text-right">
+                <p class="text-sm text-slate-400">Bạn chỉ đầu tư</p>
+                <p class="text-3xl font-black gradient-text-gold">5.000.000đ</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== PRICING ===== -->
+<section id="pricing" class="py-24 px-6 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+            <p class="text-[10px] font-black text-indigo-400 uppercase tracking-[0.3em] mb-3">Đầu tư</p>
+            <h2 class="text-4xl font-black text-white">Học phí <span class="gradient-text">minh bạch</span></h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Basic -->
+            <div class="glass p-10 rounded-3xl">
+                <div class="mb-8">
+                    <p class="text-xs font-black text-slate-500 uppercase tracking-widest mb-2">Cơ bản</p>
+                    <h3 class="text-2xl font-black text-white mb-1">Early Bird</h3>
+                    <p class="text-slate-500 text-sm">Đặt chỗ trước khai giảng</p>
+                </div>
+                <div class="mb-8">
+                    <span class="text-lg text-slate-500 price-line">6.000.000đ</span>
+                    <div class="text-5xl font-black text-white mt-1">4.500.000đ</div>
+                    <p class="text-emerald-400 text-sm font-bold mt-1">Tiết kiệm 1.500.000đ</p>
+                </div>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-3 text-sm text-slate-400"><i class="fas fa-check text-emerald-400 flex-shrink-0"></i> 3 buổi Zoom Live</li>
+                    <li class="flex items-center gap-3 text-sm text-slate-400"><i class="fas fa-check text-emerald-400 flex-shrink-0"></i> Recording xem lại 6 tháng</li>
+                    <li class="flex items-center gap-3 text-sm text-slate-400"><i class="fas fa-check text-emerald-400 flex-shrink-0"></i> Tài liệu Prompt 50+ templates</li>
+                    <li class="flex items-center gap-3 text-sm text-slate-400"><i class="fas fa-check text-emerald-400 flex-shrink-0"></i> 10 CLAUDE.md Templates</li>
+                    <li class="flex items-center gap-3 text-sm text-slate-400"><i class="fas fa-check text-emerald-400 flex-shrink-0"></i> Group hỗ trợ 3 tháng</li>
+                </ul>
+                <a href="#register" class="block w-full py-4 border border-indigo-500/50 text-indigo-400 font-black text-center rounded-2xl hover:bg-indigo-500/10 transition uppercase tracking-widest text-sm">
+                    Chọn gói này
+                </a>
+            </div>
+
+            <!-- Pro (highlight) -->
+            <div class="relative bg-gradient-to-b from-indigo-600/20 to-indigo-900/20 border border-indigo-500/40 p-10 rounded-3xl glow-indigo">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-indigo-600 text-white text-[10px] font-black uppercase tracking-widest rounded-full whitespace-nowrap">
+                    <i class="fas fa-star mr-1"></i> Phổ biến nhất
+                </div>
+                <div class="mb-8">
+                    <p class="text-xs font-black text-indigo-400 uppercase tracking-widest mb-2">Đầy đủ</p>
+                    <h3 class="text-2xl font-black text-white mb-1">Director Pro</h3>
+                    <p class="text-slate-500 text-sm">Toàn bộ giá trị + hỗ trợ trọn đời</p>
+                </div>
+                <div class="mb-8">
+                    <span class="text-lg text-slate-500 price-line">8.000.000đ</span>
+                    <div class="text-5xl font-black text-white mt-1">5.000.000đ</div>
+                    <p class="text-emerald-400 text-sm font-bold mt-1">Tiết kiệm 3.000.000đ</p>
+                </div>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-3 text-sm text-white font-medium"><i class="fas fa-check text-emerald-400 flex-shrink-0"></i> 3 buổi Zoom Live</li>
+                    <li class="flex items-center gap-3 text-sm text-white font-medium"><i class="fas fa-check text-emerald-400 flex-shrink-0"></i> Recording xem lại <strong>vĩnh viễn</strong></li>
+                    <li class="flex items-center gap-3 text-sm text-white font-medium"><i class="fas fa-check text-emerald-400 flex-shrink-0"></i> Tài liệu Prompt 50+ templates</li>
+                    <li class="flex items-center gap-3 text-sm text-white font-medium"><i class="fas fa-check text-emerald-400 flex-shrink-0"></i> 10 CLAUDE.md Templates</li>
+                    <li class="flex items-center gap-3 text-sm text-white font-medium"><i class="fas fa-check text-emerald-400 flex-shrink-0"></i> Skills Pack (5 Sub-agents)</li>
+                    <li class="flex items-center gap-3 text-sm text-white font-medium"><i class="fas fa-check text-emerald-400 flex-shrink-0"></i> Group hỗ trợ <strong>trọn đời</strong></li>
+                    <li class="flex items-center gap-3 text-sm text-amber-300 font-bold"><i class="fas fa-star text-amber-400 flex-shrink-0"></i> 1:1 Review dự án cá nhân (30 phút)</li>
+                </ul>
+                <a href="#register" class="block w-full py-4 bg-indigo-600 text-white font-black text-center rounded-2xl hover:bg-indigo-500 transition shadow-lg shadow-indigo-600/30 uppercase tracking-widest text-sm">
+                    Đăng ký Director Pro
+                </a>
+            </div>
+        </div>
+
+        <!-- Guarantee -->
+        <div class="mt-10 flex flex-col md:flex-row items-center gap-5 glass p-8 rounded-3xl">
+            <div class="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-shield-alt text-emerald-400 text-2xl"></i>
+            </div>
+            <div>
+                <h4 class="text-lg font-black text-white mb-1">Cam kết hoàn tiền 100% trong 7 ngày</h4>
+                <p class="text-sm text-slate-400">Nếu sau buổi 1 bạn cảm thấy không phù hợp, chúng tôi hoàn tiền toàn bộ — không hỏi lý do. Rủi ro về phía chúng tôi.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== REGISTER FORM ===== -->
+<section id="register" class="py-24 px-6 border-t border-white/5">
+    <div class="max-w-2xl mx-auto">
+        <div class="text-center mb-12">
+            <p class="text-[10px] font-black text-rose-400 uppercase tracking-[0.3em] mb-3">
+                <i class="fas fa-fire mr-1"></i> Chỉ còn 12 suất
+            </p>
+            <h2 class="text-4xl font-black text-white mb-4">Đăng ký <span class="gradient-text">ngay hôm nay</span></h2>
+            <p class="text-slate-500">Điền thông tin bên dưới — team sẽ liên hệ xác nhận và gửi link Zoom trong 24 giờ.</p>
+        </div>
+
+        <div class="glass rounded-3xl p-10 glow-indigo">
+            <form id="enrollForm" class="space-y-5" onsubmit="handleSubmit(event)">
+
+                <!-- Name -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Họ và tên *</label>
+                    <input type="text" name="name" placeholder="Nguyễn Văn A" required
+                        class="form-input w-full px-5 py-3.5 rounded-2xl text-sm" />
+                </div>
+
+                <!-- Email -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Email *</label>
+                    <input type="email" name="email" placeholder="email@example.com" required
+                        class="form-input w-full px-5 py-3.5 rounded-2xl text-sm" />
+                </div>
+
+                <!-- Phone -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Số điện thoại *</label>
+                    <input type="tel" name="phone" placeholder="0901 234 567" required
+                        class="form-input w-full px-5 py-3.5 rounded-2xl text-sm" />
+                </div>
+
+                <!-- Package -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Gói đăng ký *</label>
+                    <select name="package" required class="form-input w-full px-5 py-3.5 rounded-2xl text-sm appearance-none cursor-pointer">
+                        <option value="" disabled selected>Chọn gói phù hợp</option>
+                        <option value="director-pro">Director Pro — 5.000.000đ (Phổ biến nhất)</option>
+                        <option value="early-bird">Early Bird — 4.500.000đ</option>
+                    </select>
+                </div>
+
+                <!-- Experience -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Bạn đã dùng Claude / AI coding chưa?</label>
+                    <select name="experience" class="form-input w-full px-5 py-3.5 rounded-2xl text-sm appearance-none cursor-pointer">
+                        <option value="never">Chưa bao giờ dùng</option>
+                        <option value="basic">Đã dùng ChatGPT / Claude cơ bản</option>
+                        <option value="coding">Đã thử Claude Code nhưng chưa thành thạo</option>
+                        <option value="advanced">Đã dùng thường xuyên, muốn nâng cấp</option>
+                    </select>
+                </div>
+
+                <!-- Note -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Bạn muốn build gì sau khóa học? (không bắt buộc)</label>
+                    <textarea name="note" placeholder="VD: Build landing page cho freelance, tạo tool automation cho công ty, build SaaS mini..." rows="3"
+                        class="form-input w-full px-5 py-3.5 rounded-2xl text-sm resize-none"></textarea>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="w-full py-5 bg-indigo-600 text-white font-black text-base rounded-2xl hover:bg-indigo-500 transition shadow-xl shadow-indigo-600/30 uppercase tracking-widest">
+                    <i class="fas fa-paper-plane mr-2"></i> Đặt chỗ ngay
+                </button>
+
+                <p class="text-center text-xs text-slate-600">Thông tin của bạn được bảo mật tuyệt đối. Không spam.</p>
+            </form>
+
+            <!-- Success state (hidden by default) -->
+            <div id="successMsg" class="hidden text-center py-10">
+                <div class="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-check text-emerald-400 text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-black text-white mb-3">Đăng ký thành công!</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Cảm ơn bạn đã đăng ký. Team sẽ liên hệ qua email và số điện thoại của bạn<br>
+                    trong vòng <strong class="text-white">24 giờ</strong> để xác nhận và gửi link Zoom.
+                </p>
+                <p class="mt-4 text-indigo-400 text-sm font-bold">
+                    <i class="fas fa-envelope mr-1"></i> Kiểm tra hộp thư (kể cả spam) để nhận tài liệu chuẩn bị trước buổi 1.
+                </p>
+            </div>
+        </div>
+
+        <!-- Contact alternative -->
+        <div class="mt-8 text-center">
+            <p class="text-sm text-slate-500">Có câu hỏi trước khi đăng ký?</p>
+            <div class="flex flex-wrap justify-center gap-4 mt-3">
+                <a href="#" class="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition">
+                    <i class="fab fa-facebook-messenger text-blue-400"></i> Nhắn Messenger
+                </a>
+                <a href="#" class="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition">
+                    <i class="fab fa-telegram text-sky-400"></i> Chat Telegram
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== FAQ ===== -->
+<section class="py-20 px-6 border-t border-white/5">
+    <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-black text-white">Câu hỏi <span class="gradient-text">thường gặp</span></h2>
+        </div>
+        <div class="space-y-4" id="faqList">
+            <div class="faq-item glass rounded-2xl overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-7 py-5 text-left">
+                    <span class="font-bold text-white text-sm">Tôi không biết code có học được không?</span>
+                    <i class="fas fa-plus text-indigo-400 flex-shrink-0 transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden px-7 pb-5">
+                    <p class="text-sm text-slate-400 leading-relaxed">Hoàn toàn được. Khóa học được thiết kế cho người <strong class="text-white">không cần background kỹ thuật</strong>. Bạn chỉ cần biết dùng máy tính cơ bản. Phương pháp Vibe Coding giúp bạn "điều khiển" AI viết code thay bạn.</p>
+                </div>
+            </div>
+            <div class="faq-item glass rounded-2xl overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-7 py-5 text-left">
+                    <span class="font-bold text-white text-sm">Học Zoom có cần online đúng giờ không?</span>
+                    <i class="fas fa-plus text-indigo-400 flex-shrink-0 transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden px-7 pb-5">
+                    <p class="text-sm text-slate-400 leading-relaxed">Khuyến khích học live để có thể hỏi trực tiếp. Nhưng mỗi buổi đều được <strong class="text-white">recording đầy đủ</strong> — gói Early Bird xem lại 6 tháng, gói Director Pro xem lại vĩnh viễn.</p>
+                </div>
+            </div>
+            <div class="faq-item glass rounded-2xl overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-7 py-5 text-left">
+                    <span class="font-bold text-white text-sm">Cần chuẩn bị gì trước khi học?</span>
+                    <i class="fas fa-plus text-indigo-400 flex-shrink-0 transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden px-7 pb-5">
+                    <p class="text-sm text-slate-400 leading-relaxed">Chỉ cần: (1) Máy tính Mac/Windows, (2) Tài khoản Claude (có plan Pro hoặc Max), (3) Cài VS Code. Team sẽ gửi hướng dẫn chuẩn bị đầy đủ sau khi đăng ký.</p>
+                </div>
+            </div>
+            <div class="faq-item glass rounded-2xl overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-7 py-5 text-left">
+                    <span class="font-bold text-white text-sm">Sau khóa học tôi có thể tự build được không?</span>
+                    <i class="fas fa-plus text-indigo-400 flex-shrink-0 transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden px-7 pb-5">
+                    <p class="text-sm text-slate-400 leading-relaxed">Đó là mục tiêu chính. Ngay buổi 3 bạn sẽ có sản phẩm <strong class="text-white">chạy live trên internet</strong>. Kèm theo đó là bộ Framework + Prompt Templates để tái sử dụng cho mọi dự án tiếp theo.</p>
+                </div>
+            </div>
+            <div class="faq-item glass rounded-2xl overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between px-7 py-5 text-left">
+                    <span class="font-bold text-white text-sm">Tôi có thể trả góp không?</span>
+                    <i class="fas fa-plus text-indigo-400 flex-shrink-0 transition-transform"></i>
+                </button>
+                <div class="faq-answer hidden px-7 pb-5">
+                    <p class="text-sm text-slate-400 leading-relaxed">Hỗ trợ thanh toán 2 đợt: 50% khi đăng ký, 50% trước buổi 2. Liên hệ team qua Messenger hoặc Telegram để được hỗ trợ.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-black py-20 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-indigo-600 rounded flex items-center justify-center">
+                    <i class="fas fa-terminal text-white"></i>
+                </div>
+                <div>
+                    <span class="block text-lg font-black text-white tracking-tighter uppercase">Claude Code <span class="text-indigo-400">Director</span></span>
+                    <span class="text-[10px] font-bold text-slate-600 uppercase tracking-widest">Vibe Coding Mastery Program</span>
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 text-xs font-bold text-slate-500 uppercase tracking-widest">
+                <a href="#curriculum" class="hover:text-indigo-400 transition">Lộ trình</a>
+                <a href="#value" class="hover:text-indigo-400 transition">Giá trị</a>
+                <a href="#bonus" class="hover:text-indigo-400 transition">Quà tặng</a>
+                <a href="#pricing" class="hover:text-indigo-400 transition">Học phí</a>
+                <a href="#register" class="hover:text-indigo-400 transition">Đăng ký</a>
+            </div>
+        </div>
+        <div class="border-t border-white/5 pt-10 text-center">
+            <p class="text-slate-400 text-sm font-medium italic mb-4">
+                "Công nghệ thay đổi, tư duy Director là vĩnh viễn."
+            </p>
+            <p class="text-[9px] font-black text-slate-800 uppercase tracking-widest">
+                Designed for Future AI Directors • 2026 • Claude Code Mastery Pro
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+<!-- ===== FLOATING CTA (mobile) ===== -->
+<div class="fixed bottom-6 left-4 right-4 z-40 md:hidden">
+    <a href="#register" class="flex items-center justify-center gap-3 w-full py-4 bg-indigo-600 text-white font-black rounded-2xl shadow-2xl shadow-indigo-600/50 uppercase tracking-widest text-sm">
+        <i class="fas fa-paper-plane"></i> Đăng ký — 5.000.000đ
+    </a>
+</div>
+
+
+<script>
+    // FAQ toggle
+    function toggleFaq(btn) {
+        const answer = btn.nextElementSibling;
+        const icon = btn.querySelector('i');
+        const isOpen = !answer.classList.contains('hidden');
+
+        // Close all
+        document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+        document.querySelectorAll('.faq-item button i').forEach(i => {
+            i.classList.remove('fa-minus', 'rotate-45');
+            i.classList.add('fa-plus');
+        });
+
+        if (!isOpen) {
+            answer.classList.remove('hidden');
+            icon.classList.remove('fa-plus');
+            icon.classList.add('fa-minus');
+        }
+    }
+
+    // Form submit
+    function handleSubmit(e) {
+        e.preventDefault();
+        const form = document.getElementById('enrollForm');
+        const success = document.getElementById('successMsg');
+
+        // Collect data
+        const data = {
+            name: form.name.value,
+            email: form.email.value,
+            phone: form.phone.value,
+            package: form.package.value,
+            experience: form.experience.value,
+            note: form.note.value,
+            timestamp: new Date().toLocaleString('vi-VN')
+        };
+
+        // Log to console (replace with actual API call)
+        console.log('New registration:', data);
+
+        // Show success
+        form.classList.add('hidden');
+        success.classList.remove('hidden');
+
+        // Scroll to success
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Smooth nav active state
+    const sections = document.querySelectorAll('section[id], header');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            if (window.scrollY >= section.offsetTop - 100) {
+                current = section.getAttribute('id') || '';
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.toggle('text-indigo-400', link.getAttribute('href') === '#' + current);
+        });
+    });
+</script>
+
+</body>
+</html>
