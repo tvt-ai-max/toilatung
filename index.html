@@ -134,6 +134,47 @@
         .bg-red-brand { background-color: var(--red); }
         .text-red-brand { color: var(--red); }
         .border-red-brand { border-color: var(--red); }
+
+        /* ===== MOBILE MENU ===== */
+        #mobileDrawer {
+            position: fixed;
+            top: 0; right: 0; bottom: 0;
+            width: 280px;
+            background: #0d1117;
+            border-left: 1px solid rgba(255,255,255,0.08);
+            z-index: 200;
+            transform: translateX(100%);
+            transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+            overflow-y: auto;
+        }
+        #mobileDrawer.open { transform: translateX(0); }
+        #drawerOverlay {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            z-index: 199;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        #drawerOverlay.open { opacity: 1; pointer-events: all; }
+        .hamburger-line {
+            display: block; width: 22px; height: 2px;
+            background: white; border-radius: 2px;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        .hamburger.active .hamburger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .hamburger.active .hamburger-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .hamburger.active .hamburger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+        /* Mobile optimizations */
+        @media (max-width: 767px) {
+            .hero-title { font-size: 2.75rem !important; line-height: 1.1 !important; }
+            .hero-sub { font-size: 1rem !important; }
+            .section-h2 { font-size: 1.875rem !important; }
+            .mobile-px { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+            .card-hover:hover { transform: none; }
+        }
     </style>
 </head>
 
@@ -141,56 +182,102 @@
 
 <!-- ===== NAV ===== -->
 <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#0b0e14]/90 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded flex items-center justify-center" style="background:var(--red);box-shadow:0 0 15px var(--red-glow)">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded flex items-center justify-center flex-shrink-0" style="background:var(--red);box-shadow:0 0 15px var(--red-glow)">
                 <i class="fas fa-user-tie text-white text-sm"></i>
             </div>
-            <span class="font-black text-white tracking-tighter uppercase">TVT <span style="color:var(--red)">Strategist</span></span>
-        </div>
+            <span class="font-black text-white tracking-tighter uppercase text-sm">TVT <span style="color:var(--red)">Strategist</span></span>
+        </a>
+        <!-- Desktop links -->
         <div class="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
-            <a href="#problem" class="transition" style="" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color=''">Vấn đề</a>
+            <a href="#problem" class="transition" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color=''">Vấn đề</a>
             <a href="#value" class="transition" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color=''">Giá trị</a>
             <a href="#roadmap" class="transition" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color=''">Lộ trình</a>
-            <a href="#founder" class="transition" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color=''">Tùng là ai</a>
+            <a href="#founder" class="transition" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color=''">Tôi là Tùng</a>
             <a href="#pricing" class="transition" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color=''">Học phí</a>
         </div>
-        <a href="#apply" class="hidden md:block px-5 py-2 text-white text-xs font-black uppercase tracking-widest rounded-xl transition" style="background:var(--red);box-shadow:0 4px 15px var(--red-glow)" onmouseover="this.style.background='var(--red-light)'" onmouseout="this.style.background='var(--red)'">
-            Audit ngay
-        </a>
+        <div class="flex items-center gap-3">
+            <a href="#apply" class="hidden md:block px-5 py-2 text-white text-xs font-black uppercase tracking-widest rounded-xl transition" style="background:var(--red);box-shadow:0 4px 15px var(--red-glow)" onmouseover="this.style.background='var(--red-light)'" onmouseout="this.style.background='var(--red)'">
+                Audit ngay
+            </a>
+            <!-- Hamburger -->
+            <button id="hamburgerBtn" class="hamburger md:hidden flex flex-col gap-[6px] p-2 rounded-xl glass" aria-label="Menu" onclick="toggleDrawer()">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
     </div>
 </nav>
 
+<!-- Mobile Overlay -->
+<div id="drawerOverlay" onclick="toggleDrawer()"></div>
+
+<!-- Mobile Drawer -->
+<div id="mobileDrawer">
+    <div class="p-6 border-b border-white/5 flex items-center justify-between">
+        <span class="font-black text-white tracking-tighter uppercase text-sm">TVT <span style="color:var(--red)">Strategist</span></span>
+        <button onclick="toggleDrawer()" class="w-8 h-8 glass rounded-xl flex items-center justify-center">
+            <i class="fas fa-times text-slate-400 text-sm"></i>
+        </button>
+    </div>
+    <nav class="p-4 space-y-1">
+        <a href="#problem" onclick="toggleDrawer()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition">
+            <i class="fas fa-exclamation-circle w-4" style="color:var(--red)"></i> Vấn đề
+        </a>
+        <a href="#value" onclick="toggleDrawer()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition">
+            <i class="fas fa-gem w-4 text-emerald-400"></i> Giá trị
+        </a>
+        <a href="#roadmap" onclick="toggleDrawer()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition">
+            <i class="fas fa-map w-4 text-amber-400"></i> Lộ trình
+        </a>
+        <a href="#founder" onclick="toggleDrawer()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition">
+            <i class="fas fa-user w-4 text-blue-400"></i> Tôi là Tùng
+        </a>
+        <a href="#pricing" onclick="toggleDrawer()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition">
+            <i class="fas fa-tag w-4 text-purple-400"></i> Học phí
+        </a>
+    </nav>
+    <div class="p-4 border-t border-white/5">
+        <a href="#apply" onclick="toggleDrawer()" class="flex items-center justify-center gap-2 w-full py-4 text-white font-black rounded-2xl text-sm uppercase tracking-widest" style="background:var(--red);box-shadow:0 4px 20px var(--red-glow)">
+            <i class="fas fa-paper-plane"></i> Đăng ký Audit 1-1
+        </a>
+        <p class="text-center text-[10px] text-slate-600 mt-3 uppercase tracking-widest">Chỉ 5.000.000đ · Hoàn tiền 100%</p>
+    </div>
+</div>
+
 
 <!-- ===== HERO ===== -->
-<header class="pt-32 pb-24 px-6 relative overflow-hidden">
-    <div class="absolute -top-32 -right-32 w-[600px] h-[600px] blur-[140px] rounded-full pointer-events-none" style="background:rgba(255,45,45,0.12)"></div>
-    <div class="absolute -bottom-32 -left-32 w-[400px] h-[400px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+<header class="pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-6 relative overflow-hidden">
+    <div class="absolute -top-32 -right-32 w-[400px] md:w-[600px] h-[400px] md:h-[600px] blur-[120px] md:blur-[140px] rounded-full pointer-events-none" style="background:rgba(255,45,45,0.12)"></div>
+    <div class="absolute -bottom-32 -left-32 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-emerald-500/10 blur-[100px] md:blur-[120px] rounded-full pointer-events-none"></div>
 
     <div class="max-w-5xl mx-auto text-center relative z-10">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-8 badge-pulse" style="background:rgba(255,45,45,0.1);border:1px solid rgba(255,45,45,0.25);color:var(--red)">
-            <span class="w-1.5 h-1.5 rounded-full" style="background:var(--red)"></span>
-            TVT Exclusive · 1-1 Coaching Framework · Zoom trực tiếp
+        <div class="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.15em] md:tracking-[0.2em] mb-6 md:mb-8 badge-pulse" style="background:rgba(255,45,45,0.1);border:1px solid rgba(255,45,45,0.25);color:var(--red)">
+            <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:var(--red)"></span>
+            <span class="truncate">TVT Exclusive · 1-1 · Zoom trực tiếp</span>
         </div>
 
-        <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.05]">
+        <h1 class="hero-title text-4xl sm:text-5xl md:text-7xl font-black text-white mb-4 md:mb-6 leading-[1.05]">
             Coaching AI 1-1<br>
             <span class="gradient-text italic">qua Zoom</span>
         </h1>
 
-        <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-4 font-medium leading-relaxed">
-            Dành cho người đã biết AI cơ bản nhưng muốn đi xa hơn.<br>
-            <strong class="text-white">Chọn đúng tool → Xây workflow → Tạo đầu ra kinh doanh thực tế.</strong>
+        <p class="hero-sub text-base md:text-xl text-slate-400 max-w-2xl mx-auto mb-4 font-medium leading-relaxed">
+            Dành cho người đã biết AI cơ bản nhưng muốn đi xa hơn.<br class="hidden sm:block">
+            <strong class="text-white">Chọn đúng tool → Xây workflow → Tạo đầu ra kinh doanh.</strong>
         </p>
 
-        <div class="flex flex-wrap justify-center gap-6 mb-10 text-sm">
+        <div class="flex flex-wrap justify-center gap-3 md:gap-6 mb-8 md:mb-10 text-sm">
             <div class="flex items-center gap-2 text-slate-400">
-                <i class="fas fa-user text-indigo-400"></i>
+                <i class="fas fa-user" style="color:var(--red)"></i>
                 <span><strong class="text-white">1 học viên</strong> / 1 chương trình</span>
             </div>
             <div class="flex items-center gap-2 text-slate-400">
                 <i class="fas fa-video text-emerald-400"></i>
-                <span><strong class="text-white">4 buổi Zoom</strong> trực tiếp</span>
+                <span><strong class="text-white">4 buổi Zoom</strong> × 90 phút</span>
             </div>
             <div class="flex items-center gap-2 text-slate-400">
                 <i class="fas fa-cogs text-amber-400"></i>
@@ -198,17 +285,17 @@
             </div>
         </div>
 
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="#apply" class="px-10 py-4 text-white font-black rounded-2xl transition text-base uppercase tracking-widest" style="background:var(--red);box-shadow:0 8px 30px var(--red-glow)" onmouseover="this.style.background='var(--red-light)'" onmouseout="this.style.background='var(--red)'">
-                Đăng ký Audit 1-1
+        <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 px-2">
+            <a href="#apply" class="w-full sm:w-auto px-8 md:px-10 py-4 text-white font-black rounded-2xl transition text-sm md:text-base uppercase tracking-widest text-center" style="background:var(--red);box-shadow:0 8px 30px var(--red-glow)" onmouseover="this.style.background='var(--red-light)'" onmouseout="this.style.background='var(--red)'">
+                <i class="fas fa-paper-plane mr-2"></i>Đăng ký Audit 1-1
             </a>
-            <a href="#roadmap" class="px-10 py-4 glass text-white font-bold rounded-2xl border border-white/10 hover:border-white/20 transition text-base">
-                <i class="fas fa-arrow-down mr-2" style="color:var(--red)"></i> Xem lộ trình 4 buổi
+            <a href="#roadmap" class="w-full sm:w-auto px-8 md:px-10 py-4 glass text-white font-bold rounded-2xl border border-white/10 hover:border-white/20 transition text-sm md:text-base text-center">
+                <i class="fas fa-arrow-down mr-2" style="color:var(--red)"></i>Xem lộ trình 4 buổi
             </a>
         </div>
 
-        <p class="mt-6 text-xs text-rose-400 font-bold uppercase tracking-widest">
-            <i class="fas fa-lock mr-1"></i> Chương trình không thiết kế đại trà — mỗi case được điều chỉnh theo mục tiêu cá nhân
+        <p class="mt-5 text-xs text-slate-500 font-medium px-4">
+            <i class="fas fa-lock mr-1" style="color:var(--red)"></i> Không thiết kế đại trà — từng case được điều chỉnh theo mục tiêu cá nhân
         </p>
     </div>
 </header>
@@ -551,9 +638,9 @@
 <section id="founder" class="py-20 px-6 border-t border-white/5">
     <div class="max-w-4xl mx-auto">
         <div class="glass rounded-3xl p-10 glow-indigo">
-            <div class="flex flex-col lg:flex-row gap-10 items-start">
+            <div class="flex flex-col lg:flex-row gap-10 items-center lg:items-start">
                 <!-- Avatar Column -->
-                <div class="flex-shrink-0 text-center lg:text-left">
+                <div class="flex-shrink-0 flex flex-col items-center lg:items-start">
                     <!-- Avatar with gradient ring -->
                     <div class="relative inline-block mb-5">
                         <div class="w-36 h-36 rounded-full p-[3px] mx-auto lg:mx-0" style="background:linear-gradient(135deg,var(--red),#ff8c42)">
@@ -583,7 +670,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="flex-1">
+                <div class="flex-1 text-center lg:text-left">
                     <p class="text-slate-300 leading-relaxed mb-4">
                         16 năm làm branding và thiết kế. Hiện tập trung xây hệ marketing và workflow AI ứng dụng cho cá nhân và doanh nghiệp.
                     </p>
@@ -604,7 +691,7 @@
                             <p class="text-[10px] font-bold text-white uppercase">Case cá nhân hóa</p>
                         </div>
                     </div>
-                    <a href="#apply" class="inline-flex items-center gap-2 px-7 py-4 text-white font-black rounded-2xl transition text-sm uppercase tracking-widest" style="background:var(--red)" onmouseover="this.style.background='var(--red-light)'" onmouseout="this.style.background='var(--red)'">
+                    <a href="#apply" class="inline-flex items-center gap-2 px-7 py-4 text-white font-black rounded-2xl transition text-sm uppercase tracking-widest mx-auto lg:mx-0" style="background:var(--red)" onmouseover="this.style.background='var(--red-light)'" onmouseout="this.style.background='var(--red)'">
                         <i class="fas fa-arrow-right"></i> Đăng ký coaching 1-1
                     </a>
                 </div>
@@ -846,6 +933,7 @@
                 <a href="#problem" class="transition" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color=''">Vấn đề</a>
                 <a href="#value" class="transition" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color=''">Giá trị</a>
                 <a href="#roadmap" class="transition" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color=''">Lộ trình</a>
+                <a href="#founder" class="transition" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color=''">Tôi là Tùng</a>
                 <a href="#pricing" class="transition" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color=''">Học phí</a>
                 <a href="#apply" class="transition" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color=''">Đăng ký</a>
             </div>
@@ -862,11 +950,17 @@
 </footer>
 
 
-<!-- ===== FLOATING CTA (mobile) ===== -->
-<div class="fixed bottom-6 left-4 right-4 z-40 md:hidden">
-    <a href="#apply" class="flex items-center justify-center gap-3 w-full py-4 text-white font-black rounded-2xl uppercase tracking-widest text-sm" style="background:var(--red);box-shadow:0 8px 30px rgba(255,45,45,0.5)" onmouseover="this.style.background='var(--red-light)'" onmouseout="this.style.background='var(--red)'">
-        <i class="fas fa-paper-plane"></i> Đăng ký Audit 1-1 — 5.000.000đ
-    </a>
+<!-- ===== STICKY BOTTOM BAR (mobile) ===== -->
+<div class="fixed bottom-0 left-0 right-0 z-40 md:hidden" style="background:rgba(11,14,20,0.95);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,0.07)">
+    <div class="flex items-center gap-3 px-4 py-3">
+        <div class="flex-1 min-w-0">
+            <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest">Coaching AI 1-1</p>
+            <p class="text-sm font-black text-white">5.000.000đ <span class="text-emerald-400 text-xs font-bold">· Hoàn tiền 100%</span></p>
+        </div>
+        <a href="#apply" class="flex-shrink-0 px-5 py-3 text-white font-black rounded-xl text-xs uppercase tracking-widest whitespace-nowrap" style="background:var(--red);box-shadow:0 4px 16px var(--red-glow)">
+            Đăng ký ngay
+        </a>
+    </div>
 </div>
 
 
@@ -917,6 +1011,26 @@
             const isActive = link.getAttribute('href') === '#' + current;
             link.style.color = isActive ? 'var(--red)' : '';
         });
+    });
+
+    // Mobile drawer
+    function toggleDrawer() {
+        const drawer = document.getElementById('mobileDrawer');
+        const overlay = document.getElementById('drawerOverlay');
+        const btn = document.getElementById('hamburgerBtn');
+        const isOpen = drawer.classList.contains('open');
+        drawer.classList.toggle('open', !isOpen);
+        overlay.classList.toggle('open', !isOpen);
+        btn.classList.toggle('active', !isOpen);
+        document.body.style.overflow = isOpen ? '' : 'hidden';
+    }
+
+    // Close drawer on ESC
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            const drawer = document.getElementById('mobileDrawer');
+            if (drawer.classList.contains('open')) toggleDrawer();
+        }
     });
 </script>
 
