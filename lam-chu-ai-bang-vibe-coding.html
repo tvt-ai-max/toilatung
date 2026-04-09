@@ -164,6 +164,50 @@
             background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(52,211,153,0.05));
             border: 1px solid rgba(255,255,255,0.08);
         }
+
+        /* ===== MOBILE MENU ===== */
+        #mobileDrawer {
+            position: fixed;
+            top: 0; right: 0; bottom: 0;
+            width: 280px;
+            background: #0d1117;
+            border-left: 1px solid rgba(255,255,255,0.08);
+            z-index: 200;
+            transform: translateX(100%);
+            transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+            overflow-y: auto;
+        }
+        #mobileDrawer.open { transform: translateX(0); }
+        #drawerOverlay {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            z-index: 199;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        #drawerOverlay.open { opacity: 1; pointer-events: all; }
+        .hamburger-line {
+            display: block; width: 22px; height: 2px;
+            background: white; border-radius: 2px;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        .hamburger.active .hamburger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .hamburger.active .hamburger-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .hamburger.active .hamburger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+        /* Mobile optimizations */
+        @media (max-width: 767px) {
+            .hero-title { font-size: 2.75rem !important; line-height: 1.1 !important; }
+            .hero-sub { font-size: 1rem !important; }
+            .card-hover:hover { transform: none; }
+            /* Extra bottom space for sticky bar */
+            body { padding-bottom: 72px; }
+        }
+        @media (min-width: 768px) {
+            body { padding-bottom: 0; }
+        }
     </style>
 </head>
 
@@ -171,13 +215,15 @@
 
 <!-- ===== STICKY NAV ===== -->
 <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#0b0e14]/90 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-            <div class="w-8 h-8 bg-indigo-600 rounded flex items-center justify-center shadow-[0_0_15px_rgba(79,70,229,0.5)]">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-indigo-600 rounded flex items-center justify-center shadow-[0_0_15px_rgba(79,70,229,0.5)] flex-shrink-0">
                 <i class="fas fa-terminal text-white text-sm"></i>
             </div>
-            <span class="font-black text-white tracking-tighter uppercase">Claude Code <span class="text-indigo-400">Pro</span></span>
-        </div>
+            <span class="font-black text-white tracking-tighter uppercase text-sm">Claude Code <span class="text-indigo-400">Pro</span></span>
+        </a>
+        <!-- Desktop links -->
         <div class="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
             <a href="#curriculum" class="hover:text-indigo-400 transition">Lộ trình</a>
             <a href="#value" class="hover:text-indigo-400 transition">Giá trị</a>
@@ -186,39 +232,86 @@
             <a href="#pricing" class="hover:text-indigo-400 transition">Học phí</a>
             <a href="#register" class="hover:text-indigo-400 transition">Đăng ký</a>
         </div>
-        <a href="#register" class="hidden md:block px-5 py-2 bg-indigo-600 text-white text-xs font-black uppercase tracking-widest rounded-xl hover:bg-indigo-500 transition shadow-lg shadow-indigo-600/30">
-            Đăng ký ngay
-        </a>
+        <div class="flex items-center gap-3">
+            <a href="#register" class="hidden md:block px-5 py-2 bg-indigo-600 text-white text-xs font-black uppercase tracking-widest rounded-xl hover:bg-indigo-500 transition shadow-lg shadow-indigo-600/30">
+                Đăng ký ngay
+            </a>
+            <!-- Hamburger -->
+            <button id="hamburgerBtn" class="hamburger md:hidden flex flex-col gap-[6px] p-2 rounded-xl glass" aria-label="Menu" onclick="toggleDrawer()">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
     </div>
 </nav>
 
+<!-- Mobile Overlay -->
+<div id="drawerOverlay" onclick="toggleDrawer()"></div>
+
+<!-- Mobile Drawer -->
+<div id="mobileDrawer">
+    <div class="p-6 border-b border-white/5 flex items-center justify-between">
+        <span class="font-black text-white tracking-tighter uppercase text-sm">Claude Code <span class="text-indigo-400">Pro</span></span>
+        <button onclick="toggleDrawer()" class="w-8 h-8 glass rounded-xl flex items-center justify-center">
+            <i class="fas fa-times text-slate-400 text-sm"></i>
+        </button>
+    </div>
+    <nav class="p-4 space-y-1">
+        <a href="#curriculum" onclick="toggleDrawer()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition">
+            <i class="fas fa-map w-4 text-indigo-400"></i> Lộ trình
+        </a>
+        <a href="#value" onclick="toggleDrawer()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition">
+            <i class="fas fa-gem w-4 text-emerald-400"></i> Giá trị
+        </a>
+        <a href="#bonus" onclick="toggleDrawer()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition">
+            <i class="fas fa-gift w-4 text-amber-400"></i> Quà tặng
+        </a>
+        <a href="#instructor" onclick="toggleDrawer()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition">
+            <i class="fas fa-user w-4 text-blue-400"></i> Tôi là Tùng
+        </a>
+        <a href="#pricing" onclick="toggleDrawer()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition">
+            <i class="fas fa-tag w-4 text-purple-400"></i> Học phí
+        </a>
+        <a href="#register" onclick="toggleDrawer()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition">
+            <i class="fas fa-pen w-4 text-rose-400"></i> Đăng ký
+        </a>
+    </nav>
+    <div class="p-4 border-t border-white/5">
+        <a href="#register" onclick="toggleDrawer()" class="flex items-center justify-center gap-2 w-full py-4 bg-indigo-600 text-white font-black rounded-2xl text-sm uppercase tracking-widest hover:bg-indigo-500 transition">
+            <i class="fas fa-paper-plane"></i> Đăng ký ngay
+        </a>
+        <p class="text-center text-[10px] text-slate-600 mt-3 uppercase tracking-widest">Chỉ 5.000.000đ · Hoàn tiền 7 ngày</p>
+    </div>
+</div>
+
 
 <!-- ===== HERO ===== -->
-<header class="pt-32 pb-24 px-6 relative overflow-hidden">
+<header class="pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-6 relative overflow-hidden">
     <!-- Background glows -->
-    <div class="absolute -top-32 -right-32 w-[600px] h-[600px] bg-indigo-600/15 blur-[140px] rounded-full pointer-events-none"></div>
-    <div class="absolute -bottom-32 -left-32 w-[400px] h-[400px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+    <div class="absolute -top-32 -right-32 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-indigo-600/15 blur-[120px] md:blur-[140px] rounded-full pointer-events-none"></div>
+    <div class="absolute -bottom-32 -left-32 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-emerald-500/10 blur-[100px] md:blur-[120px] rounded-full pointer-events-none"></div>
 
     <div class="max-w-5xl mx-auto text-center relative z-10">
         <!-- Badge -->
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-400 text-[10px] font-black uppercase tracking-[0.2em] mb-8 badge-pulse">
-            <span class="w-1.5 h-1.5 bg-indigo-400 rounded-full"></span>
-            Live Zoom · 3 Buổi · Khai giảng sắp tới
+        <div class="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-400 text-[10px] font-black uppercase tracking-[0.15em] md:tracking-[0.2em] mb-6 md:mb-8 badge-pulse">
+            <span class="w-1.5 h-1.5 bg-indigo-400 rounded-full flex-shrink-0"></span>
+            <span class="truncate">Live Zoom · 3 Buổi · Khai giảng sắp tới</span>
         </div>
 
         <!-- Headline -->
-        <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.05]">
+        <h1 class="hero-title text-4xl sm:text-5xl md:text-7xl font-black text-white mb-4 md:mb-6 leading-[1.05]">
             Làm chủ AI bằng<br>
             <span class="gradient-text italic">"Vibe Coding"</span>
         </h1>
 
-        <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-4 font-medium leading-relaxed">
-            Từ <strong class="text-white">Zero → Deploy</strong> trong 3 buổi Zoom thực chiến.<br>
+        <p class="hero-sub text-base md:text-xl text-slate-400 max-w-2xl mx-auto mb-4 font-medium leading-relaxed">
+            Từ <strong class="text-white">Zero → Deploy</strong> trong 3 buổi Zoom thực chiến.<br class="hidden sm:block">
             Biến Claude Code thành đội ngũ kỹ sư hùng hậu của riêng bạn.
         </p>
 
         <!-- Social proof bar -->
-        <div class="flex flex-wrap justify-center gap-6 mb-10 text-sm">
+        <div class="flex flex-wrap justify-center gap-3 md:gap-6 mb-8 md:mb-10 text-sm">
             <div class="flex items-center gap-2 text-slate-400">
                 <i class="fas fa-users text-indigo-400"></i>
                 <span><strong class="text-white">247+</strong> học viên</span>
@@ -234,17 +327,17 @@
         </div>
 
         <!-- CTA -->
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="#register" class="px-10 py-4 bg-indigo-600 text-white font-black rounded-2xl hover:bg-indigo-500 transition shadow-xl shadow-indigo-600/30 text-base uppercase tracking-widest">
-                Đăng ký — 5.000.000đ
+        <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 px-2">
+            <a href="#register" class="w-full sm:w-auto px-8 md:px-10 py-4 bg-indigo-600 text-white font-black rounded-2xl hover:bg-indigo-500 transition shadow-xl shadow-indigo-600/30 text-sm md:text-base uppercase tracking-widest text-center">
+                <i class="fas fa-paper-plane mr-2"></i>Đăng ký — 5.000.000đ
             </a>
-            <a href="#curriculum" class="px-10 py-4 glass text-white font-bold rounded-2xl border border-white/10 hover:border-white/20 transition text-base">
-                <i class="fas fa-play-circle mr-2 text-indigo-400"></i> Xem lộ trình
+            <a href="#curriculum" class="w-full sm:w-auto px-8 md:px-10 py-4 glass text-white font-bold rounded-2xl border border-white/10 hover:border-white/20 transition text-sm md:text-base text-center">
+                <i class="fas fa-play-circle mr-2 text-indigo-400"></i>Xem lộ trình
             </a>
         </div>
 
         <!-- Urgency -->
-        <p class="mt-6 text-xs text-rose-400 font-bold uppercase tracking-widest">
+        <p class="mt-5 text-xs text-rose-400 font-bold uppercase tracking-widest">
             <i class="fas fa-fire mr-1"></i> Chỉ còn 12 suất — Lớp đang lấp đầy nhanh
         </p>
     </div>
@@ -809,9 +902,9 @@
             <h2 class="text-3xl font-black text-white">Ai hướng dẫn bạn?</h2>
         </div>
         <div class="glass rounded-3xl p-10 glow-indigo">
-            <div class="flex flex-col lg:flex-row gap-10 items-start">
+            <div class="flex flex-col lg:flex-row gap-10 items-center lg:items-start">
                 <!-- Avatar Column -->
-                <div class="flex-shrink-0 text-center lg:text-left">
+                <div class="flex-shrink-0 flex flex-col items-center lg:items-start">
                     <!-- Avatar with gradient ring -->
                     <div class="relative inline-block mb-5">
                         <div class="w-40 h-40 rounded-full p-[3px] mx-auto lg:mx-0" style="background:linear-gradient(135deg,#818cf8,#34d399)">
@@ -846,7 +939,7 @@
                 </div>
 
                 <!-- Content Column -->
-                <div class="flex-1">
+                <div class="flex-1 text-center lg:text-left">
                     <p class="text-slate-300 leading-relaxed mb-4">
                         16 năm kinh nghiệm branding và thiết kế. Hiện đang build hệ thống AI Marketing và Vibe Coding workflow thực chiến — áp dụng cho chính TVT Agency và coaching cá nhân.
                     </p>
@@ -874,11 +967,11 @@
                     </div>
 
                     <!-- Quote -->
-                    <blockquote class="border-l-4 border-indigo-500 pl-4 mb-6">
-                        <p class="text-sm text-slate-300 italic leading-relaxed">"Tôi build khóa học này từ những gì tôi thực sự làm hàng ngày, không phải từ slide PowerPoint lý thuyết."</p>
+                    <blockquote class="border-t border-b lg:border-t-0 lg:border-b-0 lg:border-l-4 border-indigo-500/40 lg:border-indigo-500 py-4 lg:py-0 lg:pl-4 mb-6">
+                        <p class="text-sm text-slate-300 italic leading-relaxed">""Tôi build khóa học này từ những gì tôi thực sự làm hàng ngày, không phải từ slide PowerPoint lý thuyết."</p>
                     </blockquote>
 
-                    <a href="#register" class="inline-flex items-center gap-2 px-7 py-4 bg-indigo-600 text-white font-black rounded-2xl hover:bg-indigo-500 transition text-sm uppercase tracking-widest">
+                    <a href="#register" class="inline-flex items-center gap-2 px-7 py-4 bg-indigo-600 text-white font-black rounded-2xl hover:bg-indigo-500 transition text-sm uppercase tracking-widest mx-auto lg:mx-0">
                         <i class="fas fa-arrow-right"></i> Học với Tùng
                     </a>
                 </div>
@@ -979,11 +1072,17 @@
 </footer>
 
 
-<!-- ===== FLOATING CTA (mobile) ===== -->
-<div class="fixed bottom-6 left-4 right-4 z-40 md:hidden">
-    <a href="#register" class="flex items-center justify-center gap-3 w-full py-4 bg-indigo-600 text-white font-black rounded-2xl shadow-2xl shadow-indigo-600/50 uppercase tracking-widest text-sm">
-        <i class="fas fa-paper-plane"></i> Đăng ký — 5.000.000đ
-    </a>
+<!-- ===== STICKY BOTTOM BAR (mobile) ===== -->
+<div class="fixed bottom-0 left-0 right-0 z-40 md:hidden" style="background:rgba(11,14,20,0.95);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,0.07)">
+    <div class="flex items-center gap-3 px-4 py-3">
+        <div class="flex-1 min-w-0">
+            <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest">Claude Code Mastery Pro</p>
+            <p class="text-sm font-black text-white">5.000.000đ <span class="text-emerald-400 text-xs font-bold">· Hoàn tiền 7 ngày</span></p>
+        </div>
+        <a href="#register" class="flex-shrink-0 px-5 py-3 bg-indigo-600 text-white font-black rounded-xl text-xs uppercase tracking-widest whitespace-nowrap hover:bg-indigo-500 transition">
+            Đăng ký ngay
+        </a>
+    </div>
 </div>
 
 
@@ -1039,17 +1138,34 @@
     // Smooth nav active state
     const sections = document.querySelectorAll('section[id], header');
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
-
     window.addEventListener('scroll', () => {
         let current = '';
         sections.forEach(section => {
-            if (window.scrollY >= section.offsetTop - 100) {
-                current = section.getAttribute('id') || '';
-            }
+            if (window.scrollY >= section.offsetTop - 100) current = section.getAttribute('id') || '';
         });
         navLinks.forEach(link => {
             link.classList.toggle('text-indigo-400', link.getAttribute('href') === '#' + current);
         });
+    });
+
+    // Mobile drawer
+    function toggleDrawer() {
+        const drawer = document.getElementById('mobileDrawer');
+        const overlay = document.getElementById('drawerOverlay');
+        const btn = document.getElementById('hamburgerBtn');
+        const isOpen = drawer.classList.contains('open');
+        drawer.classList.toggle('open', !isOpen);
+        overlay.classList.toggle('open', !isOpen);
+        btn.classList.toggle('active', !isOpen);
+        document.body.style.overflow = isOpen ? '' : 'hidden';
+    }
+
+    // Close on ESC
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            const drawer = document.getElementById('mobileDrawer');
+            if (drawer.classList.contains('open')) toggleDrawer();
+        }
     });
 </script>
 
