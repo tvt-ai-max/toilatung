@@ -217,11 +217,16 @@
 <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#0b0e14]/90 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
         <!-- Logo -->
-        <a href="#" class="flex items-center gap-3">
+        <a href="https://toilatung.com/" class="flex items-center gap-3 group">
             <div class="w-8 h-8 bg-indigo-600 rounded flex items-center justify-center shadow-[0_0_15px_rgba(79,70,229,0.5)] flex-shrink-0">
                 <i class="fas fa-terminal text-white text-sm"></i>
             </div>
-            <span class="font-black text-white tracking-tighter uppercase text-sm">Claude Code <span class="text-indigo-400">Pro</span></span>
+            <div>
+                <span class="block text-[9px] font-bold text-slate-600 uppercase tracking-widest leading-none mb-0.5 group-hover:text-slate-400 transition">
+                    <i class="fas fa-arrow-left mr-1 text-[8px]"></i>Tôi Là Tùng
+                </span>
+                <span class="block font-black text-white tracking-tighter uppercase text-sm leading-none">Claude Code <span class="text-indigo-400">Pro</span></span>
+            </div>
         </a>
         <!-- Desktop links -->
         <div class="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
@@ -252,7 +257,10 @@
 <!-- Mobile Drawer -->
 <div id="mobileDrawer">
     <div class="p-6 border-b border-white/5 flex items-center justify-between">
-        <span class="font-black text-white tracking-tighter uppercase text-sm">Claude Code <span class="text-indigo-400">Pro</span></span>
+        <a href="https://toilatung.com/" class="group">
+            <span class="block text-[9px] font-bold text-slate-600 uppercase tracking-widest leading-none mb-0.5 group-hover:text-slate-400 transition"><i class="fas fa-arrow-left mr-1 text-[8px]"></i>Tôi Là Tùng</span>
+            <span class="block font-black text-white tracking-tighter uppercase text-sm leading-none">Claude Code <span class="text-indigo-400">Pro</span></span>
+        </a>
         <button onclick="toggleDrawer()" class="w-8 h-8 glass rounded-xl flex items-center justify-center">
             <i class="fas fa-times text-slate-400 text-sm"></i>
         </button>
@@ -1060,13 +1068,35 @@
                 <a href="#register" class="hover:text-indigo-400 transition">Đăng ký</a>
             </div>
         </div>
-        <div class="border-t border-white/5 pt-10 text-center">
-            <p class="text-slate-400 text-sm font-medium italic mb-4">
+        <!-- Other programs -->
+        <div class="border-t border-white/5 pt-8 mb-8">
+            <p class="text-[10px] font-black text-slate-600 uppercase tracking-widest text-center mb-5">Các chương trình khác của Tôi Là Tùng</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://toilatung.com/" class="flex items-center gap-2 px-5 py-2.5 glass rounded-xl text-xs font-bold text-slate-400 hover:text-white transition border border-white/5 hover:border-white/20">
+                    <i class="fas fa-user-tie" style="color:var(--red)"></i> ← Trang chủ Tôi Là Tùng
+                </a>
+                <a href="ai-coaching-1-1.html" class="flex items-center gap-2 px-5 py-2.5 glass rounded-xl text-xs font-bold text-slate-400 hover:text-white transition border border-white/5" onmouseover="this.style.borderColor='rgba(255,45,45,0.4)'" onmouseout="this.style.borderColor=''">
+                    <i class="fas fa-user-tie" style="color:#ff2d2d"></i> Coaching AI 1-1
+                </a>
+                <a href="phunulamchuai.html" class="flex items-center gap-2 px-5 py-2.5 glass rounded-xl text-xs font-bold text-slate-400 hover:text-white transition border border-white/5 hover:border-pink-400/40">
+                    <i class="fas fa-heart text-pink-400"></i> Phụ Nữ Làm Chủ AI (Miễn phí)
+                </a>
+            </div>
+        </div>
+
+        <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-slate-400 text-sm font-medium italic">
                 "Công nghệ thay đổi, tư duy Director là vĩnh viễn."
             </p>
-            <p class="text-[9px] font-black text-slate-800 uppercase tracking-widest">
-                Designed for Future AI Directors • 2026 • Claude Code Mastery Pro
-            </p>
+            <div class="flex items-center gap-4 flex-shrink-0">
+                <a href="https://zalo.me/0972613455" target="_blank" rel="noopener"
+                   class="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-widest text-white transition"
+                   style="background:rgba(0,104,255,0.12);border:1px solid rgba(0,104,255,0.3)"
+                   onmouseover="this.style.borderColor='rgba(0,104,255,0.6)'" onmouseout="this.style.borderColor='rgba(0,104,255,0.3)'">
+                    <i class="fas fa-comment-dots text-blue-400"></i> Zalo: 0972613455
+                </a>
+                <p class="text-[9px] font-black text-slate-700 uppercase tracking-widest">Claude Code Mastery · 2026</p>
+            </div>
         </div>
     </div>
 </footer>
@@ -1167,6 +1197,93 @@
             if (drawer.classList.contains('open')) toggleDrawer();
         }
     });
+</script>
+
+<!-- ===== EXIT-INTENT POPUP ===== -->
+<div id="exitPopup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.78);backdrop-filter:blur(10px);padding:1.5rem;align-items:center;justify-content:center">
+    <div style="max-width:500px;width:100%;margin:auto;background:#0d1117;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;padding:2rem 2.25rem;position:relative;box-shadow:0 0 60px rgba(99,102,241,0.15)">
+        <!-- Close -->
+        <button onclick="closeExitPopup()" style="position:absolute;top:1rem;right:1rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#94a3b8;width:2rem;height:2rem;border-radius:0.5rem;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center">✕</button>
+
+        <!-- Icon + Headline -->
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem">
+            <div style="width:2.5rem;height:2.5rem;border-radius:0.75rem;background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <i class="fas fa-code" style="color:#818cf8;font-size:14px"></i>
+            </div>
+            <h3 style="color:white;font-weight:900;font-size:1.05rem;line-height:1.3;margin:0">Khoan đã — đừng rời đi khi chưa rõ mình có phù hợp không</h3>
+        </div>
+
+        <p style="color:#94a3b8;font-size:0.85rem;line-height:1.6;margin-bottom:0.75rem">Nếu Bạn đang xem khóa học Vibe Coding nhưng vẫn còn vài câu hỏi, hãy chọn cách thuận tiện nhất bên dưới.</p>
+        <p style="color:#64748b;font-size:0.8rem;line-height:1.6;margin-bottom:1.5rem">Tùng sẽ giúp Bạn xem level hiện tại, mục tiêu dự án và hướng học phù hợp nhất — trước khi Bạn quyết định đăng ký.</p>
+
+        <!-- CTA 1: Zalo (primary) -->
+        <a href="https://zalo.me/0972613455" target="_blank" rel="noopener"
+           style="display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.35);border-radius:1rem;text-decoration:none;margin-bottom:0.75rem;transition:border-color 0.2s"
+           onmouseover="this.style.borderColor='rgba(99,102,241,0.7)'" onmouseout="this.style.borderColor='rgba(99,102,241,0.35)'">
+            <div style="width:2.75rem;height:2.75rem;border-radius:0.75rem;background:#0068ff;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <i class="fas fa-comment-dots" style="color:white;font-size:16px"></i>
+            </div>
+            <div>
+                <p style="color:white;font-weight:900;font-size:0.9rem;margin:0 0 0.15rem">Chat với Tùng qua Zalo</p>
+                <p style="color:#64748b;font-size:0.75rem;margin:0">Hỏi nhanh về khóa học trước khi đăng ký · <strong style="color:#818cf8">0972613455</strong></p>
+            </div>
+            <i class="fas fa-arrow-right" style="color:#818cf8;margin-left:auto;font-size:12px"></i>
+        </a>
+
+        <!-- CTA 2: Form (secondary) -->
+        <a href="#register" onclick="closeExitPopup()"
+           style="display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:1rem;text-decoration:none;margin-bottom:1.25rem;transition:border-color 0.2s"
+           onmouseover="this.style.borderColor='rgba(255,255,255,0.25)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+            <div style="width:2.75rem;height:2.75rem;border-radius:0.75rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <i class="fas fa-file-alt" style="color:#94a3b8;font-size:14px"></i>
+            </div>
+            <div>
+                <p style="color:white;font-weight:700;font-size:0.9rem;margin:0 0 0.15rem">Quay lại form đăng ký khóa học</p>
+                <p style="color:#64748b;font-size:0.75rem;margin:0">Điền form để được tư vấn và chốt lịch Zoom trong 24 giờ</p>
+            </div>
+            <i class="fas fa-arrow-right" style="color:#64748b;margin-left:auto;font-size:12px"></i>
+        </a>
+
+        <!-- Dismiss -->
+        <p style="text-align:center;margin:0">
+            <button onclick="closeExitPopup()" style="background:none;border:none;color:#475569;font-size:0.75rem;cursor:pointer;text-decoration:underline;text-underline-offset:2px">Không, tôi muốn xem tiếp nội dung</button>
+        </p>
+    </div>
+</div>
+
+<script>
+(function() {
+    var KEY = 'exitPopupShown_vibecoding';
+    var shown = false;
+    var readyAt = Date.now() + 3000;
+
+    function openExitPopup() {
+        if (shown || sessionStorage.getItem(KEY)) return;
+        shown = true;
+        sessionStorage.setItem(KEY, '1');
+        var el = document.getElementById('exitPopup');
+        el.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('mouseleave', function(e) {
+        if (e.clientY < 10 && Date.now() > readyAt) openExitPopup();
+    });
+
+    if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+        setTimeout(openExitPopup, 30000);
+    }
+
+    document.getElementById('exitPopup').addEventListener('click', function(e) {
+        if (e.target === this) closeExitPopup();
+    });
+})();
+
+function closeExitPopup() {
+    var el = document.getElementById('exitPopup');
+    el.style.display = 'none';
+    document.body.style.overflow = '';
+}
 </script>
 
 </body>
