@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phụ Nữ Làm Chủ AI — Lộ trình 21 ngày miễn phí</title>
+    <meta name="description" content="Khóa học AI miễn phí dành riêng cho phụ nữ 8x, 9x. Lộ trình 21 ngày thực chiến: từ ChatGPT → tạo nội dung → thu nhập số. Không cần kỹ thuật, chỉ cần 3 tiếng/ngày.">
+    <meta name="keywords" content="khóa học AI miễn phí, phụ nữ làm chủ AI, AI marketing, lộ trình 21 ngày, phụ nữ 8x 9x">
+    <meta name="author" content="Chị Nguyên — phunulamchuai.click">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://phunulamchuai.click/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://phunulamchuai.click/">
+    <meta property="og:title" content="Phụ Nữ Làm Chủ AI — Lộ trình 21 ngày MIỄN PHÍ">
+    <meta property="og:description" content="Dành riêng cho phụ nữ 8x, 9x. Biến vốn sống thực tế thành thu nhập số. Lộ trình 21 ngày, 3 tiếng/ngày, hoàn toàn miễn phí.">
+    <meta property="og:locale" content="vi_VN">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Phụ Nữ Làm Chủ AI — Lộ trình 21 ngày",
+      "description": "Khóa học AI miễn phí dành riêng cho phụ nữ 8x, 9x muốn làm chủ công nghệ AI, biến vốn sống thực tế thành thu nhập bền vững.",
+      "provider": { "@type": "Person", "name": "Chị Nguyên", "url": "https://phunulamchuai.click/" },
+      "offers": [{ "@type": "Offer", "price": "0", "priceCurrency": "VND", "availability": "https://schema.org/InStock" }],
+      "courseMode": "online"
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        * { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+
+        :root {
+            --pink: #f472b6;
+            --pink-dark: #db2777;
+            --pink-light: #fb7185;
+            --pink-dim: rgba(244,114,182,0.15);
+            --pink-glow: rgba(244,114,182,0.25);
+            --gold: #fbbf24;
+        }
+
+        .glass {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #f472b6, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-text-free {
+            background: linear-gradient(90deg, #34d399, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card-hover { transition: transform 0.3s ease, border-color 0.3s ease; }
+        .card-hover:hover { transform: translateY(-4px); }
+
+        .badge-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+        .form-input {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--pink);
+            box-shadow: 0 0 0 3px rgba(244,114,182,0.15);
+        }
+        .form-input::placeholder { color: rgba(255,255,255,0.3); }
+
+        /* ===== MOBILE MENU ===== */
+        #mobileDrawer {
+            position: fixed;
+            top: 0; right: 0; bottom: 0;
+            width: 280px;
+            background: #0d1117;
+            border-left: 1px solid rgba(255,255,255,0.08);
+            z-index: 200;
+            transform: translateX(100%);
+            transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+            overflow-y: auto;
+        }
+        #mobileDrawer.open { transform: translateX(0); }
+        #drawerOverlay {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            z-index: 199;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        #drawerOverlay.open { opacity: 1; pointer-events: all; }
+        .hamburger-line {
+            display: block; width: 22px; height: 2px;
+            background: white; border-radius: 2px;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        .hamburger.active .hamburger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .hamburger.active .hamburger-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .hamburger.active .hamburger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+        /* Timeline */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 23px; top: 52px; bottom: -20px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--pink), transparent);
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 767px) {
+            .hero-title { font-size: 2.75rem !important; line-height: 1.1 !important; }
+            .hero-sub { font-size: 1rem !important; }
+            .card-hover:hover { transform: none; }
+            body { padding-bottom: 72px; }
+        }
+        @media (min-width: 768px) {
+            body { padding-bottom: 0; }
+        }
+    </style>
+</head>
+
+<body class="bg-[#0b0e14] text-slate-300">
+
+<!-- ===== NAV ===== -->
+<nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#0b0e14]/90 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded flex items-center justify-center flex-shrink-0" style="background:var(--pink);box-shadow:0 0 15px var(--pink-glow)">
+                <i class="fas fa-female text-white text-sm"></i>
+            </div>
+            <span class="font-black text-white tracking-tighter text-sm">Phụ Nữ <span style="color:var(--pink)">Làm Chủ AI</span></span>
+        </a>
+        <!-- Desktop links -->
+        <div class="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
+            <a href="#problem" class="transition" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color=''">Vấn đề</a>
+            <a href="#journey" class="transition" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color=''">Lộ trình</a>
+            <a href="#tools" class="transition" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color=''">Công cụ</a>
+            <a href="#founder" class="transition" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color=''">Tôi là Tùng</a>
+            <a href="#register" class="transition" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color=''">Đăng ký</a>
+        </div>
+        <div class="flex items-center gap-3">
+            <a href="#register" class="hidden md:block px-5 py-2 text-white text-xs font-black uppercase tracking-widest rounded-xl transition" style="background:var(--pink);box-shadow:0 4px 15px var(--pink-glow)" onmouseover="this.style.background='var(--pink-light)'" onmouseout="this.style.background='var(--pink)'">
+                Miễn phí
+            </a>
+            <!-- Hamburger -->
+            <button id="hamburgerBtn" class="hamburger md:hidden flex flex-col gap-[6px] p-2 rounded-xl glass" aria-label="Menu" onclick="toggleDrawer()">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Overlay -->
+<div id="drawerOverlay" onclick="toggleDrawer()"></div>
+
+<!-- Mobile Drawer -->
+<div id="mobileDrawer">
+    <div class="p-6 border-b border-white/5 flex items-center justify-between">
+        <span class="font-black text-white tracking-tighter text-sm">Phụ Nữ <span style="color:var(--pink)">Làm Chủ AI</span></span>
+        <button onclick="toggleDrawer()" class="w-8 h-8 glass rounded-xl flex items-center justify-center">
+            <i class="fas fa-times text-slate-400 text-sm"></i>
+        </button>
+    </div>
+    <nav class="p-4 space-y-1">
+        <a href="#problem" onclick="toggleDrawer()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition">
+            <i class="fas fa-exclamation-circle w-4" style="color:var(--pink)"></i> Vấn đề
+        </a>
+        <a href="#journey" onclick="toggleDrawer()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition">
+            <i class="fas fa-map w-4 text-amber-400"></i> Lộ trình
+        </a>
+        <a href="#tools" onclick="toggleDrawer()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition">
+            <i class="fas fa-tools w-4 text-emerald-400"></i> Công cụ
+        </a>
+        <a href="#founder" onclick="toggleDrawer()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition">
+            <i class="fas fa-user w-4 text-blue-400"></i> Tôi là Tùng
+        </a>
+        <a href="#register" onclick="toggleDrawer()" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition">
+            <i class="fas fa-pen w-4 text-rose-400"></i> Đăng ký
+        </a>
+    </nav>
+    <div class="p-4 border-t border-white/5">
+        <a href="#register" onclick="toggleDrawer()" class="flex items-center justify-center gap-2 w-full py-4 text-white font-black rounded-2xl text-sm uppercase tracking-widest" style="background:var(--pink);box-shadow:0 4px 20px var(--pink-glow)">
+            <i class="fas fa-gift"></i> Đăng ký miễn phí
+        </a>
+        <p class="text-center text-[10px] text-slate-600 mt-3 uppercase tracking-widest">100% miễn phí · Không điều kiện</p>
+    </div>
+</div>
+
+
+<!-- ===== HERO ===== -->
+<header class="pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-6 relative overflow-hidden">
+    <div class="absolute -top-32 -right-32 w-[400px] md:w-[600px] h-[400px] md:h-[600px] blur-[120px] md:blur-[140px] rounded-full pointer-events-none" style="background:rgba(244,114,182,0.12)"></div>
+    <div class="absolute -bottom-32 -left-32 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-amber-500/10 blur-[100px] md:blur-[120px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto text-center relative z-10">
+        <!-- FREE badge -->
+        <div class="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.15em] mb-6 md:mb-8 badge-pulse" style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.3);color:#34d399">
+            <span class="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-emerald-400"></span>
+            <span class="truncate">100% Miễn Phí · Lộ trình 21 ngày · Dành cho 8x, 9x</span>
+        </div>
+
+        <h1 class="hero-title text-4xl sm:text-5xl md:text-7xl font-black text-white mb-4 md:mb-6 leading-[1.05]">
+            Phụ Nữ<br>
+            <span class="gradient-text italic">Làm Chủ AI</span>
+        </h1>
+
+        <p class="hero-sub text-base md:text-xl text-slate-400 max-w-2xl mx-auto mb-4 font-medium leading-relaxed">
+            Dành riêng cho phụ nữ thế hệ <strong class="text-white">8x, 9x</strong> — biến vốn sống thực tế<br class="hidden sm:block">
+            thành <strong class="text-white">thu nhập bền vững trên internet.</strong>
+        </p>
+
+        <!-- Social proof -->
+        <div class="flex flex-wrap justify-center gap-3 md:gap-6 mb-8 md:mb-10 text-sm">
+            <div class="flex items-center gap-2 text-slate-400">
+                <i class="fas fa-calendar-alt" style="color:var(--pink)"></i>
+                <span><strong class="text-white">21 ngày</strong> lộ trình rõ ràng</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-400">
+                <i class="fas fa-clock text-amber-400"></i>
+                <span><strong class="text-white">3 tiếng/ngày</strong> · Linh hoạt</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-400">
+                <i class="fas fa-gift text-emerald-400"></i>
+                <span><strong class="text-white">Hoàn toàn</strong> miễn phí</span>
+            </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 px-2">
+            <a href="#register" class="w-full sm:w-auto px-8 md:px-10 py-4 text-white font-black rounded-2xl transition text-sm md:text-base uppercase tracking-widest text-center" style="background:var(--pink);box-shadow:0 8px 30px var(--pink-glow)" onmouseover="this.style.background='var(--pink-light)'" onmouseout="this.style.background='var(--pink)'">
+                <i class="fas fa-gift mr-2"></i>Đăng ký miễn phí ngay
+            </a>
+            <a href="#journey" class="w-full sm:w-auto px-8 md:px-10 py-4 glass text-white font-bold rounded-2xl border border-white/10 hover:border-white/20 transition text-sm md:text-base text-center">
+                <i class="fas fa-arrow-down mr-2" style="color:var(--pink)"></i>Xem lộ trình 21 ngày
+            </a>
+        </div>
+
+        <p class="mt-5 text-xs text-slate-500 font-medium px-4">
+            <i class="fas fa-heart mr-1" style="color:var(--pink)"></i> Không cần kỹ thuật — Không cần kinh nghiệm — Chỉ cần điện thoại và 3 tiếng/ngày
+        </p>
+    </div>
+</header>
+
+
+<!-- ===== FOR WHO ===== -->
+<section id="problem" class="py-20 px-4 md:px-6 border-y border-white/5">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+            <p class="text-[10px] font-black uppercase tracking-[0.3em] mb-3" style="color:var(--pink)">Khóa học này dành cho</p>
+            <h2 class="text-3xl md:text-4xl font-black text-white">Bạn có đang cảm thấy thế này?</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+                <i class="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
+                <p class="text-sm text-slate-300 font-medium">Thấy AI "đáng sợ", phức tạp — sợ mình không theo kịp thế hệ trẻ?</p>
+            </div>
+            <div class="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+                <i class="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
+                <p class="text-sm text-slate-300 font-medium">Có 20+ năm kinh nghiệm sống thực tế nhưng không biết kiếm tiền từ internet?</p>
+            </div>
+            <div class="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+                <i class="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
+                <p class="text-sm text-slate-300 font-medium">Bận chăm gia đình, không có 8 tiếng/ngày để học — muốn có lộ trình vừa vặn?</p>
+            </div>
+            <div class="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+                <i class="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
+                <p class="text-sm text-slate-300 font-medium">Đã thử học nhiều nơi nhưng quá kỹ thuật, quá trừu tượng — bỏ giữa chừng?</p>
+            </div>
+            <div class="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+                <i class="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
+                <p class="text-sm text-slate-300 font-medium">Muốn tạo thu nhập thụ động Online nhưng không biết bắt đầu từ đâu?</p>
+            </div>
+            <div class="glass p-6 rounded-2xl border-l-4 border-emerald-500/50 card-hover bg-emerald-500/5">
+                <i class="fas fa-check-circle text-emerald-400 text-xl mb-3"></i>
+                <p class="text-sm text-emerald-300 font-bold">Nếu bạn gật đầu với 2+ điều trên — lộ trình 21 ngày này được thiết kế đặc biệt cho bạn.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== 21-DAY JOURNEY ===== -->
+<section id="journey" class="py-24 px-4 md:px-6">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+            <p class="text-[10px] font-black uppercase tracking-[0.3em] mb-3" style="color:var(--pink)">Lộ trình thực chiến</p>
+            <h2 class="text-3xl md:text-4xl font-black text-white mb-4">21 Ngày <span class="gradient-text">Thay Đổi Bản Thân</span></h2>
+            <p class="text-slate-500 max-w-xl mx-auto">Chia thành 3 giai đoạn rõ ràng — mỗi ngày một nhiệm vụ cụ thể, không mơ hồ, không lạc lối.</p>
+        </div>
+
+        <div class="space-y-8">
+
+            <!-- Giai đoạn 1 -->
+            <div class="relative pl-20 timeline-line">
+                <div class="absolute left-0 top-0 w-12 h-12 rounded-2xl flex flex-col items-center justify-center text-white border" style="background:var(--pink);box-shadow:0 0 20px var(--pink-glow);border-color:rgba(244,114,182,0.5)">
+                    <span class="text-[9px] font-black uppercase leading-none">GĐ</span>
+                    <span class="text-xl font-black leading-none">1</span>
+                </div>
+                <div class="glass p-6 md:p-8 rounded-3xl card-hover border-l-4" style="border-left-color:var(--pink)">
+                    <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+                        <div>
+                            <span class="text-[10px] font-black uppercase tracking-widest" style="color:var(--pink)">Ngày 1–7 · Xây nền tảng</span>
+                            <h3 class="text-xl md:text-2xl font-black text-white mt-1">Kết Bạn Với AI & Tìm Giọng Nói Riêng</h3>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap" style="background:rgba(244,114,182,0.1);border:1px solid rgba(244,114,182,0.25);color:var(--pink)">7 ngày</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Ngày 1-2: Học ChatGPT/Gemini như trò chuyện với người em trong nhà</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Ngày 3: AI khai phá 50 chủ đề từ vốn sống của bạn</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Ngày 4: Xây "cửa hàng số" — TikTok, Facebook Page, YouTube</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Ngày 5: Prompting chuẩn — Vai trò + Nhiệm vụ + Đối tượng</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Ngày 6-7: <strong class="text-white">Viết 3 kịch bản đầu tay</strong> — storytelling thật từ kinh nghiệm sống</span>
+                        </div>
+                    </div>
+                    <div class="mt-5 px-4 py-2 rounded-xl inline-block text-xs font-bold" style="background:rgba(244,114,182,0.08);color:var(--pink)">
+                        🎯 Kết quả: Có kênh + kịch bản đầu tay
+                    </div>
+                </div>
+            </div>
+
+            <!-- Giai đoạn 2 -->
+            <div class="relative pl-20 timeline-line">
+                <div class="absolute left-0 top-0 w-12 h-12 bg-amber-500 rounded-2xl flex flex-col items-center justify-center text-white shadow-[0_0_20px_rgba(245,158,11,0.4)] border border-amber-400">
+                    <span class="text-[9px] font-black uppercase leading-none">GĐ</span>
+                    <span class="text-xl font-black leading-none">2</span>
+                </div>
+                <div class="glass p-6 md:p-8 rounded-3xl card-hover border-l-4 border-amber-500">
+                    <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+                        <div>
+                            <span class="text-[10px] font-black text-amber-400 uppercase tracking-widest">Ngày 8–14 · Quan trọng nhất</span>
+                            <h3 class="text-xl md:text-2xl font-black text-white mt-1">Sản Xuất Nội Dung Đa Phương Tiện</h3>
+                        </div>
+                        <span class="px-3 py-1 bg-amber-500/10 border border-amber-500/25 text-amber-400 text-xs font-bold rounded-full whitespace-nowrap">7 ngày</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Ngày 8-9: Tạo hình ảnh với Canva — ảnh đại diện & minh hoạ bài viết</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Ngày 10-11: Làm chủ âm thanh — tạo Podcast với Vbee/ElevenLabs</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Ngày 12-13: Dựng video bằng CapCut — 3 nút: Cắt · Chữ · Nhạc</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Ngày 14: <strong class="text-white">🎉 Lễ Ra Mắt</strong> — Đăng video đầu tiên lên mạng!</span>
+                        </div>
+                    </div>
+                    <div class="mt-5 px-4 py-2 bg-amber-500/10 rounded-xl inline-block text-xs font-bold text-amber-400">
+                        🎯 Kết quả: Video đầu tiên lên sóng!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Giai đoạn 3 -->
+            <div class="relative pl-20">
+                <div class="absolute left-0 top-0 w-12 h-12 bg-emerald-600 rounded-2xl flex flex-col items-center justify-center text-white shadow-[0_0_20px_rgba(52,211,153,0.4)] border border-emerald-400">
+                    <span class="text-[9px] font-black uppercase leading-none">GĐ</span>
+                    <span class="text-xl font-black leading-none">3</span>
+                </div>
+                <div class="glass p-6 md:p-8 rounded-3xl card-hover border-l-4 border-emerald-500">
+                    <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+                        <div>
+                            <span class="text-[10px] font-black text-emerald-400 uppercase tracking-widest">Ngày 15–21 · Thu hoạch</span>
+                            <h3 class="text-xl md:text-2xl font-black text-white mt-1">Monetize — Tạo Ra Thu Nhập Đầu Tiên</h3>
+                        </div>
+                        <span class="px-3 py-1 bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-bold rounded-full whitespace-nowrap">7 ngày</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Ngày 15-16: Đăng ký Affiliate — sách, phụ kiện đúng tệp khách hàng</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Ngày 17: AI viết kịch bản bán hàng kiểu "chia sẻ" — không giống quảng cáo</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Ngày 18: Kỹ thuật "giật tít" — AI tạo 10 tiêu đề gây tò mò/video</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Ngày 19-20: Lịch đăng bài tự động + tương tác cộng đồng</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check text-emerald-400 mt-1 text-xs flex-shrink-0"></i>
+                            <span class="text-sm text-slate-400">Ngày 21: <strong class="text-white">Tổng kết & Đóng gói quy trình</strong> tái dùng mãi mãi</span>
+                        </div>
+                    </div>
+                    <div class="mt-5 px-4 py-2 bg-emerald-500/10 rounded-xl inline-block text-xs font-bold text-emerald-400">
+                        🎯 Kết quả: Hoa hồng Affiliate đầu tiên!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Daily schedule -->
+        <div class="mt-16 glass rounded-3xl p-6 md:p-10">
+            <h3 class="text-2xl font-black text-white mb-2 text-center">⏰ Thời Gian Biểu Mỗi Ngày <span style="color:var(--pink)">(Chỉ 3 Tiếng!)</span></h3>
+            <p class="text-center text-slate-500 text-sm mb-8">Phù hợp cho chị em vừa lo gia đình, vừa kinh doanh</p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="glass rounded-2xl p-6 border-l-4" style="border-left-color:var(--gold)">
+                    <p class="font-black text-amber-400 mb-3 text-sm uppercase tracking-wider">🌅 Buổi Sáng — 60 phút (Tư duy)</p>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-xs"></i> 15 phút — Xem nội dung truyền cảm hứng</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-xs"></i> 30 phút — Hỏi AI lên kịch bản & ý tưởng</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-xs"></i> 15 phút — Lưu ý tưởng vào sổ tay số</li>
+                    </ul>
+                </div>
+                <div class="glass rounded-2xl p-6 border-l-4" style="border-left-color:var(--pink)">
+                    <p class="font-black mb-3 text-sm uppercase tracking-wider" style="color:var(--pink)">🌙 Chiều/Tối — 120 phút (Thực thi)</p>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-xs"></i> 30 phút — Thiết kế ảnh (Canva)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-xs"></i> 60 phút — Quay & dựng video (CapCut)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-xs"></i> 30 phút — Đăng bài & tương tác cộng đồng</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== AI TOOLS ===== -->
+<section id="tools" class="py-24 px-4 md:px-6 border-t border-white/5">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <p class="text-[10px] font-black uppercase tracking-[0.3em] mb-3 text-amber-400">Công cụ hỗ trợ</p>
+            <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Hệ Sinh Thái AI <span class="gradient-text">Đồng Hành</span></h2>
+            <p class="text-slate-500 max-w-xl mx-auto">Những "người bạn trợ lý" giúp bạn tối ưu công việc, sáng tạo nội dung và tạo thu nhập — tất cả miễn phí hoặc rất rẻ.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="glass p-8 rounded-3xl card-hover group">
+                <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 group-hover:opacity-80 transition" style="background:rgba(244,114,182,0.15);border:1px solid rgba(244,114,182,0.3)">
+                    <i class="fas fa-robot text-lg" style="color:var(--pink)"></i>
+                </div>
+                <h3 class="text-lg font-black text-white mb-3">ChatGPT / Gemini</h3>
+                <p class="text-sm text-slate-400 leading-relaxed mb-4">Trợ lý viết kịch bản, lên kế hoạch Marketing và tư vấn chiến lược nội dung mỗi ngày.</p>
+                <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">Miễn phí</span>
+            </div>
+
+            <div class="glass p-8 rounded-3xl card-hover group">
+                <div class="w-12 h-12 bg-amber-500/20 border border-amber-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-amber-500/40 transition">
+                    <i class="fas fa-file-alt text-amber-400 text-lg"></i>
+                </div>
+                <h3 class="text-lg font-black text-white mb-3">Claude</h3>
+                <p class="text-sm text-slate-400 leading-relaxed mb-4">Chuyên gia viết nội dung dài, chuyên sâu và xử lý tài liệu cực kỳ thông minh.</p>
+                <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">Miễn phí</span>
+            </div>
+
+            <div class="glass p-8 rounded-3xl card-hover group">
+                <div class="w-12 h-12 bg-blue-500/20 border border-blue-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-blue-500/40 transition">
+                    <i class="fas fa-microphone-alt text-blue-400 text-lg"></i>
+                </div>
+                <h3 class="text-lg font-black text-white mb-3">ElevenLabs / Vbee</h3>
+                <p class="text-sm text-slate-400 leading-relaxed mb-4">Biến văn bản thành tiếng nói truyền cảm, tự nhiên như người thật — dùng cho Podcast.</p>
+                <span class="text-xs font-bold text-slate-500 uppercase tracking-widest">Freemium</span>
+            </div>
+
+            <div class="glass p-8 rounded-3xl card-hover group">
+                <div class="w-12 h-12 bg-purple-500/20 border border-purple-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-purple-500/40 transition">
+                    <i class="fas fa-palette text-purple-400 text-lg"></i>
+                </div>
+                <h3 class="text-lg font-black text-white mb-3">Canva</h3>
+                <p class="text-sm text-slate-400 leading-relaxed mb-4">Thiết kế ảnh, bài đăng mạng xã hội chuyên nghiệp chỉ bằng kéo thả — không cần học design.</p>
+                <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">Miễn phí</span>
+            </div>
+
+            <div class="glass p-8 rounded-3xl card-hover group">
+                <div class="w-12 h-12 bg-rose-500/20 border border-rose-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-rose-500/40 transition">
+                    <i class="fas fa-video text-rose-400 text-lg"></i>
+                </div>
+                <h3 class="text-lg font-black text-white mb-3">CapCut</h3>
+                <p class="text-sm text-slate-400 leading-relaxed mb-4">Biên tập video nhanh trên điện thoại với kho hiệu ứng và nhạc nền khổng lồ. Dễ hơn bạn nghĩ.</p>
+                <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">Miễn phí</span>
+            </div>
+
+            <div class="glass p-8 rounded-3xl card-hover group">
+                <div class="w-12 h-12 bg-emerald-500/20 border border-emerald-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-emerald-500/40 transition">
+                    <i class="fas fa-magic text-emerald-400 text-lg"></i>
+                </div>
+                <h3 class="text-lg font-black text-white mb-3">Flow / Whisk</h3>
+                <p class="text-sm text-slate-400 leading-relaxed mb-4">Tạo ảnh nghệ thuật AI và video chuyên nghiệp với Imagen & VEO của Google.</p>
+                <span class="text-xs font-bold text-slate-500 uppercase tracking-widest">Freemium</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== WHAT YOU GET ===== -->
+<section class="py-24 px-4 md:px-6 border-t border-white/5">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+            <p class="text-[10px] font-black uppercase tracking-[0.3em] mb-3 text-emerald-400">Bạn nhận được gì?</p>
+            <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Giá Trị Từ Lộ Trình <span class="gradient-text">100% Miễn Phí</span></h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="glass p-8 rounded-3xl card-hover group">
+                <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 group-hover:opacity-80 transition" style="background:rgba(244,114,182,0.15);border:1px solid rgba(244,114,182,0.3)">
+                    <i class="fas fa-brain text-lg" style="color:var(--pink)"></i>
+                </div>
+                <h3 class="text-lg font-black text-white mb-3">Tư duy "Vốn Sống = Nội Dung"</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Biến 20+ năm kinh nghiệm thực tế thành kho nội dung vô tận — không cần tìm đề tài từ trên trời rơi xuống.</p>
+            </div>
+
+            <div class="glass p-8 rounded-3xl card-hover group">
+                <div class="w-12 h-12 bg-amber-500/20 border border-amber-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-amber-500/40 transition">
+                    <i class="fas fa-rocket text-amber-400 text-lg"></i>
+                </div>
+                <h3 class="text-lg font-black text-white mb-3">Xây kênh Online trong 7 ngày</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">TikTok, Facebook Page, YouTube — có mặt đúng nơi khách hàng của bạn đang ở, trong tuần đầu tiên.</p>
+            </div>
+
+            <div class="glass p-8 rounded-3xl card-hover group">
+                <div class="w-12 h-12 bg-emerald-500/20 border border-emerald-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-emerald-500/40 transition">
+                    <i class="fas fa-video text-emerald-400 text-lg"></i>
+                </div>
+                <h3 class="text-lg font-black text-white mb-3">Video đầu tiên lên sóng</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Thực hành ngay từ ngày 1 — không chờ "sẵn sàng". Video hoàn chỉnh CapCut trong 60 phút.</p>
+            </div>
+
+            <div class="glass p-8 rounded-3xl card-hover group">
+                <div class="w-12 h-12 bg-blue-500/20 border border-blue-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-blue-500/40 transition">
+                    <i class="fas fa-dollar-sign text-blue-400 text-lg"></i>
+                </div>
+                <h3 class="text-lg font-black text-white mb-3">Thu nhập Affiliate đầu tiên</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Kỹ thuật bán hàng kiểu "chia sẻ" — không giống quảng cáo, phụ nữ 8x làm cực tốt vì sự chân thật.</p>
+            </div>
+
+            <div class="glass p-8 rounded-3xl card-hover group">
+                <div class="w-12 h-12 bg-purple-500/20 border border-purple-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-purple-500/40 transition">
+                    <i class="fas fa-infinity text-purple-400 text-lg"></i>
+                </div>
+                <h3 class="text-lg font-black text-white mb-3">Quy trình tái dùng mãi mãi</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Framework 21 ngày này áp dụng cho mọi chủ đề khác — một lần học, dùng cả đời.</p>
+            </div>
+
+            <div class="glass p-8 rounded-3xl card-hover group">
+                <div class="w-12 h-12 bg-rose-500/20 border border-rose-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-rose-500/40 transition">
+                    <i class="fas fa-users text-rose-400 text-lg"></i>
+                </div>
+                <h3 class="text-lg font-black text-white mb-3">Cộng đồng chị em đồng hành</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Group hỗ trợ riêng — hỏi đáp, chia sẻ tiến độ, cổ vũ nhau. Không ai bị bỏ lại phía sau.</p>
+            </div>
+        </div>
+
+        <!-- Transformation banner -->
+        <div class="mt-16 bg-gradient-to-r from-pink-600/10 to-amber-500/10 border border-white/10 rounded-3xl p-8 md:p-10 text-center">
+            <p class="text-2xl font-black text-white leading-relaxed">
+                "Nếu một người phụ nữ từng vỡ nợ, 10 năm ở nhà chăm con,<br class="hidden md:block">
+                có thể làm chủ AI —<span class="gradient-text"> thì bạn cũng làm được."</span>
+            </p>
+            <p class="text-slate-500 mt-3 text-sm">Điều kiện duy nhất: Điện thoại + Internet + 3 tiếng/ngày + Sẵn sàng thực hành.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== FOUNDER (Instructor) ===== -->
+<section id="founder" class="py-20 px-4 md:px-6 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+            <p class="text-[10px] font-black uppercase tracking-[0.3em] mb-3" style="color:var(--pink)">Người hướng dẫn</p>
+            <h2 class="text-3xl font-black text-white">Ai hướng dẫn bạn?</h2>
+        </div>
+        <div class="glass rounded-3xl p-8 md:p-10" style="box-shadow:0 0 40px rgba(244,114,182,0.15)">
+            <div class="flex flex-col lg:flex-row gap-10 items-center lg:items-start">
+                <!-- Avatar Column -->
+                <div class="flex-shrink-0 flex flex-col items-center lg:items-start">
+                    <div class="relative inline-block mb-5">
+                        <div class="w-36 h-36 rounded-full p-[3px] mx-auto" style="background:linear-gradient(135deg,#f472b6,#fbbf24)">
+                            <img
+                                src="https://tvtagency.com/wp-content/uploads/2026/01/tung-soc-son-tvt-agency.png"
+                                alt="Nguyễn Thanh Tùng — TVT Strategist"
+                                class="w-full h-full rounded-full object-cover object-top block"
+                                style="border:3px solid #0b0e14"
+                            >
+                        </div>
+                        <span class="absolute bottom-2 right-2 w-4 h-4 bg-emerald-400 rounded-full border-2 border-[#0b0e14] block"></span>
+                    </div>
+                    <p class="text-[10px] font-black uppercase tracking-[0.2em] mb-1" style="color:var(--pink)">Tôi là Tùng</p>
+                    <h3 class="text-xl font-black text-white">Nguyễn Thanh Tùng</h3>
+                    <p class="text-xs text-slate-500 mt-1 text-center lg:text-left">Founder TVT Agency<br>AI Marketing System Architect</p>
+                    <!-- Social links -->
+                    <div class="flex justify-center lg:justify-start gap-2 mt-4">
+                        <a href="#" class="w-8 h-8 glass rounded-xl flex items-center justify-center transition hover:border-blue-400/40" title="Facebook">
+                            <i class="fab fa-facebook-f text-blue-400 text-xs"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 glass rounded-xl flex items-center justify-center transition hover:border-white/20" title="TikTok">
+                            <i class="fab fa-tiktok text-white text-xs"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 glass rounded-xl flex items-center justify-center transition hover:border-red-400/40" title="YouTube">
+                            <i class="fab fa-youtube text-red-400 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Content Column -->
+                <div class="flex-1 text-center lg:text-left">
+                    <p class="text-slate-300 leading-relaxed mb-4">
+                        16 năm làm branding và thiết kế. Hiện tập trung xây hệ marketing và workflow AI ứng dụng — đặc biệt cho cá nhân và các chị em muốn làm chủ công nghệ mà không cần background kỹ thuật.
+                    </p>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Tôi không dạy theo kiểu nhồi nhét tool. Tôi tập trung vào <strong class="text-white">hệ thống tư duy</strong> — giúp bạn hiểu cách dùng AI phù hợp với cuộc sống thực tế, không cần ngồi 8 tiếng/ngày.
+                    </p>
+
+                    <div class="grid grid-cols-3 gap-3 mb-6">
+                        <div class="glass p-3 rounded-xl text-center">
+                            <i class="fas fa-chart-line mb-2 block" style="color:var(--pink)"></i>
+                            <p class="text-[10px] font-bold text-white uppercase">16 năm<br>kinh nghiệm</p>
+                        </div>
+                        <div class="glass p-3 rounded-xl text-center">
+                            <i class="fas fa-sitemap text-amber-400 mb-2 block"></i>
+                            <p class="text-[10px] font-bold text-white uppercase">System<br>> Tool</p>
+                        </div>
+                        <div class="glass p-3 rounded-xl text-center">
+                            <i class="fas fa-heart text-rose-400 mb-2 block"></i>
+                            <p class="text-[10px] font-bold text-white uppercase">Thực tế<br>& Gần gũi</p>
+                        </div>
+                    </div>
+
+                    <a href="#register" class="inline-flex items-center gap-2 px-7 py-4 text-white font-black rounded-2xl transition text-sm uppercase tracking-widest mx-auto lg:mx-0" style="background:var(--pink)" onmouseover="this.style.background='var(--pink-light)'" onmouseout="this.style.background='var(--pink)'">
+                        <i class="fas fa-gift"></i> Đăng ký học miễn phí
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== REGISTER FORM ===== -->
+<section id="register" class="py-24 px-4 md:px-6 border-t border-white/5">
+    <div class="max-w-2xl mx-auto">
+        <div class="text-center mb-12">
+            <p class="text-[10px] font-black uppercase tracking-[0.3em] mb-3 text-emerald-400">
+                <i class="fas fa-gift mr-1"></i> 100% Miễn phí
+            </p>
+            <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Đăng ký <span class="gradient-text">ngay hôm nay</span></h2>
+            <p class="text-slate-500">Điền thông tin bên dưới — bạn sẽ nhận link tài liệu & vào group hỗ trợ trong 24 giờ.</p>
+        </div>
+
+        <div class="glass rounded-3xl p-8 md:p-10" style="box-shadow:0 0 40px rgba(244,114,182,0.15)">
+
+            <!-- Free badge -->
+            <div class="flex items-center justify-center gap-3 mb-8 px-6 py-4 rounded-2xl" style="background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.2)">
+                <i class="fas fa-gift text-emerald-400 text-xl"></i>
+                <div>
+                    <p class="text-white font-black">Khóa học 100% MIỄN PHÍ</p>
+                    <p class="text-emerald-400 text-xs">Không mất tiền · Không điều kiện · Không giới hạn thời gian</p>
+                </div>
+            </div>
+
+            <form id="enrollForm" class="space-y-5" onsubmit="handleSubmit(event)">
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Họ và tên *</label>
+                    <input type="text" name="name" placeholder="Nguyễn Thị A" required class="form-input w-full px-5 py-3.5 rounded-2xl text-sm" />
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Facebook / Zalo (để liên hệ) *</label>
+                    <input type="text" name="contact" placeholder="Link Facebook hoặc số điện thoại Zalo" required class="form-input w-full px-5 py-3.5 rounded-2xl text-sm" />
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Email</label>
+                    <input type="email" name="email" placeholder="email@example.com" class="form-input w-full px-5 py-3.5 rounded-2xl text-sm" />
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Bạn đang ở giai đoạn nào? *</label>
+                    <select name="stage" required class="form-input w-full px-5 py-3.5 rounded-2xl text-sm appearance-none cursor-pointer">
+                        <option value="" disabled selected>Chọn tình trạng hiện tại</option>
+                        <option value="never">Chưa bao giờ dùng AI</option>
+                        <option value="basic">Đã dùng ChatGPT cơ bản vài lần</option>
+                        <option value="content">Đã làm nội dung nhưng chưa có thu nhập</option>
+                        <option value="earning">Đã có thu nhập, muốn tối ưu hơn</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Bạn muốn tạo nội dung về chủ đề gì? (không bắt buộc)</label>
+                    <textarea name="topic" placeholder="VD: Nuôi con, nấu ăn, chăm sóc sức khỏe, tài chính cá nhân, kinh doanh online..." rows="3"
+                        class="form-input w-full px-5 py-3.5 rounded-2xl text-sm resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full py-5 text-white font-black text-base rounded-2xl transition uppercase tracking-widest" style="background:var(--pink);box-shadow:0 8px 30px var(--pink-glow)">
+                    <i class="fas fa-gift mr-2"></i> Đăng ký học MIỄN PHÍ ngay
+                </button>
+                <p class="text-center text-xs text-slate-600">Thông tin của bạn được bảo mật. Không spam.</p>
+            </form>
+
+            <!-- Success state -->
+            <div id="successMsg" class="hidden text-center py-10">
+                <div class="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-check text-emerald-400 text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-black text-white mb-3">Đăng ký thành công! 🎉</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Cảm ơn bạn đã đăng ký! Team sẽ liên hệ qua Facebook/Zalo trong vòng <strong class="text-white">24 giờ</strong> để gửi link tài liệu và mời vào group hỗ trợ.
+                </p>
+                <p class="mt-4 text-sm font-bold" style="color:var(--pink)">
+                    <i class="fas fa-heart mr-1"></i> Chào mừng bạn đến với hành trình 21 ngày làm chủ AI!
+                </p>
+            </div>
+        </div>
+
+        <!-- Contact alternative -->
+        <div class="mt-8 text-center">
+            <p class="text-sm text-slate-500">Có câu hỏi trước khi đăng ký?</p>
+            <div class="flex flex-wrap justify-center gap-4 mt-3">
+                <a href="#" class="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition">
+                    <i class="fab fa-facebook-messenger text-blue-400"></i> Nhắn Messenger
+                </a>
+                <a href="#" class="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition">
+                    <i class="fab fa-tiktok text-white"></i> TikTok của chị Nguyên
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-black py-16 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded flex items-center justify-center flex-shrink-0" style="background:var(--pink)">
+                    <i class="fas fa-female text-white"></i>
+                </div>
+                <div>
+                    <span class="block text-lg font-black text-white tracking-tighter">Phụ Nữ <span style="color:var(--pink)">Làm Chủ AI</span></span>
+                    <span class="text-[10px] font-bold text-slate-600 uppercase tracking-widest">Lộ trình 21 ngày · Miễn phí</span>
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 text-xs font-bold text-slate-500 uppercase tracking-widest">
+                <a href="#problem" class="hover:text-white transition">Vấn đề</a>
+                <a href="#journey" class="hover:text-white transition">Lộ trình</a>
+                <a href="#tools" class="hover:text-white transition">Công cụ</a>
+                <a href="#founder" class="hover:text-white transition">Tôi là Tùng</a>
+                <a href="#register" style="color:var(--pink)">Đăng ký</a>
+            </div>
+        </div>
+
+        <!-- Other courses -->
+        <div class="border-t border-white/5 pt-8 mb-8">
+            <p class="text-[10px] font-black text-slate-600 uppercase tracking-widest text-center mb-5">Khóa học khác của TVT Agency</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="lam-chu-ai-bang-vibe-coding.html" class="flex items-center gap-2 px-5 py-2.5 glass rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:border-indigo-500/40 transition border border-white/5">
+                    <i class="fas fa-terminal text-indigo-400"></i> Claude Code Mastery Pro
+                </a>
+                <a href="ai-coaching-1-1.html" class="flex items-center gap-2 px-5 py-2.5 glass rounded-xl text-xs font-bold text-slate-400 hover:text-white transition border border-white/5" onmouseover="this.style.borderColor='rgba(255,45,45,0.4)'" onmouseout="this.style.borderColor=''">
+                    <i class="fas fa-user-tie" style="color:#ff2d2d"></i> Coaching AI 1-1
+                </a>
+            </div>
+        </div>
+
+        <div class="border-t border-white/5 pt-8 text-center">
+            <p class="text-slate-400 text-sm font-medium italic mb-4">
+                "Công nghệ không phân biệt tuổi tác — chỉ phân biệt người bắt đầu và người chưa bắt đầu."
+            </p>
+            <p class="text-[9px] font-black text-slate-800 uppercase tracking-widest">
+                Phụ Nữ Làm Chủ AI · phunulamchuai.click · 2026
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+<!-- ===== STICKY BOTTOM BAR (mobile) ===== -->
+<div class="fixed bottom-0 left-0 right-0 z-40 md:hidden" style="background:rgba(11,14,20,0.95);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,0.07)">
+    <div class="flex items-center gap-3 px-4 py-3">
+        <div class="flex-1 min-w-0">
+            <p class="text-[10px] font-black text-slate-500 uppercase tracking-widest">Phụ Nữ Làm Chủ AI</p>
+            <p class="text-sm font-black text-white">Miễn phí <span class="text-emerald-400 text-xs font-bold">· 100% không mất phí</span></p>
+        </div>
+        <a href="#register" class="flex-shrink-0 px-5 py-3 text-white font-black rounded-xl text-xs uppercase tracking-widest whitespace-nowrap" style="background:var(--pink);box-shadow:0 4px 16px var(--pink-glow)">
+            Đăng ký ngay
+        </a>
+    </div>
+</div>
+
+
+<script>
+    // Form submit
+    function handleSubmit(e) {
+        e.preventDefault();
+        const form = document.getElementById('enrollForm');
+        const success = document.getElementById('successMsg');
+        const data = {
+            name: form.name.value,
+            contact: form.contact.value,
+            email: form.email.value,
+            stage: form.stage.value,
+            topic: form.topic.value,
+            timestamp: new Date().toLocaleString('vi-VN')
+        };
+        console.log('New free registration:', data);
+        form.classList.add('hidden');
+        success.classList.remove('hidden');
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Nav active state
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            if (window.scrollY >= section.offsetTop - 100) current = section.getAttribute('id') || '';
+        });
+        navLinks.forEach(link => {
+            const isActive = link.getAttribute('href') === '#' + current;
+            link.style.color = isActive ? 'var(--pink)' : '';
+        });
+    });
+
+    // Mobile drawer
+    function toggleDrawer() {
+        const drawer = document.getElementById('mobileDrawer');
+        const overlay = document.getElementById('drawerOverlay');
+        const btn = document.getElementById('hamburgerBtn');
+        const isOpen = drawer.classList.contains('open');
+        drawer.classList.toggle('open', !isOpen);
+        overlay.classList.toggle('open', !isOpen);
+        btn.classList.toggle('active', !isOpen);
+        document.body.style.overflow = isOpen ? '' : 'hidden';
+    }
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            const drawer = document.getElementById('mobileDrawer');
+            if (drawer.classList.contains('open')) toggleDrawer();
+        }
+    });
+</script>
+
+<!-- ===== EXIT-INTENT POPUP ===== -->
+<div id="exitPopup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.78);backdrop-filter:blur(10px);padding:1.5rem;align-items:center;justify-content:center">
+    <div style="max-width:500px;width:100%;margin:auto;background:#0d1117;border:1px solid rgba(255,255,255,0.1);border-radius:1.5rem;padding:2rem 2.25rem;position:relative;box-shadow:0 0 60px rgba(244,114,182,0.15)">
+        <!-- Close -->
+        <button onclick="closeExitPopup()" style="position:absolute;top:1rem;right:1rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#94a3b8;width:2rem;height:2rem;border-radius:0.5rem;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center">✕</button>
+
+        <!-- Icon + Headline -->
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem">
+            <div style="width:2.5rem;height:2.5rem;border-radius:0.75rem;background:rgba(244,114,182,0.15);border:1px solid rgba(244,114,182,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <i class="fas fa-heart" style="color:#f472b6;font-size:14px"></i>
+            </div>
+            <h3 style="color:white;font-weight:900;font-size:1.05rem;line-height:1.3;margin:0">Khoan đã — đừng rời đi khi chưa rõ mình có phù hợp không</h3>
+        </div>
+
+        <p style="color:#94a3b8;font-size:0.85rem;line-height:1.6;margin-bottom:0.75rem">Nếu Bạn đang xem lộ trình 21 ngày nhưng vẫn còn vài câu hỏi, hãy chọn cách thuận tiện nhất bên dưới.</p>
+        <p style="color:#64748b;font-size:0.8rem;line-height:1.6;margin-bottom:1.5rem">Lộ trình này hoàn toàn miễn phí và được thiết kế riêng cho phụ nữ 8x, 9x — không cần kỹ thuật, không cần kinh nghiệm AI trước đó.</p>
+
+        <!-- CTA 1: Zalo (primary) -->
+        <a href="https://zalo.me/0972613455" target="_blank" rel="noopener"
+           style="display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;background:rgba(244,114,182,0.1);border:1px solid rgba(244,114,182,0.35);border-radius:1rem;text-decoration:none;margin-bottom:0.75rem;transition:border-color 0.2s"
+           onmouseover="this.style.borderColor='rgba(244,114,182,0.7)'" onmouseout="this.style.borderColor='rgba(244,114,182,0.35)'">
+            <div style="width:2.75rem;height:2.75rem;border-radius:0.75rem;background:#0068ff;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <i class="fas fa-comment-dots" style="color:white;font-size:16px"></i>
+            </div>
+            <div>
+                <p style="color:white;font-weight:900;font-size:0.9rem;margin:0 0 0.15rem">Nhắn Zalo hỏi nhanh trước khi đăng ký</p>
+                <p style="color:#64748b;font-size:0.75rem;margin:0">Hỏi về lộ trình, phù hợp với mình không · <strong style="color:#f472b6">0972613455</strong></p>
+            </div>
+            <i class="fas fa-arrow-right" style="color:#f472b6;margin-left:auto;font-size:12px"></i>
+        </a>
+
+        <!-- CTA 2: Form (secondary) -->
+        <a href="#register" onclick="closeExitPopup()"
+           style="display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:1rem;text-decoration:none;margin-bottom:1.25rem;transition:border-color 0.2s"
+           onmouseover="this.style.borderColor='rgba(255,255,255,0.25)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+            <div style="width:2.75rem;height:2.75rem;border-radius:0.75rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <i class="fas fa-file-alt" style="color:#94a3b8;font-size:14px"></i>
+            </div>
+            <div>
+                <p style="color:white;font-weight:700;font-size:0.9rem;margin:0 0 0.15rem">Quay lại đăng ký lộ trình miễn phí</p>
+                <p style="color:#64748b;font-size:0.75rem;margin:0">Điền form để nhận ngay tài liệu lộ trình 21 ngày</p>
+            </div>
+            <i class="fas fa-arrow-right" style="color:#64748b;margin-left:auto;font-size:12px"></i>
+        </a>
+
+        <!-- Dismiss -->
+        <p style="text-align:center;margin:0">
+            <button onclick="closeExitPopup()" style="background:none;border:none;color:#475569;font-size:0.75rem;cursor:pointer;text-decoration:underline;text-underline-offset:2px">Không, tôi muốn xem tiếp nội dung</button>
+        </p>
+    </div>
+</div>
+
+<script>
+(function() {
+    var KEY = 'exitPopupShown_pnlcai';
+    var shown = false;
+    var readyAt = Date.now() + 3000;
+
+    function openExitPopup() {
+        if (shown || sessionStorage.getItem(KEY)) return;
+        shown = true;
+        sessionStorage.setItem(KEY, '1');
+        var el = document.getElementById('exitPopup');
+        el.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('mouseleave', function(e) {
+        if (e.clientY < 10 && Date.now() > readyAt) openExitPopup();
+    });
+
+    if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+        setTimeout(openExitPopup, 30000);
+    }
+
+    document.getElementById('exitPopup').addEventListener('click', function(e) {
+        if (e.target === this) closeExitPopup();
+    });
+})();
+
+function closeExitPopup() {
+    var el = document.getElementById('exitPopup');
+    el.style.display = 'none';
+    document.body.style.overflow = '';
+}
+</script>
+
+</body>
+</html>
