@@ -882,6 +882,23 @@
     </div>
 </footer>
 
+<!-- ===== STICKY BOTTOM BAR (mobile only) ===== -->
+<div class="fixed bottom-0 left-0 right-0 z-40 md:hidden"
+     style="background:rgba(11,14,20,0.97);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,0.07)">
+    <div class="grid grid-cols-2 gap-2 px-4 py-3">
+        <a href="ai-coaching-1-1.html"
+           class="flex items-center justify-center gap-2 py-3.5 text-white font-black rounded-xl text-[11px] uppercase tracking-widest"
+           style="background:var(--red);box-shadow:0 4px 16px var(--red-glow)">
+            <i class="fas fa-user-tie text-xs"></i> Coaching 1-1
+        </a>
+        <a href="lam-chu-ai-bang-vibe-coding.html"
+           class="flex items-center justify-center gap-2 py-3.5 text-white font-black rounded-xl text-[11px] uppercase tracking-widest"
+           style="background:linear-gradient(135deg,#6366f1,#34d399);box-shadow:0 4px 16px var(--indigo-glow)">
+            <i class="fas fa-terminal text-xs"></i> Vibe Coding
+        </a>
+    </div>
+</div>
+
 <script>
     function toggleDrawer() {
         const drawer = document.getElementById('mobileDrawer');
@@ -914,6 +931,116 @@
         });
     });
 </script>
+
+<!-- ===================== EXIT-INTENT POPUP ===================== -->
+<div id="exitPopupTulatung" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:1rem;">
+    <div style="background:#0d1117;border:1px solid rgba(255,255,255,0.08);border-radius:20px;max-width:480px;width:100%;padding:2rem 2rem 1.75rem;position:relative;box-shadow:0 0 60px rgba(255,45,45,0.15),0 0 120px rgba(129,140,248,0.1);">
+        <!-- Close button -->
+        <button onclick="closeExitPopupTulatung()" aria-label="Đóng" style="position:absolute;top:1rem;right:1rem;background:rgba(255,255,255,0.06);border:none;color:#94a3b8;cursor:pointer;width:32px;height:32px;border-radius:50%;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">✕</button>
+
+        <!-- Gift icon -->
+        <div style="width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,rgba(255,45,45,0.2),rgba(129,140,248,0.2));border:1px solid rgba(255,45,45,0.3);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+            <span style="font-size:26px;">🎁</span>
+        </div>
+
+        <!-- Headline -->
+        <p style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#64748b;margin:0 0 0.5rem;">Khoan đã —</p>
+        <h2 style="font-size:1.375rem;font-weight:900;color:#f1f5f9;line-height:1.3;margin:0 0 0.75rem;">Trước khi rời đi,<br>nhận quà này nhé</h2>
+
+        <!-- Gift name badge -->
+        <div style="display:inline-block;background:linear-gradient(90deg,rgba(255,45,45,0.15),rgba(129,140,248,0.15));border:1px solid rgba(129,140,248,0.3);border-radius:8px;padding:0.4rem 0.85rem;margin-bottom:1rem;">
+            <span style="font-size:13px;font-weight:700;background:linear-gradient(90deg,#ff2d2d,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">"Bộ Bắt đầu với AI đúng cách"</span>
+        </div>
+
+        <!-- What's inside -->
+        <ul style="list-style:none;padding:0;margin:0 0 1.5rem;display:flex;flex-direction:column;gap:0.5rem;">
+            <li style="display:flex;align-items:flex-start;gap:0.6rem;font-size:14px;color:#94a3b8;">
+                <span style="color:#34d399;flex-shrink:0;margin-top:1px;">✓</span>
+                <span>Checklist xác định <strong style="color:#e2e8f0;">level AI hiện tại</strong> của bạn</span>
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:0.6rem;font-size:14px;color:#94a3b8;">
+                <span style="color:#34d399;flex-shrink:0;margin-top:1px;">✓</span>
+                <span>Lộ trình học AI <strong style="color:#e2e8f0;">phù hợp với mục tiêu</strong> của bạn</span>
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:0.6rem;font-size:14px;color:#94a3b8;">
+                <span style="color:#34d399;flex-shrink:0;margin-top:1px;">✓</span>
+                <span>Danh sách <strong style="color:#e2e8f0;">tool AI nên dùng trước</strong> (không bị overwhelm)</span>
+            </li>
+        </ul>
+
+        <!-- Form -->
+        <form onsubmit="submitExitFormTulatung(event)" style="display:flex;flex-direction:column;gap:0.65rem;margin-bottom:1rem;">
+            <input type="text" id="exitNameTulatung" placeholder="Tên của bạn" required style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:0.65rem 1rem;color:#e2e8f0;font-size:14px;outline:none;font-family:inherit;transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(129,140,248,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" />
+            <input type="email" id="exitEmailTulatung" placeholder="Email nhận quà" required style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:0.65rem 1rem;color:#e2e8f0;font-size:14px;outline:none;font-family:inherit;transition:border-color 0.2s;" onfocus="this.style.borderColor='rgba(129,140,248,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" />
+            <button type="submit" style="background:linear-gradient(90deg,#ff2d2d,#818cf8);border:none;border-radius:10px;padding:0.8rem 1.5rem;color:#fff;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
+                🎁 Nhận quà miễn phí
+            </button>
+        </form>
+
+        <!-- Success message (hidden) -->
+        <div id="exitSuccessTulatung" style="display:none;text-align:center;padding:0.75rem;background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.3);border-radius:10px;margin-bottom:1rem;">
+            <p style="color:#34d399;font-weight:700;margin:0 0 0.25rem;">🎉 Đã nhận! Check email nhé.</p>
+            <p style="color:#64748b;font-size:13px;margin:0;">Tùng sẽ gửi bộ tài liệu trong 24h.</p>
+        </div>
+
+        <!-- Secondary CTA -->
+        <div style="text-align:center;">
+            <button onclick="closeExitPopupTulatung()" style="background:none;border:none;color:#475569;font-size:13px;cursor:pointer;font-family:inherit;transition:color 0.2s;" onmouseover="this.style.color='#94a3b8'" onmouseout="this.style.color='#475569'">
+                Xem tiếp các chương trình →
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    var KEY = 'exitPopupShown_toilatung';
+    var shown = false;
+    var readyAt = Date.now() + 3000;
+
+    function openExitPopupTulatung() {
+        if (shown || sessionStorage.getItem(KEY)) return;
+        if (Date.now() < readyAt) return;
+        shown = true;
+        sessionStorage.setItem(KEY, '1');
+        var popup = document.getElementById('exitPopupTulatung');
+        popup.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    window.closeExitPopupTulatung = function() {
+        document.getElementById('exitPopupTulatung').style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    window.submitExitFormTulatung = function(e) {
+        e.preventDefault();
+        var name = document.getElementById('exitNameTulatung').value.trim();
+        var email = document.getElementById('exitEmailTulatung').value.trim();
+        if (!name || !email) return;
+        // TODO: connect to email service (Mailchimp / ConvertKit / GetResponse)
+        document.getElementById('exitPopupTulatung').querySelector('form').style.display = 'none';
+        document.getElementById('exitSuccessTulatung').style.display = 'block';
+        setTimeout(function() { window.closeExitPopupTulatung(); }, 3500);
+    };
+
+    // Desktop: mouse exit from top edge
+    document.addEventListener('mouseleave', function(e) {
+        if (e.clientY < 10) openExitPopupTulatung();
+    });
+
+    // Mobile: delayed popup (35s)
+    if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+        setTimeout(openExitPopupTulatung, 35000);
+    }
+
+    // Click outside card to close
+    document.getElementById('exitPopupTulatung').addEventListener('click', function(e) {
+        if (e.target === this) window.closeExitPopupTulatung();
+    });
+})();
+</script>
+<!-- ===================== /EXIT-INTENT POPUP ===================== -->
 
 </body>
 </html>
