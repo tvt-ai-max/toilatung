@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài liệu của bạn đã sẵn sàng | TVT Agency</title>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; background-color: #0b0e14; color: #cbd5e1; }
+        
+        .glass {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .glow-emerald { box-shadow: 0 0 40px rgba(52,211,153,0.15); }
+        .glow-indigo { box-shadow: 0 0 40px rgba(99,102,241,0.15); }
+
+        .gradient-text {
+            background: linear-gradient(to right, #818cf8, #34d399);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        @keyframes bounce-subtle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+        .animate-bounce-subtle { animation: bounce-subtle 2s ease-in-out infinite; }
+
+        @keyframes scale-in {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-scale-in { animation: scale-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+
+    <!-- Background Decoration -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+
+    <!-- Header -->
+    <header class="w-full py-6 px-6 border-b border-white/5 bg-[#0b0e14]/80 backdrop-blur-md relative z-10">
+        <div class="max-w-4xl mx-auto flex items-center justify-between">
+            <a href="toilatung.html" class="flex items-center gap-3">
+                <div class="w-8 h-8 flex flex-col justify-center gap-[3px] bg-white rounded-lg p-2 shadow-lg">
+                    <div class="w-full h-[3px] bg-black rounded-full"></div>
+                    <div class="w-3/4 h-[3px] bg-black rounded-full"></div>
+                    <div class="w-1/2 h-[3px] bg-black rounded-full"></div>
+                </div>
+                <div>
+                    <span class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest leading-none mb-0.5">Marketing as a System</span>
+                    <span class="block font-black text-white tracking-tighter uppercase text-sm leading-none">Tôi Là Tùng</span>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 w-full max-w-4xl mx-auto px-6 py-12 md:py-20 relative z-10">
+        
+        <!-- Section 1: Success & Download -->
+        <div class="opacity-0 animate-scale-in text-center mb-16">
+            <div class="w-20 h-20 bg-emerald-500/10 border border-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-6 glow-emerald">
+                <i class="fas fa-check text-4xl text-emerald-400"></i>
+            </div>
+            
+            <p class="text-emerald-400 text-xs font-black uppercase tracking-widest mb-3">Đăng ký thành công</p>
+            <h1 class="text-3xl md:text-5xl font-black text-white mb-4">Chào <span id="customerName" class="gradient-text">bạn</span>,</h1>
+            <p class="text-lg text-slate-400 mb-10 max-w-xl mx-auto">Món quà: <strong class="text-white">Bộ Bắt đầu với AI đúng cách</strong> mà bạn đăng ký đã sẵn sàng để tải xuống!</p>
+            
+            <div class="glass p-8 md:p-10 rounded-3xl max-w-2xl mx-auto border-emerald-500/20 relative overflow-hidden group">
+                <div class="absolute inset-0 bg-gradient-to-r from-emerald-500/5 to-indigo-500/5 transition opacity-50 group-hover:opacity-100"></div>
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-6 text-left">
+                    <div class="w-24 h-32 flex-shrink-0 bg-gradient-to-br from-indigo-500 to-indigo-900 rounded-xl shadow-2xl flex items-center justify-center border border-indigo-400/30 transform -rotate-2">
+                        <i class="fas fa-file-pdf text-3xl text-white/50"></i>
+                    </div>
+                    <div class="flex-1 text-center md:text-left">
+                        <h3 class="text-xl font-bold text-white mb-2">Bộ Bắt đầu với AI đúng cách (ZIP)</h3>
+                        <p class="text-sm text-slate-400 mb-5">Bao gồm: Checklist đo lường Level, Lộ trình học theo mục tiêu và Bộ tools (công cụ) tối giản giúp người mới không bị ngợp thông tin.</p>
+                        <a href="Bo_Tai_Lieu_AI_Starter_Kit.zip" download target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 text-[#0b0e14] font-black text-sm uppercase tracking-widest rounded-xl hover:bg-emerald-400 transition animate-bounce-subtle shadow-[0_0_20px_rgba(52,211,153,0.3)]">
+                            <i class="fas fa-download"></i> Tải tài liệu ngay
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <p class="text-xs text-slate-500 mt-5"><i class="fas fa-envelope mr-1"></i> Chúng tôi cũng đã gửi một bản sao lưu kèm vào hộp thư của bạn.</p>
+        </div>
+
+        <!-- Section 2: Next Steps -->
+        <div class="mb-20">
+            <h2 class="text-xs font-black text-slate-500 uppercase tracking-[0.2em] text-center mb-8">Các bước tiếp theo (Quan trọng)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="glass p-6 rounded-2xl flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center flex-shrink-0 border border-indigo-500/20">
+                        <span class="font-black text-indigo-400 text-sm">1</span>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-1">Kiểm tra hộp thư chính</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed">Hãy thường xuyên check Hộp Thư Chính (Primary) để nhận cập nhật về AI Marketing từ Tôi là Tùng mỗi tuần nhé.</p>
+                    </div>
+                </div>
+                <div class="glass p-6 rounded-2xl flex gap-4 items-start">
+                    <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center flex-shrink-0 border border-blue-500/20">
+                        <span class="font-black text-blue-400 text-sm">2</span>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-1">Tham gia Cộng đồng</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed">Kết nối cùng hàng ngàn marketer và nhà phát triển khác trong nhóm kín của TVT Agency.</p>
+                        <a href="https://zalo.me/0972613455" target="_blank" class="inline-block mt-3 text-xs font-bold text-blue-400 hover:text-white transition">Vào Zalo Group <i class="fas fa-arrow-right text-[10px] ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Cross-sell / Upsell -->
+        <div class="relative bg-gradient-to-r from-indigo-900/40 to-[#0b0e14] border border-indigo-500/30 rounded-3xl p-8 md:p-12 glow-indigo overflow-hidden">
+            <div class="absolute -right-20 -top-20 w-64 h-64 bg-indigo-500/20 blur-[60px] rounded-full pointer-events-none"></div>
+            
+            <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+                <div class="flex-1">
+                    <span class="px-3 py-1 bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 text-[10px] font-black uppercase tracking-widest rounded-full mb-4 inline-block">Chương trình chuyên sâu</span>
+                    <h2 class="text-3xl font-black text-white mb-3">Bạn muốn đi nhanh hơn?</h2>
+                    <p class="text-slate-400 text-sm md:text-base leading-relaxed max-w-lg mb-0 text-balance">Hơn 240+ người đã học cách "điều khiển" Claude Code biến ý tưởng thành ứng dụng thực tế chỉ sau 3 buổi. Bạn đã sẵn sàng ứng dụng Vibe Coding vào công việc của mình?</p>
+                </div>
+                <div class="flex-shrink-0">
+                    <a href="lam-chu-ai-bang-vibe-coding.html" class="inline-flex items-center justify-center px-8 py-4 bg-indigo-600 text-white font-black rounded-2xl hover:bg-indigo-500 transition shadow-xl shadow-indigo-600/20 uppercase tracking-widest text-sm w-full md:w-auto hover:scale-105 transform duration-300">
+                        Khám phá ngay <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-8 border-t border-white/5 mt-auto bg-[#080b0f] relative z-10">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-xs text-slate-600 font-bold uppercase tracking-widest">&copy; 2026 TVT Agency. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Lấy tên từ URL để chào mừng cá nhân hóa
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name');
+            if (name) {
+                const nameEl = document.getElementById('customerName');
+                // Format lại tên cho đẹp (Viết hoa chữ cái đầu)
+                const formattedName = name.trim().split(' ').map(word => 
+                    word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+                ).join(' ');
+                
+                nameEl.textContent = formattedName;
+            }
+        });
+    </script>
+</body>
+</html>
