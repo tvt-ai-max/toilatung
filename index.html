@@ -1005,7 +1005,7 @@
     var readyAt = Date.now() + 3000;
 
     function submitToSheet(name, email) {
-        if (!SHEET_URL) return;
+        if (!SHEET_URL) return null;
         var payload = {
             sheet_name: 'toilatung',
             timestamp:  new Date().toISOString(),
@@ -1015,8 +1015,8 @@
             page_url:   window.location.href,
             referrer:   document.referrer || null,
         };
-        // fire-and-forget — không block UX dù Sheet thành công hay lỗi
-        fetch(SHEET_URL, {
+        // return promise to allow caller to wait before redirecting
+        return fetch(SHEET_URL, {
             method:  'POST',
             headers: { 'Content-Type': 'text/plain' },
             body:    JSON.stringify(payload),
@@ -1045,10 +1045,23 @@
         var name = document.getElementById('exitNameTulatung').value.trim();
         var email = document.getElementById('exitEmailTulatung').value.trim();
         if (!name || !email) return;
-        submitToSheet(name, email);
-        document.getElementById('exitPopupTulatung').querySelector('form').style.display = 'none';
-        document.getElementById('exitSuccessTulatung').style.display = 'block';
-        setTimeout(function() { window.closeExitPopupTulatung(); }, 3500);
+        
+        var btn = e.target.querySelector('button[type="submit"]');
+        var originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Đang tải...';
+        btn.style.opacity = '0.7';
+        btn.style.pointerEvents = 'none';
+
+        var redirect = function() {
+            window.location.href = "qua-tang.html?name=" + encodeURIComponent(name);
+        };
+
+        var req = submitToSheet(name, email);
+        if (req && req.then) {
+            req.then(redirect).catch(redirect);
+        } else {
+            setTimeout(redirect, 600);
+        }
     };
 
     // Desktop: mouse exit from top edge
