@@ -838,6 +838,26 @@
 
 
 <script>
+    // ── CONFIG ────────────────────────────────────────────────
+    // Dán Web App URL vào đây sau khi deploy Apps Script
+    var SHEET_URL = 'https://script.google.com/macros/s/AKfycbyBB95MS-2o_TBMI7c_iyiOH7CdQzLCNgworbHRaUACcR7wlFKYHoc_m9cr5zBNplXhxg/exec'; 
+    // ─────────────────────────────────────────────────────────
+
+    function submitToSheet(sheetName, data) {
+        if (!SHEET_URL) return;
+        data.sheet_name = sheetName;
+        data.page_url   = window.location.href;
+        data.referrer   = document.referrer || null;
+        
+        fetch(SHEET_URL, {
+            method:  'POST',
+            headers: { 'Content-Type': 'text/plain' },
+            body:    JSON.stringify(data),
+        }).catch(function(err) {
+            console.warn('[LeadConnector] Submit failed:', err.message);
+        });
+    }
+
     // Form submit
     function handleSubmit(e) {
         e.preventDefault();
@@ -849,9 +869,12 @@
             email: form.email.value,
             stage: form.stage.value,
             topic: form.topic.value,
-            timestamp: new Date().toLocaleString('vi-VN')
+            timestamp: new Date().toISOString()
         };
-        console.log('New free registration:', data);
+        
+        // Gửi data về Google Sheet
+        submitToSheet('phunulamchuai', data);
+
         form.classList.add('hidden');
         success.classList.remove('hidden');
         success.scrollIntoView({ behavior: 'smooth', block: 'center' });
