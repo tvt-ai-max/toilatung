@@ -88,6 +88,17 @@
                     "description": "Lộ trình 21 ngày miễn phí dành cho phụ nữ 8x, 9x muốn ứng dụng AI vào kinh doanh.",
                     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "VND" }
                 }
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                    "@type": "Course",
+                    "name": "Thiết Kế Landing Page 2026 — AI & Vibe Coding",
+                    "url": "https://toilatung.com/vibe-coding-landing-page-ai",
+                    "description": "Khóa học thiết kế landing page thực chiến bằng AI. 18 bài, 6 phần, production-ready. Không cần biết code trước.",
+                    "offers": { "@type": "Offer", "priceCurrency": "VND" }
+                }
             }
         ]
     }
@@ -96,71 +107,156 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap');
 
-        * { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; }
-        .code-font { font-family: 'Fira Code', monospace; }
+        /* ── RESET & BASE ── */
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        .code-font { font-family: 'Fira Code', 'SF Mono', monospace; }
 
+        /* ── DESIGN TOKENS ── */
         :root {
-            --bg: #0b0e14;
-            --panel: rgba(255, 255, 255, 0.03);
-            --line: rgba(255, 255, 255, 0.08);
-            --red: #ff2d2d;
-            --red-light: #ff5555;
-            --red-glow: rgba(255, 45, 45, 0.25);
-            --indigo: #818cf8;
-            --indigo-glow: rgba(129, 140, 248, 0.24);
-            --pink: #f472b6;
-            --pink-glow: rgba(244, 114, 182, 0.22);
-            --emerald: #34d399;
-            --amber: #fbbf24;
-            --sky: #38bdf8;
+            --bg:           #000000;
+            --surface:      #0a0a0a;
+            --panel:        #111111;
+            --line:         rgba(255, 255, 255, 0.08);
+            --line-hover:   rgba(255, 255, 255, 0.16);
+            --text-1:       #f5f5f7;
+            --text-2:       #a1a1a6;
+            --text-3:       #6e6e73;
+            --red:          #ff375f;
+            --red-light:    #ff6380;
+            --red-glow:     rgba(255, 55, 95, 0.28);
+            --indigo:       #7b61ff;
+            --indigo-glow:  rgba(123, 97, 255, 0.24);
+            --pink:         #f472b6;
+            --pink-glow:    rgba(244, 114, 182, 0.22);
+            --emerald:      #30d158;
+            --amber:        #ffd60a;
+            --sky:          #2997ff;
+            --sky-glow:     rgba(41, 151, 255, 0.28);
         }
 
+        /* ── GRADIENT TEXTS ── */
+        .gradient-text {
+            background: linear-gradient(90deg, #ff375f, #7b61ff, #2997ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-indigo {
+            background: linear-gradient(90deg, #7b61ff, #30d158);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-pink {
+            background: linear-gradient(90deg, #f472b6, #ffd60a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ── CARD — Apple minimal (flat dark, no glassmorphism) ── */
         .glass {
             background: var(--panel);
-            backdrop-filter: blur(10px);
             border: 1px solid var(--line);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
         }
-
-        .gradient-text {
-            background: linear-gradient(90deg, #ff2d2d, #818cf8, #f472b6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .glass::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%),
+                rgba(255,255,255,.035) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity .3s;
+            pointer-events: none;
         }
+        .glass:hover::before { opacity: 1; }
 
-        .gradient-indigo {
-            background: linear-gradient(90deg, #818cf8, #34d399);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .gradient-pink {
-            background: linear-gradient(90deg, #f472b6, #fbbf24);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
+        /* ── CARD HOVER ── */
         .card-hover {
-            transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+            transition: transform .3s cubic-bezier(.16,1,.3,1),
+                        border-color .3s ease,
+                        background .3s ease;
         }
-        .card-hover:hover { transform: translateY(-4px); }
-
-        .badge-pulse {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        .card-hover:hover {
+            transform: translateY(-3px);
+            border-color: var(--line-hover);
+            background: #161616;
         }
 
+        /* ── PROGRAM CARD ── */
+        .program-card {
+            transition: transform .3s cubic-bezier(.16,1,.3,1),
+                        border-color .3s ease,
+                        box-shadow .3s ease;
+        }
         .program-card:hover {
-            box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+            transform: translateY(-3px);
+            box-shadow: 0 0 48px rgba(255,255,255,.04);
         }
 
+        /* ── BADGE PULSE ── */
+        .badge-pulse { animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
+
+        /* ── SCROLL REVEAL ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1);
+        }
+        .reveal.visible { opacity: 1; transform: none; }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-32px);
+            transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1);
+        }
+        .reveal-left.visible { opacity: 1; transform: none; }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(32px);
+            transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1);
+        }
+        .reveal-right.visible { opacity: 1; transform: none; }
+        .delay-1 { transition-delay: .1s; }
+        .delay-2 { transition-delay: .2s; }
+        .delay-3 { transition-delay: .3s; }
+        .delay-4 { transition-delay: .4s; }
+        .delay-5 { transition-delay: .5s; }
+
+        /* ── NAV — Apple style: transparent → frosted on scroll ── */
+        nav#main-nav {
+            position: fixed;
+            top: 0; width: 100%; z-index: 50;
+            background: rgba(0, 0, 0, 0);
+            backdrop-filter: blur(0px);
+            border-bottom: 1px solid transparent;
+            transition: background .45s ease, backdrop-filter .45s ease, border-color .45s ease;
+        }
+        nav#main-nav.nav-scrolled {
+            background: rgba(0, 0, 0, 0.78);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-color: var(--line);
+        }
+
+        /* ── MOBILE DRAWER ── */
         #mobileDrawer {
             position: fixed;
             top: 0; right: 0; bottom: 0;
             width: 280px;
-            background: #0d1117;
-            border-left: 1px solid rgba(255, 255, 255, 0.08);
+            background: #0a0a0a;
+            border-left: 1px solid var(--line);
             z-index: 200;
             transform: translateX(100%);
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -170,17 +266,19 @@
 
         #drawerOverlay {
             position: fixed; inset: 0;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(4px);
+            background: rgba(0, 0, 0, 0.72);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
             z-index: 199;
             opacity: 0; pointer-events: none;
             transition: opacity 0.3s ease;
         }
         #drawerOverlay.open { opacity: 1; pointer-events: all; }
 
+        /* ── HAMBURGER ── */
         .hamburger-line {
             display: block; width: 22px; height: 2px;
-            background: white; border-radius: 2px;
+            background: rgba(255,255,255,.7); border-radius: 2px;
             transition: all 0.3s ease;
             transform-origin: center;
         }
@@ -188,8 +286,29 @@
         .hamburger.active .hamburger-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
         .hamburger.active .hamburger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
+        /* ── GRAIN TEXTURE (subtle) ── */
+        body::after {
+            content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9998;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+            opacity: .016;
+        }
+
+        /* ── HERO GLOW BACKGROUND ── */
+        .hero-glow {
+            background:
+                radial-gradient(ellipse 80% 60% at 50% -10%, rgba(123,97,255,.16) 0%, transparent 65%),
+                radial-gradient(ellipse 60% 40% at 85% 35%, rgba(41,151,255,.10) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 50% at 15% 70%, rgba(255,55,95,.09) 0%, transparent 60%),
+                #000000;
+        }
+
+        /* ── TYPOGRAPHY TWEAKS ── */
+        .hero-title {
+            letter-spacing: -.04em;
+            line-height: 1.04;
+        }
         @media (max-width: 767px) {
-            .hero-title { font-size: 2.8rem !important; line-height: 1.06 !important; }
+            .hero-title { font-size: 2.75rem !important; }
             .card-hover:hover { transform: none; }
             body { padding-bottom: 72px; }
         }
@@ -199,12 +318,12 @@
     </style>
 </head>
 
-<body class="bg-[#0b0e14] text-slate-300">
+<body style="background:#000000;color:#a1a1a6;">
 
 <a href="#programs" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded-lg focus:font-bold text-sm">Chuyển đến nội dung chính</a>
 
 <!-- ===== NAV ===== -->
-<nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#0b0e14]/90 backdrop-blur-md" aria-label="Menu chính">
+<nav id="main-nav" aria-label="Menu chính">
     <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
         <a href="#" class="flex items-center gap-3">
             <div class="w-8 h-8 rounded flex items-center justify-center flex-shrink-0"
@@ -278,13 +397,7 @@
 <main id="main-content">
 
 <!-- ===== HERO ===== -->
-<header class="pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-6 relative overflow-hidden">
-    <div class="absolute -top-32 -right-32 w-[600px] h-[600px] blur-[140px] rounded-full pointer-events-none"
-        style="background:rgba(255,45,45,0.09)"></div>
-    <div class="absolute top-20 left-0 w-[500px] h-[500px] blur-[130px] rounded-full pointer-events-none"
-        style="background:rgba(129,140,248,0.09)"></div>
-    <div class="absolute -bottom-28 right-1/4 w-[420px] h-[420px] blur-[120px] rounded-full pointer-events-none"
-        style="background:rgba(244,114,182,0.07)"></div>
+<header class="hero-glow pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-6 relative overflow-hidden">
 
     <div class="max-w-5xl mx-auto relative z-10">
         <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
@@ -297,9 +410,9 @@
                         <img src="https://tvtagency.com/wp-content/uploads/2026/01/tung-soc-son-tvt-agency.png"
                             alt="Nguyễn Thanh Tùng — TVT Strategist"
                             class="w-full h-full rounded-full object-cover object-top block"
-                            style="border:4px solid #0b0e14" />
+                            style="border:4px solid #000000" />
                     </div>
-                    <span class="absolute bottom-3 right-3 w-5 h-5 bg-emerald-400 rounded-full border-2 border-[#0b0e14] block"></span>
+                    <span class="absolute bottom-3 right-3 w-5 h-5 bg-emerald-400 rounded-full border-2 border-black block"></span>
                 </div>
                 <div class="text-center">
                     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.15em] badge-pulse"
@@ -552,6 +665,40 @@
                     </div>
                     <span class="flex items-center gap-1 text-sm font-black uppercase tracking-widest text-pink-300">
                         Xem chi tiết <i class="fas fa-arrow-right text-xs"></i>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Program 4: Landing Page AI -->
+            <a href="vibe-coding-landing-page-ai.html"
+               class="block rounded-3xl p-8 card-hover program-card"
+               style="background:linear-gradient(to bottom,rgba(41,151,255,0.1),rgba(255,255,255,0.01));border:1px solid rgba(41,151,255,0.22)">
+                <div class="flex items-start justify-between mb-6">
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center"
+                        style="background:rgba(41,151,255,0.15);border:1px solid rgba(41,151,255,0.35)">
+                        <i class="fas fa-layer-group text-white text-xl"></i>
+                    </div>
+                    <span class="text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full"
+                        style="background:rgba(41,151,255,0.12);color:#93c5fd;border:1px solid rgba(41,151,255,0.25)">Mới 2026</span>
+                </div>
+                <h3 class="text-2xl font-black text-white mb-2">Thiết Kế<br>Landing Page AI</h3>
+                <p class="text-[10px] font-bold uppercase tracking-widest mb-4" style="color:#38bdf8">Thực chiến từ ý tưởng đến deploy</p>
+                <p class="text-sm text-slate-300 leading-relaxed mb-5">
+                    Dùng AI & Vibe Coding để thiết kế landing page production-ready trong 6 tuần. 18 bài học, không cần biết code trước. Output thực tế: landing page hoạt động ngay sau khóa học.
+                </p>
+                <div class="space-y-2 text-sm text-slate-400 mb-6">
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-xs"></i>18 bài, 6 phần — từ layout đến deploy</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-xs"></i>Dùng Claude Code, AI tools thực chiến</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-xs"></i>Output: landing page production-ready</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-xs"></i>Không cần background kỹ thuật</div>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-white/5">
+                    <div>
+                        <p class="text-white font-black text-xl" style="background:linear-gradient(90deg,#38bdf8,#818cf8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">Xem chi tiết →</p>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-widest">6 tuần · 18 bài học</p>
+                    </div>
+                    <span class="flex items-center gap-1 text-sm font-black uppercase tracking-widest text-sky-300">
+                        Đăng ký <i class="fas fa-arrow-right text-xs"></i>
                     </span>
                 </div>
             </a>
@@ -900,6 +1047,7 @@
 </div>
 
 <script>
+    /* ── MOBILE DRAWER ── */
     function toggleDrawer() {
         const drawer = document.getElementById('mobileDrawer');
         const overlay = document.getElementById('drawerOverlay');
@@ -918,7 +1066,13 @@
         }
     });
 
-    // Nav active state on scroll
+    /* ── NAV: transparent → frosted on scroll (Apple style) ── */
+    const mainNav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+        mainNav.classList.toggle('nav-scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    /* ── NAV ACTIVE LINK ── */
     const sections = document.querySelectorAll('section[id], header');
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
     window.addEventListener('scroll', () => {
@@ -927,7 +1081,28 @@
             if (window.scrollY >= section.offsetTop - 100) current = section.getAttribute('id') || '';
         });
         navLinks.forEach(link => {
-            link.style.color = link.getAttribute('href') === '#' + current ? 'white' : '';
+            link.style.color = link.getAttribute('href') === '#' + current ? '#f5f5f7' : '';
+        });
+    }, { passive: true });
+
+    /* ── SCROLL REVEAL (IntersectionObserver) ── */
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    /* ── BENTO CARD MOUSE GLOW ── */
+    document.querySelectorAll('.glass').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const r = card.getBoundingClientRect();
+            card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+            card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
         });
     });
 </script>
@@ -1081,6 +1256,61 @@
 })();
 </script>
 <!-- ===================== /EXIT-INTENT POPUP ===================== -->
+
+
+<!-- ===== BACK TO TOP ===== -->
+<button id="backToTop" aria-label="Về đầu trang" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <path d="M9 13.5V4.5M4.5 9l4.5-4.5L13.5 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+</button>
+<style>
+    #backToTop {
+        position: fixed;
+        bottom: 28px; right: 24px;
+        z-index: 990;
+        width: 44px; height: 44px;
+        border-radius: 50%;
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(15,15,15,0.82);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        color: rgba(255,255,255,0.65);
+        cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        opacity: 0;
+        transform: translateY(10px) scale(0.88);
+        transition: opacity .4s cubic-bezier(.16,1,.3,1),
+                    transform .4s cubic-bezier(.16,1,.3,1),
+                    background .2s, border-color .2s, color .2s;
+        pointer-events: none;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+    #backToTop.btt-visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        pointer-events: auto;
+    }
+    #backToTop:hover {
+        background: rgba(30,30,30,0.95);
+        border-color: rgba(255,255,255,0.22);
+        color: #fff;
+        transform: translateY(-2px) scale(1);
+    }
+    #backToTop:active { transform: scale(0.95); }
+    @media (max-width: 767px) {
+        #backToTop { bottom: 90px; right: 14px; width: 40px; height: 40px; }
+    }
+</style>
+<script>
+(function() {
+    var btt = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+        btt.classList.toggle('btt-visible', window.scrollY > 320);
+    }, { passive: true });
+})();
+</script>
+<!-- ===== /BACK TO TOP ===== -->
 
 </body>
 </html>
