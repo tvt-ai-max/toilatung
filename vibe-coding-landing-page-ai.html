@@ -356,7 +356,7 @@
     <a href="#pricing"    class="nav-link">Học phí</a>
   </div>
 
-  <a href="#pricing" class="nav-cta">Đăng ký ngay</a>
+  <a href="#register" class="nav-cta">Đăng ký ngay</a>
 </nav>
 
 
@@ -1033,6 +1033,348 @@
 <!-- ═══════════════════════════════════════════
      FOOTER
 ═══════════════════════════════════════════ -->
+  </div>
+</footer>
+
+
+
+
+<!-- ═══════════════════════════════════════════
+     FAQ
+═══════════════════════════════════════════ -->
+<section id="faq" style="padding:120px 24px;border-top:1px solid var(--border);">
+  <div style="max-width:800px;margin:0 auto;">
+
+    <!-- Header -->
+    <div class="reveal" style="text-align:center;margin-bottom:72px;">
+      <p style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);margin-bottom:14px;">FAQs</p>
+      <h2 style="font-size:clamp(28px,5vw,48px);font-weight:800;letter-spacing:-.04em;line-height:1.08;margin-bottom:16px;">
+        Những câu hỏi<br><span class="grad-cool">thường gặp.</span>
+      </h2>
+      <p style="font-size:17px;color:var(--text-2);font-weight:300;max-width:440px;margin:0 auto;line-height:1.6;">
+        Vẫn còn băn khoăn? Câu trả lời của bạn có thể ở đây.
+      </p>
+    </div>
+
+    <!-- FAQ List -->
+    <div id="faqListLP" style="display:flex;flex-direction:column;gap:8px;">
+
+      <!-- Q1 -->
+      <div class="faq-item-lp reveal" style="background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .25s;">
+        <button onclick="toggleFaqLP(this)"
+          style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 28px;background:none;border:none;cursor:pointer;text-align:left;font-family:inherit;">
+          <span style="font-size:15px;font-weight:600;color:var(--text-1);line-height:1.4;">Tôi không biết code — có học được không?</span>
+          <svg class="faq-icon-lp" width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink:0;transition:transform .3s cubic-bezier(.16,1,.3,1);">
+            <path d="M4.5 9h9M9 4.5v9" stroke="#6e6e73" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="faq-answer-lp" style="display:none;padding:0 28px 22px;">
+          <p style="font-size:15px;color:var(--text-2);line-height:1.7;border-top:1px solid var(--border);padding-top:18px;">
+            Hoàn toàn được. Đây là khóa học dùng phương pháp <strong style="color:var(--text-1);">Vibe Coding</strong> — bạn không viết code trực tiếp mà <em>điều khiển AI</em> viết thay. Yêu cầu duy nhất: biết dùng máy tính và muốn có kết quả thật. Không cần background kỹ thuật.
+          </p>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="faq-item-lp reveal delay-1" style="background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .25s;">
+        <button onclick="toggleFaqLP(this)"
+          style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 28px;background:none;border:none;cursor:pointer;text-align:left;font-family:inherit;">
+          <span style="font-size:15px;font-weight:600;color:var(--text-1);line-height:1.4;">Khóa học dạy tôi dùng công cụ gì?</span>
+          <svg class="faq-icon-lp" width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink:0;transition:transform .3s cubic-bezier(.16,1,.3,1);">
+            <path d="M4.5 9h9M9 4.5v9" stroke="#6e6e73" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="faq-answer-lp" style="display:none;padding:0 28px 22px;">
+          <p style="font-size:15px;color:var(--text-2);line-height:1.7;border-top:1px solid var(--border);padding-top:18px;">
+            Bộ công cụ thực chiến: <strong style="color:var(--text-1);">Claude Code, Cursor, VS Code, Netlify, Google Sheets</strong> cho lead capture, và Make.com / n8n cho automation. Bạn sẽ học cách phối hợp toàn bộ stack này để ra một landing page hoàn chỉnh — có form, có analytics, có auto-response.
+          </p>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="faq-item-lp reveal delay-2" style="background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .25s;">
+        <button onclick="toggleFaqLP(this)"
+          style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 28px;background:none;border:none;cursor:pointer;text-align:left;font-family:inherit;">
+          <span style="font-size:15px;font-weight:600;color:var(--text-1);line-height:1.4;">Sau khóa học tôi có thể tự deploy lên internet không?</span>
+          <svg class="faq-icon-lp" width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink:0;transition:transform .3s cubic-bezier(.16,1,.3,1);">
+            <path d="M4.5 9h9M9 4.5v9" stroke="#6e6e73" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="faq-answer-lp" style="display:none;padding:0 28px 22px;">
+          <p style="font-size:15px;color:var(--text-2);line-height:1.7;border-top:1px solid var(--border);padding-top:18px;">
+            Đó chính là mục tiêu. Đến cuối khóa học bạn có <strong style="color:var(--text-1);">1 landing page thật — live trên internet</strong>, có domain, có form nhận lead về Google Sheet, có auto email confirmation. Không phải demo — là sản phẩm thật bạn hiểu từ trong ra ngoài.
+          </p>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="faq-item-lp reveal delay-3" style="background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .25s;">
+        <button onclick="toggleFaqLP(this)"
+          style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 28px;background:none;border:none;cursor:pointer;text-align:left;font-family:inherit;">
+          <span style="font-size:15px;font-weight:600;color:var(--text-1);line-height:1.4;">Gói Mentored khác gói Tự học như thế nào?</span>
+          <svg class="faq-icon-lp" width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink:0;transition:transform .3s cubic-bezier(.16,1,.3,1);">
+            <path d="M4.5 9h9M9 4.5v9" stroke="#6e6e73" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="faq-answer-lp" style="display:none;padding:0 28px 22px;">
+          <div style="border-top:1px solid var(--border);padding-top:18px;">
+            <p style="font-size:15px;color:var(--text-2);line-height:1.7;margin-bottom:14px;">
+              Cả hai gói đều có <strong style="color:var(--text-1);">truy cập trọn đời</strong> vào 18 bài học, 45+ Master Prompts và Template Library.
+            </p>
+            <p style="font-size:15px;color:var(--text-2);line-height:1.7;">
+              Gói <strong style="color:#a78bfa;">Mentored (5.9M)</strong> có thêm: hỗ trợ Zalo 1-1 trong 30 ngày, code review landing page cá nhân và 1 buổi Zoom review 60 phút cùng Tùng. Phù hợp nếu bạn muốn ra sản phẩm nhanh nhất có thể.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="faq-item-lp reveal delay-4" style="background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .25s;">
+        <button onclick="toggleFaqLP(this)"
+          style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 28px;background:none;border:none;cursor:pointer;text-align:left;font-family:inherit;">
+          <span style="font-size:15px;font-weight:600;color:var(--text-1);line-height:1.4;">Tôi cần chuẩn bị gì trước khi học?</span>
+          <svg class="faq-icon-lp" width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink:0;transition:transform .3s cubic-bezier(.16,1,.3,1);">
+            <path d="M4.5 9h9M9 4.5v9" stroke="#6e6e73" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="faq-answer-lp" style="display:none;padding:0 28px 22px;">
+          <p style="font-size:15px;color:var(--text-2);line-height:1.7;border-top:1px solid var(--border);padding-top:18px;">
+            Chỉ cần: (1) Máy tính Mac hoặc Windows, (2) Tài khoản <strong style="color:var(--text-1);">Claude Pro</strong> hoặc Max (~25$/tháng), (3) Kết nối internet ổn định. Tùng sẽ gửi hướng dẫn cài đặt chi tiết sau khi bạn đăng ký — mất khoảng 20 phút để setup xong.
+          </p>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="faq-item-lp reveal delay-5" style="background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .25s;">
+        <button onclick="toggleFaqLP(this)"
+          style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 28px;background:none;border:none;cursor:pointer;text-align:left;font-family:inherit;">
+          <span style="font-size:15px;font-weight:600;color:var(--text-1);line-height:1.4;">Tôi học theo tốc độ của mình được không?</span>
+          <svg class="faq-icon-lp" width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink:0;transition:transform .3s cubic-bezier(.16,1,.3,1);">
+            <path d="M4.5 9h9M9 4.5v9" stroke="#6e6e73" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="faq-answer-lp" style="display:none;padding:0 28px 22px;">
+          <p style="font-size:15px;color:var(--text-2);line-height:1.7;border-top:1px solid var(--border);padding-top:18px;">
+            Hoàn toàn. Tài liệu và video được thiết kế để học <strong style="color:var(--text-1);">self-paced</strong> — bạn có thể học lúc nào thuận tiện, dừng lại thực hành, rồi tiếp tục. Không có deadline. Truy cập trọn đời.
+          </p>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="faq-item-lp reveal" style="background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .25s;">
+        <button onclick="toggleFaqLP(this)"
+          style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 28px;background:none;border:none;cursor:pointer;text-align:left;font-family:inherit;">
+          <span style="font-size:15px;font-weight:600;color:var(--text-1);line-height:1.4;">Cam kết hoàn tiền như thế nào?</span>
+          <svg class="faq-icon-lp" width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink:0;transition:transform .3s cubic-bezier(.16,1,.3,1);">
+            <path d="M4.5 9h9M9 4.5v9" stroke="#6e6e73" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="faq-answer-lp" style="display:none;padding:0 28px 22px;">
+          <p style="font-size:15px;color:var(--text-2);line-height:1.7;border-top:1px solid var(--border);padding-top:18px;">
+            <strong style="color:#30d158;">Hoàn tiền 100% trong 7 ngày</strong> nếu bạn không hài lòng sau khi học — không hỏi lý do. Rủi ro về phía Tùng. Bạn chỉ mất thời gian nếu không học, không mất tiền.
+          </p>
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="faq-item-lp reveal delay-1" style="background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .25s;">
+        <button onclick="toggleFaqLP(this)"
+          style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 28px;background:none;border:none;cursor:pointer;text-align:left;font-family:inherit;">
+          <span style="font-size:15px;font-weight:600;color:var(--text-1);line-height:1.4;">Landing page tôi tạo ra dùng được thật không?</span>
+          <svg class="faq-icon-lp" width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink:0;transition:transform .3s cubic-bezier(.16,1,.3,1);">
+            <path d="M4.5 9h9M9 4.5v9" stroke="#6e6e73" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="faq-answer-lp" style="display:none;padding:0 28px 22px;">
+          <p style="font-size:15px;color:var(--text-2);line-height:1.7;border-top:1px solid var(--border);padding-top:18px;">
+            Dùng được ngay và <strong style="color:var(--text-1);">production-ready</strong>. Học viên đã dùng để launch sản phẩm, chạy quảng cáo, nhận booking. Không phải demo — là trang bạn có thể share link cho khách hàng ngay sau buổi học cuối.
+          </p>
+        </div>
+      </div>
+
+    </div><!-- /faq list -->
+
+    <!-- CTA link -->
+    <div class="reveal" style="text-align:center;margin-top:56px;">
+      <p style="font-size:15px;color:var(--text-2);margin-bottom:16px;">Câu hỏi không có trong danh sách?</p>
+      <a href="https://zalo.me/0972613455" target="_blank" rel="noopener"
+        style="display:inline-flex;align-items:center;gap:8px;color:var(--blue);font-size:15px;font-weight:500;text-decoration:none;transition:gap .2s;"
+        onmouseover="this.style.gap='14px'" onmouseout="this.style.gap='8px'">
+        Chat trực tiếp với Tùng
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .faq-item-lp:has(.faq-answer-lp[style*="block"]) { border-color: rgba(255,255,255,.14); }
+  @media (max-width: 640px) {
+    .faq-item-lp button { padding: 18px 20px; }
+    .faq-answer-lp { padding-left: 20px !important; padding-right: 20px !important; }
+  }
+</style>
+<script>
+  function toggleFaqLP(btn) {
+    var answer = btn.nextElementSibling;
+    var icon   = btn.querySelector('.faq-icon-lp');
+    var item   = btn.parentElement;
+    var isOpen = answer.style.display === 'block';
+
+    /* Close all */
+    document.querySelectorAll('.faq-answer-lp').forEach(function(a) { a.style.display = 'none'; });
+    document.querySelectorAll('.faq-icon-lp').forEach(function(i) { i.style.transform = 'rotate(0deg)'; });
+    document.querySelectorAll('.faq-item-lp').forEach(function(el) { el.style.borderColor = 'var(--border)'; });
+
+    /* Toggle target */
+    if (!isOpen) {
+      answer.style.display = 'block';
+      icon.style.transform = 'rotate(45deg)';
+      item.style.borderColor = 'rgba(255,255,255,.2)';
+    }
+  }
+</script>
+
+<!-- ═══════════════════════════════════════════
+     REGISTER FORM
+═══════════════════════════════════════════ -->
+<section id="register" style="padding:100px 24px;background:var(--surface);border-top:1px solid var(--border);">
+  <div style="max-width:720px;margin:0 auto;">
+
+    <div class="reveal" style="text-align:center;margin-bottom:56px;">
+      <p style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:12px;">
+        🔥 Đang mở đăng ký
+      </p>
+      <h2 style="font-size:clamp(30px,5vw,48px);font-weight:800;letter-spacing:-.04em;margin-bottom:16px;">
+        Bắt đầu hành trình<br><span class="grad-brand">của bạn hôm nay.</span>
+      </h2>
+      <p style="font-size:17px;color:var(--text-2);max-width:480px;margin:0 auto;line-height:1.6;font-weight:300;">
+        Điền thông tin bên dưới — Tùng sẽ liên hệ xác nhận và gửi hướng dẫn bắt đầu trong 24 giờ.
+      </p>
+    </div>
+
+    <!-- FORM CARD -->
+    <div class="reveal bento-card" style="border-radius:24px;padding:48px 40px;max-width:600px;margin:0 auto 40px;">
+
+      <form id="enrollFormLP" onsubmit="handleSubmitLP(event)">
+
+        <!-- Họ tên -->
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;">
+            Họ và tên *
+          </label>
+          <input type="text" name="name" placeholder="Nguyễn Văn A" required
+            style="width:100%;background:#1a1a1a;border:1px solid var(--border);border-radius:12px;padding:14px 18px;font-size:15px;color:var(--text-1);font-family:inherit;outline:none;transition:border-color .2s;"
+            onfocus="this.style.borderColor='rgba(41,151,255,.45)'" onblur="this.style.borderColor='var(--border)'" />
+        </div>
+
+        <!-- Email -->
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;">
+            Email *
+          </label>
+          <input type="email" name="email" placeholder="email@example.com" required
+            style="width:100%;background:#1a1a1a;border:1px solid var(--border);border-radius:12px;padding:14px 18px;font-size:15px;color:var(--text-1);font-family:inherit;outline:none;transition:border-color .2s;"
+            onfocus="this.style.borderColor='rgba(41,151,255,.45)'" onblur="this.style.borderColor='var(--border)'" />
+        </div>
+
+        <!-- SĐT -->
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;">
+            Số điện thoại *
+          </label>
+          <input type="tel" name="phone" placeholder="0901 234 567" required
+            style="width:100%;background:#1a1a1a;border:1px solid var(--border);border-radius:12px;padding:14px 18px;font-size:15px;color:var(--text-1);font-family:inherit;outline:none;transition:border-color .2s;"
+            onfocus="this.style.borderColor='rgba(41,151,255,.45)'" onblur="this.style.borderColor='var(--border)'" />
+        </div>
+
+        <!-- Gói học -->
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;">
+            Gói đăng ký *
+          </label>
+          <select name="package" required
+            style="width:100%;background:#1a1a1a;border:1px solid var(--border);border-radius:12px;padding:14px 18px;font-size:15px;color:var(--text-1);font-family:inherit;outline:none;transition:border-color .2s;appearance:none;cursor:pointer;"
+            onfocus="this.style.borderColor='rgba(41,151,255,.45)'" onblur="this.style.borderColor='var(--border)'">
+            <option value="" disabled selected>Chọn gói phù hợp</option>
+            <option value="mentored-5900">Mentored — 5.900.000đ (Phổ biến · Hỗ trợ 1-1)</option>
+            <option value="self-learn-3900">Tự học — 3.900.000đ (Truy cập trọn đời)</option>
+          </select>
+        </div>
+
+        <!-- Trình độ -->
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;">
+            Bạn đã dùng AI / Vibe Coding chưa?
+          </label>
+          <select name="experience"
+            style="width:100%;background:#1a1a1a;border:1px solid var(--border);border-radius:12px;padding:14px 18px;font-size:15px;color:var(--text-1);font-family:inherit;outline:none;transition:border-color .2s;appearance:none;cursor:pointer;"
+            onfocus="this.style.borderColor='rgba(41,151,255,.45)'" onblur="this.style.borderColor='var(--border)'">
+            <option value="never">Chưa bao giờ — bắt đầu từ zero</option>
+            <option value="basic">Đã dùng ChatGPT / Claude cơ bản</option>
+            <option value="tried">Đã thử Vibe Coding nhưng chưa ra sản phẩm</option>
+            <option value="advanced">Dùng thường xuyên — muốn nâng cấp workflow</option>
+          </select>
+        </div>
+
+        <!-- Ghi chú -->
+        <div style="margin-bottom:28px;">
+          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;">
+            Bạn muốn build gì sau khóa học? (không bắt buộc)
+          </label>
+          <textarea name="note" rows="3" placeholder="VD: Landing page cho sản phẩm của mình, tool automation, portfolio AI..."
+            style="width:100%;background:#1a1a1a;border:1px solid var(--border);border-radius:12px;padding:14px 18px;font-size:15px;color:var(--text-1);font-family:inherit;outline:none;resize:none;transition:border-color .2s;"
+            onfocus="this.style.borderColor='rgba(41,151,255,.45)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" id="submitBtnLP"
+          style="width:100%;padding:18px;background:var(--blue);color:#fff;font-family:inherit;font-size:16px;font-weight:600;letter-spacing:-.02em;border:none;border-radius:980px;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s;display:flex;align-items:center;justify-content:center;gap:8px;"
+          onmouseover="this.style.background='#1a8fff';this.style.boxShadow='0 8px 30px rgba(41,151,255,.35)'"
+          onmouseout="this.style.background='var(--blue)';this.style.boxShadow='none'">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Gửi đăng ký ngay
+        </button>
+
+        <p style="text-align:center;font-size:12px;color:var(--text-3);margin-top:14px;">
+          🔒 Thông tin của bạn được bảo mật hoàn toàn. Không spam.
+        </p>
+
+      </form>
+
+      <!-- Success state -->
+      <div id="successMsgLP" style="display:none;text-align:center;padding:40px 0;">
+        <div style="width:64px;height:64px;border-radius:50%;background:rgba(48,209,88,.12);border:1px solid rgba(48,209,88,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#30d158" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 style="font-size:24px;font-weight:800;letter-spacing:-.03em;margin-bottom:12px;">Đăng ký thành công! 🎉</h3>
+        <p style="font-size:15px;color:var(--text-2);line-height:1.65;max-width:380px;margin:0 auto 8px;">
+          Tùng sẽ liên hệ qua email & Zalo trong vòng <strong style="color:var(--text-1);">24 giờ</strong> để xác nhận và gửi tài liệu chuẩn bị.
+        </p>
+        <p style="font-size:13px;color:var(--text-3);">Đang chuyển hướng về trang quà tặng…</p>
+      </div>
+
+    </div>
+
+    <!-- Contact alternative -->
+    <div class="reveal" style="text-align:center;">
+      <p style="font-size:14px;color:var(--text-3);margin-bottom:12px;">Còn câu hỏi? Chat trực tiếp với Tùng →</p>
+      <a href="https://zalo.me/0972613455" target="_blank" rel="noopener"
+        style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:980px;border:1px solid rgba(0,104,255,.35);background:rgba(0,104,255,.08);font-size:14px;font-weight:500;color:var(--text-1);text-decoration:none;transition:border-color .2s;"
+        onmouseover="this.style.borderColor='rgba(0,104,255,.65)'" onmouseout="this.style.borderColor='rgba(0,104,255,.35)'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#2997ff" stroke-width="1.6"/><path d="M8 12s1 3 4 3 4-3 4-3" stroke="#2997ff" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="10" r="1" fill="#2997ff"/><circle cx="15" cy="10" r="1" fill="#2997ff"/></svg>
+        Zalo: 0972 613 455
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
 <footer style="border-top:1px solid var(--border);padding:48px 24px;max-width:1100px;margin:0 auto;">
   <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;">
     <div style="display:flex;align-items:center;gap:10px;">
@@ -1212,6 +1554,178 @@
 })();
 </script>
 <!-- ===== /BACK TO TOP ===== -->
+
+
+<!-- ===== FORM + EXIT POPUP LOGIC ===== -->
+<script>
+    // ── CONFIG ─────────────────────────────────────────
+    var SHEET_URL = 'https://script.google.com/macros/s/AKfycbyBB95MS-2o_TBMI7c_iyiOH7CdQzLCNgworbHRaUACcR7wlFKYHoc_m9cr5zBNplXhxg/exec';
+    // ───────────────────────────────────────────────────
+
+    function submitToSheetLP(sheetName, data) {
+        if (!SHEET_URL) return;
+        data.sheet_name = sheetName;
+        data.page_url   = window.location.href;
+        data.referrer   = document.referrer || null;
+        fetch(SHEET_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain' },
+            body: JSON.stringify(data),
+        }).catch(function(err) {
+            console.warn('[LeadConnector] Submit failed:', err.message);
+        });
+    }
+
+    function handleSubmitLP(e) {
+        e.preventDefault();
+        var form    = document.getElementById('enrollFormLP');
+        var success = document.getElementById('successMsgLP');
+        var btn     = document.getElementById('submitBtnLP');
+
+        // Disable button
+        btn.disabled = true;
+        btn.style.opacity = '0.6';
+        btn.textContent = 'Đang gửi…';
+
+        var data = {
+            name:       form.elements['name'].value,
+            email:      form.elements['email'].value,
+            phone:      form.elements['phone'].value,
+            package:    form.elements['package'].value,
+            experience: form.elements['experience'].value,
+            note:       form.elements['note'].value,
+            timestamp:  new Date().toISOString()
+        };
+
+        console.log('[LeadConnector] Submitting vibe-coding-landing-page-ai form…', data);
+        submitToSheetLP('vibe-coding-landing-page-ai', data);
+
+        // Show success
+        form.style.display = 'none';
+        success.style.display = 'block';
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // Redirect to qua-tang.html after 2s
+        setTimeout(function() {
+            window.location.href = 'qua-tang.html?src=vibe-coding-lp&name=' + encodeURIComponent(data.name);
+        }, 2000);
+    }
+
+    function closeExitPopupVC() {
+        var el = document.getElementById('exitPopupVC');
+        el.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+</script>
+
+<!-- ===== EXIT-INTENT POPUP ===== -->
+<div id="exitPopupVC"
+    style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.80);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:1.5rem;">
+    <div style="max-width:480px;width:100%;margin:auto;background:#0d0d0d;border:1px solid rgba(255,255,255,0.09);border-radius:24px;padding:36px;position:relative;box-shadow:0 0 80px rgba(41,151,255,.12),0 0 40px rgba(123,97,255,.08);">
+
+        <!-- Close -->
+        <button onclick="closeExitPopupVC()"
+            style="position:absolute;top:14px;right:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#6e6e73;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;transition:background .2s;"
+            onmouseover="this.style.background='rgba(255,255,255,.12)'" onmouseout="this.style.background='rgba(255,255,255,.06)'">✕</button>
+
+        <!-- Icon + Headline -->
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+            <div style="width:44px;height:44px;border-radius:14px;background:rgba(41,151,255,.1);border:1px solid rgba(41,151,255,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#2997ff" stroke-width="1.8"/><path d="M7 12h10M7 8h10M7 16h6" stroke="#2997ff" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h3 style="color:#f5f5f7;font-weight:800;font-size:17px;letter-spacing:-.02em;line-height:1.3;margin:0;">
+                Khoan đã — landing page của bạn chưa có lead nào chạy vào.
+            </h3>
+        </div>
+
+        <p style="color:#a1a1a6;font-size:14px;line-height:1.65;margin-bottom:8px;">
+            Khóa học này dạy bạn build landing page <strong style="color:#f5f5f7;">thật — live trên internet</strong>, form kết nối Google Sheet, và tự chạy được ngay từ ngày đầu.
+        </p>
+        <p style="color:#6e6e73;font-size:13px;line-height:1.6;margin-bottom:24px;">
+            Nếu còn câu hỏi, Tùng sẽ giúp bạn xem level và gói học phù hợp trước khi quyết định.
+        </p>
+
+        <!-- CTA 1: Zalo -->
+        <a href="https://zalo.me/0972613455" target="_blank" rel="noopener"
+            style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(41,151,255,.08);border:1px solid rgba(41,151,255,.25);border-radius:14px;text-decoration:none;margin-bottom:10px;transition:border-color .2s;"
+            onmouseover="this.style.borderColor='rgba(41,151,255,.6)'" onmouseout="this.style.borderColor='rgba(41,151,255,.25)'">
+            <div style="width:40px;height:40px;border-radius:12px;background:#0068ff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div style="flex:1;">
+                <p style="color:#f5f5f7;font-weight:700;font-size:14px;margin:0 0 2px;">Chat với Tùng qua Zalo</p>
+                <p style="color:#6e6e73;font-size:12px;margin:0;">Hỏi trước khi đăng ký · <strong style="color:#2997ff;">0972 613 455</strong></p>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#2997ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+
+        <!-- CTA 2: Form -->
+        <a href="#register" onclick="closeExitPopupVC()"
+            style="display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09);border-radius:14px;text-decoration:none;margin-bottom:20px;transition:border-color .2s;"
+            onmouseover="this.style.borderColor='rgba(255,255,255,.22)'" onmouseout="this.style.borderColor='rgba(255,255,255,.09)'">
+            <div style="width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7-7 7 7" stroke="#a1a1a6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div style="flex:1;">
+                <p style="color:#f5f5f7;font-weight:600;font-size:14px;margin:0 0 2px;">Quay lại form đăng ký</p>
+                <p style="color:#6e6e73;font-size:12px;margin:0;">Điền form — được xác nhận trong 24 giờ</p>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#6e6e73" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+
+        <!-- Dismiss -->
+        <p style="text-align:center;margin:0;">
+            <button onclick="closeExitPopupVC()"
+                style="background:none;border:none;color:#6e6e73;font-size:12px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;font-family:inherit;">
+                Không, tôi muốn xem tiếp
+            </button>
+        </p>
+    </div>
+</div>
+
+<script>
+(function () {
+    var KEY   = 'exitPopupShown_vibecoding_lp';
+    var shown = false;
+    var readyAt = Date.now() + 4000;
+
+    function openExitPopupVC() {
+        if (shown || sessionStorage.getItem(KEY)) return;
+        // Không show nếu user đang ở form
+        var formEl = document.getElementById('enrollFormLP');
+        if (formEl) {
+            var rect = formEl.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) return;
+        }
+        shown = true;
+        sessionStorage.setItem(KEY, '1');
+        var el = document.getElementById('exitPopupVC');
+        el.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Desktop: rời khỏi viewport (mouse lên trên)
+    document.addEventListener('mouseleave', function (e) {
+        if (e.clientY < 10 && Date.now() > readyAt) openExitPopupVC();
+    });
+
+    // Mobile: sau 35 giây không tương tác
+    if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+        setTimeout(openExitPopupVC, 35000);
+    }
+
+    // Click backdrop to close
+    document.getElementById('exitPopupVC').addEventListener('click', function (e) {
+        if (e.target === this) closeExitPopupVC();
+    });
+
+    // ESC to close
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeExitPopupVC();
+    });
+})();
+</script>
+<!-- ===== /EXIT-INTENT POPUP ===== -->
 
 </body>
 </html>
