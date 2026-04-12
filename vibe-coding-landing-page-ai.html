@@ -8,10 +8,10 @@
   <meta name="keywords" content="khóa học landing page, thiết kế landing page AI, vibe coding, Claude Code, khóa học AI 2026, Nguyễn Thanh Tùng, TVT Agency" />
   <meta name="author" content="Nguyễn Thanh Tùng" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://toilatung.com/vibe-coding-landing-page-ai" />
+  <link rel="canonical" href="https://toilatung.com/vibe-coding-landing-page-ai.html" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://toilatung.com/vibe-coding-landing-page-ai" />
+  <meta property="og:url" content="https://toilatung.com/vibe-coding-landing-page-ai.html" />
   <meta property="og:title" content="Thiết Kế Landing Page 2026 — AI & Vibe Coding | Nguyễn Thanh Tùng" />
   <meta property="og:description" content="Khóa học thiết kế landing page thực chiến bằng AI. 18 bài, 6 phần, production-ready. Không cần biết code trước." />
   <meta property="og:image" content="https://tvtagency.com/wp-content/uploads/2026/01/tung-soc-son-tvt-agency.png" />
@@ -165,7 +165,7 @@
     .bento-card::before {
       content: ''; position: absolute; inset: 0; border-radius: inherit;
       background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,.04) 0%, transparent 60%);
-      opacity: 0; transition: opacity .3s;
+      opacity: 0; transition: opacity .3s; pointer-events: none;
     }
     .bento-card:hover::before { opacity: 1; }
 
@@ -1261,40 +1261,40 @@
 
         <!-- Họ tên -->
         <div style="margin-bottom:20px;">
-          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;">
+          <label for="lp_name" style="display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;">
             Họ và tên *
           </label>
-          <input type="text" name="name" placeholder="Nguyễn Văn A" required
+          <input type="text" id="lp_name" name="name" placeholder="Nguyễn Văn A" required
             style="width:100%;background:#1a1a1a;border:1px solid var(--border);border-radius:12px;padding:14px 18px;font-size:15px;color:var(--text-1);font-family:inherit;outline:none;transition:border-color .2s;"
             onfocus="this.style.borderColor='rgba(41,151,255,.45)'" onblur="this.style.borderColor='var(--border)'" />
         </div>
 
         <!-- Email -->
         <div style="margin-bottom:20px;">
-          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;">
+          <label for="lp_email" style="display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;">
             Email *
           </label>
-          <input type="email" name="email" placeholder="email@example.com" required
+          <input type="email" id="lp_email" name="email" placeholder="email@example.com" required
             style="width:100%;background:#1a1a1a;border:1px solid var(--border);border-radius:12px;padding:14px 18px;font-size:15px;color:var(--text-1);font-family:inherit;outline:none;transition:border-color .2s;"
             onfocus="this.style.borderColor='rgba(41,151,255,.45)'" onblur="this.style.borderColor='var(--border)'" />
         </div>
 
         <!-- SĐT -->
         <div style="margin-bottom:20px;">
-          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;">
+          <label for="lp_phone" style="display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;">
             Số điện thoại *
           </label>
-          <input type="tel" name="phone" placeholder="0901 234 567" required
+          <input type="tel" id="lp_phone" name="phone" placeholder="0901 234 567" required
             style="width:100%;background:#1a1a1a;border:1px solid var(--border);border-radius:12px;padding:14px 18px;font-size:15px;color:var(--text-1);font-family:inherit;outline:none;transition:border-color .2s;"
             onfocus="this.style.borderColor='rgba(41,151,255,.45)'" onblur="this.style.borderColor='var(--border)'" />
         </div>
 
         <!-- Gói học -->
         <div style="margin-bottom:20px;">
-          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;">
+          <label for="lp_package" style="display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;">
             Gói đăng ký *
           </label>
-          <select name="package" required
+          <select id="lp_package" name="package" required
             style="width:100%;background:#1a1a1a;border:1px solid var(--border);border-radius:12px;padding:14px 18px;font-size:15px;color:var(--text-1);font-family:inherit;outline:none;transition:border-color .2s;appearance:none;cursor:pointer;"
             onfocus="this.style.borderColor='rgba(41,151,255,.45)'" onblur="this.style.borderColor='var(--border)'">
             <option value="" disabled selected>Chọn gói phù hợp</option>
@@ -1305,10 +1305,10 @@
 
         <!-- Trình độ -->
         <div style="margin-bottom:20px;">
-          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;">
-            Bạn đã dùng AI / Vibe Coding chưa?
+          <label for="lp_experience" style="display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;">
+            Bạn đã dùng AI / Vibe Coding chưa? *
           </label>
-          <select name="experience"
+          <select id="lp_experience" name="experience" required
             style="width:100%;background:#1a1a1a;border:1px solid var(--border);border-radius:12px;padding:14px 18px;font-size:15px;color:var(--text-1);font-family:inherit;outline:none;transition:border-color .2s;appearance:none;cursor:pointer;"
             onfocus="this.style.borderColor='rgba(41,151,255,.45)'" onblur="this.style.borderColor='var(--border)'">
             <option value="never">Chưa bao giờ — bắt đầu từ zero</option>
@@ -1320,10 +1320,10 @@
 
         <!-- Ghi chú -->
         <div style="margin-bottom:28px;">
-          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;">
+          <label for="lp_note" style="display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;">
             Bạn muốn build gì sau khóa học? (không bắt buộc)
           </label>
-          <textarea name="note" rows="3" placeholder="VD: Landing page cho sản phẩm của mình, tool automation, portfolio AI..."
+          <textarea id="lp_note" name="note" rows="3" placeholder="VD: Landing page cho sản phẩm của mình, tool automation, portfolio AI..."
             style="width:100%;background:#1a1a1a;border:1px solid var(--border);border-radius:12px;padding:14px 18px;font-size:15px;color:var(--text-1);font-family:inherit;outline:none;resize:none;transition:border-color .2s;"
             onfocus="this.style.borderColor='rgba(41,151,255,.45)'" onblur="this.style.borderColor='var(--border)'"></textarea>
         </div>
@@ -1607,7 +1607,7 @@
 
         // Redirect to qua-tang.html after 2s
         setTimeout(function() {
-            window.location.href = 'qua-tang.html?src=vibe-coding-lp&name=' + encodeURIComponent(data.name);
+            window.location.href = 'https://toilatung.com/qua-tang.html?src=vibe-coding-lp&name=' + encodeURIComponent(data.name);
         }, 2000);
     }
 
