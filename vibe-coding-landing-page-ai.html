@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thiết Kế Landing Page 2026 — AI & Vibe Coding | Nguyễn Thanh Tùng</title>
+  <meta name="description" content="Khóa học thiết kế landing page thực chiến bằng AI. 18 bài, 6 phần, production-ready. Không cần biết code trước. Giảng viên: Nguyễn Thanh Tùng — AI Strategist, Founder TVT Agency." />
+  <meta name="keywords" content="khóa học landing page, thiết kế landing page AI, vibe coding, Claude Code, khóa học AI 2026, Nguyễn Thanh Tùng, TVT Agency" />
+  <meta name="author" content="Nguyễn Thanh Tùng" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://toilatung.com/vibe-coding-landing-page-ai" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://toilatung.com/vibe-coding-landing-page-ai" />
+  <meta property="og:title" content="Thiết Kế Landing Page 2026 — AI & Vibe Coding | Nguyễn Thanh Tùng" />
+  <meta property="og:description" content="Khóa học thiết kế landing page thực chiến bằng AI. 18 bài, 6 phần, production-ready. Không cần biết code trước." />
+  <meta property="og:image" content="https://tvtagency.com/wp-content/uploads/2026/01/tung-soc-son-tvt-agency.png" />
+  <meta property="og:locale" content="vi_VN" />
+  <meta property="og:site_name" content="Tôi Là Tùng" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@tvtstrategist" />
+  <meta name="twitter:title" content="Thiết Kế Landing Page 2026 — AI & Vibe Coding" />
+  <meta name="twitter:description" content="Khóa học landing page thực chiến bằng AI. 18 bài, production-ready. Không cần biết code trước." />
+  <meta name="twitter:image" content="https://tvtagency.com/wp-content/uploads/2026/01/tung-soc-son-tvt-agency.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Thiết Kế Landing Page 2026 — AI & Vibe Coding",
+    "description": "Khóa học thiết kế landing page thực chiến bằng AI. 18 bài, 6 phần, production-ready. Không cần biết code trước.",
+    "url": "https://toilatung.com/vibe-coding-landing-page-ai",
+    "image": "https://tvtagency.com/wp-content/uploads/2026/01/tung-soc-son-tvt-agency.png",
+    "inLanguage": "vi",
+    "provider": {
+      "@type": "Person",
+      "name": "Nguyễn Thanh Tùng",
+      "url": "https://toilatung.com/",
+      "jobTitle": "AI Strategist & Founder TVT Agency"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "VND",
+      "availability": "https://schema.org/InStock"
+    },
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "Online",
+      "inLanguage": "vi"
+    }
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --black:   #000000;
+      --surface: #0a0a0a;
+      --card:    #111111;
+      --border:  rgba(255,255,255,0.08);
+      --text-1:  #f5f5f7;
+      --text-2:  #a1a1a6;
+      --text-3:  #6e6e73;
+      --red:     #ff375f;
+      --indigo:  #7b61ff;
+      --blue:    #2997ff;
+      --green:   #30d158;
+      --amber:   #ffd60a;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--black);
+      color: var(--text-1);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── GRADIENT TEXT ── */
+    .grad-main   { background: linear-gradient(135deg, #fff 0%, #a0a0a8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .grad-brand  { background: linear-gradient(90deg, #ff375f, #7b61ff, #2997ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .grad-warm   { background: linear-gradient(90deg, #ff375f, #ff9500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .grad-cool   { background: linear-gradient(90deg, #7b61ff, #2997ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .grad-green  { background: linear-gradient(90deg, #30d158, #34aadc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(48px); transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-scale { opacity: 0; transform: scale(.94); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+    .reveal-scale.visible { opacity: 1; transform: scale(1); }
+    .reveal-left  { opacity: 0; transform: translateX(-40px); transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
+    .reveal-left.visible  { opacity: 1; transform: none; }
+    .reveal-right { opacity: 0; transform: translateX(40px);  transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
+    .reveal-right.visible { opacity: 1; transform: none; }
+
+    .delay-1 { transition-delay: .1s; }
+    .delay-2 { transition-delay: .2s; }
+    .delay-3 { transition-delay: .3s; }
+    .delay-4 { transition-delay: .4s; }
+    .delay-5 { transition-delay: .5s; }
+    .delay-6 { transition-delay: .6s; }
+
+    /* ── NAV ── */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 52px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px;
+      background: rgba(0,0,0,0);
+      backdrop-filter: blur(0px);
+      border-bottom: 1px solid transparent;
+      transition: background .4s ease, backdrop-filter .4s ease, border-color .4s ease;
+    }
+    #nav.scrolled {
+      background: rgba(0,0,0,0.72);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-color: var(--border);
+    }
+    .nav-link { font-size: 13px; color: var(--text-2); text-decoration: none; transition: color .2s; letter-spacing: -.01em; }
+    .nav-link:hover { color: var(--text-1); }
+    .nav-cta {
+      font-size: 13px; font-weight: 500; color: #fff;
+      background: var(--blue); padding: 7px 16px; border-radius: 20px;
+      text-decoration: none; transition: background .2s, transform .2s;
+      letter-spacing: -.01em;
+    }
+    .nav-cta:hover { background: #1a8fff; transform: scale(1.02); }
+
+    /* ── HERO ── */
+    .hero-bg {
+      background:
+        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(123,97,255,.18) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 40%, rgba(41,151,255,.12) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 20% 70%, rgba(255,55,95,.10) 0%, transparent 60%),
+        var(--black);
+    }
+
+    /* ── SECTION DIVIDER ── */
+    .section-divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+    /* ── BENTO GRID ── */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+    .bento-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      overflow: hidden;
+      position: relative;
+      transition: border-color .3s ease, transform .3s ease;
+    }
+    .bento-card:hover { border-color: rgba(255,255,255,.16); transform: translateY(-2px); }
+    .bento-card::before {
+      content: ''; position: absolute; inset: 0; border-radius: inherit;
+      background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,.04) 0%, transparent 60%);
+      opacity: 0; transition: opacity .3s;
+    }
+    .bento-card:hover::before { opacity: 1; }
+
+    /* ── MARQUEE ── */
+    .marquee-track {
+      display: flex; gap: 48px; white-space: nowrap;
+      animation: marquee 28s linear infinite;
+    }
+    .marquee-track-rev { animation-direction: reverse; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── STAT ── */
+    .stat-num {
+      font-size: clamp(52px, 8vw, 96px);
+      font-weight: 700;
+      letter-spacing: -.04em;
+      line-height: 1;
+    }
+
+    /* ── CURRICULUM CARD ── */
+    .part-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 40px;
+      transition: border-color .3s, background .3s;
+      cursor: default;
+    }
+    .part-card:hover { border-color: rgba(255,255,255,.2); background: #161616; }
+    .part-num {
+      font-size: 11px; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; margin-bottom: 20px;
+    }
+
+    /* ── LAPTOP MOCKUP (pure CSS) ── */
+    .laptop-wrap { perspective: 1000px; }
+    .laptop {
+      width: 520px; max-width: 90vw;
+      transform: rotateX(6deg) rotateY(-2deg);
+      transition: transform .6s ease;
+      filter: drop-shadow(0 60px 80px rgba(0,0,0,.8));
+    }
+    .laptop:hover { transform: rotateX(2deg) rotateY(2deg); }
+    .laptop-screen {
+      background: #111;
+      border-radius: 12px 12px 0 0;
+      padding: 14px;
+      border: 1.5px solid rgba(255,255,255,.12);
+      position: relative;
+    }
+    .laptop-screen::before {
+      content: ''; display: block; width: 8px; height: 8px;
+      border-radius: 50%; background: rgba(255,255,255,.15);
+      position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
+    }
+    .laptop-display {
+      background: var(--black);
+      border-radius: 6px;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .laptop-base {
+      height: 18px;
+      background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+      border-radius: 0 0 6px 6px;
+      border: 1.5px solid rgba(255,255,255,.1);
+      border-top: none;
+    }
+    .laptop-foot {
+      height: 4px; width: 40%;
+      margin: 0 auto;
+      background: #0d0d0d;
+      border-radius: 0 0 4px 4px;
+    }
+
+    /* ── PRICING CARD ── */
+    .pricing-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-card.featured {
+      border-color: rgba(123,97,255,.5);
+      background: linear-gradient(160deg, rgba(123,97,255,.08) 0%, var(--card) 50%);
+    }
+    .pricing-card.featured::before {
+      content: ''; position: absolute; top: -1px; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, #ff375f, #7b61ff, #2997ff);
+    }
+
+    /* ── CTA BUTTON ── */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue); color: #fff;
+      padding: 14px 28px; border-radius: 980px;
+      font-size: 16px; font-weight: 500; text-decoration: none;
+      transition: background .2s, transform .2s, box-shadow .2s;
+      letter-spacing: -.02em;
+    }
+    .btn-primary:hover {
+      background: #1a8fff;
+      transform: scale(1.02);
+      box-shadow: 0 8px 30px rgba(41,151,255,.3);
+    }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--blue); font-size: 16px; font-weight: 400;
+      text-decoration: none; transition: gap .2s;
+      letter-spacing: -.02em;
+    }
+    .btn-ghost:hover { gap: 10px; }
+    .btn-ghost .arrow { transition: transform .2s; }
+    .btn-ghost:hover .arrow { transform: translateX(4px); }
+
+    /* ── GLOW ── */
+    .glow-red    { box-shadow: 0 0 60px rgba(255,55,95,.15); }
+    .glow-indigo { box-shadow: 0 0 60px rgba(123,97,255,.15); }
+    .glow-blue   { box-shadow: 0 0 60px rgba(41,151,255,.15); }
+
+    /* ── SCROLL INDICATOR ── */
+    @keyframes bounce-y { 0%,100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+    .scroll-ind { animation: bounce-y 2s ease-in-out infinite; }
+
+    /* ── GRAIN (subtle) ── */
+    body::after {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: .018;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .bento-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .bento-card { padding: 24px 20px; }
+      .stat-num { font-size: 48px; }
+      #nav .nav-links { display: none; }
+    }
+    @media (max-width: 480px) {
+      .bento-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── TIMELINE DOT ── */
+    .timeline-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      flex-shrink: 0; margin-top: 6px;
+    }
+
+    /* ── TAG ── */
+    .tag {
+      display: inline-block;
+      font-size: 11px; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 5px 12px; border-radius: 100px;
+    }
+
+    /* ── COUNTER ── */
+    .counter { display: inline-block; }
+  </style>
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAV
+═══════════════════════════════════════════ -->
+<nav id="nav" role="navigation" aria-label="Menu chính">
+  <a href="#" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <rect width="20" height="20" rx="5" fill="url(#ng)"/>
+      <defs><linearGradient id="ng" x1="0" y1="0" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#ff375f"/><stop offset=".5" stop-color="#7b61ff"/><stop offset="1" stop-color="#2997ff"/>
+      </linearGradient></defs>
+      <text x="4" y="14" font-size="11" font-weight="800" fill="white" font-family="Inter,sans-serif">AI</text>
+    </svg>
+    <span style="font-size:14px;font-weight:700;color:#f5f5f7;letter-spacing:-.02em;">Vibe Coding</span>
+  </a>
+
+  <div class="nav-links" style="display:flex;gap:32px;position:absolute;left:50%;transform:translateX(-50%);">
+    <a href="https://toilatung.com/" class="nav-link" rel="home">Trang chủ</a>
+    <a href="#features"   class="nav-link">Nội dung</a>
+    <a href="#curriculum" class="nav-link">Chương trình</a>
+    <a href="#instructor" class="nav-link">Giảng viên</a>
+    <a href="#pricing"    class="nav-link">Học phí</a>
+  </div>
+
+  <a href="#pricing" class="nav-cta">Đăng ký ngay</a>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section class="hero-bg" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 24px 80px;text-align:center;position:relative;">
+
+  <!-- Eyebrow -->
+  <div class="reveal tag" style="background:rgba(123,97,255,.12);color:#a78bfa;border:1px solid rgba(123,97,255,.25);margin-bottom:28px;">
+    Khóa học · 2026 Edition
+  </div>
+
+  <!-- Headline -->
+  <h1 class="reveal delay-1" style="font-size:clamp(44px,8vw,96px);font-weight:800;letter-spacing:-.04em;line-height:1.04;max-width:880px;margin-bottom:24px;">
+    Làm chủ AI.<br>
+    <span class="grad-brand">Không giới hạn.</span>
+  </h1>
+
+  <!-- Sub -->
+  <p class="reveal delay-2" style="font-size:clamp(17px,2.5vw,22px);color:var(--text-2);max-width:560px;line-height:1.55;margin-bottom:40px;font-weight:300;">
+    Thiết kế landing page thực chiến bằng AI — từ ý tưởng đến deploy production trong 6 tuần. Không cần biết code trước.
+  </p>
+
+  <!-- CTAs -->
+  <div class="reveal delay-3" style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-bottom:64px;">
+    <a href="#pricing" class="btn-primary" style="font-size:17px;padding:16px 32px;">
+      Bắt đầu học
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="#curriculum" class="btn-ghost" style="font-size:17px;padding:16px 0;">
+      Xem chương trình <span class="arrow">›</span>
+    </a>
+  </div>
+
+  <!-- Laptop Mockup -->
+  <div class="reveal-scale delay-4 laptop-wrap" style="display:flex;justify-content:center;">
+    <div class="laptop">
+      <div class="laptop-screen">
+        <div class="laptop-display" style="background:linear-gradient(135deg,#050508 0%,#0a0a14 100%);">
+          <!-- Screen Content -->
+          <div style="width:100%;height:100%;padding:20px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;">
+
+            <!-- Glow blobs inside screen -->
+            <div style="position:absolute;top:-20px;right:-20px;width:200px;height:200px;border-radius:50%;background:rgba(123,97,255,.2);filter:blur(60px);pointer-events:none;"></div>
+            <div style="position:absolute;bottom:-30px;left:0;width:160px;height:160px;border-radius:50%;background:rgba(41,151,255,.15);filter:blur(50px);pointer-events:none;"></div>
+
+            <!-- Fake nav bar -->
+            <div style="display:flex;gap:6px;align-items:center;background:rgba(255,255,255,.04);border-radius:6px;padding:8px 12px;border:1px solid rgba(255,255,255,.06);">
+              <div style="width:6px;height:6px;border-radius:50%;background:#ff5f57;"></div>
+              <div style="width:6px;height:6px;border-radius:50%;background:#febc2e;"></div>
+              <div style="width:6px;height:6px;border-radius:50%;background:#28c840;"></div>
+              <div style="flex:1;background:rgba(255,255,255,.06);border-radius:4px;height:14px;margin:0 12px;"></div>
+            </div>
+
+            <!-- Fake code / content area -->
+            <div style="flex:1;display:grid;grid-template-columns:1fr 2fr;gap:10px;">
+              <!-- Sidebar -->
+              <div style="background:rgba(255,255,255,.03);border-radius:6px;border:1px solid rgba(255,255,255,.05);padding:12px;display:flex;flex-direction:column;gap:8px;">
+                <div style="height:8px;width:70%;background:rgba(255,55,95,.4);border-radius:4px;"></div>
+                <div style="height:6px;width:90%;background:rgba(255,255,255,.08);border-radius:4px;"></div>
+                <div style="height:6px;width:60%;background:rgba(255,255,255,.06);border-radius:4px;"></div>
+                <div style="height:6px;width:80%;background:rgba(123,97,255,.3);border-radius:4px;"></div>
+                <div style="height:6px;width:50%;background:rgba(255,255,255,.06);border-radius:4px;"></div>
+                <div style="height:6px;width:75%;background:rgba(41,151,255,.3);border-radius:4px;"></div>
+                <div style="height:6px;width:65%;background:rgba(255,255,255,.06);border-radius:4px;"></div>
+              </div>
+              <!-- Main area -->
+              <div style="background:rgba(255,255,255,.02);border-radius:6px;border:1px solid rgba(255,255,255,.05);padding:14px;display:flex;flex-direction:column;gap:10px;">
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <div style="width:10px;height:10px;border-radius:50%;background:rgba(123,97,255,.6);"></div>
+                  <div style="height:7px;flex:1;background:rgba(255,255,255,.1);border-radius:4px;"></div>
+                </div>
+                <div style="background:linear-gradient(90deg,rgba(123,97,255,.15),rgba(41,151,255,.1));border-radius:6px;padding:10px;border:1px solid rgba(123,97,255,.15);">
+                  <div style="height:6px;width:90%;background:rgba(255,255,255,.12);border-radius:4px;margin-bottom:6px;"></div>
+                  <div style="height:6px;width:70%;background:rgba(255,255,255,.08);border-radius:4px;margin-bottom:6px;"></div>
+                  <div style="height:6px;width:80%;background:rgba(255,255,255,.1);border-radius:4px;"></div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+                  <div style="background:rgba(255,55,95,.1);border:1px solid rgba(255,55,95,.2);border-radius:5px;padding:8px;">
+                    <div style="height:5px;width:80%;background:rgba(255,55,95,.4);border-radius:4px;margin-bottom:4px;"></div>
+                    <div style="height:5px;width:60%;background:rgba(255,255,255,.07);border-radius:4px;"></div>
+                  </div>
+                  <div style="background:rgba(48,209,88,.08);border:1px solid rgba(48,209,88,.15);border-radius:5px;padding:8px;">
+                    <div style="height:5px;width:70%;background:rgba(48,209,88,.3);border-radius:4px;margin-bottom:4px;"></div>
+                    <div style="height:5px;width:50%;background:rgba(255,255,255,.07);border-radius:4px;"></div>
+                  </div>
+                </div>
+                <div style="margin-top:auto;background:rgba(41,151,255,.15);border-radius:5px;padding:8px;text-align:center;border:1px solid rgba(41,151,255,.25);">
+                  <div style="height:6px;width:50%;background:rgba(41,151,255,.5);border-radius:4px;margin:0 auto;"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="laptop-base"></div>
+      <div class="laptop-foot"></div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-ind reveal delay-5" style="position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;">
+    <span style="font-size:11px;color:var(--text-3);letter-spacing:.08em;text-transform:uppercase;">Cuộn xuống</span>
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M10 4v12M4 10l6 6 6-6" stroke="rgba(255,255,255,.3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     MARQUEE
+═══════════════════════════════════════════ -->
+<div style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 0;overflow:hidden;background:var(--surface);">
+  <div class="marquee-track" style="font-size:13px;font-weight:500;color:var(--text-3);letter-spacing:.04em;text-transform:uppercase;">
+    <span>Vibe Coding &nbsp;·&nbsp;</span><span>Antigravity Workflow &nbsp;·&nbsp;</span>
+    <span>Figma to Code &nbsp;·&nbsp;</span><span>MCP Integration &nbsp;·&nbsp;</span>
+    <span>AI Copywriting &nbsp;·&nbsp;</span><span>Deploy Production &nbsp;·&nbsp;</span>
+    <span>Lead Automation &nbsp;·&nbsp;</span><span>CRO Tactics &nbsp;·&nbsp;</span>
+    <span>Design System &nbsp;·&nbsp;</span><span>Director Mindset &nbsp;·&nbsp;</span>
+    <!-- duplicate for loop -->
+    <span>Vibe Coding &nbsp;·&nbsp;</span><span>Antigravity Workflow &nbsp;·&nbsp;</span>
+    <span>Figma to Code &nbsp;·&nbsp;</span><span>MCP Integration &nbsp;·&nbsp;</span>
+    <span>AI Copywriting &nbsp;·&nbsp;</span><span>Deploy Production &nbsp;·&nbsp;</span>
+    <span>Lead Automation &nbsp;·&nbsp;</span><span>CRO Tactics &nbsp;·&nbsp;</span>
+    <span>Design System &nbsp;·&nbsp;</span><span>Director Mindset &nbsp;·&nbsp;</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     STATEMENT SECTION
+═══════════════════════════════════════════ -->
+<section style="padding:120px 24px;max-width:900px;margin:0 auto;text-align:center;">
+  <p class="reveal" style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:24px;">Triết lý</p>
+  <h2 class="reveal delay-1" style="font-size:clamp(32px,5vw,58px);font-weight:700;letter-spacing:-.035em;line-height:1.12;color:var(--text-1);">
+    AI làm nặng.<br>
+    <span style="color:var(--text-3);">Người làm hướng.</span>
+  </h2>
+  <p class="reveal delay-2" style="font-size:19px;color:var(--text-2);line-height:1.65;margin-top:28px;max-width:640px;margin-left:auto;margin-right:auto;font-weight:300;">
+    Vibe Coding không phải về việc gõ ít code hơn — mà về việc tư duy đúng trước khi chạm tool. Bạn là đạo diễn. AI là đội ngũ thực thi.
+  </p>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     STATS
+═══════════════════════════════════════════ -->
+<section style="padding:0 24px 120px;max-width:1100px;margin:0 auto;">
+  <hr class="section-divider" style="margin-bottom:80px;" />
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;border:1px solid var(--border);border-radius:20px;overflow:hidden;">
+
+    <div class="reveal" style="padding:48px 36px;border-right:1px solid var(--border);text-align:center;">
+      <div class="stat-num grad-brand counter" data-target="18">0</div>
+      <p style="font-size:14px;color:var(--text-2);margin-top:8px;letter-spacing:-.01em;">Bài học</p>
+    </div>
+
+    <div class="reveal delay-1" style="padding:48px 36px;border-right:1px solid var(--border);text-align:center;">
+      <div class="stat-num grad-cool counter" data-target="6">0</div>
+      <p style="font-size:14px;color:var(--text-2);margin-top:8px;letter-spacing:-.01em;">Phần học</p>
+    </div>
+
+    <div class="reveal delay-2" style="padding:48px 36px;border-right:1px solid var(--border);text-align:center;">
+      <div class="stat-num grad-green counter" data-target="45">0</div>
+      <p style="font-size:14px;color:var(--text-2);margin-top:8px;letter-spacing:-.01em;">Master Prompts</p>
+    </div>
+
+    <div class="reveal delay-3" style="padding:48px 36px;text-align:center;">
+      <div class="stat-num grad-warm">0</div>
+      <p style="font-size:14px;color:var(--text-2);margin-top:8px;letter-spacing:-.01em;">Code trước cần biết</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     BENTO FEATURES
+═══════════════════════════════════════════ -->
+<section id="features" style="padding:0 24px 120px;max-width:1100px;margin:0 auto;">
+  <div style="text-align:center;margin-bottom:64px;">
+    <p class="reveal" style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:16px;">Bạn sẽ làm được</p>
+    <h2 class="reveal delay-1" style="font-size:clamp(32px,5vw,52px);font-weight:700;letter-spacing:-.035em;line-height:1.12;">
+      Mọi thứ một landing page <span class="grad-brand">thực chiến</span> cần có.
+    </h2>
+  </div>
+
+  <div class="bento-grid">
+
+    <!-- Card 1: Large — Vibe Brief -->
+    <div class="bento-card reveal delay-1" style="grid-column:span 7;">
+      <div class="tag" style="background:rgba(255,55,95,.1);color:#ff375f;border:1px solid rgba(255,55,95,.2);margin-bottom:20px;">Strategy</div>
+      <h3 style="font-size:28px;font-weight:700;letter-spacing:-.03em;margin-bottom:12px;">Vibe Brief & Message Architecture</h3>
+      <p style="font-size:16px;color:var(--text-2);line-height:1.6;max-width:380px;">Xây khung narrative trước khi viết một chữ. Xác định WHO, VIBE, WIN — và biến chúng thành copy thuyết phục.</p>
+      <!-- Visual accent -->
+      <div style="margin-top:28px;display:flex;gap:10px;flex-wrap:wrap;">
+        <span style="font-size:12px;padding:6px 14px;border-radius:100px;background:rgba(255,55,95,.08);color:rgba(255,55,95,.8);border:1px solid rgba(255,55,95,.15);">PAS Framework</span>
+        <span style="font-size:12px;padding:6px 14px;border-radius:100px;background:rgba(255,255,255,.04);color:var(--text-2);border:1px solid var(--border);">BAB Framework</span>
+        <span style="font-size:12px;padding:6px 14px;border-radius:100px;background:rgba(255,255,255,.04);color:var(--text-2);border:1px solid var(--border);">PASTOR</span>
+      </div>
+    </div>
+
+    <!-- Card 2: Small — VoC -->
+    <div class="bento-card reveal delay-2" style="grid-column:span 5;background:linear-gradient(135deg,rgba(123,97,255,.08),var(--card));border-color:rgba(123,97,255,.2);">
+      <div class="tag" style="background:rgba(123,97,255,.12);color:#a78bfa;border:1px solid rgba(123,97,255,.2);margin-bottom:20px;">Copy</div>
+      <h3 style="font-size:22px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px;">Voice of Customer</h3>
+      <p style="font-size:15px;color:var(--text-2);line-height:1.6;">Biến ngôn ngữ thật của khách hàng thành copy thuyết phục nhất. Không viết từ đầu — tổ chức lại những gì họ đã nói.</p>
+      <div style="margin-top:24px;font-size:36px;font-weight:800;letter-spacing:-.04em;color:rgba(123,97,255,.6);">3×</div>
+      <div style="font-size:12px;color:var(--text-3);">tỷ lệ "họ hiểu tôi" tăng lên</div>
+    </div>
+
+    <!-- Card 3: Design System -->
+    <div class="bento-card reveal delay-2" style="grid-column:span 4;background:linear-gradient(160deg,rgba(41,151,255,.07),var(--card));border-color:rgba(41,151,255,.2);">
+      <div class="tag" style="background:rgba(41,151,255,.1);color:#2997ff;border:1px solid rgba(41,151,255,.2);margin-bottom:20px;">Design</div>
+      <h3 style="font-size:22px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px;">Design System Nhanh</h3>
+      <p style="font-size:15px;color:var(--text-2);line-height:1.6;">Color tokens, type scale, spacing — thiết lập 1 lần, áp dụng mọi nơi. Không còn quyết định màu từng section.</p>
+      <!-- Color dots -->
+      <div style="margin-top:24px;display:flex;gap:8px;">
+        <div style="width:24px;height:24px;border-radius:50%;background:#ff375f;box-shadow:0 0 12px rgba(255,55,95,.4);"></div>
+        <div style="width:24px;height:24px;border-radius:50%;background:#7b61ff;box-shadow:0 0 12px rgba(123,97,255,.4);"></div>
+        <div style="width:24px;height:24px;border-radius:50%;background:#2997ff;box-shadow:0 0 12px rgba(41,151,255,.4);"></div>
+        <div style="width:24px;height:24px;border-radius:50%;background:#30d158;box-shadow:0 0 12px rgba(48,209,88,.3);"></div>
+        <div style="width:24px;height:24px;border-radius:50%;background:#ffd60a;box-shadow:0 0 12px rgba(255,214,10,.3);"></div>
+      </div>
+    </div>
+
+    <!-- Card 4: MCP -->
+    <div class="bento-card reveal delay-3" style="grid-column:span 4;background:linear-gradient(160deg,rgba(48,209,88,.06),var(--card));border-color:rgba(48,209,88,.15);">
+      <div class="tag" style="background:rgba(48,209,88,.08);color:#30d158;border:1px solid rgba(48,209,88,.2);margin-bottom:20px;">Technical</div>
+      <h3 style="font-size:22px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px;">MCP & Zero-Gravity Coding</h3>
+      <p style="font-size:15px;color:var(--text-2);line-height:1.6;">AI đọc file, sửa code, push GitHub — không cần copy-paste thủ công. Cursor + MCP = deploy pipeline tự động.</p>
+      <div style="margin-top:20px;font-family:monospace;font-size:12px;color:rgba(48,209,88,.7);background:rgba(48,209,88,.05);padding:10px 12px;border-radius:8px;border:1px solid rgba(48,209,88,.1);">
+        git push → Netlify → Live ✓
+      </div>
+    </div>
+
+    <!-- Card 5: Conversion -->
+    <div class="bento-card reveal delay-3" style="grid-column:span 4;background:linear-gradient(160deg,rgba(255,149,0,.07),var(--card));border-color:rgba(255,149,0,.15);">
+      <div class="tag" style="background:rgba(255,149,0,.1);color:#ff9500;border:1px solid rgba(255,149,0,.2);margin-bottom:20px;">Conversion</div>
+      <h3 style="font-size:22px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px;">CRO & Lead Automation</h3>
+      <p style="font-size:15px;color:var(--text-2);line-height:1.6;">Exit popup, email sequence 3 bước, Brevo automation — toàn bộ pipeline từ click đến lead đến conversion tự chạy.</p>
+      <div style="margin-top:20px;display:flex;align-items:center;gap:8px;">
+        <div style="font-size:28px;font-weight:800;color:rgba(255,149,0,.8);letter-spacing:-.03em;">+32%</div>
+        <div style="font-size:12px;color:var(--text-3);line-height:1.4;">conversion rate<br>trung bình sau optimize</div>
+      </div>
+    </div>
+
+    <!-- Card 6: Wide — Scrollytelling -->
+    <div class="bento-card reveal delay-4" style="grid-column:span 12;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
+      <div>
+        <div class="tag" style="background:rgba(123,97,255,.12);color:#a78bfa;border:1px solid rgba(123,97,255,.2);margin-bottom:20px;">Launch & Scale</div>
+        <h3 style="font-size:28px;font-weight:700;letter-spacing:-.03em;margin-bottom:14px;">Từ file local đến live trên internet.</h3>
+        <p style="font-size:16px;color:var(--text-2);line-height:1.65;">Deploy Netlify, custom domain, HTTPS, PageSpeed ≥ 80, 30-Day Traffic Plan — tất cả trong Phần 6. Khóa học kết thúc với trang web thật đang chạy, không phải "sẽ làm sau".</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:rgba(255,255,255,.03);border-radius:12px;border:1px solid var(--border);">
+          <div style="width:8px;height:8px;border-radius:50%;background:#30d158;box-shadow:0 0 8px rgba(48,209,88,.5);flex-shrink:0;"></div>
+          <span style="font-size:14px;color:var(--text-1);">Netlify auto-deploy pipeline</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:rgba(255,255,255,.03);border-radius:12px;border:1px solid var(--border);">
+          <div style="width:8px;height:8px;border-radius:50%;background:#2997ff;box-shadow:0 0 8px rgba(41,151,255,.5);flex-shrink:0;"></div>
+          <span style="font-size:14px;color:var(--text-1);">Custom domain + HTTPS tự động</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:rgba(255,255,255,.03);border-radius:12px;border:1px solid var(--border);">
+          <div style="width:8px;height:8px;border-radius:50%;background:#7b61ff;box-shadow:0 0 8px rgba(123,97,255,.5);flex-shrink:0;"></div>
+          <span style="font-size:14px;color:var(--text-1);">30-Day Traffic Plan + UTM tracking</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:rgba(255,255,255,.03);border-radius:12px;border:1px solid var(--border);">
+          <div style="width:8px;height:8px;border-radius:50%;background:#ff9500;box-shadow:0 0 8px rgba(255,149,0,.5);flex-shrink:0;"></div>
+          <span style="font-size:14px;color:var(--text-1);">Personal Playbook — tái dùng mãi mãi</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     CURRICULUM
+═══════════════════════════════════════════ -->
+<section id="curriculum" style="padding:0 24px 120px;max-width:1100px;margin:0 auto;">
+  <hr class="section-divider" style="margin-bottom:80px;" />
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-bottom:64px;">
+    <div>
+      <p class="reveal" style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:16px;">Chương trình</p>
+      <h2 class="reveal delay-1" style="font-size:clamp(32px,4vw,48px);font-weight:700;letter-spacing:-.035em;line-height:1.12;">18 bài học.<br><span class="grad-brand">6 phần.</span></h2>
+    </div>
+    <div>
+      <p class="reveal delay-2" style="font-size:17px;color:var(--text-2);line-height:1.65;font-weight:300;margin-top:36px;">Mỗi phần có vai trò riêng trong hành trình xây dựng landing page. Kết thúc mỗi phần, bạn có output cụ thể — không phải "hiểu thêm."</p>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;">
+
+    <div class="part-card reveal delay-1">
+      <div class="part-num" style="color:#ff375f;">Phần 01</div>
+      <h3 style="font-size:20px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px;">The Foundation</h3>
+      <p style="font-size:13px;font-weight:500;color:var(--text-3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:16px;">Tư duy Vibe Coding & Hệ sinh thái</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div class="timeline-dot" style="background:rgba(255,55,95,.5);"></div>
+          <span style="font-size:14px;color:var(--text-2);">Bài 1 — Vibe Brief & Intent-First Design</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div class="timeline-dot" style="background:rgba(255,55,95,.3);"></div>
+          <span style="font-size:14px;color:var(--text-2);">Bài 2 — Bản đồ AI Ecosystem 2026</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div class="timeline-dot" style="background:rgba(255,55,95,.15);"></div>
+          <span style="font-size:14px;color:var(--text-2);">Bài 3 — Hybrid Workflow: Draft trong 45 phút</span>
+        </div>
+      </div>
+      <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);font-size:13px;color:var(--text-3);">Output: Vibe Brief + Landing page copy v1</div>
+    </div>
+
+    <div class="part-card reveal delay-2">
+      <div class="part-num" style="color:#7b61ff;">Phần 02</div>
+      <h3 style="font-size:20px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px;">The Architect</h3>
+      <p style="font-size:13px;font-weight:500;color:var(--text-3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:16px;">Chiến thuật Nội dung</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div class="timeline-dot" style="background:rgba(123,97,255,.5);"></div>
+          <span style="font-size:14px;color:var(--text-2);">Bài 4 — Message Architecture & Narrative Map</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div class="timeline-dot" style="background:rgba(123,97,255,.3);"></div>
+          <span style="font-size:14px;color:var(--text-2);">Bài 5 — The Hook System & Headline Rubric</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div class="timeline-dot" style="background:rgba(123,97,255,.15);"></div>
+          <span style="font-size:14px;color:var(--text-2);">Bài 6 — Voice of Customer Mining</span>
+        </div>
+      </div>
+      <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);font-size:13px;color:var(--text-3);">Output: Headline đã test + VoC Bank + copy v3</div>
+    </div>
+
+    <div class="part-card reveal delay-3">
+      <div class="part-num" style="color:#2997ff;">Phần 03</div>
+      <h3 style="font-size:20px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px;">The Stylist</h3>
+      <p style="font-size:13px;font-weight:500;color:var(--text-3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:16px;">Thẩm mỹ Pixel-Perfect</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div class="timeline-dot" style="background:rgba(41,151,255,.5);"></div>
+          <span style="font-size:14px;color:var(--text-2);">Bài 7 — Design System: Color, Type, Spacing</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div class="timeline-dot" style="background:rgba(41,151,255,.3);"></div>
+          <span style="font-size:14px;color:var(--text-2);">Bài 8 — Layout Psychology & Wireframe</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div class="timeline-dot" style="background:rgba(41,151,255,.15);"></div>
+          <span style="font-size:14px;color:var(--text-2);">Bài 9 — Pixel-Perfect với AI Art Director</span>
+        </div>
+      </div>
+      <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);font-size:13px;color:var(--text-3);">Output: Design System Figma + 3 section hi-fi</div>
+    </div>
+
+    <div class="part-card reveal delay-1">
+      <div class="part-num" style="color:#30d158;">Phần 04</div>
+      <h3 style="font-size:20px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px;">The Engine</h3>
+      <p style="font-size:13px;font-weight:500;color:var(--text-3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:16px;">MCP & Zero-Gravity Coding</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div class="timeline-dot" style="background:rgba(48,209,88,.5);"></div>
+          <span style="font-size:14px;color:var(--text-2);">Bài 10 — MCP Setup: Cursor + GitHub</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div class="timeline-dot" style="background:rgba(48,209,88,.3);"></div>
+          <span style="font-size:14px;color:var(--text-2);">Bài 11 — Zero-Gravity: Figma → HTML/CSS</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div class="timeline-dot" style="background:rgba(48,209,88,.15);"></div>
+          <span style="font-size:14px;color:var(--text-2);">Bài 12 — Production-Ready Architecture</span>
+        </div>
+      </div>
+      <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);font-size:13px;color:var(--text-3);">Output: 6 section HTML/CSS live trên GitHub</div>
+    </div>
+
+    <div class="part-card reveal delay-2">
+      <div class="part-num" style="color:#ff9500;">Phần 05</div>
+      <h3 style="font-size:20px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px;">The Conversion</h3>
+      <p style="font-size:13px;font-weight:500;color:var(--text-3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:16px;">Chuyển đổi & Tự động hóa</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div class="timeline-dot" style="background:rgba(255,149,0,.5);"></div>
+          <span style="font-size:14px;color:var(--text-2);">Bài 13 — CRO Psychology + Exit Popup</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div class="timeline-dot" style="background:rgba(255,149,0,.3);"></div>
+          <span style="font-size:14px;color:var(--text-2);">Bài 14 — Lead Capture & Email Automation</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div class="timeline-dot" style="background:rgba(255,149,0,.15);"></div>
+          <span style="font-size:14px;color:var(--text-2);">Bài 15 — Analytics: Clarity + GA4</span>
+        </div>
+      </div>
+      <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);font-size:13px;color:var(--text-3);">Output: Lead pipeline tự chạy + dashboard</div>
+    </div>
+
+    <div class="part-card reveal delay-3">
+      <div class="part-num" style="color:#ffd60a;">Phần 06</div>
+      <h3 style="font-size:20px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px;">The Success</h3>
+      <p style="font-size:13px;font-weight:500;color:var(--text-3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:16px;">Launch & Scale</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div class="timeline-dot" style="background:rgba(255,214,10,.5);"></div>
+          <span style="font-size:14px;color:var(--text-2);">Bài 16 — Deploy: Netlify + Domain + PageSpeed</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div class="timeline-dot" style="background:rgba(255,214,10,.3);"></div>
+          <span style="font-size:14px;color:var(--text-2);">Bài 17 — Traffic Strategy & 30-Day Plan</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div class="timeline-dot" style="background:rgba(255,214,10,.15);"></div>
+          <span style="font-size:14px;color:var(--text-2);">Bài 18 — Director's Playbook</span>
+        </div>
+      </div>
+      <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);font-size:13px;color:var(--text-3);">Output: Live site + Playbook tái dùng mãi mãi</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     TOOLS
+═══════════════════════════════════════════ -->
+<section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:100px 24px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:64px;">
+      <p class="reveal" style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:16px;">Công cụ</p>
+      <h2 class="reveal delay-1" style="font-size:clamp(28px,4vw,44px);font-weight:700;letter-spacing:-.03em;">Stack thực chiến. Không cần mua thêm tool nào khác.</h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:var(--border);border-radius:16px;overflow:hidden;">
+
+      <div class="reveal" style="background:var(--surface);padding:32px 24px;text-align:center;">
+        <div style="font-size:28px;margin-bottom:12px;">🤖</div>
+        <div style="font-size:15px;font-weight:600;color:var(--text-1);margin-bottom:4px;">Claude</div>
+        <div style="font-size:12px;color:var(--text-3);">Strategy · Copy · Code</div>
+      </div>
+
+      <div class="reveal delay-1" style="background:var(--surface);padding:32px 24px;text-align:center;">
+        <div style="font-size:28px;margin-bottom:12px;">🖥</div>
+        <div style="font-size:15px;font-weight:600;color:var(--text-1);margin-bottom:4px;">Cursor</div>
+        <div style="font-size:12px;color:var(--text-3);">AI IDE · MCP · Deploy</div>
+      </div>
+
+      <div class="reveal delay-2" style="background:var(--surface);padding:32px 24px;text-align:center;">
+        <div style="font-size:28px;margin-bottom:12px;">🎨</div>
+        <div style="font-size:15px;font-weight:600;color:var(--text-1);margin-bottom:4px;">Figma</div>
+        <div style="font-size:12px;color:var(--text-3);">Design System · Wireframe</div>
+      </div>
+
+      <div class="reveal delay-3" style="background:var(--surface);padding:32px 24px;text-align:center;">
+        <div style="font-size:28px;margin-bottom:12px;">🔍</div>
+        <div style="font-size:15px;font-weight:600;color:var(--text-1);margin-bottom:4px;">Perplexity</div>
+        <div style="font-size:12px;color:var(--text-3);">Research · VoC</div>
+      </div>
+
+      <div class="reveal delay-4" style="background:var(--surface);padding:32px 24px;text-align:center;">
+        <div style="font-size:28px;margin-bottom:12px;">🚀</div>
+        <div style="font-size:15px;font-weight:600;color:var(--text-1);margin-bottom:4px;">Netlify</div>
+        <div style="font-size:12px;color:var(--text-3);">Deploy · Domain · CI</div>
+      </div>
+
+      <div class="reveal delay-5" style="background:var(--surface);padding:32px 24px;text-align:center;">
+        <div style="font-size:28px;margin-bottom:12px;">📧</div>
+        <div style="font-size:15px;font-weight:600;color:var(--text-1);margin-bottom:4px;">Brevo</div>
+        <div style="font-size:12px;color:var(--text-3);">Email Automation</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     INSTRUCTOR
+═══════════════════════════════════════════ -->
+<section id="instructor" style="padding:120px 24px;max-width:900px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:center;">
+
+    <div class="reveal" style="flex-shrink:0;">
+      <!-- Gradient border wrapper -->
+      <div style="width:168px;height:168px;border-radius:50%;padding:3px;background:linear-gradient(135deg,#ff375f,#7b61ff,#2997ff,#30d158);flex-shrink:0;">
+        <div style="width:100%;height:100%;border-radius:50%;overflow:hidden;background:var(--card);">
+          <img src="https://tvtagency.com/wp-content/uploads/2026/01/tung-soc-son-tvt-agency.png"
+               alt="Nguyễn Thanh Tùng — AI Strategist, Founder TVT Agency"
+               style="width:100%;height:100%;object-fit:cover;object-position:top;"
+               onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:48px;\'>👤</div>'" />
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p class="reveal" style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:16px;">Giảng viên</p>
+      <h2 class="reveal delay-1" style="font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:-.03em;margin-bottom:12px;">Nguyễn Thanh Tùng</h2>
+      <p class="reveal delay-2" style="font-size:14px;font-weight:500;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:24px;">AI Strategist · Founder TVT Agency</p>
+      <p class="reveal delay-3" style="font-size:17px;color:var(--text-2);line-height:1.65;font-weight:300;margin-bottom:20px;">
+        16 năm branding và thiết kế. Ứng dụng AI trực tiếp vào vận hành agency và coaching học viên — không từ slide lý thuyết.
+      </p>
+      <p class="reveal delay-4" style="font-size:15px;color:var(--text-3);line-height:1.6;font-style:italic;">
+        "Không học AI để biết thêm. Học AI để tạo ra kết quả cụ thể cho công việc và kinh doanh."
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════════ -->
+<section style="background:var(--surface);border-top:1px solid var(--border);padding:100px 24px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:64px;">
+      <p class="reveal" style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:16px;">Học viên nói gì</p>
+      <h2 class="reveal delay-1" style="font-size:clamp(28px,4vw,44px);font-weight:700;letter-spacing:-.03em;">Kết quả thật. Từ người thật.</h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;">
+
+      <div class="reveal delay-1 bento-card">
+        <div style="display:flex;gap:3px;margin-bottom:20px;">
+          <span style="color:#ffd60a;">★★★★★</span>
+        </div>
+        <p style="font-size:16px;color:var(--text-1);line-height:1.65;margin-bottom:24px;font-style:italic;">"Trước khóa học, tôi mất 2 tuần để làm xong 1 landing page và vẫn không hài lòng. Sau khóa học, tôi làm xong trong 4 ngày và deploy luôn."</p>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#ff375f,#7b61ff);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;">M</div>
+          <div>
+            <div style="font-size:14px;font-weight:600;color:var(--text-1);">Minh Anh</div>
+            <div style="font-size:12px;color:var(--text-3);">Marketing Manager · TP.HCM</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal delay-2 bento-card">
+        <div style="display:flex;gap:3px;margin-bottom:20px;">
+          <span style="color:#ffd60a;">★★★★★</span>
+        </div>
+        <p style="font-size:16px;color:var(--text-1);line-height:1.65;margin-bottom:24px;font-style:italic;">"Phần MCP và Cursor thay đổi hoàn toàn cách tôi làm việc. Tôi không cần gọi developer nữa — tôi tự làm được và hiểu tôi đang làm gì."</p>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#2997ff,#30d158);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;">T</div>
+          <div>
+            <div style="font-size:14px;font-weight:600;color:var(--text-1);">Thanh Hà</div>
+            <div style="font-size:12px;color:var(--text-3);">Founder · SaaS Startup</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal delay-3 bento-card">
+        <div style="display:flex;gap:3px;margin-bottom:20px;">
+          <span style="color:#ffd60a;">★★★★★</span>
+        </div>
+        <p style="font-size:16px;color:var(--text-1);line-height:1.65;margin-bottom:24px;font-style:italic;">"Master Prompts trong khóa học là thứ tôi dùng hàng ngày. Không phải để học — mà để làm thật. Đó là sự khác biệt lớn nhất so với các khóa AI khác."</p>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#ff9500,#ff375f);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;">D</div>
+          <div>
+            <div style="font-size:14px;font-weight:600;color:var(--text-1);">Đức Anh</div>
+            <div style="font-size:12px;color:var(--text-3);">Freelance Designer · Hà Nội</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     PRICING
+═══════════════════════════════════════════ -->
+<section id="pricing" style="padding:120px 24px;max-width:900px;margin:0 auto;">
+  <div style="text-align:center;margin-bottom:64px;">
+    <p class="reveal" style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:16px;">Học phí</p>
+    <h2 class="reveal delay-1" style="font-size:clamp(32px,5vw,52px);font-weight:700;letter-spacing:-.035em;line-height:1.1;">Đầu tư một lần.<br><span class="grad-cool">Dùng mãi mãi.</span></h2>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:800px;margin:0 auto;">
+
+    <!-- Basic -->
+    <div class="pricing-card reveal delay-1">
+      <div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:20px;">Tự học</div>
+      <div style="font-size:40px;font-weight:800;letter-spacing:-.04em;margin-bottom:4px;color:var(--text-1);">3.900.000<span style="font-size:18px;font-weight:400;color:var(--text-3);">đ</span></div>
+      <div style="font-size:13px;color:var(--text-3);margin-bottom:32px;">Truy cập trọn đời · Không hỗ trợ 1-1</div>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px;">
+        <div style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--text-2);"><span style="color:#30d158;">✓</span> 18 bài học đầy đủ</div>
+        <div style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--text-2);"><span style="color:#30d158;">✓</span> 45+ Master Prompts</div>
+        <div style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--text-2);"><span style="color:#30d158;">✓</span> Tài liệu FULL PDF</div>
+        <div style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--text-2);"><span style="color:#30d158;">✓</span> Template Library</div>
+        <div style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--text-3);"><span style="color:var(--text-3);">–</span> Hỗ trợ Zalo 1-1</div>
+        <div style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--text-3);"><span style="color:var(--text-3);">–</span> Code review cá nhân</div>
+      </div>
+      <a href="https://zalo.me/0972613455" target="_blank" rel="noopener"
+         style="display:block;text-align:center;padding:14px;border-radius:980px;font-size:15px;font-weight:500;color:var(--text-1);border:1px solid var(--border);text-decoration:none;transition:background .2s,border-color .2s;"
+         onmouseover="this.style.background='rgba(255,255,255,.06)';this.style.borderColor='rgba(255,255,255,.2)'"
+         onmouseout="this.style.background='transparent';this.style.borderColor='var(--border)'">
+        Đăng ký
+      </a>
+    </div>
+
+    <!-- Featured -->
+    <div class="pricing-card featured reveal delay-2">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#a78bfa;">Mentored</div>
+        <span style="font-size:11px;font-weight:700;background:rgba(123,97,255,.15);color:#a78bfa;border:1px solid rgba(123,97,255,.3);padding:4px 10px;border-radius:100px;letter-spacing:.05em;text-transform:uppercase;">Phổ biến</span>
+      </div>
+      <div style="font-size:40px;font-weight:800;letter-spacing:-.04em;margin-bottom:4px;color:var(--text-1);">5.900.000<span style="font-size:18px;font-weight:400;color:var(--text-3);">đ</span></div>
+      <div style="font-size:13px;color:var(--text-3);margin-bottom:32px;">Truy cập trọn đời · Hỗ trợ 1-1 Zalo 30 ngày</div>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px;">
+        <div style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--text-1);"><span style="color:#30d158;">✓</span> <strong>Tất cả gói Tự học</strong></div>
+        <div style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--text-1);"><span style="color:#30d158;">✓</span> Hỗ trợ Zalo 1-1 trong 30 ngày</div>
+        <div style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--text-1);"><span style="color:#30d158;">✓</span> Code review landing page của bạn</div>
+        <div style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--text-1);"><span style="color:#30d158;">✓</span> 1 buổi Zoom review 60 phút</div>
+        <div style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--text-1);"><span style="color:#30d158;">✓</span> Audit Vibe Brief trực tiếp</div>
+        <div style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--text-1);"><span style="color:#30d158;">✓</span> Cập nhật khoá học trọn đời</div>
+      </div>
+      <a href="https://zalo.me/0972613455" target="_blank" rel="noopener"
+         class="btn-primary" style="display:block;text-align:center;font-size:15px;padding:14px;">
+        Đăng ký ngay
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Guarantee -->
+  <div class="reveal" style="text-align:center;margin-top:40px;">
+    <p style="font-size:14px;color:var(--text-3);">
+      🔒 Cam kết hoàn tiền 100% trong 7 ngày nếu không hài lòng.
+      <a href="https://zalo.me/0972613455" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:none;margin-left:4px;">Câu hỏi? Chat Zalo ›</a>
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     FINAL CTA
+═══════════════════════════════════════════ -->
+<section style="padding:0 24px 0;max-width:1100px;margin:0 auto 0;">
+  <div class="reveal" style="background:var(--card);border:1px solid var(--border);border-radius:28px;padding:80px 60px;text-align:center;position:relative;overflow:hidden;margin-bottom:80px;">
+    <!-- Glow -->
+    <div style="position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:500px;height:300px;background:radial-gradient(ellipse,rgba(123,97,255,.15) 0%,transparent 70%);pointer-events:none;"></div>
+    <div style="position:absolute;bottom:-80px;left:20%;width:300px;height:200px;background:radial-gradient(ellipse,rgba(41,151,255,.1) 0%,transparent 70%);pointer-events:none;"></div>
+
+    <!-- Badge -->
+    <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#30d158;background:rgba(48,209,88,.08);border:1px solid rgba(48,209,88,.2);padding:6px 16px;border-radius:100px;margin-bottom:28px;">
+      <span style="width:6px;height:6px;border-radius:50%;background:#30d158;display:inline-block;"></span>
+      Đang mở đăng ký
+    </div>
+
+    <h2 style="font-size:clamp(36px,5vw,64px);font-weight:800;letter-spacing:-.04em;line-height:1.06;margin-bottom:20px;">
+      Bắt đầu hành trình<br><span class="grad-brand">của bạn hôm nay.</span>
+    </h2>
+    <p style="font-size:18px;color:var(--text-2);max-width:500px;margin:0 auto 40px;line-height:1.6;font-weight:300;">
+      6 tuần. 18 bài. Landing page thật — live trên internet, lead đang chạy vào.
+    </p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="#pricing" class="btn-primary" style="font-size:17px;padding:16px 36px;">
+        Đăng ký ngay
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://zalo.me/0972613455" target="_blank" rel="noopener" class="btn-ghost" style="font-size:17px;padding:16px 0;color:var(--text-2);">
+        Hỏi trước khi đăng ký <span class="arrow">›</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer style="border-top:1px solid var(--border);padding:48px 24px;max-width:1100px;margin:0 auto;">
+  <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <rect width="20" height="20" rx="5" fill="url(#fg)"/>
+        <defs><linearGradient id="fg" x1="0" y1="0" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#ff375f"/><stop offset=".5" stop-color="#7b61ff"/><stop offset="1" stop-color="#2997ff"/>
+        </linearGradient></defs>
+        <text x="4" y="14" font-size="11" font-weight="800" fill="white" font-family="Inter,sans-serif">AI</text>
+      </svg>
+      <span style="font-size:13px;font-weight:600;color:var(--text-2);letter-spacing:-.01em;">Thiết Kế Landing Page 2026</span>
+    </div>
+
+    <div style="display:flex;gap:28px;flex-wrap:wrap;">
+      <a href="https://toilatung.com/" rel="home" style="font-size:12px;color:var(--text-3);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text-2)'" onmouseout="this.style.color='var(--text-3)'">Trang chủ</a>
+      <a href="#features"   style="font-size:12px;color:var(--text-3);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text-2)'" onmouseout="this.style.color='var(--text-3)'">Nội dung</a>
+      <a href="#curriculum" style="font-size:12px;color:var(--text-3);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text-2)'" onmouseout="this.style.color='var(--text-3)'">Chương trình</a>
+      <a href="#pricing"    style="font-size:12px;color:var(--text-3);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text-2)'" onmouseout="this.style.color='var(--text-3)'">Học phí</a>
+      <a href="https://zalo.me/0972613455" target="_blank" rel="noopener" style="font-size:12px;color:var(--text-3);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text-2)'" onmouseout="this.style.color='var(--text-3)'">Liên hệ</a>
+    </div>
+
+    <p style="font-size:11px;color:var(--text-3);">© 2026 Nguyễn Thanh Tùng · <a href="https://toilatung.com/" style="color:var(--text-3);text-decoration:none;" onmouseover="this.style.color='var(--text-2)'" onmouseout="this.style.color='var(--text-3)'">toilatung.com</a></p>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════ -->
+<script>
+(function () {
+
+  /* ── 1. NAV SCROLL ── */
+  const nav = document.getElementById('nav');
+  let lastY = 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    nav.classList.toggle('scrolled', y > 40);
+    lastY = y;
+  }, { passive: true });
+
+
+  /* ── 2. SCROLL REVEAL (IntersectionObserver) ── */
+  const revealEls = document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  revealEls.forEach(el => io.observe(el));
+
+
+  /* ── 3. BENTO CARD MOUSE GLOW ── */
+  document.querySelectorAll('.bento-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width  * 100).toFixed(1);
+      const y = ((e.clientY - r.top)  / r.height * 100).toFixed(1);
+      card.style.setProperty('--mx', x + '%');
+      card.style.setProperty('--my', y + '%');
+    });
+  });
+
+
+  /* ── 4. COUNTER ANIMATION ── */
+  function animateCounter(el, target, duration = 1600) {
+    const start = performance.now();
+    const update = (now) => {
+      const p = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - p, 4);
+      el.textContent = Math.round(ease * target);
+      if (p < 1) requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+  }
+
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const target = parseInt(e.target.dataset.target, 10);
+        animateCounter(e.target, target);
+        counterIO.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.counter[data-target]').forEach(el => counterIO.observe(el));
+
+
+  /* ── 5. PARALLAX (RAF-throttled) ── */
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        document.querySelectorAll('[data-parallax]').forEach(el => {
+          const speed = parseFloat(el.dataset.parallax) || 0.2;
+          el.style.transform = `translateY(${y * speed}px)`;
+        });
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+
+  /* ── 6. SMOOTH ANCHOR SCROLL ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (target) {
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 60;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
