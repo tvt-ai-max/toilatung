@@ -6,254 +6,296 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QUANG TUYÊN AUTO | MASTER MARKETING PLAN 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Roboto+Condensed:wght@700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --led-red: #ff0000;
-            --deep-red: #8b0000;
-            --charcoal: #0d0d0d;
+            --led-red: #FF0000;
+            --deep-red: #8B0000;
+            --charcoal: #0D0D0D;
+            --led-white: #FFFFFF;
         }
-        body { font-family: 'Roboto', sans-serif; background-color: var(--charcoal); color: #e2e8f0; scroll-behavior: smooth; }
-        .text-led { color: var(--led-red); text-shadow: 0 0 12px rgba(255, 0, 0, 0.7); }
-        .bg-signage { background: linear-gradient(180deg, #1a1a1a 0%, #050505 100%); border: 1px solid #333; }
-        .border-glow-red { border: 1px solid rgba(255, 0, 0, 0.3); box-shadow: 0 0 15px rgba(255, 0, 0, 0.1); }
-        .border-glow-red:hover { border-color: var(--led-red); box-shadow: 0 0 20px rgba(255, 0, 0, 0.3); transition: all 0.4s ease; }
-        .section-tag { background-color: var(--led-red); color: white; padding: 2px 10px; font-weight: 900; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; }
-        .hero-gradient { background: radial-gradient(circle at center, #2d0000 0%, #0d0d0d 100%); }
-        .nav-link:hover { color: var(--led-red); border-bottom: 2px solid var(--led-red); }
-        .kpi-card { border-bottom: 4px solid var(--led-red); }
-        .contact-led-box { border: 4px solid #1a1a1a; background: #000; position: relative; overflow: hidden; }
-        .contact-led-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: rgba(255,0,0,0.5); }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--charcoal); 
+            color: #E2E8F0; 
+            scroll-behavior: smooth;
+        }
+        .font-signage { font-family: 'Roboto Condensed', sans-serif; text-transform: uppercase; }
+        
+        /* Hiệu ứng LED Signage */
+        .glow-red { text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.4); }
+        .glow-white { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+        
+        .signage-border { 
+            border: 2px solid #222; 
+            background: linear-gradient(180deg, #151515 0%, #050505 100%);
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+        }
+        .signage-border:hover { 
+            border-color: var(--led-red); 
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.15); 
+            transition: all 0.4s ease;
+        }
+
+        .hotline-led {
+            color: var(--led-red);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+        }
+
+        .section-divider {
+            height: 4px;
+            width: 60px;
+            background: var(--led-red);
+            margin-bottom: 2rem;
+        }
+
+        .kpi-node {
+            border-left: 4px solid var(--led-red);
+            padding-left: 1.5rem;
+        }
+
+        /* Tối ưu hóa cho Mobile */
+        @media (max-width: 768px) {
+            .hero-text { font-size: 3.5rem !important; line-height: 1; }
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- STICKY NAVIGATION -->
-    <nav class="fixed top-0 w-full z-50 bg-black/95 border-b border-white/5 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 w-full z-50 bg-black/95 border-b border-white/5 backdrop-blur-md px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="bg-red-600 px-2 py-0.5 font-black text-black italic text-lg">QT</div>
-                <span class="font-black text-xl tracking-tighter uppercase text-white">QUANG TUYÊN <span class="text-red-600 italic">AUTO</span></span>
+                <div class="bg-red-600 px-2 py-1 font-black text-black italic text-lg leading-none">QT</div>
+                <div class="font-signage font-black text-xl tracking-tighter text-white">
+                    QUANG TUYÊN <span class="text-red-600 italic">AUTO</span>
+                </div>
             </div>
-            <div class="hidden lg:flex gap-8 text-[11px] font-bold uppercase tracking-widest text-gray-400">
-                <a href="#market" class="nav-link transition py-1">Thị trường</a>
-                <a href="#competitors" class="nav-link transition py-1">Đối thủ</a>
-                <a href="#strategy" class="nav-link transition py-1">Chiến lược</a>
-                <a href="#offers" class="nav-link transition py-1">Dịch vụ</a>
-                <a href="#kpi" class="nav-link transition py-1">KPI 2026</a>
-                <a href="#contact" class="bg-red-600 text-white px-4 py-1 rounded hover:bg-red-700 transition">Liên hệ</a>
+            <div class="hidden lg:flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">
+                <a href="#diagnosis" class="hover:text-red-500 transition">Diagnosis</a>
+                <a href="#market" class="hover:text-red-500 transition">Market</a>
+                <a href="#strategy" class="hover:text-red-500 transition">Strategy</a>
+                <a href="#offers" class="hover:text-red-500 transition">Service</a>
+                <a href="#kpi" class="hover:text-red-500 transition">KPIs</a>
+                <a href="#contact" class="text-red-600 border border-red-600/50 px-4 py-1 rounded-sm hover:bg-red-600 hover:text-white transition">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <header class="hero-gradient pt-40 pb-24 px-6 relative border-b border-red-900/20">
-        <div class="max-w-7xl mx-auto relative z-10 text-center lg:text-left flex flex-col lg:flex-row items-end gap-12">
-            <div class="flex-grow">
-                <div class="inline-flex items-center gap-3 bg-red-600/10 border border-red-600/30 px-3 py-1 rounded mb-6">
-                    <span class="w-2 h-2 bg-red-600 rounded-full animate-pulse"></span>
-                    <span class="text-[10px] font-black uppercase tracking-widest text-red-500">Document: Strategy v2.0</span>
-                </div>
-                <h1 class="text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-[0.85] tracking-tighter text-white mb-8">
-                    MASTER <br> <span class="text-led italic">MARKETING</span> <br> PLAN 2026
-                </h1>
-                <p class="text-gray-400 max-w-xl text-lg font-light leading-relaxed mb-10 mx-auto lg:mx-0">
-                    Bản kế hoạch hành động giúp Quang Tuyên Auto thống lĩnh thị trường nội thất VinFast phía Bắc Hà Nội.
-                </p>
+    <!-- SECTION 1: HERO / COVER -->
+    <section class="min-h-screen flex flex-col justify-center px-6 relative overflow-hidden bg-[radial-gradient(circle_at_center,_#1a0000_0%,_#0a0a0a_100%)]">
+        <div class="max-w-7xl mx-auto w-full pt-20">
+            <div class="inline-block bg-red-600 text-black font-black px-4 py-1 text-[10px] uppercase tracking-[0.4em] mb-8">
+                Master Marketing Plan 2026
             </div>
-            <div class="lg:w-1/3 bg-signage p-8 border-glow-red text-left relative">
-                <div class="absolute -top-3 left-6 section-tag">Rationale</div>
-                <p class="text-sm text-gray-400 font-medium italic leading-relaxed">
-                    "2024-2026 là thời điểm vàng để chiếm lĩnh tệp khách xe điện. Nếu không định vị ngay bây giờ, Quang Tuyên sẽ mất cơ hội vào tay các 'đế chế' truyền thông lớn."
+            <h1 class="hero-text text-6xl md:text-9xl font-black uppercase tracking-tighter text-white mb-6 leading-[0.9]">
+                THỐNG LĨNH <br> <span class="text-red-600 glow-red italic">NỘI THẤT EV</span>
+            </h1>
+            <div class="flex flex-col md:flex-row gap-8 items-start md:items-center mt-12">
+                <div class="bg-white text-black font-signage font-black text-3xl px-8 py-4 leading-none">
+                    AUTO365 ĐÔNG ANH
+                </div>
+                <div class="max-w-md text-gray-500 text-sm font-medium leading-relaxed border-l border-zinc-800 pl-6 italic">
+                    Xây dựng hệ thống tăng trưởng dựa trên giá trị cốt lõi: May đo thủ công (Craftsmanship) và hệ sinh thái xe điện VinFast.
+                </div>
+            </div>
+
+            <!-- Grounding Note -->
+            <div class="mt-20 p-6 bg-zinc-900/40 border border-zinc-800 max-w-lg">
+                <p class="text-[10px] font-bold text-gray-600 uppercase mb-2 tracking-widest">Source Grounding Note</p>
+                <p class="text-[10px] text-gray-500 leading-relaxed italic">
+                    Dữ liệu được tổng hợp từ NotebookLM Source Pack 2026. Bao gồm phân tích đối thủ (ChungAuto, Dubai Care) và báo cáo thị trường xe điện VinFast.
                 </p>
             </div>
         </div>
-    </header>
+    </section>
 
-    <!-- MARKET SECTION (NEW) -->
-    <section id="market" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-20 items-start">
-            <div>
-                <h2 class="section-tag inline-block mb-6">01. Thị trường & Cơ hội</h2>
-                <h3 class="text-4xl font-black uppercase tracking-tighter mb-8 text-white">BÙNG NỔ <span class="text-red-600 italic">VINFAST ERA</span></h3>
-                <div class="space-y-6 text-gray-400 text-sm leading-relaxed">
-                    <p>Dòng xe điện (EV) đang chuyển từ 'lựa chọn' sang 'xu hướng bắt buộc'. Doanh số VF3, VF5 đạt mức kỷ lục trong Q1/2026 tạo ra nhu cầu nâng cấp nội thất khổng lồ.</p>
-                    <div class="grid grid-cols-2 gap-4 mt-8">
-                        <div class="bg-zinc-900 p-6 border-l-4 border-red-600">
-                            <p class="text-2xl font-black text-white">75%</p>
-                            <p class="text-[10px] uppercase font-bold text-gray-500 tracking-widest">Nhu cầu bọc da Nappa</p>
-                        </div>
-                        <div class="bg-zinc-900 p-6 border-l-4 border-white">
-                            <p class="text-2xl font-black text-white">200%</p>
-                            <p class="text-[10px] uppercase font-bold text-gray-500 tracking-widest">Tăng trưởng PK xe điện</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-signage p-10 border border-white/5 rounded-3xl">
-                <h4 class="text-xl font-black uppercase mb-6 text-white border-b border-zinc-800 pb-4">Lý do Marketing ngay bây giờ</h4>
-                <ul class="space-y-6">
-                    <li class="flex gap-4">
-                        <span class="text-red-600 font-black text-xl">01</span>
-                        <p class="text-xs text-gray-400">Chiếm lĩnh tệp khách hàng VF3/VF5 trước khi thị trường đạt điểm bão hòa vào cuối 2026.</p>
-                    </li>
-                    <li class="flex gap-4">
-                        <span class="text-red-600 font-black text-xl">02</span>
-                        <p class="text-xs text-gray-400">Xóa bỏ rào cản địa lý (Đông Anh) bằng cách xây dựng sự 'Authority' qua video thực tế.</p>
-                    </li>
-                    <li class="flex gap-4">
-                        <span class="text-red-600 font-black text-xl">03</span>
-                        <p class="text-xs text-gray-400">Hợp nhất cộng đồng xe điện khu vực phía Bắc về một 'Thủ phủ' nâng cấp chuyên sâu.</p>
-                    </li>
+    <!-- SECTION 2: STRATEGIC DIAGNOSIS -->
+    <section id="diagnosis" class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="section-divider"></div>
+        <h2 class="font-signage text-4xl font-black text-white mb-16 tracking-tighter">Strategic Diagnosis</h2>
+        
+        <div class="grid lg:grid-cols-3 gap-8">
+            <div class="signage-border p-10">
+                <h4 class="text-red-600 font-black text-xs uppercase mb-6 tracking-widest">Điểm mạnh (Leverage)</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li class="flex gap-3"><span class="text-red-600">▶</span> Xưởng may da tại chỗ (Kiểm soát 100% Visual).</li>
+                    <li class="flex gap-3"><span class="text-red-600">▶</span> Thương hiệu Auto365 bảo chứng kỹ thuật.</li>
+                    <li class="flex gap-3"><span class="text-red-600">▶</span> Vị trí mặt tiền Đông Anh thoáng đãng.</li>
                 </ul>
             </div>
+            <div class="signage-border p-10">
+                <h4 class="text-gray-500 font-black text-xs uppercase mb-6 tracking-widest">Nút thắt (Bottleneck)</h4>
+                <p class="text-sm text-gray-300 leading-relaxed italic">
+                    "Khoảng cách tâm lý". Khách nội thành coi Đông Anh là 'xa'. Cần truyền thông để khách thấy 'Xứng đáng để đi xa'.
+                </p>
+            </div>
+            <div class="bg-red-600 p-10 flex flex-col justify-center">
+                <p class="text-white/70 text-[10px] font-bold uppercase mb-2 tracking-widest">Strategic Thesis</p>
+                <h3 class="text-2xl font-black text-white uppercase italic leading-tight">
+                    May đo thủ công <br> cho xe điện phổ thông.
+                </h3>
+            </div>
         </div>
     </section>
 
-    <!-- COMPETITORS SECTION (NEW) -->
-    <section id="competitors" class="py-24 bg-zinc-900/30 px-6">
+    <!-- SECTION 3: MARKET & COMPETITORS -->
+    <section id="market" class="py-32 bg-zinc-950 px-6">
         <div class="max-w-7xl mx-auto">
-            <h2 class="section-tag inline-block mb-12">02. Đối thủ & Lợi thế cạnh tranh</h2>
-            <div class="grid md:grid-cols-3 gap-1">
-                <div class="bg-black p-8 border border-white/5 flex flex-col">
-                    <h4 class="text-lg font-black uppercase mb-2 text-white">ChungAuto</h4>
-                    <p class="text-[10px] font-bold text-red-600 mb-6 uppercase tracking-widest italic">Kẻ thống trị truyền thông</p>
-                    <p class="text-xs text-gray-500 leading-relaxed mb-8 flex-grow">Mạnh về traffic khủng từ YouTube/TikTok. Lê Đăng Trung có tầm ảnh hưởng lớn nhất ngành.</p>
-                    <div class="text-[9px] font-bold text-gray-700 uppercase pt-4 border-t border-zinc-900">Điểm yếu: Khó cá nhân hóa cực sâu cho từng địa phương.</div>
-                </div>
-                <div class="bg-black p-8 border border-white/5 flex flex-col">
-                    <h4 class="text-lg font-black uppercase mb-2 text-white">Dubai Care</h4>
-                    <p class="text-[10px] font-bold text-blue-500 mb-6 uppercase tracking-widest italic">Hệ sinh thái sản phẩm</p>
-                    <p class="text-xs text-gray-500 leading-relaxed mb-8 flex-grow">Mạnh về sản phẩm đóng gói chuyên nghiệp, tinh tế và tập trung vào trải nghiệm khách hàng cao cấp.</p>
-                    <div class="text-[9px] font-bold text-gray-700 uppercase pt-4 border-t border-zinc-900">Điểm yếu: Hệ thống nhượng quyền chưa bao phủ rộng bằng Auto365.</div>
-                </div>
-                <div class="bg-zinc-950 p-8 border-2 border-red-600 flex flex-col shadow-2xl">
-                    <h4 class="text-lg font-black uppercase mb-2 text-white">Quang Tuyên Auto</h4>
-                    <p class="text-[10px] font-bold text-amber-500 mb-6 uppercase tracking-widest italic">Local Master & Craftsmanship</p>
-                    <ul class="text-xs text-gray-400 space-y-3 mb-8 flex-grow">
-                        <li>• <span class="text-white font-bold">Lợi thế:</span> May đo Nappa thủ công tại chỗ, không dùng phôi sẵn.</li>
-                        <li>• <span class="text-white font-bold">Kỹ thuật:</span> Am hiểu sâu cấu trúc điện VinFast (Chuẩn Auto365).</li>
-                    </ul>
-                    <div class="text-[10px] font-bold text-red-600 uppercase pt-4 border-t border-red-600/20">USP: Chất lượng may đo thủ công & Dịch vụ gần gũi.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- STRATEGIC SWOT (NEW) -->
-    <section id="strategy" class="py-24 px-6 max-w-7xl mx-auto">
-        <h2 class="section-tag inline-block mb-12">03. Phân tích SWOT & Chiến lược</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-zinc-800 border border-zinc-800">
-            <div class="bg-charcoal p-8">
-                <p class="text-[10px] font-black text-green-500 uppercase mb-4 tracking-widest">Strengths</p>
-                <p class="text-xs text-gray-400 leading-relaxed italic">- Xưởng may da tại chỗ.<br>- Thương hiệu Auto365 bảo chứng.<br>- Vị trí mặt tiền Đông Anh cực thoáng.</p>
-            </div>
-            <div class="bg-charcoal p-8">
-                <p class="text-[10px] font-black text-red-500 uppercase mb-4 tracking-widest">Weaknesses</p>
-                <p class="text-xs text-gray-400 leading-relaxed italic">- Kênh TikTok/YouTube chưa có nội dung viral.<br>- Khoảng cách tâm lý với khách nội thành.</p>
-            </div>
-            <div class="bg-charcoal p-8">
-                <p class="text-[10px] font-black text-blue-500 uppercase mb-4 tracking-widest">Opportunities</p>
-                <p class="text-xs text-gray-400 leading-relaxed italic">- VinFast bùng nổ tệp khách hàng mới.<br>- Xu hướng độ xe gia đình (Camping/Comfort).</p>
-            </div>
-            <div class="bg-charcoal p-8">
-                <p class="text-[10px] font-black text-amber-500 uppercase mb-4 tracking-widest">Threats</p>
-                <p class="text-xs text-gray-400 leading-relaxed italic">- Đối thủ cạnh tranh phá giá phụ kiện cỏ.<br>- Thuật toán MXH thay đổi liên tục.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- OFFER STACK -->
-    <section id="offers" class="py-24 bg-black px-6">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="section-tag inline-block mb-12">04. Offer Stack Architecture</h2>
-            <div class="grid lg:grid-cols-3 gap-6">
-                <!-- Offer 1 -->
-                <div class="bg-signage p-10 border-glow-red flex flex-col">
-                    <p class="text-blue-500 text-[10px] font-black uppercase mb-4">Traffic Offer</p>
-                    <h4 class="text-2xl font-black text-white uppercase mb-6 italic">Gói "Sạch & Sang"</h4>
-                    <p class="text-sm text-gray-500 mb-8 flex-grow italic">Vệ sinh nội thất chuyên sâu + Dưỡng da Nappa + Tặng voucher 500k. Dành cho khách hàng lần đầu.</p>
-                    <div class="pt-6 border-t border-zinc-800 text-[10px] font-bold text-gray-600 uppercase">Mục tiêu: Kéo Lead & Review Google Maps</div>
-                </div>
-                <!-- Offer 2 -->
-                <div class="bg-red-600 p-10 flex flex-col shadow-2xl scale-105 z-10">
-                    <p class="text-white text-[10px] font-black uppercase mb-4">Hero Offer</p>
-                    <h4 class="text-2xl font-black text-black uppercase mb-6 italic leading-none">VINFAST <br> LUXURY CABIN</h4>
-                    <p class="text-sm text-black font-bold mb-8 flex-grow">Full bọc da Nappa (Ghế + Cánh + Taplo) thiết kế riêng. Tặng thảm sàn 360 cao cấp.</p>
-                    <div class="pt-6 border-t border-black/20 text-[10px] font-bold text-black uppercase">Mục tiêu: Core Revenue & Brand</div>
-                </div>
-                <!-- Offer 3 -->
-                <div class="bg-signage p-10 border-glow-red flex flex-col">
-                    <p class="text-purple-500 text-[10px] font-black uppercase mb-4">Profit Booster</p>
-                    <h4 class="text-2xl font-black text-white uppercase mb-6 italic">Tech-Upgrade Combo</h4>
-                    <p class="text-sm text-gray-500 mb-8 flex-grow italic">Màn hình ICAR Android + Đèn Ambient Light + Dán phim 3M Crystaline.</p>
-                    <div class="pt-6 border-t border-zinc-800 text-[10px] font-bold text-gray-600 uppercase">Mục tiêu: Maximize AOV</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- KPI TREE -->
-    <section id="kpi" class="py-24 px-6 max-w-7xl mx-auto">
-        <h2 class="section-tag inline-block mb-16">05. Chỉ số Performance (KPI Tree)</h2>
-        <div class="grid grid-cols-2 lg:grid-cols-5 gap-4">
-            <div class="bg-zinc-900/50 p-8 text-center kpi-card">
-                <p class="text-[10px] font-bold text-gray-500 uppercase mb-4 tracking-widest">Leads</p>
-                <p class="text-4xl font-black text-white italic">400+</p>
-                <p class="text-[9px] text-red-500 mt-2 font-bold uppercase">Mỗi tháng</p>
-            </div>
-            <div class="bg-zinc-900/50 p-8 text-center kpi-card">
-                <p class="text-[10px] font-bold text-gray-500 uppercase mb-4 tracking-widest">Bookings</p>
-                <p class="text-4xl font-black text-white italic">120+</p>
-                <p class="text-[9px] text-gray-500 mt-2 font-bold uppercase">Tỉ lệ 30%</p>
-            </div>
-            <div class="bg-zinc-900/50 p-8 text-center kpi-card">
-                <p class="text-[10px] font-bold text-gray-500 uppercase mb-4 tracking-widest">Show-ups</p>
-                <p class="text-4xl font-black text-white italic">85%</p>
-                <p class="text-[9px] text-gray-500 mt-2 font-bold uppercase">Min Target</p>
-            </div>
-            <div class="bg-zinc-900/50 p-8 text-center kpi-card">
-                <p class="text-[10px] font-bold text-gray-500 uppercase mb-4 tracking-widest">Revenue</p>
-                <p class="text-4xl font-black text-white italic">1.2B+</p>
-                <p class="text-[9px] text-red-500 mt-2 font-bold uppercase">Giả định tối ưu</p>
-            </div>
-            <div class="bg-zinc-900/50 p-8 text-center kpi-card">
-                <p class="text-[10px] font-bold text-gray-500 uppercase mb-4 tracking-widest">Reviews</p>
-                <p class="text-4xl font-black text-white italic">50+</p>
-                <p class="text-[9px] text-gray-500 mt-2 font-bold uppercase">Mới / Tháng</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION (MANDATORY STYLE) -->
-    <section id="contact" class="py-24 px-6 bg-black relative overflow-hidden">
-        <div class="max-w-4xl mx-auto">
-            <div class="contact-led-box p-12 text-center md:text-left shadow-[0_0_50px_rgba(255,0,0,0.15)]">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <div class="flex items-center gap-4 mb-4 justify-center md:justify-start">
-                            <div class="bg-red-600 px-3 py-1 font-black text-black italic text-xl">QT</div>
-                            <div class="font-black text-2xl tracking-tighter uppercase text-white leading-none">
-                                QUANG TUYÊN AUTO <br>
-                                <span class="text-red-600 text-lg">AUTO365 ĐÔNG ANH</span>
-                            </div>
+            <h2 class="font-signage text-4xl font-black text-white mb-16 text-center italic">Thị trường & Đối thủ 2026</h2>
+            
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div>
+                    <h4 class="text-red-600 font-black text-xs uppercase mb-4">Cơ hội từ VinFast (Market Context)</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">
+                        VinFast VF3, VF5 và VF7 đang tạo ra làn sóng "độ xe từ khi lấy xe". Khách hàng mua xe điện có xu hướng chi thêm 15-20% giá trị xe cho nội thất Nappa và công nghệ.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-end border-b border-zinc-800 pb-2">
+                            <span class="text-xs text-gray-500 uppercase font-bold">Tỉ lệ độ Nappa (VF3/VF5)</span>
+                            <span class="text-xl font-black text-white">75% Users</span>
                         </div>
-                        <p class="text-gray-400 text-sm mb-8 flex items-center gap-3 justify-center md:justify-start">
-                            <span class="text-red-600">📍</span> Số 110, Tổ 16, Thị trấn Đông Anh, Hà Nội
-                        </p>
-                        <div class="flex flex-col gap-4">
-                            <p class="text-[10px] font-black text-gray-600 uppercase tracking-[0.5em]">Tagline</p>
-                            <p class="text-xl font-black text-white italic tracking-tight uppercase">Làm đẹp – May chuẩn – Khách hài lòng</p>
+                        <div class="flex justify-between items-end border-b border-zinc-800 pb-2">
+                            <span class="text-xs text-gray-500 uppercase font-bold">Nhu cầu Phim 3M / Đèn</span>
+                            <span class="text-xl font-black text-red-600">High Demand</span>
                         </div>
                     </div>
-                    <div class="bg-zinc-900/50 p-10 border border-zinc-800 text-center flex flex-col items-center">
-                        <p class="text-[10px] font-black text-red-500 uppercase tracking-[0.3em] mb-4">Hotline Liên Hệ</p>
-                        <a href="tel:0902038880" class="text-4xl md:text-5xl font-black text-led mb-8 hover:scale-105 transition-transform block">
+                </div>
+                
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="signage-border p-6 flex justify-between items-center">
+                        <span class="font-black text-white uppercase italic">ChungAuto</span>
+                        <span class="text-[10px] font-bold text-gray-500">Đế chế truyền thông</span>
+                    </div>
+                    <div class="signage-border p-6 flex justify-between items-center">
+                        <span class="font-black text-white uppercase italic">Dubai Care</span>
+                        <span class="text-[10px] font-bold text-gray-500">Hệ sinh thái sản phẩm riêng</span>
+                    </div>
+                    <div class="bg-red-600/10 border border-red-600 p-6 flex justify-between items-center">
+                        <span class="font-black text-red-600 uppercase italic">Quang Tuyên Auto</span>
+                        <span class="text-[10px] font-black text-red-600 uppercase">Local Master Craftsmanship</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: POSITIONING & OFFER STACK -->
+    <section id="strategy" class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-24">
+            <h3 class="text-sm font-bold text-red-600 uppercase tracking-[0.4em] mb-4">Positioning</h3>
+            <h2 class="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter">NGHỆ THUẬT NỘI THẤT NAPPA <br> <span class="text-gray-600">CHUẨN MỰC GARAGE</span></h2>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-1">
+            <div class="bg-zinc-900/50 p-12 border border-zinc-800">
+                <p class="text-blue-500 font-black text-[10px] uppercase mb-8">Traffic Offer</p>
+                <h4 class="text-2xl font-black text-white mb-6 uppercase">Gói EV Fresh</h4>
+                <p class="text-xs text-gray-500 leading-relaxed mb-10 italic">Vệ sinh nội thất sâu + Khử mùi Ozone + Voucher 500k. Dành cho khách hàng lần đầu trải nghiệm.</p>
+                <span class="text-[10px] font-bold text-zinc-700 uppercase">Mục tiêu: Kéo Lead & Review Maps</span>
+            </div>
+            <div class="bg-red-600 p-12 shadow-2xl relative z-10 scale-105">
+                <p class="text-white font-black text-[10px] uppercase mb-8">Hero Offer</p>
+                <h4 class="text-2xl font-black text-black mb-6 uppercase italic leading-none">VINFAST <br> LUXURY CABIN</h4>
+                <p class="text-xs text-black font-bold leading-relaxed mb-10 italic">Full bọc da Nappa cá nhân hóa + Thảm sàn 360 cao cấp. May đo theo phong thủy/sở thích.</p>
+                <span class="text-[10px] font-bold text-white uppercase">Mục tiêu: Doanh thu & Branding</span>
+            </div>
+            <div class="bg-zinc-900/50 p-12 border border-zinc-800">
+                <p class="text-purple-500 font-black text-[10px] uppercase mb-8">Profit Booster</p>
+                <h4 class="text-2xl font-black text-white mb-6 uppercase">Tech-Smart Combo</h4>
+                <p class="text-xs text-gray-500 leading-relaxed mb-10 italic">Màn hình ICAR Android + Đèn Ambient Light + Dán phim 3M Crystaline.</p>
+                <span class="text-[10px] font-bold text-zinc-700 uppercase">Mục tiêu: Tăng AOV (Giá trị đơn hàng)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: ROADMAP 2026 -->
+    <section id="roadmap" class="py-32 bg-zinc-900/20 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-signage text-4xl font-black text-white mb-16 italic">Roadmap Implementation</h2>
+            <div class="space-y-12">
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="bg-white text-black font-black px-4 py-1 text-xl italic shrink-0">Phase 01</div>
+                    <div class="flex-grow p-8 signage-border border-l-4 border-l-red-600">
+                        <h4 class="text-white font-black uppercase text-lg mb-4">Foundation (0-60 ngày)</h4>
+                        <ul class="text-xs text-gray-500 space-y-2 uppercase font-bold tracking-widest">
+                            <li>• Chuẩn hóa Content Library 20 xe VinFast.</li>
+                            <li>• Tối ưu Google Maps Profile.</li>
+                            <li>• Xây dựng quy trình "Chốt Lead Zalo".</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="bg-red-600 text-black font-black px-4 py-1 text-xl italic shrink-0">Phase 02</div>
+                    <div class="flex-grow p-8 signage-border border-l-4 border-l-white">
+                        <h4 class="text-white font-black uppercase text-lg mb-4">Acquisition (60-120 ngày)</h4>
+                        <ul class="text-xs text-gray-500 space-y-2 uppercase font-bold tracking-widest">
+                            <li>• Chạy Ads Video "Quy trình may đo Nappa".</li>
+                            <li>• Hợp tác giới thiệu với showroom xe cũ khu vực.</li>
+                            <li>• Xây dựng hệ thống Review từ khách cũ.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: KPI TREE -->
+    <section id="kpi" class="py-32 px-6 max-w-7xl mx-auto">
+        <h2 class="font-signage text-4xl font-black text-white mb-16 text-center italic tracking-tighter">KPI TREE 2026</h2>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="p-10 signage-border text-center kpi-node">
+                <p class="text-[10px] font-bold text-gray-600 uppercase mb-4 tracking-[0.2em]">Monthly Leads</p>
+                <p class="text-5xl font-black text-white italic">400+</p>
+            </div>
+            <div class="p-10 signage-border text-center kpi-node">
+                <p class="text-[10px] font-bold text-gray-600 uppercase mb-4 tracking-[0.2em]">Bookings</p>
+                <p class="text-5xl font-black text-red-600 italic">120+</p>
+            </div>
+            <div class="p-10 signage-border text-center kpi-node">
+                <p class="text-[10px] font-bold text-gray-600 uppercase mb-4 tracking-[0.2em]">Close Rate</p>
+                <p class="text-5xl font-black text-white italic">30%</p>
+            </div>
+            <div class="p-10 signage-border text-center kpi-node">
+                <p class="text-[10px] font-bold text-gray-600 uppercase mb-4 tracking-[0.2em]">Revenue (Est.)</p>
+                <p class="text-5xl font-black text-red-600 italic">1.2B</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: CONTACT (MANDATORY STYLE) -->
+    <section id="contact" class="py-32 px-6 bg-black relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="contact-led-box p-12 bg-zinc-950/50 shadow-[0_0_80px_rgba(255,0,0,0.15)]">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="bg-red-600 px-4 py-2 font-black text-black italic text-2xl">QT</div>
+                            <div class="font-signage font-black text-3xl tracking-tighter uppercase text-white leading-none">
+                                QUANG TUYÊN AUTO <br>
+                                <span class="text-red-600 text-xl tracking-normal italic">AUTO365 ĐÔNG ANH</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-12 flex items-center gap-4">
+                            <span class="text-red-600 text-2xl">📍</span> Số 110, Tổ 16, Thị trấn Đông Anh, Hà Nội
+                        </p>
+                        <div class="flex flex-col gap-4">
+                            <p class="text-[10px] font-black text-gray-700 uppercase tracking-[0.6em]">Tagline</p>
+                            <p class="text-2xl font-black text-white italic tracking-tight uppercase">Làm đẹp – May chuẩn – Khách hài lòng</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-zinc-900/50 p-12 border border-zinc-800 text-center flex flex-col items-center shadow-inner">
+                        <p class="text-[10px] font-black text-red-500 uppercase tracking-[0.3em] mb-4">GỌI NGAY ĐỂ NHẬN BÁO GIÁ</p>
+                        <a href="tel:0902038880" class="hotline-led text-5xl md:text-6xl mb-10 block transition-transform hover:scale-105">
                             0902 038 880
                         </a>
-                        <a href="tel:0902038880" class="bg-red-600 text-white font-black px-10 py-4 text-sm uppercase tracking-widest hover:bg-red-700 transition w-full text-center">
-                            GỌI NGAY ĐỂ NHẬN BÁO GIÁ
+                        <a href="tel:0902038880" class="bg-red-600 text-white font-black px-12 py-5 text-sm uppercase tracking-widest hover:bg-red-700 transition w-full shadow-lg shadow-red-900/20">
+                            ĐẶT LỊCH LÀM XE NGAY
                         </a>
+                        <p class="text-[9px] text-gray-500 mt-6 uppercase tracking-tighter">Chuyên nội thất ô tô – Da Nappa VinFast</p>
                     </div>
                 </div>
             </div>
@@ -261,11 +303,10 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-12 border-t border-white/5 bg-black text-center px-6">
-        <p class="text-[10px] font-bold text-gray-700 uppercase tracking-[0.5em] mb-4 italic">Quang Tuyen Auto - Marketing Plan v2.0 Final</p>
-        <div class="max-w-2xl mx-auto text-[9px] text-gray-800 leading-relaxed">
-            Bản kế hoạch dựa trên dữ liệu tổng hợp từ NotebookLM và Phân tích thị trường 2026. <br>
-            Mọi số liệu về KPI doanh thu là giả định chiến lược cho môi trường vận hành tối ưu.
+    <footer class="py-12 border-t border-zinc-900 bg-black text-center px-6">
+        <p class="text-[10px] font-bold text-gray-800 uppercase tracking-[0.5em] mb-4 italic italic">Quang Tuyen Auto - Strategic Presentation v4.0</p>
+        <div class="max-w-2xl mx-auto text-[9px] text-gray-800 leading-relaxed uppercase font-bold tracking-widest opacity-50">
+            Dữ liệu chiến lược nội bộ. Bảo mật và thực thi theo roadmap 2026.
         </div>
     </footer>
 
