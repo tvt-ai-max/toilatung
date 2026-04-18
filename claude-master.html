@@ -1,277 +1,372 @@
+```html
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude Code Master 2026 • Knowledge Base</title>
+    <title>Claude Code Master 2026 • The Ultimate Guide</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .glass-card { background: rgba(24, 24, 27, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(63, 63, 70, 0.5); }
-        .toc-link:hover { color: #10b981; padding-left: 10px; }
-        .toc-link { transition: all 0.3s ease; }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #09090b; }
-        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+        .glass-card { background: rgba(24, 24, 27, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(63, 63, 70, 0.3); }
+        .toc-link:hover { color: #10b981; padding-left: 10px; background: rgba(16, 185, 129, 0.05); }
+        .toc-link { transition: all 0.2s ease; border-left: 2px solid transparent; }
+        .toc-active { border-left-color: #10b981; color: #10b981; background: rgba(16, 185, 129, 0.05); }
         code { font-family: 'Fira Code', monospace; }
-        .sticky-sidebar { height: calc(100vh - 2rem); top: 1rem; }
-        .text-glow { text-shadow: 0 0 10px rgba(16, 185, 129, 0.5); }
-        .brief-table th, .brief-table td { border: 1px solid #27272a; padding: 12px; }
-        .skill-code { background: #000; padding: 20px; border-radius: 12px; border: 1px solid #10b98133; font-size: 0.8rem; overflow-x: auto; }
+        .text-glow { text-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
+        .step-pill { @apply px-2 py-0.5 bg-zinc-800 text-zinc-400 text-[10px] rounded font-bold uppercase tracking-wider; }
+        .sidebar-scroll::-webkit-scrollbar { width: 4px; }
+        .sidebar-scroll::-webkit-scrollbar-thumb { background: #27272a; border-radius: 10px; }
     </style>
 </head>
-<body class="bg-zinc-950 text-zinc-300">
+<body class="bg-zinc-950 text-zinc-300 antialiased">
 
-    <div class="flex flex-col md:flex-row min-h-screen">
-        <!-- Sidebar Navigation -->
-        <aside class="w-full md:w-72 p-6 md:sticky sticky-sidebar z-40 bg-zinc-950 md:bg-transparent">
-            <div class="glass-card rounded-2xl p-6 h-full flex flex-col">
-                <div class="flex items-center gap-3 mb-10">
-                    <div class="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/20">
-                        <i class="fa-solid fa-bolt-lightning text-zinc-950 text-xl"></i>
+    <div class="flex flex-col lg:flex-row min-h-screen">
+        <!-- Sidebar -->
+        <aside class="w-full lg:w-80 p-6 lg:fixed lg:h-screen z-50 bg-zinc-950 border-r border-zinc-900">
+            <div class="flex flex-col h-full">
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/30">
+                        <i class="fa-solid fa-brain text-zinc-950 text-xl"></i>
                     </div>
                     <div>
-                        <h2 class="text-white font-bold text-lg tracking-tight">Claude Master</h2>
-                        <p class="text-emerald-500 text-xs font-semibold tracking-widest uppercase">2026 Wiki</p>
+                        <h1 class="text-white font-bold text-lg leading-none">Claude Code</h1>
+                        <p class="text-emerald-500 text-[10px] font-black uppercase tracking-[0.2em] mt-1">Mastery 2026</p>
                     </div>
                 </div>
 
-                <nav class="flex-1 space-y-2 overflow-y-auto">
-                    <p class="text-zinc-500 text-[10px] uppercase font-bold tracking-widest mb-4">Lộ trình & Công cụ</p>
-                    <a href="#welcome" class="toc-link block text-sm py-2 px-3 hover:bg-zinc-800 rounded-lg">Khởi đầu 2026</a>
-                    <a href="#opus47" class="toc-link block text-sm py-2 px-3 hover:bg-zinc-800 rounded-lg">Claude Opus 4.7 Core</a>
-                    <a href="#marketing-skills" class="toc-link block text-sm py-2 px-3 bg-emerald-500/10 text-emerald-400 font-bold rounded-lg border border-emerald-500/20">MARKETING SKILLS (New)</a>
-                    <a href="#brief-master" class="toc-link block text-sm py-2 px-3 hover:bg-zinc-800 rounded-lg">Brief Master Template</a>
-                    <a href="#comparison" class="toc-link block text-sm py-2 px-3 hover:bg-zinc-800 rounded-lg">Claude vs Gemini CLI</a>
+                <nav class="flex-1 sidebar-scroll overflow-y-auto space-y-1 pr-2">
+                    <p class="text-zinc-600 text-[10px] font-bold uppercase tracking-widest mb-4 mt-2">Nền tảng & Thiết lập</p>
+                    <a href="#setup" class="toc-link block text-sm py-2 px-3 rounded-lg">Cài đặt & IDE</a>
+                    <a href="#opus47" class="toc-link block text-sm py-2 px-3 rounded-lg">Claude Opus 4.7 Core</a>
+                    <a href="#brief-master" class="toc-link block text-sm py-2 px-3 rounded-lg font-bold text-emerald-400">BRIEF MASTER SOP</a>
                     
-                    <p class="text-zinc-500 text-[10px] uppercase font-bold tracking-widest mt-8 mb-4">Kỹ thuật Agent</p>
-                    <a href="#task-budgets" class="toc-link block text-sm py-2 px-3 hover:bg-zinc-800 rounded-lg">Task Budgets Beta</a>
-                    <a href="#effort-levels" class="toc-link block text-sm py-2 px-3 hover:bg-zinc-800 rounded-lg">Thang đo Effort</a>
-                    <a href="#architecture" class="toc-link block text-sm py-2 px-3 hover:bg-zinc-800 rounded-lg">Kiến trúc 14 ngày</a>
+                    <p class="text-zinc-600 text-[10px] font-bold uppercase tracking-widest mb-4 mt-6">Kiến trúc Agentic</p>
+                    <a href="#brain-file" class="toc-link block text-sm py-2 px-3 rounded-lg">CLAUDE.md & .claude</a>
+                    <a href="#modes" class="toc-link block text-sm py-2 px-3 rounded-lg">Các chế độ Permission</a>
+                    <a href="#teams" class="toc-link block text-sm py-2 px-3 rounded-lg">Subagents & Agent Teams</a>
+                    <a href="#worktrees" class="toc-link block text-sm py-2 px-3 rounded-lg">Git WorkTrees (Parallel)</a>
+
+                    <p class="text-zinc-600 text-[10px] font-bold uppercase tracking-widest mb-4 mt-6">Tự động hóa & Skills</p>
+                    <a href="#skills" class="toc-link block text-sm py-2 px-3 rounded-lg">Hệ thống Skills Engine</a>
+                    <a href="#mcp" class="toc-link block text-sm py-2 px-3 rounded-lg">MCP Servers (Google, Chrome)</a>
+                    <a href="#context" class="toc-link block text-sm py-2 px-3 rounded-lg">Quản lý Context & Chi phí</a>
+
+                    <p class="text-zinc-600 text-[10px] font-bold uppercase tracking-widest mb-4 mt-6">Kiếm tiền & Triển khai</p>
+                    <a href="#deploy" class="toc-link block text-sm py-2 px-3 rounded-lg">Modal & Netlify Scaling</a>
+                    <a href="#monetize" class="toc-link block text-sm py-2 px-3 rounded-lg">Build & Sell Apps</a>
                 </nav>
 
-                <div class="mt-auto pt-6 border-t border-zinc-800 text-[10px] text-zinc-500">
-                    <p>Updated: April 18, 2026</p>
-                    <p>Claude Skills Integrated</p>
+                <div class="mt-8 pt-6 border-t border-zinc-900">
+                    <div class="bg-zinc-900/50 p-4 rounded-xl border border-zinc-800">
+                        <p class="text-[10px] text-zinc-500 uppercase font-bold mb-2">Thông số phiên bản</p>
+                        <div class="flex justify-between text-[11px]">
+                            <span>Model ID:</span>
+                            <span class="text-emerald-500 font-mono">claude-opus-4-7</span>
+                        </div>
+                        <div class="flex justify-between text-[11px] mt-1">
+                            <span>Last Update:</span>
+                            <span class="text-zinc-400">18/04/2026</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </aside>
 
-        <!-- Main Content Area -->
-        <main class="flex-1 p-4 md:p-10">
-            <div class="max-w-5xl mx-auto">
+        <!-- Main Content -->
+        <main class="flex-1 lg:ml-80 p-4 md:p-10">
+            <div class="max-w-4xl mx-auto">
                 
                 <!-- Hero Section -->
-                <header id="welcome" class="mb-16">
-                    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-900/20 to-zinc-900 border border-zinc-800 p-8 md:p-12">
+                <section id="welcome" class="mb-20">
+                    <div class="relative p-8 md:p-16 rounded-[2.5rem] bg-gradient-to-br from-zinc-900 via-zinc-900 to-emerald-950/30 border border-zinc-800 overflow-hidden shadow-2xl">
                         <div class="relative z-10">
-                            <span class="inline-block px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-bold rounded-full mb-4 border border-emerald-500/20 uppercase tracking-widest">Digital Marketing AI 2026</span>
-                            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight">The Claude <span class="text-emerald-500 text-glow italic">Skills</span> Engine</h1>
-                            <p class="text-zinc-400 text-lg max-w-2xl mb-8 leading-relaxed">
-                                Biến Claude thành đội ngũ Marketing chuyên nghiệp với hệ thống **Persistent Skills**. Tự động hóa nội dung, SEO và chiến dịch với độ nhất quán 100%.
+                            <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1] tracking-tighter">
+                                Mastering AI <br><span class="text-emerald-500 text-glow">Autonomy</span>
+                            </h1>
+                            <p class="text-zinc-400 text-lg md:text-xl max-w-xl mb-10 leading-relaxed">
+                                Hướng dẫn tối thượng về Claude Code 2026. Chuyển đổi từ một lập trình viên thông thường thành một **AI Orchestrator** quản lý hàng triệu USD lợi nhuận.
                             </p>
                             <div class="flex flex-wrap gap-4">
-                                <a href="#marketing-skills" class="bg-emerald-500 text-zinc-950 font-bold px-6 py-3 rounded-xl hover:bg-emerald-400 transition-all">Bắt đầu với Skills</a>
-                                <a href="#brief-master" class="bg-zinc-800 text-white font-semibold px-6 py-3 rounded-xl border border-zinc-700 hover:bg-zinc-700 transition-all">SOP Kick-off</a>
+                                <a href="#brief-master" class="px-8 py-4 bg-emerald-500 text-zinc-950 font-black rounded-2xl hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/20 active:scale-95">KICK-OFF PROJECT</a>
+                                <a href="#deploy" class="px-8 py-4 bg-zinc-800 text-white font-bold rounded-2xl border border-zinc-700 hover:bg-zinc-700 transition-all">DEPOYMENT GUIDE</a>
                             </div>
                         </div>
-                    </div>
-                </header>
-
-                <!-- Section: Claude Skills Marketing (NEW) -->
-                <section id="marketing-skills" class="mb-20 scroll-mt-10">
-                    <div class="flex items-center gap-4 mb-8">
-                        <h2 class="text-3xl font-bold text-white uppercase tracking-tighter">1. Claude Skills for Marketing</h2>
-                        <div class="h-px flex-1 bg-emerald-500/30"></div>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-10 mb-12">
-                        <div>
-                            <p class="text-zinc-300 leading-relaxed mb-6">
-                                **Claude Skills** không phải là Prompt. Đó là cấu hình **Persistent (Bền vững)**. Khi đã thiết lập, Claude sẽ tự động áp dụng Persona, Brand Voice và quy trình làm việc chuẩn cho mọi tác vụ tương lai mà không cần bạn phải nhắc lại.
-                            </p>
-                            <div class="space-y-4">
-                                <div class="flex items-start gap-4 p-4 glass-card rounded-2xl">
-                                    <i class="fa-solid fa-sync text-emerald-500 mt-1"></i>
-                                    <div>
-                                        <h4 class="text-white font-bold text-sm">Nhất quán tuyệt đối</h4>
-                                        <p class="text-[11px] text-zinc-500 italic">Mọi nội dung đều khớp 100% với Brand Voice đã cấu hình.</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start gap-4 p-4 glass-card rounded-2xl">
-                                    <i class="fa-solid fa-bolt text-emerald-500 mt-1"></i>
-                                    <div>
-                                        <h4 class="text-white font-bold text-sm">Tiết kiệm 40% Token</h4>
-                                        <p class="text-[11px] text-zinc-500 italic">Giảm việc lặp lại các đoạn Prompt dài trong mỗi session.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 relative">
-                            <p class="text-[10px] text-zinc-500 mb-4 font-bold uppercase tracking-widest">Template: SKILL.md</p>
-                            <div class="skill-code font-mono text-emerald-400 overflow-y-auto max-h-[300px]">
-# Skill: Content Writer
-**Persona**: Senior Copywriter
-**Tone**: Friendly & Professional
-**Workflow**:
-1. Phân tích ICP & Topic
-2. Tạo Outline theo SEO
-3. Viết Draft (Brand Voice)
-4. Self-review & Optimization
-**Constraints**: No jargon, CTA focus.
-                            </div>
-                            <div class="absolute bottom-4 right-4 bg-emerald-500 text-zinc-950 px-2 py-1 rounded text-[10px] font-bold">READY TO COPY</div>
-                        </div>
-                    </div>
-
-                    <!-- 8 Must-have Skills -->
-                    <h3 class="text-xl font-bold text-white mb-8 flex items-center gap-2">
-                        <i class="fa-solid fa-list-check text-emerald-500"></i> Hệ sinh thái 8 Marketing Skills (2026)
-                    </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <div class="p-5 glass-card rounded-2xl border-t-2 border-emerald-500">
-                            <i class="fa-solid fa-microphone-lines text-emerald-500 mb-3 text-xl"></i>
-                            <h4 class="text-white text-xs font-bold mb-1">Brand Voice Enforcer</h4>
-                            <p class="text-[10px] text-zinc-500">Giám sát và áp dụng giọng điệu thương hiệu chuẩn.</p>
-                        </div>
-                        <div class="p-5 glass-card rounded-2xl border-t-2 border-blue-500">
-                            <i class="fa-solid fa-pen-nib text-blue-500 mb-3 text-xl"></i>
-                            <h4 class="text-white text-xs font-bold mb-1">Social Media Mgr</h4>
-                            <p class="text-[10px] text-zinc-500">Tạo Threads, Carousels và quản lý Hashtags.</p>
-                        </div>
-                        <div class="p-5 glass-card rounded-2xl border-t-2 border-amber-500">
-                            <i class="fa-solid fa-magnifying-glass-chart text-amber-500 mb-3 text-xl"></i>
-                            <h4 class="text-white text-xs font-bold mb-1">SEO Researcher</h4>
-                            <p class="text-[10px] text-zinc-500">Phân tích Content Gap và tối ưu hóa EEAT.</p>
-                        </div>
-                        <div class="p-5 glass-card rounded-2xl border-t-2 border-purple-500">
-                            <i class="fa-solid fa-bullseye text-purple-500 mb-3 text-xl"></i>
-                            <h4 class="text-white text-xs font-bold mb-1">Campaign Planner</h4>
-                            <p class="text-[10px] text-zinc-500">Lập kế hoạch đa kênh (Brief, Budget, Assets).</p>
-                        </div>
-                        <div class="p-5 glass-card rounded-2xl border-t-2 border-rose-500">
-                            <i class="fa-solid fa-users-rays text-rose-500 mb-3 text-xl"></i>
-                            <h4 class="text-white text-xs font-bold mb-1">Competitor Intel</h4>
-                            <p class="text-[10px] text-zinc-500">Phân tích quảng cáo và chiến lược đối thủ.</p>
-                        </div>
-                        <div class="p-5 glass-card rounded-2xl border-t-2 border-cyan-500">
-                            <i class="fa-solid fa-chart-pie text-cyan-500 mb-3 text-xl"></i>
-                            <h4 class="text-white text-xs font-bold mb-1">Performance Analyst</h4>
-                            <p class="text-[10px] text-zinc-500">Kết nối GA4/Ads để xuất báo cáo insights.</p>
-                        </div>
-                        <div class="p-5 glass-card rounded-2xl border-t-2 border-indigo-500">
-                            <i class="fa-solid fa-magnet text-indigo-500 mb-3 text-xl"></i>
-                            <h4 class="text-white text-xs font-bold mb-1">Lead Funnel Builder</h4>
-                            <p class="text-[10px] text-zinc-500">Tạo Ebook, Webinar Scripts và Landing Page.</p>
-                        </div>
-                        <div class="p-5 glass-card rounded-2xl border-t-2 border-orange-500">
-                            <i class="fa-solid fa-robot text-orange-500 mb-3 text-xl"></i>
-                            <h4 class="text-white text-xs font-bold mb-1">AI-SEO Optimizer</h4>
-                            <p class="text-[10px] text-zinc-500">Tối ưu nội dung cho AI Answer Engines (SGE).</p>
-                        </div>
+                        <!-- Decorative Abstract Shape -->
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 blur-[100px] -mr-32 -mt-32"></div>
                     </div>
                 </section>
 
-                <!-- Section: BRIEF MASTER (Updated) -->
-                <section id="brief-master" class="mb-20 scroll-mt-10">
-                    <div class="flex items-center gap-4 mb-8">
-                        <h2 class="text-3xl font-bold text-white uppercase tracking-tighter">2. Brief Master – SOP Kick-off</h2>
-                        <div class="h-px flex-1 bg-zinc-800"></div>
+                <!-- Section: Setup & Environment -->
+                <section id="setup" class="mb-24 scroll-mt-20">
+                    <div class="flex items-center gap-4 mb-10">
+                        <h2 class="text-3xl font-bold text-white uppercase tracking-tighter">1. Thiết lập & Môi trường</h2>
+                        <div class="h-px flex-1 bg-zinc-900"></div>
                     </div>
                     
-                    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl">
-                        <div class="p-6 bg-emerald-500 text-zinc-950 flex flex-wrap justify-between items-center font-bold uppercase tracking-widest text-[10px] md:text-xs">
-                            <span>SOP 2026.04 | Agentic Marketing Workflow</span>
-                            <span class="bg-black/20 px-2 py-1 rounded">Project Initializer</span>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-6">
+                            <h3 class="text-lg font-bold text-emerald-500 flex items-center gap-2">
+                                <i class="fa-solid fa-terminal"></i> Terminal Install
+                            </h3>
+                            <p class="text-sm text-zinc-400">Bạn cần gói **Claude Pro ($17-$28)** để bắt đầu. Cài đặt trực tiếp qua lệnh:</p>
+                            <div class="bg-black p-4 rounded-xl border border-zinc-800 font-mono text-xs text-emerald-400">
+                                curl -sSL https://code.claude.com/install | sh
+                            </div>
+                            <p class="text-[11px] text-zinc-500 italic">Dùng lệnh <code class="text-zinc-300">claude login</code> sau khi cài đặt thành công.</p>
                         </div>
-                        <div class="p-8">
-                            <div class="grid md:grid-cols-2 gap-8 mb-10">
-                                <div>
-                                    <h4 class="text-emerald-500 font-bold text-xs uppercase mb-4 tracking-widest">Giai đoạn 1: Initializer</h4>
-                                    <p class="text-sm text-zinc-400 mb-4 leading-relaxed italic">
-                                        "Tạo 4–5 Marketing Skills chính + Brand Hub trong CLAUDE.md. Sử dụng Effort: xhigh để đảm bảo kiến trúc chiến dịch chuẩn ngay từ đầu."
-                                    </p>
-                                    <ul class="text-xs space-y-2 list-inside list-disc text-zinc-300">
-                                        <li>Tạo thư mục .claude/skills/</li>
-                                        <li>Cấu hình Task Budget: 180,000 tokens</li>
-                                        <li>Upload Brand Bible & SOPs</li>
-                                    </ul>
+                        <div class="space-y-6">
+                            <h3 class="text-lg font-bold text-blue-500 flex items-center gap-2">
+                                <i class="fa-solid fa-rocket"></i> IDE: Anti-Gravity
+                            </h3>
+                            <p class="text-sm text-zinc-400 italic">"Anti-Gravity là VS Code 2.0" - Được tối ưu bởi Google cho các Agent AI.</p>
+                            <ul class="text-xs space-y-3">
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-blue-500"></i> UX sạch hơn, trực quan hơn VS Code.</li>
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-blue-500"></i> Tích hợp sẵn Gemini & Claude Sidebars.</li>
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-blue-500"></i> Quản lý thư mục (File Explorer) thông minh.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: BRIEF MASTER SOP -->
+                <section id="brief-master" class="mb-24 scroll-mt-20">
+                    <div class="flex items-center gap-4 mb-10">
+                        <h2 class="text-3xl font-bold text-white uppercase tracking-tighter">2. Brief Master SOP</h2>
+                        <div class="h-px flex-1 bg-zinc-900"></div>
+                    </div>
+                    <div class="p-8 rounded-[2rem] border border-emerald-500/30 bg-emerald-500/5 shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-4 right-6 px-3 py-1 bg-emerald-500 text-zinc-950 font-black text-[10px] rounded-full">RECOMMENDED</div>
+                        <h3 class="text-2xl font-bold text-white mb-6 tracking-tight italic">Tài liệu khởi tạo dự án chuẩn 2026</h3>
+                        <p class="text-zinc-300 text-sm mb-8 leading-relaxed">
+                            Đừng chỉ "chat" với Claude. Hãy cung cấp một **Brief Master** để xác lập lộ trình. Đây là bí quyết để xây dựng module phức tạp trong 14 ngày với chi phí &lt; $20.
+                        </p>
+                        <div class="grid md:grid-cols-3 gap-4 mb-8">
+                            <div class="p-4 bg-zinc-900 rounded-xl border border-zinc-800">
+                                <span class="step-pill mb-2 inline-block">Pre</span>
+                                <h4 class="text-white text-xs font-bold mb-1">Initializer</h4>
+                                <p class="text-[10px] text-zinc-500 italic">Chạy /init, tạo CLAUDE.md, thiết lập budget 180k.</p>
+                            </div>
+                            <div class="p-4 bg-zinc-900 rounded-xl border border-zinc-800">
+                                <span class="step-pill mb-2 inline-block">During</span>
+                                <h4 class="text-white text-xs font-bold mb-1">Incremental</h4>
+                                <p class="text-[10px] text-zinc-500 italic">Mỗi ngày 1 feature, commit atomic, cập nhật log.</p>
+                            </div>
+                            <div class="p-4 bg-zinc-900 rounded-xl border border-zinc-800">
+                                <span class="step-pill mb-2 inline-block">Post</span>
+                                <h4 class="text-white text-xs font-bold mb-1">Closure</h4>
+                                <p class="text-[10px] text-zinc-500 italic">Handover doc, CI/CD setup, ROI analysis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Brain File & Claude Folder -->
+                <section id="brain-file" class="mb-24 scroll-mt-20">
+                    <div class="flex items-center gap-4 mb-10">
+                        <h2 class="text-3xl font-bold text-white uppercase tracking-tighter">3. Project Brain: .claude Folder</h2>
+                        <div class="h-px flex-1 bg-zinc-900"></div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div class="space-y-6">
+                            <h3 class="text-xl font-bold text-white flex items-center gap-3">
+                                <span class="w-8 h-8 bg-zinc-800 rounded flex items-center justify-center text-xs">A</span>
+                                CLAUDE.md (Bộ não)
+                            </h3>
+                            <p class="text-sm text-zinc-400 leading-relaxed">
+                                Được chèn vào <strong>ĐẦU TIÊN</strong> của mọi hội thoại. Đây là "bánh lái" của con tàu.
+                            </p>
+                            <ul class="text-xs space-y-4 text-zinc-300">
+                                <li class="pl-4 border-l-2 border-emerald-500"><strong>Nguyên tắc 200-500:</strong> Giữ file từ 200-500 dòng để tối ưu độ chính xác.</li>
+                                <li class="pl-4 border-l-2 border-emerald-500"><strong>Primacy Bias:</strong> Đưa các quy tắc quan trọng nhất lên hàng đầu.</li>
+                                <li class="pl-4 border-l-2 border-emerald-500"><strong>/init:</strong> Lệnh quét codebase để tự sinh cấu trúc chuẩn.</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 bg-zinc-900/80 rounded-2xl border border-zinc-800">
+                            <p class="text-[10px] text-zinc-500 uppercase font-bold mb-4 tracking-widest">Cấu trúc thư mục .claude/</p>
+                            <div class="font-mono text-xs space-y-2">
+                                <p class="text-blue-400">/agents <span class="text-zinc-600">// Các sub-agents chuyên biệt</span></p>
+                                <p class="text-emerald-400">/skills <span class="text-zinc-600">// Các workflow tái sử dụng</span></p>
+                                <p class="text-amber-400">/rules <span class="text-zinc-600">// Quy tắc style code, bảo mật</span></p>
+                                <p class="text-purple-400">memory.md <span class="text-zinc-600">// Ghi chú tự động toàn cục</span></p>
+                                <p class="text-zinc-400">settings.json <span class="text-zinc-600">// Cấu hình đội ngũ & hooks</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Context & Cost Management -->
+                <section id="context" class="mb-24 scroll-mt-20">
+                    <div class="flex items-center gap-4 mb-10">
+                        <h2 class="text-3xl font-bold text-white uppercase tracking-tighter">4. Quản lý Context & Chi phí</h2>
+                        <div class="h-px flex-1 bg-zinc-900"></div>
+                    </div>
+                    <div class="glass-card p-8 rounded-3xl overflow-hidden relative">
+                        <div class="grid md:grid-cols-2 gap-12 relative z-10">
+                            <div>
+                                <h3 class="text-white font-bold mb-6 italic">Chiến lược Token ROI</h3>
+                                <p class="text-sm text-zinc-400 mb-6 leading-relaxed">
+                                    Context Window của Opus 4.7 là hữu hạn (khoảng 200k-1M). Mỗi tool gọi ra đều tốn token cố định:
+                                </p>
+                                <ul class="space-y-4 text-xs">
+                                    <li class="flex justify-between border-b border-zinc-800 pb-2">
+                                        <span>System Tools (Bash, Search):</span>
+                                        <span class="text-amber-500 font-mono">~16,800 tokens</span>
+                                    </li>
+                                    <li class="flex justify-between border-b border-zinc-800 pb-2">
+                                        <span>MCP Server Tools:</span>
+                                        <span class="text-rose-500 font-mono">20,000+ tokens</span>
+                                    </li>
+                                    <li class="flex justify-between border-b border-zinc-800 pb-2">
+                                        <span>Skills Definition:</span>
+                                        <span class="text-emerald-500 font-mono">&lt; 100 tokens</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="bg-black/50 p-4 rounded-xl border border-zinc-800">
+                                    <p class="text-[10px] text-emerald-500 font-bold mb-2 uppercase italic tracking-widest">Lệnh cứu cánh</p>
+                                    <p class="text-xs text-zinc-300"><strong>/context:</strong> Xem bảng phân bổ token.</p>
+                                    <p class="text-xs text-zinc-300 mt-2"><strong>/compact:</strong> Nén lịch sử để giải phóng bộ nhớ (Buffer 33k tokens).</p>
+                                    <p class="text-xs text-zinc-300 mt-2"><strong>/clear:</strong> Xóa sạch lịch sử khi đổi chủ đề.</p>
                                 </div>
-                                <div class="bg-black/40 rounded-2xl border border-zinc-800 p-6">
-                                    <h4 class="text-blue-500 font-bold text-xs uppercase mb-4 tracking-widest">Giai đoạn 3: Execution</h4>
-                                    <p class="text-sm text-zinc-400 mb-4 leading-relaxed italic">
-                                        "Sử dụng Skills đã tạo với Effort: high. Đặt Task Budget 80k–110k để model tự graceful finish khi xong nội dung."
-                                    </p>
-                                    <code class="text-[11px] text-emerald-400 block border-l-2 border-emerald-500 pl-4 py-2">
-                                        "Sử dụng Skill: Content Creator.<br>
-                                        Effort: high. Budget: 100k.<br>
-                                        Làm 5 post LinkedIn cho dự án X."
-                                    </code>
+                                <div class="p-4 bg-emerald-500/10 rounded-xl border border-emerald-500/20">
+                                    <p class="text-xs text-emerald-400 font-bold mb-1">Mẹo Master:</p>
+                                    <p class="text-[10px] text-zinc-400 leading-relaxed italic">Chuyển các quy tắc từ CLAUDE.md sang **Skills**. Skills chỉ load khi được gọi, tiết kiệm 40% chi phí.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Section: Claude vs Gemini CLI (Fixed) -->
-                <section id="comparison" class="mb-20 scroll-mt-10">
-                    <div class="flex items-center gap-4 mb-8">
-                        <h2 class="text-3xl font-bold text-white uppercase tracking-tighter">Claude vs Gemini CLI</h2>
-                        <div class="h-px flex-1 bg-zinc-800"></div>
+                <!-- Section: Agent Teams -->
+                <section id="teams" class="mb-24 scroll-mt-20">
+                    <div class="flex items-center gap-4 mb-10">
+                        <h2 class="text-3xl font-bold text-white uppercase tracking-tighter">5. Agent Teams & Parallelism</h2>
+                        <div class="h-px flex-1 bg-zinc-900"></div>
                     </div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="p-6 glass-card rounded-2xl border-l-4 border-l-emerald-500">
-                            <h3 class="text-emerald-500 font-bold mb-4">Claude Code Master</h3>
-                            <ul class="text-xs space-y-3">
-                                <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> <strong>Agentic Reasoning:</strong> Tự động sửa lỗi & code logic (SWE 64.3%).</li>
-                                <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> <strong>Persistent Skills:</strong> Lưu trữ Workflow lâu dài qua SKILL.md.</li>
-                            </ul>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="p-8 glass-card rounded-3xl border-l-4 border-l-purple-500">
+                            <h3 class="text-xl font-bold text-white mb-4">Subagents (Child Agents)</h3>
+                            <p class="text-sm text-zinc-400 mb-6 italic">Phù hợp cho task tập trung, gửi kết quả về cha.</p>
+                            <div class="space-y-4 text-xs">
+                                <div class="p-3 bg-zinc-900 rounded-lg"><strong>Research Agent:</strong> Dùng Sonnet (rẻ) để đọc 1M tokens dữ liệu và gửi tóm tắt 2k tokens về cha.</div>
+                                <div class="p-3 bg-zinc-900 rounded-lg"><strong>Reviewer Agent:</strong> Đọc code với context trắng (không thiên kiến) để bắt bug logic.</div>
+                            </div>
                         </div>
-                        <div class="p-6 glass-card rounded-2xl border-l-4 border-l-blue-500">
-                            <h3 class="text-blue-500 font-bold mb-4">Gemini CLI 2026</h3>
-                            <ul class="text-xs space-y-3">
-                                <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i> <strong>Massive Context:</strong> 2 triệu tokens để phân tích toàn bộ lịch sử Ads 10 năm.</li>
-                                <li class="flex gap-2"><i class="fa-solid fa-check text-blue-500 mt-1"></i> <strong>Multimodal Native:</strong> Phân tích Video/Audio chiến dịch cực nhanh.</li>
+                        <div class="p-8 glass-card rounded-3xl border-l-4 border-l-rose-500">
+                            <h3 class="text-xl font-bold text-white mb-4">Agent Teams (Experimental)</h3>
+                            <p class="text-sm text-zinc-400 mb-6 italic">Phù hợp cho task phức tạp, các agent chat với nhau.</p>
+                            <ul class="text-[11px] space-y-3">
+                                <li class="flex gap-2 text-zinc-300"><span>🔴</span> <span><strong>Chi phí:</strong> Tốn token gấp 7 lần bình thường.</span></li>
+                                <li class="flex gap-2 text-zinc-300"><span>🟢</span> <span><strong>Tốc độ:</strong> Chạy song song 10-20 agents cùng lúc.</span></li>
+                                <li class="flex gap-2 text-zinc-300"><span>🟢</span> <span><strong>Adversarial:</strong> Cho 2 agent tranh luận (Debate) để tìm ra giải pháp tối ưu nhất.</span></li>
                             </ul>
                         </div>
                     </div>
                 </section>
 
-                <!-- Section: Opus 4.7 Details -->
-                <section id="opus47" class="mb-20 scroll-mt-10">
-                    <div class="flex items-center gap-4 mb-8">
-                        <h2 class="text-3xl font-bold text-white uppercase tracking-tighter">Claude Opus 4.7 Core</h2>
-                        <div class="h-px flex-1 bg-zinc-800"></div>
+                <!-- Section: Deployment with Modal -->
+                <section id="deploy" class="mb-24 scroll-mt-20">
+                    <div class="flex items-center gap-4 mb-10">
+                        <h2 class="text-3xl font-bold text-white uppercase tracking-tighter">6. Triển khai & Kiếm tiền</h2>
+                        <div class="h-px flex-1 bg-zinc-900"></div>
                     </div>
-                    <div class="grid md:grid-cols-3 gap-6 text-center">
-                        <div class="p-6 glass-card rounded-2xl">
-                            <h4 class="text-emerald-500 font-black text-xl mb-1">xhigh</h4>
-                            <p class="text-[10px] text-zinc-500 uppercase font-bold tracking-tighter">Effort Sweet Spot</p>
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 shadow-2xl overflow-hidden relative">
+                        <div class="flex flex-col md:flex-row gap-10 relative z-10">
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-white mb-6">Biến Skill thành Sản phẩm (SaaS)</h3>
+                                <p class="text-sm text-zinc-400 mb-8 leading-relaxed">
+                                    Đừng chỉ giữ Skill trên máy tính của bạn. Sử dụng **Modal** để đưa chúng lên internet dưới dạng API Endpoint công khai chỉ trong 30 giây.
+                                </p>
+                                <div class="space-y-4">
+                                    <div class="flex gap-4 p-4 bg-zinc-800/50 rounded-2xl">
+                                        <div class="w-10 h-10 bg-emerald-500/10 rounded flex items-center justify-center text-emerald-500 italic font-black text-xl italic">1</div>
+                                        <div>
+                                            <h4 class="text-white text-sm font-bold">Whip up URL</h4>
+                                            <p class="text-[10px] text-zinc-500">Claude tự viết script Modal và deploy lên <code class="text-zinc-300">*.modal.run</code>.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4 p-4 bg-zinc-800/50 rounded-2xl">
+                                        <div class="w-10 h-10 bg-blue-500/10 rounded flex items-center justify-center text-blue-500 italic font-black text-xl italic">2</div>
+                                        <div>
+                                            <h4 class="text-white text-sm font-bold">API Integration</h4>
+                                            <p class="text-[10px] text-zinc-500">Kết nối Skill "Scrape Leads" của bạn với Google Sheets hoặc Zapier qua Webhooks.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-72 bg-black/40 rounded-2xl p-6 border border-zinc-800 font-mono">
+                                <p class="text-[10px] text-emerald-500 mb-4 uppercase font-bold italic tracking-widest">Example Modal Run</p>
+                                <p class="text-[10px] text-zinc-400 leading-5">
+                                    <span class="text-zinc-600"># Deploying Birthday Check...</span><br>
+                                     nicholas-check-birthday.modal.run<br>
+                                    <span class="text-emerald-500">"Happy Birthday Nick!"</span><br><br>
+                                    <span class="text-zinc-600"># Deploying Lead Scraper...</span><br>
+                                     dentist-scraper.modal.run/run<br>
+                                    <span class="text-blue-400">Generating CSV... (87s)</span>
+                                </p>
+                            </div>
                         </div>
-                        <div class="p-6 glass-card rounded-2xl">
-                            <h4 class="text-amber-500 font-black text-xl mb-1">Beta</h4>
-                            <p class="text-[10px] text-zinc-500 uppercase font-bold tracking-tighter">Task Budgets Control</p>
-                        </div>
-                        <div class="p-6 glass-card rounded-2xl">
-                            <h4 class="text-blue-500 font-black text-xl mb-1">1M</h4>
-                            <p class="text-[10px] text-zinc-500 uppercase font-bold tracking-tighter">Context Capacity</p>
-                        </div>
+                    </div>
+                </section>
+
+                <!-- Comparison Table -->
+                <section id="comparison" class="mb-24 scroll-mt-20">
+                    <div class="flex items-center gap-4 mb-10">
+                        <h2 class="text-3xl font-bold text-white uppercase tracking-tighter">Claude Master vs Gemini CLI</h2>
+                        <div class="h-px flex-1 bg-zinc-900"></div>
+                    </div>
+                    <div class="overflow-x-auto rounded-3xl border border-zinc-900 shadow-xl">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-zinc-900 text-zinc-500 uppercase text-[10px] tracking-widest">
+                                <tr>
+                                    <th class="py-5 px-6">Tiêu chí</th>
+                                    <th class="py-5 px-6 text-emerald-500 italic">Claude Master 2026</th>
+                                    <th class="py-5 px-6 text-blue-500 italic">Gemini CLI 2.5 Pro</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-zinc-900 text-zinc-400">
+                                <tr>
+                                    <td class="py-5 px-6 font-bold text-zinc-200">Triết lý thiết kế</td>
+                                    <td class="py-5 px-6 italic">Software Engineering & Agentic Autonomy</td>
+                                    <td class="py-5 px-6 italic">Massive Information Processing & Google Ecosystem</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-5 px-6 font-bold text-zinc-200">Cửa sổ ngữ cảnh</td>
+                                    <td class="py-5 px-6">200k - 1M tokens (Cần quản lý kỹ)</td>
+                                    <td class="py-5 px-6 text-blue-400">2M - 10M tokens (Nuốt cả codebase)</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-5 px-6 font-bold text-zinc-200">Tính năng độc quyền</td>
+                                    <td class="py-5 px-6 text-emerald-400">Task Budgets (Kiểm soát countdown token)</td>
+                                    <td class="py-5 px-6">Multimodal native (Xử lý Video/Audio cực nhanh)</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-5 px-6 font-bold text-zinc-200">Lựa chọn tối ưu</td>
+                                    <td class="py-5 px-6 text-zinc-100 italic">Khi cần xây dựng, sửa lỗi và vận hành Agent chuyên nghiệp.</td>
+                                    <td class="py-5 px-6 text-zinc-100 italic">Khi cần nghiên cứu, tóm tắt dữ liệu khổng lồ hoặc tích hợp Google Cloud.</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </section>
 
                 <!-- Footer -->
-                <footer class="pt-20 pb-10 border-t border-zinc-800 text-center">
-                    <p class="text-zinc-500 text-sm mb-4">Claude Code Master Wiki &bull; Version 2026.04</p>
-                    <div class="flex justify-center gap-6 text-zinc-400 mb-8">
+                <footer class="pt-20 pb-12 border-t border-zinc-900 text-center">
+                    <div class="flex justify-center gap-8 text-zinc-500 mb-8">
+                        <a href="#" class="hover:text-emerald-500 transition-colors"><i class="fa-brands fa-x-twitter text-xl"></i></a>
                         <a href="#" class="hover:text-emerald-500 transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
-                        <a href="#" class="hover:text-emerald-500 transition-colors"><i class="fa-solid fa-bullhorn text-xl"></i></a>
+                        <a href="#" class="hover:text-emerald-500 transition-colors"><i class="fa-solid fa-code text-xl"></i></a>
                     </div>
-                    <div class="max-w-md mx-auto">
-                        <p class="text-[10px] text-zinc-700 font-mono tracking-widest leading-6 italic">
-                            "The difference between a pro and an amateur is the setup. Use Skills."
+                    <p class="text-zinc-600 text-[10px] uppercase font-black tracking-[0.4em] mb-4">The Value of AI is Speed</p>
+                    <div class="max-w-2xl mx-auto px-4">
+                        <p class="text-[11px] text-zinc-700 font-mono italic leading-6">
+                            "Giá trị của AI không nằm ở việc nó làm đúng 100% trong một lần thử. <br>
+                            Giá trị của AI nằm ở TỐC ĐỘ: Nó đưa bạn đến 80% trong 1 phút, <br>
+                            sau đó bạn xác minh, lặp lại và đạt 100% trong 5 phút thay vì 5 giờ."
                         </p>
                     </div>
                 </footer>
@@ -280,15 +375,22 @@
         </main>
     </div>
 
-    <!-- Mobile Button -->
-    <div class="fixed bottom-6 right-6 md:hidden z-50">
-        <button onclick="document.querySelector('aside').classList.toggle('hidden')" class="w-14 h-14 bg-emerald-500 rounded-full shadow-2xl flex items-center justify-center text-zinc-950 text-2xl active:scale-95 transition-all">
+    <!-- Mobile Navigation Toggle -->
+    <div class="fixed bottom-6 right-6 lg:hidden z-50">
+        <button id="menu-btn" class="w-14 h-14 bg-emerald-500 text-zinc-950 rounded-full shadow-2xl flex items-center justify-center text-2xl active:scale-90 transition-transform">
             <i class="fa-solid fa-bars-staggered"></i>
         </button>
     </div>
 
     <script>
-        // Smooth highlighting for TOC links
+        // Simple Sidebar Toggle for Mobile
+        const menuBtn = document.getElementById('menu-btn');
+        const sidebar = document.querySelector('aside');
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+        });
+
+        // Smooth Scroll & Active State for TOC
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.toc-link');
 
@@ -296,17 +398,23 @@
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
                 if (pageYOffset >= (sectionTop - 250)) {
                     current = section.getAttribute('id');
                 }
             });
 
             navLinks.forEach(link => {
-                link.classList.remove('bg-emerald-500/10', 'text-emerald-400', 'font-bold', 'border', 'border-emerald-500/20');
+                link.classList.remove('toc-active');
                 if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('bg-emerald-500/10', 'text-emerald-400', 'font-bold', 'border', 'border-emerald-500/20');
+                    link.classList.add('toc-active');
                 }
             });
+        });
+
+        // Ensure sidebar is visible on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) sidebar.classList.remove('hidden');
         });
     </script>
 </body>
