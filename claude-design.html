@@ -4,54 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Căn bản -->
-    <title>TVT Agency | Marketing System & Brand Strategy Master Guide 2026</title>
-    <meta name="description" content="Hướng dẫn toàn diện về hệ thống Marketing System Setup và chiến lược x3 doanh thu từ TVT Agency. Ứng dụng Claude Design Master và triết lý Branding-first.">
-    <meta name="keywords" content="TVT Agency, toilatung, Marketing System Setup, Brand Strategy, AI Automation, x3 doanh thu, Claude Design Master, Marketing Ops">
-    <link rel="canonical" href="https://toilatung.com/claude-master-guide">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://toilatung.com/claude-master-guide">
-    <meta property="og:title" content="TVT Agency | Claude Design & Marketing System Master 2026">
-    <meta property="og:description" content="Khám phá đòn kết liễu tàn khốc từ Claude Code và hệ thống vận hành 5 lớp giúp doanh nghiệp bứt phá doanh thu.">
-    <meta property="og:image" content="https://toilatung.com/assets/images/tvt-master-og.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://toilatung.com/claude-master-guide">
-    <meta property="twitter:title" content="TVT Agency | Claude Design Master Blueprint">
-    <meta property="twitter:description" content="Hệ thống vận hành Strategy → Skill → Asset → System → Revenue chuẩn TVT.">
-
-    <!-- Structured Data (JSON-LD) - Cực kỳ quan trọng cho SEO Agency -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "TVT Agency",
-      "alternateName": "toilatung.com",
-      "url": "https://toilatung.com",
-      "logo": "https://toilatung.com/logo.png",
-      "image": "https://toilatung.com/og-image.png",
-      "description": "Chuyên gia thiết lập hệ thống Marketing System và Brand Strategy giúp x3 doanh thu.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Hanoi",
-        "addressCountry": "VN"
-      },
-      "serviceType": ["Marketing System Setup", "Brand Strategy", "AI Automation"],
-      "offers": {
-        "@type": "Offer",
-        "description": "AI Audit & Marketing Strategy Sprint"
-      }
-    }
-    </script>
-
+    <!-- SEO Optimization -->
+    <title>Claude Design 2026: Vũ Khí Kết Liễu | TVT Agency Master Blueprint</title>
+    <meta name="description" content="Quy trình vận hành cấp độ chuyên gia từ Design Intent đến Production-Ready Code trong 60 phút. Hệ thống SOP Freelancer x5 hiệu suất.">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
         
         :root {
             --tvt-orange: #f97316;
@@ -60,7 +20,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--tvt-bg);
             color: #f1f5f9;
             scroll-behavior: smooth;
@@ -69,312 +29,333 @@
         .mono { font-family: 'JetBrains+Mono', monospace; }
         
         .glass-card {
-            background: rgba(15, 23, 42, 0.8);
+            background: rgba(15, 23, 42, 0.6);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .glass-card:hover {
             border-color: var(--tvt-orange);
-            transform: translateY(-4px);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(249, 115, 22, 0.1);
         }
 
         .orange-glow {
-            box-shadow: 0 0 30px rgba(249, 115, 22, 0.15);
+            box-shadow: 0 0 40px rgba(249, 115, 22, 0.2);
         }
 
-        .sidebar-link {
-            border-left: 2px solid transparent;
+        .step-number {
+            -webkit-text-stroke: 1px rgba(249, 115, 22, 0.3);
+            color: transparent;
+            font-size: 4rem;
+            font-weight: 900;
         }
 
-        .sidebar-link:hover, .sidebar-link.active {
-            border-left: 3px solid var(--tvt-orange);
-            background: linear-gradient(to right, rgba(249, 115, 22, 0.1), transparent);
-            color: var(--tvt-orange);
-        }
-
-        .terminal-block {
-            background-color: #000;
+        .terminal-window {
+            background: #000;
+            border: 1px solid #1e293b;
             border-radius: 12px;
-            border: 1px solid #334155;
-            font-family: 'JetBrains+Mono', monospace;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
-        h1, h2, h3 {
-            letter-spacing: -0.02em;
-        }
-
-        .badge-pro {
+        .intent-badge {
             background: linear-gradient(90deg, #f97316, #ea580c);
-            box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--tvt-bg); }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--tvt-orange); }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 0%, #f97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
-<body class="flex min-h-screen">
+<body class="selection:bg-orange-500 selection:text-white">
 
-    <!-- Sidebar Hỗ trợ SEO (Internal Linking) -->
-    <aside class="w-72 bg-[#000] border-r border-slate-900 fixed h-full hidden lg:block overflow-y-auto z-50">
-        <div class="p-8">
-            <a href="/" title="Trang chủ toilatung.com">
-                <div class="text-3xl font-black text-white italic tracking-tighter">TVT<span class="text-orange-500">.</span></div>
-                <div class="text-[9px] text-slate-500 uppercase tracking-[0.3em] font-black mt-1">Agency Control Layer</div>
+    <!-- Header / Navigation -->
+    <nav class="fixed top-0 w-full z-[100] bg-black/50 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-orange-500 rounded flex items-center justify-center font-black italic">T</div>
+                <span class="font-black text-xl tracking-tighter italic">TVT AGENCY</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-[11px] font-bold uppercase tracking-widest text-slate-400">
+                <a href="#workflow" class="hover:text-orange-500 transition-colors">Workflow</a>
+                <a href="#sop" class="hover:text-orange-500 transition-colors">SOP Freelancer</a>
+                <a href="#intent" class="hover:text-orange-500 transition-colors">Design Intent</a>
+            </div>
+            <a href="https://toilatung.com" class="bg-orange-500 hover:bg-orange-600 px-5 py-2 rounded-full text-[11px] font-black uppercase tracking-widest transition-all">
+                Toilatung.com
             </a>
         </div>
-        
-        <nav class="mt-4 px-6 space-y-1">
-            <p class="text-[10px] text-slate-600 uppercase font-black px-2 mb-4">Mục lục chiến lược</p>
-            <a href="#philosophy" class="sidebar-link block px-3 py-3 text-sm font-semibold text-slate-400 transition-all">00. Triết lý Vận hành</a>
-            <a href="#architecture" class="sidebar-link block px-3 py-3 text-sm font-semibold text-slate-400 transition-all">01. Kiến trúc 5 Lớp</a>
-            <a href="#dna-onboarding" class="sidebar-link block px-3 py-3 text-sm font-semibold text-slate-400 transition-all">02. DNA & Onboarding</a>
-            <a href="#design-intent" class="sidebar-link block px-3 py-3 text-sm font-semibold text-slate-400 transition-all">03. Design Intent Logic</a>
-            <a href="#motion-design" class="sidebar-link block px-3 py-3 text-sm font-semibold text-slate-400 transition-all">04. Motion Design Pro</a>
-            <a href="#claude-code" class="sidebar-link block px-3 py-3 text-sm font-semibold text-slate-400 transition-all">05. Claude Code Finisher</a>
-            <a href="#gate-protocol" class="sidebar-link block px-3 py-3 text-sm font-semibold text-slate-400 transition-all">06. Gate Protocol</a>
-            <a href="#revenue-ladder" class="sidebar-link block px-3 py-3 text-sm font-semibold text-slate-400 transition-all">07. Bậc thang Doanh thu</a>
-        </nav>
+    </nav>
 
-        <div class="absolute bottom-8 px-8 w-full">
-            <div class="p-4 bg-slate-900/50 rounded-xl border border-slate-800">
-                <p class="text-[10px] text-slate-500 uppercase mb-2">Trạng thái hệ thống</p>
-                <div class="flex items-center gap-2">
-                    <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                    <span class="text-[11px] font-bold text-slate-300">TVT Control Active</span>
+    <!-- Hero Section -->
+    <section class="pt-40 pb-24 px-6 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-orange-500/10 via-transparent to-transparent -z-10"></div>
+        
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="inline-block px-4 py-1.5 bg-orange-500/10 border border-orange-500/20 rounded-full text-orange-500 text-[10px] font-black uppercase tracking-[0.3em] mb-8 animate-pulse">
+                Claude Design 2026: Weapon System
+            </h2>
+            <h1 class="text-6xl md:text-9xl font-black italic tracking-tighter mb-8 leading-[0.85] gradient-text uppercase">
+                VŨ KHÍ <br>KẾT LIỄU.
+            </h1>
+            <p class="text-slate-400 text-xl md:text-2xl max-w-3xl mx-auto font-medium leading-relaxed mb-12">
+                Từ bản vẽ đến sản phẩm thực tế — Quy trình vận hành <span class="text-white font-bold">Cấp độ Chuyên gia</span> dành riêng cho TVT Agency.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#workflow" class="px-10 py-5 bg-white text-black font-black italic rounded-full hover:bg-orange-500 hover:text-white transition-all shadow-2xl">KHÁM PHÁ WORKFLOW</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section I: Workflow -->
+    <section id="workflow" class="py-32 px-6 scroll-mt-20 border-t border-white/5 bg-slate-950/50">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-20">
+                <h3 class="text-orange-500 font-black text-sm uppercase tracking-widest mb-4 italic">I. Chi tiết Workflow</h3>
+                <h2 class="text-4xl md:text-6xl font-black tracking-tighter uppercase italic">Handoff to Deploy</h2>
+                <p class="text-slate-500 mt-4 max-w-xl">Con đường ngắn nhất để biến một ý tưởng thành một URL có thể truy cập toàn cầu.</p>
+            </div>
+
+            <div class="grid gap-12">
+                <!-- Step 1 -->
+                <div class="flex flex-col md:flex-row gap-8 items-center group">
+                    <div class="step-number">01</div>
+                    <div class="flex-1 glass-card p-10 rounded-[40px]">
+                        <h4 class="text-2xl font-black mb-4 italic uppercase text-orange-500">Hoàn thiện "Design Intent"</h4>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            Sau khi thiết kế xong, hãy kiểm tra lần cuối các trạng thái (States) của component: <strong class="text-white italic">Loading, Success, Error, Empty.</strong>
+                        </p>
+                        <div class="flex items-center gap-4 p-4 bg-orange-500/5 border border-orange-500/20 rounded-2xl">
+                            <i class="fa-solid fa-bolt text-orange-500"></i>
+                            <span class="text-xs font-bold">Click nút "Hand off to Claude Code" → Nhận TOKEN vào Clipboard.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 & 3 -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="glass-card p-10 rounded-[40px] border-l-4 border-l-blue-500">
+                        <div class="text-blue-500 font-black text-4xl mb-4 italic">02/03</div>
+                        <h4 class="text-xl font-black mb-4 uppercase italic">Build & Scaffold</h4>
+                        <p class="text-sm text-slate-400 mb-6">Mở Terminal dự án, gõ lệnh khởi tạo. Claude Code sẽ tự động phân tích Bundle và thiết lập toàn bộ môi trường Stack (Vite, React, Tailwind, Framer).</p>
+                        <div class="terminal-window p-6 mono text-[11px]">
+                            <div class="flex gap-1.5 mb-4 border-b border-white/5 pb-2">
+                                <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                                <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+                                <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                            </div>
+                            <p class="text-slate-500"># Khởi tạo dự án mới</p>
+                            <p class="text-white">$ npx create-vite@latest . --template react-ts</p>
+                            <p class="text-white">$ claude --handoff [TOKEN]</p>
+                            <p class="text-blue-400 mt-2 italic">? I see 5 screens and Framer Motion system. Install Tailwind? (y/n)</p>
+                            <p class="text-green-500 font-bold">$ y</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-10 rounded-[40px] flex flex-col justify-between">
+                        <div>
+                            <div class="text-white font-black text-4xl mb-4 italic">04</div>
+                            <h4 class="text-xl font-black mb-4 uppercase italic">Fine-tuning (Hội thoại)</h4>
+                            <p class="text-sm text-slate-400 leading-relaxed italic">
+                                "Kết nối nút 'Thanh toán' với Stripe API demo" hoặc "Lấy dữ liệu thật từ bảng 'Sản phẩm' trong file Excel tôi vừa gửi".
+                            </p>
+                        </div>
+                        <div class="mt-8 p-6 bg-slate-900 rounded-3xl border border-slate-800">
+                            <div class="flex items-center gap-3 text-xs font-bold text-slate-500">
+                                <i class="fa-solid fa-microchip"></i>
+                                <span>Claude Code Agent đang xử lý Logic...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="relative glass-card p-12 rounded-[48px] bg-orange-600 orange-glow border-none group overflow-hidden">
+                    <div class="relative z-10">
+                        <div class="text-white/30 font-black text-6xl mb-4 italic">05</div>
+                        <h4 class="text-4xl font-black mb-6 uppercase italic text-white tracking-tighter">Đòn Kết Liễu: DEPLOY</h4>
+                        <p class="text-white/80 max-w-2xl mb-8 font-semibold">Gõ lệnh <code class="bg-black/20 px-2 py-1 rounded">claude deploy</code>. Claude tự động chọn Vercel/Netlify, cấu hình biến môi trường và trả về Production URL trong chưa đầy 2 phút.</p>
+                        <div class="inline-flex items-center gap-3 bg-white text-orange-600 px-8 py-4 rounded-full font-black italic shadow-xl">
+                            <i class="fa-solid fa-globe"></i> https://project-alpha.tvt.agency
+                        </div>
+                    </div>
+                    <div class="absolute right-0 top-0 text-[180px] font-black italic text-white/10 -mr-12 -mt-12 select-none">SHIP</div>
                 </div>
             </div>
         </div>
-    </aside>
+    </section>
 
-    <!-- Main Content -->
-    <main class="flex-1 lg:ml-72 p-6 md:p-16 max-w-5xl mx-auto">
-        
-        <!-- Header Section Optimized for SEO -->
-        <header class="mb-24">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-500/10 border border-orange-500/20 rounded-full text-orange-500 text-[11px] font-black uppercase tracking-widest mb-8">
-                <span class="relative flex h-2 w-2">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
-                </span>
-                TVT Master Blueprint v2026.1
+    <!-- Section II: SOP Freelancer -->
+    <section id="sop" class="py-32 px-6 scroll-mt-20">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-24">
+                <h3 class="text-orange-500 font-black text-sm uppercase tracking-widest mb-4 italic">II. SOP cho Freelancer</h3>
+                <h2 class="text-5xl md:text-7xl font-black tracking-tighter uppercase italic italic">Cân 5 Dự Án Cùng Lúc</h2>
+                <p class="text-slate-500 mt-6 max-w-2xl mx-auto font-medium">Mô hình Parallel Agentic Design: Vận hành đa nhiệm mà không bị "ngợp".</p>
             </div>
-            
-            <h1 class="text-5xl md:text-8xl font-black mb-8 leading-[0.95] tracking-tighter italic text-white">
-                THIẾT LẬP <br><span class="text-orange-500">HỆ THỐNG</span> <br>MARKETING.
-            </h1>
-            
-            <p class="text-slate-400 text-xl max-w-2xl leading-relaxed mb-10 font-medium">
-                Tài liệu tối mật hướng dẫn triển khai <strong class="text-white">Marketing System Setup</strong> và quy trình <strong class="text-white">x3 doanh thu</strong> ứng dụng trí tuệ nhân tạo Claude Opus 4.7.
-            </p>
 
-            <div class="flex flex-wrap gap-4">
-                <div class="flex items-center gap-3 px-5 py-3 bg-slate-900 border border-slate-800 rounded-2xl">
-                    <i class="fa-solid fa-shield-halved text-orange-500"></i>
-                    <span class="text-sm font-bold tracking-tight">System > Tool</span>
-                </div>
-                <div class="flex items-center gap-3 px-5 py-3 bg-slate-900 border border-slate-800 rounded-2xl">
-                    <i class="fa-solid fa-chart-line text-orange-500"></i>
-                    <span class="text-sm font-bold tracking-tight">Revenue Focused</span>
-                </div>
-            </div>
-        </header>
-
-        <!-- Section 00: Philosophy -->
-        <section id="philosophy" class="mb-24 scroll-mt-24">
-            <div class="flex items-center gap-4 mb-12">
-                <div class="text-orange-500 font-black text-4xl italic">00/</div>
-                <h2 class="text-3xl font-black uppercase tracking-tighter italic">Triết lý Vận hành TVT</h2>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="glass-card p-10 rounded-[32px] orange-glow border-orange-500/20">
-                    <h3 class="text-xl font-black mb-4 uppercase italic tracking-tight">Operating Philosophy</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">TVT vận hành theo chuỗi giá trị: <strong>Strategy → Skill → Asset → System → Revenue</strong>. Chúng tôi không bán công cụ, chúng tôi bán sự ổn định của dòng tiền.</p>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-xs font-bold text-slate-300">
-                            <i class="fa-solid fa-circle-check text-orange-500"></i> Branding-first
-                        </div>
-                        <div class="flex items-center gap-3 text-xs font-bold text-slate-300">
-                            <i class="fa-solid fa-circle-check text-orange-500"></i> Không qua System Setup → Không Retainer
-                        </div>
-                    </div>
-                </div>
-                <div class="space-y-6">
-                    <div class="p-8 bg-slate-900/50 rounded-3xl border border-slate-800">
-                        <h4 class="font-bold mb-2 text-orange-500">Asset > Output</h4>
-                        <p class="text-xs text-slate-500 leading-relaxed">Xây dựng tài sản chuyển đổi (Landing Page, Sales Kit, Video Funnel) là ưu tiên hàng đầu trước khi chạy bất kỳ chiến dịch Performance nào.</p>
-                    </div>
-                    <div class="p-8 bg-slate-900/50 rounded-3xl border border-slate-800">
-                        <h4 class="font-bold mb-2 text-orange-500">AI Amplifier</h4>
-                        <p class="text-xs text-slate-500 leading-relaxed">AI (Claude 4.7) là đòn bẩy khuếch đại tốc độ thực thi, không phải là thay thế tư duy chiến lược Branding.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 01: Architecture -->
-        <section id="architecture" class="mb-24 scroll-mt-24">
-            <div class="flex items-center gap-4 mb-12">
-                <div class="text-orange-500 font-black text-4xl italic">01/</div>
-                <h2 class="text-3xl font-black uppercase tracking-tighter italic text-white">Kiến trúc 5 Lớp (Architecture)</h2>
-            </div>
-            
-            <div class="space-y-4">
-                <div class="glass-card p-8 rounded-3xl group cursor-help">
-                    <div class="flex justify-between items-center">
-                        <div class="flex items-center gap-6">
-                            <div class="text-3xl font-black text-slate-800 group-hover:text-orange-500 transition-colors">L1</div>
-                            <div>
-                                <h4 class="font-bold text-lg">Layer 1 — Branding Core</h4>
-                                <p class="text-xs text-slate-500">Khóa bản sắc: Positioning, Identity, Naming.</p>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-lock text-slate-800 group-hover:text-orange-500 transition-all"></i>
-                    </div>
-                </div>
-                <div class="glass-card p-8 rounded-3xl group bg-orange-500/5 border-orange-500/20">
-                    <div class="flex justify-between items-center">
-                        <div class="flex items-center gap-6">
-                            <div class="text-3xl font-black text-orange-500">L2</div>
-                            <div>
-                                <h4 class="font-bold text-lg text-orange-500 italic">Layer 2 — Marketing System Setup</h4>
-                                <p class="text-xs text-orange-200/50">Thiết kế xương sống: Funnel, Tracking, Lead Routing, KPI Map.</p>
-                            </div>
-                        </div>
-                        <span class="px-3 py-1 bg-orange-500 text-[9px] font-black uppercase text-white rounded-full badge-pro">Critical</span>
-                    </div>
-                </div>
-                <div class="glass-card p-8 rounded-3xl group">
-                    <div class="flex justify-between items-center">
-                        <div class="flex items-center gap-6">
-                            <div class="text-3xl font-black text-slate-800 group-hover:text-orange-500 transition-colors">L3</div>
-                            <div>
-                                <h4 class="font-bold text-lg">Layer 3 — Asset Engine</h4>
-                                <p class="text-xs text-slate-500">Xây dựng cỗ máy chuyển đổi: Landing Page, SEO Pillar, Sales Kit.</p>
-                            </div>
-                        </div>
-                        <i class="fa-solid fa-engine text-slate-800"></i>
-                    </div>
-                </div>
-                <!-- ... Content logic continues for other layers ... -->
-            </div>
-        </section>
-
-        <!-- Section 05: Claude Code Finisher (Highlight) -->
-        <section id="claude-code" class="mb-24 scroll-mt-24">
-            <div class="relative p-12 bg-white rounded-[48px] overflow-hidden">
-                <div class="relative z-10">
-                    <h2 class="text-4xl md:text-6xl font-black text-black leading-[0.9] italic uppercase tracking-tighter mb-8">
-                        ĐÒN KẾT LIỄU <br><span class="text-orange-600">CLAUDE CODE.</span>
-                    </h2>
-                    <p class="text-slate-600 max-w-xl mb-10 font-semibold leading-relaxed">
-                        Pha cuối cùng tàn khốc nhất. Không còn là bản vẽ trên Figma, Claude Code biến Design Intent thành sản phẩm thực tế (Production-Ready) trong 60 phút.
-                    </p>
-                    
-                    <div class="terminal-block p-8 mb-10 shadow-3xl bg-black">
-                        <div class="flex items-center gap-2 mb-6">
-                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                            <span class="text-[10px] mono text-slate-500 ml-2 uppercase font-bold tracking-widest">Hand-off terminal v4.7</span>
-                        </div>
-                        <div class="space-y-2 text-xs md:text-sm mono text-slate-300">
-                            <p class="text-orange-400"># Giai đoạn Handoff từ Claude Design</p>
-                            <p>$ <span class="text-white">claude --handoff --intent="system-setup"</span></p>
-                            <p class="text-blue-400">$ Processing Design Tokens & Interaction Logic...</p>
-                            <p class="text-green-500">$ Successfully generated: React + Tailwind + Framer Motion</p>
-                            <p class="text-green-500">$ Deployment status: LIVE at https://client-system.tvt</p>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-wrap gap-6">
-                        <div class="flex flex-col">
-                            <span class="text-3xl font-black text-black">60m</span>
-                            <span class="text-[10px] text-slate-400 uppercase font-black">Idea-to-Ship</span>
-                        </div>
-                        <div class="flex flex-col">
-                            <span class="text-3xl font-black text-black">0%</span>
-                            <span class="text-[10px] text-slate-400 uppercase font-black">Legacy Gap</span>
-                        </div>
-                        <div class="flex flex-col">
-                            <span class="text-3xl font-black text-orange-600">60fps</span>
-                            <span class="text-[10px] text-slate-400 uppercase font-black">Motion Performance</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Background Decoration -->
-                <div class="absolute -right-20 -bottom-20 text-[300px] font-black text-slate-100 italic select-none">CODE</div>
-            </div>
-        </section>
-
-        <!-- Section 06: Gate Protocol (Detailed SEO) -->
-        <section id="gate-protocol" class="mb-24 scroll-mt-24">
-            <div class="flex items-center gap-4 mb-12">
-                <div class="text-orange-500 font-black text-4xl italic">06/</div>
-                <h2 class="text-3xl font-black uppercase tracking-tighter italic text-white">Execution Gate Protocol</h2>
-            </div>
-            
-            <div class="grid gap-6">
-                <div class="p-8 border-l-4 border-orange-500 bg-slate-900/30 rounded-r-3xl">
-                    <h4 class="text-xl font-bold mb-4 flex items-center gap-3">
-                        <i class="fa-solid fa-door-open text-orange-500"></i> Gate 0 — Pre-Launch
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Project Pipeline -->
+                <div class="glass-card p-8 rounded-3xl">
+                    <h4 class="font-black text-lg mb-6 uppercase italic text-white flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-orange-500"></i> Pipeline Dự án
                     </h4>
-                    <p class="text-sm text-slate-400 mb-6 italic">Yêu cầu tuyệt đối trước khi chạy Ads/Performance:</p>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="flex items-center gap-3 p-4 bg-black rounded-xl border border-slate-800">
-                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
-                            <span class="text-xs font-bold tracking-tight">Tracking: Pixel/CAPI hoạt động 100%</span>
+                    <div class="space-y-4 text-xs font-bold">
+                        <div class="p-3 bg-slate-900 border-l-2 border-orange-500 rounded-lg flex justify-between">
+                            <span>A: Design Phase</span> <span class="text-orange-500 uppercase">Chatting</span>
                         </div>
-                        <div class="flex items-center gap-3 p-4 bg-black rounded-xl border border-slate-800">
-                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
-                            <span class="text-xs font-bold tracking-tight">Routing: Lead về CRM < 1 phút</span>
+                        <div class="p-3 bg-slate-900 border-l-2 border-blue-500 rounded-lg flex justify-between">
+                            <span>B: Handoff Phase</span> <span class="text-blue-500 uppercase">Scaffold</span>
                         </div>
-                        <div class="flex items-center gap-3 p-4 bg-black rounded-xl border border-slate-800">
-                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
-                            <span class="text-xs font-bold tracking-tight">Asset: Landing Page PASS Audit</span>
+                        <div class="p-3 bg-slate-900 border-l-2 border-green-500 rounded-lg flex justify-between">
+                            <span>C: Logic Phase</span> <span class="text-green-500 uppercase">Coding</span>
                         </div>
-                        <div class="flex items-center gap-3 p-4 bg-black rounded-xl border border-slate-800">
-                            <div class="w-2 h-2 rounded-full bg-orange-500"></div>
-                            <span class="text-xs font-bold tracking-tight">Sales SLA: Cam kết phản hồi < 15p</span>
+                        <div class="p-3 bg-slate-900 border-l-2 border-purple-500 rounded-lg flex justify-between opacity-50">
+                            <span>D: Review Phase</span> <span class="uppercase">Waiting</span>
+                        </div>
+                        <div class="p-3 bg-slate-900 border-l-2 border-red-500 rounded-lg flex justify-between opacity-50">
+                            <span>E: Maintenance</span> <span class="uppercase">Fixing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Context Management -->
+                <div class="glass-card p-8 rounded-3xl md:col-span-2">
+                    <h4 class="font-black text-lg mb-6 uppercase italic text-white flex items-center gap-2">
+                        <i class="fa-solid fa-brain text-orange-500"></i> Quản lý Context: claude.md
+                    </h4>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <p class="text-sm text-slate-400">Mọi dự án bắt buộc phải có "Project Brain" để lưu trữ:</p>
+                            <ul class="text-xs space-y-2 text-slate-300">
+                                <li>• Link Design gốc từ Claude Design.</li>
+                                <li>• Danh sách tính năng đã hoàn thiện.</li>
+                                <li>• Todo list (các lỗi chưa xử lý).</li>
+                            </ul>
+                            <div class="mt-4 p-4 bg-orange-500/10 rounded-xl text-[10px] italic text-orange-500 font-bold border border-orange-500/20">
+                                "Mẹo: Trước khi bắt đầu ca làm việc, hãy bảo Claude Code: 'Đọc claude.md và tóm tắt tiến độ 5 dự án cho tôi'."
+                            </div>
+                        </div>
+                        <div class="bg-black p-6 rounded-2xl border border-slate-800 mono text-[10px] leading-relaxed">
+                            <p class="text-slate-600"># Project: Project_Alpha.md</p>
+                            <p class="text-white mt-2">## Design System: toilatung-v2</p>
+                            <p class="text-white">## Status: [||||||||--] 80%</p>
+                            <p class="text-green-500">## Completed: Landing, Auth, Payment</p>
+                            <p class="text-red-400">## Todo: Fix dark-mode flicker</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Footer / CTA Section Optimized for Conversion & SEO -->
-        <footer class="mt-40 pt-20 border-t border-slate-900 text-center pb-20">
-            <p class="text-orange-500 font-black uppercase tracking-[0.3em] text-[11px] mb-6">Liên hệ đội ngũ TVT Agency</p>
-            <h3 class="text-4xl md:text-6xl font-black mb-12 italic uppercase tracking-tighter text-white">XÂY HỆ THỐNG. <br>GẶT DOANH THU.</h3>
-            
-            <div class="flex flex-col md:flex-row justify-center gap-6 mb-20">
-                <a href="https://toilatung.com" class="px-12 py-5 bg-orange-500 hover:bg-orange-600 text-white font-black italic rounded-full transition-all transform hover:scale-105 orange-glow text-lg">
+    <!-- Section III: Design Intent -->
+    <section id="intent" class="py-32 px-6 scroll-mt-20 border-t border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-20 text-center md:text-left flex flex-col md:flex-row justify-between items-end gap-8">
+                <div>
+                    <h3 class="text-orange-500 font-black text-sm uppercase tracking-widest mb-4 italic">III. Phân tích Sâu</h3>
+                    <h2 class="text-5xl md:text-7xl font-black tracking-tighter uppercase italic">Design Intent Logic</h2>
+                </div>
+                <div class="max-w-md text-slate-500 font-medium">
+                    Tại sao Claude lại hiểu bạn hơn cả người yêu? Đó là nhờ <strong class="text-white italic text-lg">Semantic Design</strong> (Thiết kế dựa trên ngữ nghĩa).
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 mb-20">
+                <div class="p-10 bg-slate-900/50 rounded-[40px] border border-slate-800">
+                    <h4 class="text-xl font-black mb-6 uppercase italic flex items-center gap-3">
+                        <span class="w-10 h-10 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center italic text-sm">X</span> Visual-first (Sai)
+                    </h4>
+                    <p class="text-xs text-slate-500 mb-6 font-bold uppercase italic tracking-widest">Tập trung vào vẻ ngoài (Nouns)</p>
+                    <div class="space-y-4 opacity-50">
+                        <div class="p-4 bg-black rounded-2xl text-xs">"Vẽ một cái bảng có 5 cột màu xanh"</div>
+                        <div class="p-4 bg-black rounded-2xl text-xs">"Thêm một cái pop-up khi bấm nút"</div>
+                        <div class="p-4 bg-black rounded-2xl text-xs">"Cho cái hình này chạy qua chạy lại"</div>
+                    </div>
+                </div>
+
+                <div class="p-10 bg-orange-500/5 rounded-[40px] border border-orange-500/30 orange-glow">
+                    <h4 class="text-xl font-black mb-6 uppercase italic flex items-center gap-3 text-orange-500">
+                        <span class="w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center italic text-sm">✓</span> Intent-first (Đúng)
+                    </h4>
+                    <p class="text-xs text-orange-500/70 mb-6 font-black uppercase italic tracking-widest">Tập trung vào hành động (Verbs)</p>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-orange-500/10 rounded-2xl text-xs border border-orange-500/20 font-bold">"Thiết kế Data Grid có khả năng Sắp xếp & Lọc dữ liệu, mặc định Loading."</div>
+                        <div class="p-4 bg-orange-500/10 rounded-2xl text-xs border border-orange-500/20 font-bold">"Xây dựng Modal xác nhận có tính năng Chặn tương tác nền (Overlay)."</div>
+                        <div class="p-4 bg-orange-500/10 rounded-2xl text-xs border border-orange-500/20 font-bold">"Thêm Motion Design kiểu Infinite Marquee cho dải Logo đối tác (Trust signal)."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opus 4.7 Hacks -->
+            <div class="bg-black border border-slate-800 p-12 rounded-[48px]">
+                <h4 class="text-2xl font-black mb-8 italic uppercase tracking-tighter flex items-center gap-3">
+                    <i class="fa-solid fa-skull-crossbones text-orange-500"></i> Mẹo "Hack" Logic Opus 4.7
+                </h4>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-orange-500 flex items-center justify-center shrink-0 font-bold">1</div>
+                            <div>
+                                <h5 class="font-bold text-lg mb-1">Contextual Awareness</h5>
+                                <p class="text-sm text-slate-500 leading-relaxed italic">Hãy cung cấp "Tại sao" trước khi nói "Cái gì".</p>
+                                <p class="text-xs text-slate-400 mt-2 p-3 bg-slate-900 rounded-lg">"Khách hàng cao tuổi, hãy ưu tiên Typography lớn và khoảng cách click rộng (Accessibility)."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-orange-500 flex items-center justify-center shrink-0 font-bold">2</div>
+                            <div>
+                                <h5 class="font-bold text-lg mb-1">Component Thinking</h5>
+                                <p class="text-sm text-slate-500 leading-relaxed italic">Luôn yêu cầu thiết kế dưới dạng Atomics.</p>
+                                <p class="text-xs text-slate-400 mt-2 p-3 bg-slate-900 rounded-lg">"Hãy thiết kế component này dưới dạng Atomics để tôi dễ dàng tái sử dụng khi hand-off sang Code."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Manifesto -->
+    <footer class="py-40 px-6 text-center border-t border-white/5 overflow-hidden relative">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h3 class="text-orange-500 font-black uppercase tracking-[0.4em] text-xs mb-8">The AI-Powered Agency Manifesto</h3>
+            <h2 class="text-4xl md:text-7xl font-black italic uppercase tracking-tighter leading-[0.9] mb-12">
+                AI KHÔNG THAY THẾ BẠN. <br><span class="text-orange-500">NGƯỜI DÙNG AI SẼ THAY THẾ BẠN.</span>
+            </h2>
+            <p class="text-slate-500 max-w-2xl mx-auto font-medium mb-16 leading-relaxed">
+                Kẻ chiến thắng là kẻ biết cách ra lệnh (Prompt) sao cho AI hiểu được cái "Ý định" (Intent) đằng sau những điểm ảnh (Pixels).
+            </p>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                <a href="https://toilatung.com" class="px-12 py-6 bg-orange-500 text-white font-black italic rounded-full orange-glow hover:scale-105 transition-all uppercase tracking-widest">
                     VÀO TOILATUNG.COM
                 </a>
-                <button onclick="window.print()" class="px-12 py-5 border-2 border-slate-800 hover:bg-slate-800 text-white font-black italic rounded-full transition-all">
-                    TẢI BẢN PDF BLUEPRINT
-                </button>
-            </div>
-
-            <div class="max-w-2xl mx-auto space-y-4">
-                <p class="text-slate-500 text-xs font-medium">TVT Agency không bán công cụ. Chúng tôi bán một tương lai nơi dòng tiền của bạn được tự động hóa bằng hệ thống Marketing bền vững.</p>
-                <div class="flex justify-center gap-8 text-slate-700 text-sm">
-                    <a href="#" class="hover:text-orange-500">Facebook</a>
-                    <a href="#" class="hover:text-orange-500">YouTube</a>
-                    <a href="#" class="hover:text-orange-500">LinkedIn</a>
+                <div class="text-slate-700 font-black text-xs uppercase tracking-widest">
+                    HCM, 18.04.2026 — VERSION 4.7.0
                 </div>
-                <p class="text-[10px] text-slate-800 mt-12 uppercase tracking-widest font-black">&copy; 2026 TVT Agency & toilatung.com - Vibe-Coded by Claude 4.7</p>
             </div>
-        </footer>
-
-    </main>
-
-    <!-- Floating SEO Elements -->
-    <div class="fixed bottom-10 right-10 z-[100] group">
-        <div class="absolute -top-12 right-0 bg-white text-black text-[10px] font-black px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-            CHẠT VỚI AI AGENT
         </div>
-        <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl orange-glow cursor-pointer hover:rotate-12 transition-all">
-            <i class="fa-solid fa-robot"></i>
+        <div class="absolute bottom-0 left-0 w-full opacity-[0.02] pointer-events-none select-none text-[250px] font-black italic leading-none -mb-20">TVT AGENCY</div>
+    </footer>
+
+    <!-- Floating Tooltip -->
+    <div class="fixed bottom-10 left-1/2 -translate-x-1/2 z-[200]">
+        <div class="bg-white/10 backdrop-blur-xl border border-white/10 px-6 py-3 rounded-full flex gap-6 text-[10px] font-black uppercase tracking-widest text-slate-400 shadow-2xl">
+            <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-500"></span> System Active</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-code"></i> Opus 4.7</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-shield-halved"></i> 100% Intent-Based</div>
         </div>
     </div>
 
