@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Tôi Là Tùng | SePay Automation - Giải Pháp Thanh Toán 10 Giây</title>
+    <meta name="description" content="Chuyên gia AI & Automation. Tích hợp SePay Open Banking vào WordPress, React, HTML. Sở hữu bộ Prompt Claude Cheats độc quyền giúp tối ưu hóa công việc 10x.">
+    <meta name="keywords" content="Tôi là Tùng, toilatung.com, SePay, Open Banking, AI Automation, Claude Prompt Cheats, Tích hợp thanh toán, Webhooks SePay, Tự động hóa thanh toán">
+    <meta name="author" content="Tôi Là Tùng">
+    <link rel="canonical" href="https://toilatung.com">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toilatung.com">
+    <meta property="og:title" content="Tôi Là Tùng | SePay Automation - Giải Pháp Thanh Toán 10 Giây">
+    <meta property="og:description" content="Tự động hóa thanh toán với SePay Open Banking. Giải pháp dành cho WordPress, React và Landing Page.">
+    <meta property="og:image" content="https://tvtagency.com/wp-content/uploads/2026/01/tung-soc-son-tvt-agency.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://toilatung.com">
+    <meta property="twitter:title" content="Tôi Là Tùng | SePay Automation - Giải Pháp Thanh Toán 10 Giây">
+    <meta property="twitter:description" content="Tự động hóa thanh toán với SePay Open Banking. Giải pháp dành cho WordPress, React và Landing Page.">
+    <meta property="twitter:image" content="https://tvtagency.com/wp-content/uploads/2026/01/tung-soc-son-tvt-agency.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-primary: #f59e0b; 
+            --brand-dark: #09090b;
+            --brand-surface: #18181b;
+        }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--brand-dark); 
+            color: #f4f4f5;
+            scroll-behavior: smooth;
+        }
+        .glass { background: rgba(24, 24, 27, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .amber-gradient { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+        .text-gradient-amber { background: linear-gradient(to right, #fbbf24, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .spinner { border: 2px solid rgba(245, 158, 11, 0.1); border-top: 2px solid #f59e0b; border-radius: 50%; width: 20px; height: 20px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .tab-btn.active { border-color: var(--brand-primary); color: var(--brand-primary); background: rgba(245, 158, 11, 0.05); }
+    </style>
+</head>
+<body class="selection:bg-amber-500/30 selection:text-amber-500">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="https://toilatung.com" class="flex items-center gap-3 cursor-pointer group">
+                <div class="w-10 h-10 amber-gradient rounded-xl flex items-center justify-center font-black text-black text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition">T</div>
+                <div class="flex flex-col">
+                    <span class="text-lg font-extrabold tracking-tight leading-none group-hover:text-amber-500 transition">TÔI LÀ TÙNG</span>
+                    <span class="text-[10px] text-amber-500 font-bold tracking-[0.2em] uppercase">AI & AUTOMATION</span>
+                </div>
+            </a>
+            <div class="hidden lg:flex gap-10 text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-400">
+                <a href="#about" class="hover:text-amber-500 transition">Tác giả</a>
+                <a href="#platforms" class="hover:text-amber-500 transition">Nền tảng</a>
+                <a href="#demo" class="hover:text-amber-500 transition">Thanh toán Demo</a>
+                <a href="#benefits" class="hover:text-amber-500 transition">Lợi ích</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://toilatung.com" target="_blank" class="hidden sm:block px-5 py-2.5 rounded-lg border border-white/10 text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">toilatung.com</a>
+                <button onclick="document.getElementById('demo').scrollIntoView()" class="px-5 py-2.5 rounded-lg amber-gradient text-black text-[11px] font-black uppercase tracking-widest">Mua ngay</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-48 pb-32 px-6 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] font-bold mb-10 uppercase tracking-[0.2em]">
+                <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+                SePay Open Banking Expert
+            </div>
+            <h1 class="text-6xl md:text-8xl font-black mb-10 leading-[0.95] tracking-tighter">
+                Tự động hóa thanh toán <br> 
+                <span class="text-gradient-amber">Smart & Fast.</span>
+            </h1>
+            <p class="text-zinc-400 text-xl mb-14 max-w-3xl mx-auto font-medium leading-relaxed">
+                Tôi là Tùng, chuyên gia tại <a href="https://toilatung.com" class="text-white hover:text-amber-500 underline decoration-amber-500/30 transition">toilatung.com</a>. Tôi giúp bạn tích hợp giải pháp thanh toán 10 giây 
+                từ SePay vào mọi nền tảng website hiện đại.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <button onclick="document.getElementById('demo').scrollIntoView()" class="px-10 py-5 rounded-2xl amber-gradient text-black font-black text-lg hover:scale-105 transition-all shadow-2xl shadow-amber-500/20">TRẢI NGHIỆM DEMO</button>
+                <button onclick="document.getElementById('platforms').scrollIntoView()" class="px-10 py-5 rounded-2xl bg-zinc-900 border border-zinc-800 font-bold text-lg hover:bg-zinc-800 transition">CÁC GIẢI PHÁP NỀN TẢNG</button>
+            </div>
+        </div>
+        <!-- Decorative elements -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-amber-500/5 rounded-full blur-[160px] -z-10"></div>
+    </section>
+
+    <!-- About "Tôi Là Tùng" -->
+    <section id="about" class="py-32 border-y border-white/5 bg-zinc-900/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-20">
+                <div class="lg:w-2/5 relative">
+                    <div class="relative z-10 w-full aspect-[4/5] rounded-[3rem] overflow-hidden border-4 border-zinc-800 shadow-2xl group">
+                        <img src="https://tvtagency.com/wp-content/uploads/2026/01/tung-soc-son-tvt-agency.png" alt="Tôi là Tùng - toilatung.com" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100">
+                    </div>
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 amber-gradient rounded-[2.5rem] p-6 flex flex-col justify-end text-black shadow-2xl rotate-6 group-hover:rotate-0 transition-transform">
+                        <span class="text-xs font-black uppercase tracking-widest opacity-60">Expert in</span>
+                        <span class="text-2xl font-black leading-none">AI & AUTO</span>
+                    </div>
+                </div>
+                <div class="lg:w-3/5">
+                    <h2 class="text-amber-500 font-black text-xs uppercase tracking-[0.4em] mb-6">GIỚI THIỆU TÁC GIẢ</h2>
+                    <h3 class="text-5xl font-black mb-8 leading-tight italic uppercase">Tôi là Tùng.</h3>
+                    <p class="text-zinc-400 text-xl leading-relaxed mb-10">
+                        Tại <a href="https://toilatung.com" class="text-white font-bold hover:text-amber-500 transition">toilatung.com</a>, tôi không chỉ chia sẻ kiến thức. Tôi cung cấp 
+                        các giải pháp thực thi. Sự kết hợp giữa <span class="text-amber-500">SePay Open Banking</span> và hệ thống 
+                        Automation giúp doanh nghiệp của bạn vận hành trơn tru mà không cần tốn hàng giờ kiểm tra số dư thủ công.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-10">
+                        <div>
+                            <div class="text-4xl font-black text-white mb-2 tracking-tighter">500+</div>
+                            <div class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Prompt Claude</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-black text-white mb-2 tracking-tighter">200+</div>
+                            <div class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Hệ thống Auto</div>
+                        </div>
+                        <div class="col-span-2 md:col-span-1">
+                            <div class="text-4xl font-black text-white mb-2 tracking-tighter">10s</div>
+                            <div class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Thời gian xử lý</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Solutions -->
+    <section id="platforms" class="py-32">
+        <div class="max-w-7xl mx-auto px-6 text-center mb-20">
+            <h2 class="text-amber-500 font-black text-xs uppercase tracking-[0.4em] mb-4">IMPLEMENTATION</h2>
+            <h3 class="text-5xl font-black mb-6">Giải pháp cho mọi nền tảng.</h3>
+            <p class="text-zinc-500 max-w-2xl mx-auto">Tùng hỗ trợ bạn tích hợp SePay vào bất kỳ công nghệ nào bạn đang sử dụng với hiệu suất tối ưu nhất.</p>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6">
+            <!-- Tabs Navigation -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button onclick="showTab('wp')" class="tab-btn active px-8 py-4 rounded-2xl border border-white/5 font-bold transition-all" id="btn-wp">WordPress / Woo</button>
+                <button onclick="showTab('react')" class="tab-btn px-8 py-4 rounded-2xl border border-white/5 font-bold transition-all" id="btn-react">React / Next.js</button>
+                <button onclick="showTab('html')" class="tab-btn px-8 py-4 rounded-2xl border border-white/5 font-bold transition-all" id="btn-html">Landing Page HTML</button>
+                <button onclick="showTab('lark')" class="tab-btn px-8 py-4 rounded-2xl border border-white/5 font-bold transition-all" id="btn-lark">Lark / Telegram</button>
+            </div>
+
+            <!-- Tab Content: WordPress -->
+            <div id="tab-wp" class="tab-content active glass p-10 rounded-[3rem] animate-in fade-in duration-500">
+                <div class="flex flex-col lg:flex-row gap-16 items-center">
+                    <div class="lg:w-1/2">
+                        <h4 class="text-3xl font-black mb-6">Tích hợp WooCommerce trong 5 phút.</h4>
+                        <p class="text-zinc-400 mb-8 leading-relaxed">Sử dụng Plugin SePay dành riêng cho WordPress để tự động hóa hoàn toàn quy trình nhận tiền và kích hoạt đơn hàng (Virtual Products, Courses, Licenses).</p>
+                        <ul class="space-y-4 mb-10">
+                            <li class="flex items-center gap-3 text-sm font-medium"><div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div> Cấu hình Webhook URL tự động.</li>
+                            <li class="flex items-center gap-3 text-sm font-medium"><div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div> Tạo mã VietQR động ngay tại trang Checkout.</li>
+                            <li class="flex items-center gap-3 text-sm font-medium"><div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div> Tự động chuyển trạng thái đơn hàng sang "Processing".</li>
+                        </ul>
+                        <button class="px-8 py-4 bg-white text-black font-black rounded-xl hover:bg-zinc-200 transition text-sm">XEM VIDEO HƯỚNG DẪN</button>
+                    </div>
+                    <div class="lg:w-1/2 grid grid-cols-2 gap-4">
+                        <div class="bg-zinc-800/50 p-6 rounded-3xl border border-white/5 text-center">
+                            <div class="text-amber-500 font-black text-xl mb-1">ZERO</div>
+                            <p class="text-[10px] uppercase font-bold text-zinc-500 tracking-widest">Coding Required</p>
+                        </div>
+                        <div class="bg-zinc-800/50 p-6 rounded-3xl border border-white/5 text-center">
+                            <div class="text-white font-black text-xl mb-1">100%</div>
+                            <p class="text-[10px] uppercase font-bold text-zinc-500 tracking-widest">Sync Speed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: React -->
+            <div id="tab-react" class="tab-content glass p-10 rounded-[3rem]">
+                <div class="flex flex-col lg:flex-row gap-16 items-center">
+                    <div class="lg:w-1/2">
+                        <h4 class="text-3xl font-black mb-6">API & Webhooks cho React App.</h4>
+                        <p class="text-zinc-400 mb-8 leading-relaxed">Xây dựng trải nghiệm thanh toán Real-time bằng cách sử dụng REST API của SePay kết hợp với Serverless Functions (Next.js/Node.js).</p>
+                        <div class="bg-zinc-950 p-6 rounded-2xl font-mono text-[11px] text-amber-500 mb-8 border border-white/5">
+                            <code>fetch('https://api.sepay.vn/v1/qr/create', {<br>&nbsp;&nbsp;amount: 199000,<br>&nbsp;&nbsp;description: 'TUNG_CLAUDE_68'<br>})</code>
+                        </div>
+                        <button class="px-8 py-4 bg-white text-black font-black rounded-xl text-sm">TẢI SDK TỪ TÙNG</button>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="https://sepay.vn/wp-content/uploads/2023/12/payment-api-hub.png" class="rounded-2xl shadow-2xl grayscale brightness-75" alt="SePay API Integration">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: HTML -->
+            <div id="tab-html" class="tab-content glass p-10 rounded-[3rem]">
+                <div class="flex flex-col lg:flex-row gap-16 items-center">
+                    <div class="lg:w-1/2">
+                        <h4 class="text-3xl font-black mb-6">Landing Page & Google Sheets.</h4>
+                        <p class="text-zinc-400 mb-8 leading-relaxed">Giải pháp cho các trang Landing Page tĩnh (HTML/CSS) không có Backend. SePay sẽ tự động ghi dữ liệu thanh toán vào file Google Sheets của bạn.</p>
+                        <ul class="space-y-4 mb-10 text-sm">
+                            <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-zinc-800 flex items-center justify-center text-[10px]">1</span> Khách quét mã QR trên Landing Page.</li>
+                            <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-zinc-800 flex items-center justify-center text-[10px]">2</span> SePay bắn Webhook đến công cụ trung gian.</li>
+                            <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-zinc-800 flex items-center justify-center text-[10px]">3</span> Dữ liệu ghi trực tiếp vào Google Sheets.</li>
+                        </ul>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <div class="bg-emerald-500/10 border border-emerald-500/20 p-8 rounded-3xl">
+                            <h5 class="font-bold text-emerald-500 mb-2">Ưu điểm:</h5>
+                            <p class="text-zinc-400 text-sm">Không cần thuê Hosting đắt tiền cho Backend, chi phí vận hành 0đ qua <a href="https://toilatung.com" class="underline">toilatung.com</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Lark -->
+            <div id="tab-lark" class="tab-content glass p-10 rounded-[3rem]">
+                <div class="flex flex-col lg:flex-row gap-16 items-center text-center lg:text-left">
+                    <div class="lg:w-full">
+                        <h4 class="text-3xl font-black mb-6">Thông báo nhóm Lark / Telegram.</h4>
+                        <p class="text-zinc-400 mb-10 max-w-2xl mx-auto lg:mx-0">Đồng bộ biến động số dư về nhóm chat công ty. Cả team (Sales, Marketing, Admin) đều biết khách đã chuyển tiền ngay lập tức mà không cần hỏi Kế toán.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="p-6 bg-zinc-800/30 rounded-2xl border border-white/5">
+                                <h5 class="font-bold mb-2">Telegram Bot</h5>
+                                <p class="text-xs text-zinc-500 italic">"Khách hàng Nguyễn Văn A vừa chuyển 500k cho đơn #123"</p>
+                            </div>
+                            <div class="p-6 bg-zinc-800/30 rounded-2xl border border-white/5">
+                                <h5 class="font-bold mb-2">Lark Messenger</h5>
+                                <p class="text-xs text-zinc-500 italic">Tích hợp Card Message chuyên nghiệp, đẹp mắt.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE DEMO SECTION -->
+    <section id="demo" class="py-32 bg-zinc-950 border-y border-white/5">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-zinc-900 rounded-[4rem] overflow-hidden border border-white/5 flex flex-col lg:flex-row shadow-[0_0_100px_rgba(245,158,11,0.08)]">
+                <!-- Product View -->
+                <div class="lg:w-1/2 p-16 bg-zinc-900/50 flex flex-col justify-center border-r border-white/5">
+                    <div class="w-16 h-1 bg-amber-500 mb-10 rounded-full"></div>
+                    <h4 class="text-amber-500 font-black text-xs uppercase tracking-[0.4em] mb-4">By Tùng AI Automation</h4>
+                    <h3 class="text-5xl font-black mb-10 leading-[1.1]">Claude <br> Prompt Cheats</h3>
+                    <div class="space-y-6 mb-12">
+                        <div class="flex items-center gap-4 text-zinc-300">
+                            <div class="w-6 h-6 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-500 text-xs font-bold">✓</div>
+                            <span class="font-medium text-sm">500+ Prompt độc quyền từ <a href="https://toilatung.com" class="underline">toilatung.com</a></span>
+                        </div>
+                        <div class="flex items-center gap-4 text-zinc-300">
+                            <div class="w-6 h-6 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-500 text-xs font-bold">✓</div>
+                            <span class="font-medium text-sm">Hướng dẫn Workflow Claude x Automation</span>
+                        </div>
+                    </div>
+                    <div class="flex items-baseline gap-4">
+                        <span class="text-5xl font-black text-white tracking-tighter">199.000đ</span>
+                        <span class="text-zinc-600 line-through text-xl">499.000đ</span>
+                    </div>
+                </div>
+
+                <!-- Payment Area -->
+                <div class="lg:w-1/2 p-16 flex flex-col justify-center bg-black/40">
+                    <div id="checkout-form">
+                        <div class="space-y-4 mb-10">
+                            <label class="block">
+                                <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest ml-1 mb-2 block">Email nhận tài liệu</span>
+                                <input type="email" placeholder="example@gmail.com" class="w-full bg-zinc-800/50 border border-white/5 px-6 py-5 rounded-2xl focus:outline-none focus:ring-2 focus:ring-amber-500/50 text-white font-medium">
+                            </label>
+                            <label class="block">
+                                <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest ml-1 mb-2 block">Số điện thoại</span>
+                                <input type="text" placeholder="09xx xxx xxx" class="w-full bg-zinc-800/50 border border-white/5 px-6 py-5 rounded-2xl focus:outline-none focus:ring-2 focus:ring-amber-500/50 text-white font-medium">
+                            </label>
+                        </div>
+                        <button onclick="startPaymentFlow()" class="w-full py-6 amber-gradient rounded-3xl text-black font-black text-xl hover:shadow-2xl hover:shadow-amber-500/40 transition-all active:scale-95 uppercase tracking-widest">
+                            THANH TOÁN 10S
+                        </button>
+                    </div>
+
+                    <!-- Payment Processing UI -->
+                    <div id="payment-ui" class="hidden text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
+                        <div class="inline-block p-5 bg-white rounded-[2.5rem] mb-8 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=TUNG_CLAUDE_DEMO_QR" class="w-48 h-48" alt="VietQR SePay">
+                        </div>
+                        <div class="bg-zinc-800/80 p-5 rounded-2xl mb-8 flex justify-between items-center text-sm border border-white/5">
+                            <span class="text-zinc-500 font-bold uppercase tracking-widest">Nội dung</span>
+                            <span class="font-black text-amber-500 text-lg tracking-widest">TUNG68</span>
+                        </div>
+                        <div class="flex items-center justify-center gap-4 py-4 bg-amber-500/5 rounded-2xl border border-amber-500/10">
+                            <div class="spinner"></div>
+                            <span id="status-text" class="text-sm font-bold text-zinc-400">Đang lắng nghe Webhook...</span>
+                        </div>
+                    </div>
+
+                    <!-- Success UI -->
+                    <div id="success-ui" class="hidden text-center">
+                        <div class="w-24 h-24 amber-gradient rounded-full flex items-center justify-center mx-auto mb-8 text-black text-4xl font-black shadow-2xl">✓</div>
+                        <h3 class="text-4xl font-black mb-4">HOÀN TẤT!</h3>
+                        <p class="text-zinc-500 text-lg mb-10">SePay đã gửi Webhook báo có thành công. Tùng đã gửi file cho bạn qua Email.</p>
+                        <button onclick="location.reload()" class="w-full py-5 bg-zinc-800 rounded-2xl font-black hover:bg-zinc-700 transition tracking-widest uppercase text-sm">QUAY LẠI TRANG CHỦ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-32 px-6 border-t border-white/5 text-center">
+        <div class="max-w-7xl mx-auto">
+            <a href="https://toilatung.com" class="flex items-center justify-center gap-3 mb-10 group">
+                <div class="w-8 h-8 amber-gradient rounded-lg flex items-center justify-center font-black text-black text-sm group-hover:scale-105 transition">T</div>
+                <span class="text-sm font-black tracking-widest group-hover:text-amber-500 transition uppercase">TÔI LÀ TÙNG</span>
+            </a>
+            <div class="flex justify-center flex-wrap gap-8 mb-16 text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500">
+                <a href="https://toilatung.com" class="hover:text-amber-500 transition underline underline-offset-4 decoration-zinc-800">Trang chủ</a>
+                <a href="https://toilatung.com" class="hover:text-amber-500 transition">Blog AI</a>
+                <a href="#" class="hover:text-amber-500 transition">Học viện</a>
+                <a href="#" class="hover:text-amber-500 transition">Cộng đồng</a>
+            </div>
+            <p class="text-zinc-700 text-[10px] font-medium tracking-[0.2em] uppercase">&copy; 2026 Crafted by <a href="https://toilatung.com" class="hover:text-amber-500 transition">Tôi Là Tùng</a>. Powered by SePay Fintech.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('tab-' + tabId).classList.add('active');
+            document.getElementById('btn-' + tabId).classList.add('active');
+        }
+
+        function startPaymentFlow() {
+            document.getElementById('checkout-form').classList.add('hidden');
+            document.getElementById('payment-ui').classList.remove('hidden');
+
+            setTimeout(() => {
+                document.getElementById('status-text').innerText = "Đã nhận biến động số dư! Đang kích hoạt...";
+                document.getElementById('status-text').classList.replace('text-zinc-400', 'text-amber-500');
+            }, 3500);
+
+            setTimeout(() => {
+                document.getElementById('payment-ui').classList.add('hidden');
+                document.getElementById('success-ui').classList.remove('hidden');
+            }, 6000);
+        }
+    </script>
+</body>
+</html>
+
+```
