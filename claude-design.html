@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <title>Claude Design Master v4 | TVT Agency Professional Edition</title>
-    <meta name="description" content="Tài liệu triển khai Claude Design Master 2026. Bao gồm Case Study, Master Prompts, SOP vận hành 5 dự án song song.">
+    <meta name="description" content="Tài liệu triển khai Claude Design Master 2026. Bao gồm Case Study, Master Prompts, SOP vận hành 5 dự án song song và Ma trận kỹ năng AI.">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -24,6 +24,7 @@
             color: #f1f5f9;
             overflow-x: hidden;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
         .mono { font-family: 'JetBrains+Mono', monospace; }
@@ -33,6 +34,12 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: var(--tvt-orange);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(249, 115, 22, 0.1);
         }
 
         .orange-glow {
@@ -48,8 +55,8 @@
         /* Tối ưu hóa cho thiết bị di động */
         @media (max-width: 768px) {
             .text-huge { font-size: 3rem; line-height: 1; }
-            .mobile-padding { padding: 1.5rem; }
-            .header-text { display: none; } /* Ẩn bớt text phụ trên mobile để gọn logo */
+            .header-text { display: none; }
+            .mobile-nav-hide { display: none; }
         }
 
         /* Skills Bar */
@@ -70,13 +77,21 @@
             border-radius: 12px;
             padding: 1.5rem;
             border: 1px solid #1e293b;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #cbd5e1;
+            overflow-x: auto;
         }
 
         header.sticky-nav {
             background: rgba(2, 6, 23, 0.8);
             backdrop-filter: blur(8px);
+        }
+
+        .step-number {
+            -webkit-text-stroke: 1px rgba(249, 115, 22, 0.3);
+            color: transparent;
+            font-size: 3rem;
+            font-weight: 900;
         }
     </style>
 </head>
@@ -94,12 +109,14 @@
                 </div>
                 <div class="flex flex-col">
                     <span class="text-white font-black italic tracking-tighter text-lg leading-none uppercase">TVT Agency</span>
-                    <span class="text-orange-500 font-bold text-[10px] tracking-widest uppercase">toilatung.com</span>
+                    <span class="text-orange-500 font-bold text-[10px] tracking-widest uppercase header-text">toilatung.com</span>
                 </div>
             </a>
 
             <!-- CTA bên phải -->
             <div class="flex items-center gap-4">
+                <a href="#hero" class="mobile-nav-hide text-xs font-bold text-slate-400 hover:text-white transition-colors">Trang chủ</a>
+                <a href="#case-studies" class="mobile-nav-hide text-xs font-bold text-slate-400 hover:text-white transition-colors">Thực thi</a>
                 <a href="https://toilatung.com" class="bg-orange-500 hover:bg-orange-600 px-6 py-2.5 rounded-full text-[11px] font-black uppercase tracking-widest text-white transition-all hover:scale-105 orange-glow shadow-lg">
                     Vào toilatung.com
                 </a>
@@ -111,7 +128,7 @@
     <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] w-[92%] max-w-md">
         <div class="glass-card rounded-full px-6 py-4 flex justify-between items-center shadow-2xl border-white/10">
             <a href="#hero" class="text-orange-500"><i class="fa-solid fa-house"></i></a>
-            <a href="#case-study" class="text-slate-400"><i class="fa-solid fa-briefcase"></i></a>
+            <a href="#case-studies" class="text-slate-400"><i class="fa-solid fa-briefcase"></i></a>
             <a href="#prompts" class="text-slate-400"><i class="fa-solid fa-terminal"></i></a>
             <a href="#sop" class="text-slate-400"><i class="fa-solid fa-clipboard-list"></i></a>
             <a href="#skills" class="text-slate-400"><i class="fa-solid fa-bolt"></i></a>
@@ -119,7 +136,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="min-h-[85vh] flex flex-col justify-center px-6 pt-32 relative">
+    <section id="hero" class="min-h-[90vh] flex flex-col justify-center px-6 pt-32 relative">
         <div class="absolute top-20 right-[-10%] w-64 h-64 bg-orange-500/20 blur-[100px] rounded-full -z-10"></div>
         <div class="max-w-4xl">
             <div class="inline-flex items-center gap-2 px-3 py-1 bg-orange-500/10 border border-orange-500/20 rounded-full text-orange-500 text-[10px] font-black uppercase tracking-widest mb-6">
@@ -129,154 +146,209 @@
                 CLAUDE <br>DESIGN <br>MASTER.
             </h1>
             <p class="text-slate-400 text-lg md:text-xl max-w-2xl font-medium mb-10 leading-relaxed">
-                Tài liệu triển khai <span class="text-white">Expert-level</span>. Từ bản vẽ DNA đến sản phẩm thực tế trong vòng 60 phút.
+                Hệ điều hành triển khai sản phẩm kỹ thuật số. <br>Từ ý tưởng đến hiện thực trong <span class="text-white font-bold underline decoration-orange-500">60 phút</span>.
             </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="#workflow" class="px-8 py-4 bg-white text-black font-black italic rounded-xl transition-all hover:bg-orange-500 hover:text-white uppercase tracking-widest text-xs">Khám phá Workflow</a>
+                <a href="#prompts" class="px-8 py-4 glass-card text-white font-bold rounded-xl uppercase tracking-widest text-xs border-white/10">Prompt Library</a>
+            </div>
         </div>
     </section>
 
-    <!-- Section: Case Study Thực tế -->
-    <section id="case-study" class="py-20 px-6 bg-slate-950/40 border-y border-white/5 scroll-mt-20">
+    <!-- Section: Case Studies -->
+    <section id="case-studies" class="py-24 px-6 bg-slate-950/40 border-y border-white/5 scroll-mt-20">
         <div class="max-w-6xl mx-auto">
-            <div class="mb-12">
-                <h3 class="text-orange-500 font-black text-xs uppercase tracking-[0.4em] mb-4 italic">Case Study 2026</h3>
-                <h2 class="text-4xl font-black italic tracking-tighter uppercase">Project Alpha: EdTech Hanoi</h2>
+            <div class="mb-16">
+                <h3 class="text-orange-500 font-black text-xs uppercase tracking-[0.4em] mb-4 italic">Real-world Execution</h3>
+                <h2 class="text-4xl md:text-6xl font-black italic tracking-tighter uppercase">Case Studies</h2>
             </div>
             
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="glass-card p-8 rounded-[32px] border-l-4 border-orange-500">
-                    <h4 class="font-black text-sm uppercase mb-4 text-slate-500 tracking-widest">Bối cảnh</h4>
-                    <p class="text-sm leading-relaxed mb-6">Một Startup giáo dục tại Hà Nội cần bộ Website + Dashboard quản trị học viên trong vòng 12 giờ để kịp buổi Pitching Series A.</p>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="p-4 bg-slate-900 rounded-2xl text-center">
-                            <div class="text-orange-500 font-black text-2xl">45m</div>
-                            <div class="text-[9px] text-slate-500 uppercase font-bold">Time to Live</div>
+                <!-- Case 1 -->
+                <div class="glass-card p-8 rounded-[40px] border-l-4 border-orange-500">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <span class="text-[10px] font-black uppercase text-slate-500 tracking-widest">Project 01</span>
+                            <h4 class="text-xl font-black italic uppercase text-white mt-1">EdTech Hanoi Startup</h4>
                         </div>
-                        <div class="p-4 bg-slate-900 rounded-2xl text-center">
-                            <div class="text-orange-500 font-black text-2xl">0</div>
-                            <div class="text-[9px] text-slate-500 uppercase font-bold">Bug Report</div>
-                        </div>
+                        <span class="px-3 py-1 bg-green-500/10 text-green-500 text-[10px] font-black rounded-full border border-green-500/20">SUCCESS</span>
                     </div>
-                </div>
-                
-                <div class="space-y-4">
-                    <h4 class="font-black text-sm uppercase text-slate-500 tracking-widest">Quy trình thực thi</h4>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-4 p-4 glass-card rounded-2xl">
-                            <div class="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-500 flex items-center justify-center font-black italic">1</div>
-                            <span class="text-xs font-bold">Nạp 10 screenshots landing page đối thủ qua Web Capture Tool.</span>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-8">
+                        Startup giáo dục cần Website + Dashboard pitching Series A trong 12h. <br>
+                        <strong>Kết quả:</strong> Toàn bộ UI/UX và Code được hoàn thiện trong <strong>45 phút</strong>.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="p-4 bg-slate-900/50 rounded-2xl border border-white/5 italic">
+                            <div class="text-orange-500 font-black text-2xl tracking-tighter">45m</div>
+                            <div class="text-[9px] text-slate-500 uppercase font-bold mt-1">Time to Live</div>
                         </div>
-                        <div class="flex items-center gap-4 p-4 glass-card rounded-2xl">
-                            <div class="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-500 flex items-center justify-center font-black italic">2</div>
-                            <span class="text-xs font-bold">Refine giao diện qua 5 lượt hội thoại với Opus 4.7.</span>
-                        </div>
-                        <div class="flex items-center gap-4 p-4 glass-card rounded-2xl border-orange-500/30">
-                            <div class="w-8 h-8 rounded-lg bg-orange-500 text-white flex items-center justify-center font-black italic">3</div>
-                            <span class="text-xs font-bold">Handoff sang Claude Code → Deploy Vercel trong 2 phút.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section: Master Prompts Library -->
-    <section id="prompts" class="py-20 px-6 scroll-mt-20">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h3 class="text-orange-500 font-black text-xs uppercase tracking-[0.4em] mb-4 italic">The Library</h3>
-                <h2 class="text-5xl font-black italic tracking-tighter uppercase">Master Prompts</h2>
-                <p class="text-slate-500 mt-4 max-w-xl mx-auto italic text-sm font-medium">Sao chép các mẫu Prompt "kết liễu" bám sát tư duy Semantic Design.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="space-y-6">
-                    <div class="glass-card p-6 rounded-3xl">
-                        <div class="flex justify-between items-center mb-4">
-                            <h4 class="font-black text-xs uppercase tracking-widest text-orange-500">Pha 1: DNA Extraction</h4>
-                            <i class="fa-regular fa-copy text-slate-600"></i>
-                        </div>
-                        <div class="code-block mono italic">
-                            "Đọc codebase hiện tại và screenshots tôi vừa upload. Trích xuất Design DNA bao gồm: primary color, spacing logic (8px grid), và typography scale. Lưu tất cả vào project context để áp dụng cho mọi UI component sắp tới."
-                        </div>
-                    </div>
-                    <div class="glass-card p-6 rounded-3xl">
-                        <div class="flex justify-between items-center mb-4">
-                            <h4 class="font-black text-xs uppercase tracking-widest text-blue-500">Pha 2: UI Intent Logic</h4>
-                            <i class="fa-regular fa-copy text-slate-600"></i>
-                        </div>
-                        <div class="code-block mono italic">
-                            "Thiết kế Dashboard quản trị học viên. Yêu cầu: Data Grid có filter thông minh, trạng thái Loading skeleton mượt mà. Đảm bảo Mobile-first và tuân thủ chuẩn WCAG AA về độ tương phản."
+                        <div class="p-4 bg-slate-900/50 rounded-2xl border border-white/5 italic">
+                            <div class="text-orange-500 font-black text-2xl tracking-tighter">98%</div>
+                            <div class="text-[9px] text-slate-500 uppercase font-bold mt-1">Design Accuracy</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="space-y-6">
-                    <div class="glass-card p-6 rounded-3xl border-orange-500/20">
-                        <div class="flex justify-between items-center mb-4">
-                            <h4 class="font-black text-xs uppercase tracking-widest text-green-500">Pha 3: The Finisher (Handoff)</h4>
-                            <i class="fa-regular fa-copy text-slate-600"></i>
+                <!-- Case 2 -->
+                <div class="glass-card p-8 rounded-[40px] border-l-4 border-blue-500">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <span class="text-[10px] font-black uppercase text-slate-500 tracking-widest">Project 02</span>
+                            <h4 class="text-xl font-black italic uppercase text-white mt-1">SaaS CRM Dashboard</h4>
                         </div>
-                        <div class="code-block mono italic">
-                            "Gói toàn bộ Design Intent này sang Claude Code. Chuyển thành production-ready code sử dụng React, Tailwind và Framer Motion. Tối ưu performance 60fps và export cấu trúc folder chuẩn Vite."
-                        </div>
+                        <span class="px-3 py-1 bg-blue-500/10 text-blue-500 text-[10px] font-black rounded-full border border-blue-500/20">LIVE</span>
                     </div>
-                    <div class="p-6 bg-orange-500/5 rounded-3xl border border-orange-500/20">
-                        <h4 class="font-black text-[10px] uppercase text-orange-500 mb-4 tracking-[0.2em]">Mẹo Bậc Thầy</h4>
-                        <p class="text-xs text-slate-400 italic">"Luôn bắt đầu bằng việc giải thích <strong>'Tại sao'</strong> trước khi nói <strong>'Cái gì'</strong>. Claude Opus 4.7 sẽ tự động chọn các pattern UX tốt nhất cho bạn."</p>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-8">
+                        Phát triển Dashboard quản lý dữ liệu phức tạp từ thiết kế Intent. <br>
+                        <strong>Kết quả:</strong> Tích hợp Stripe API và Data Visualization thông qua Claude Code.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="p-4 bg-slate-900/50 rounded-2xl border border-white/5 italic">
+                            <div class="text-blue-500 font-black text-2xl tracking-tighter">60m</div>
+                            <div class="text-[9px] text-slate-500 uppercase font-bold mt-1">Total Build</div>
+                        </div>
+                        <div class="p-4 bg-slate-900/50 rounded-2xl border border-white/5 italic">
+                            <div class="text-blue-500 font-black text-2xl tracking-tighter">Full</div>
+                            <div class="text-[9px] text-slate-500 uppercase font-bold mt-1">API Integration</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section: SOP Professional Execution -->
-    <section id="sop" class="py-20 px-6 bg-slate-900/20 scroll-mt-20">
+    <!-- Section: Master Prompts -->
+    <section id="prompts" class="py-24 px-6 scroll-mt-20">
         <div class="max-w-6xl mx-auto">
             <div class="mb-16">
-                <h2 class="text-4xl font-black italic tracking-tighter uppercase mb-2">SOP: Professional Execution</h2>
-                <p class="text-slate-500 text-sm">Quy trình vận hành 5 dự án cùng lúc (Parallel Agentic Design).</p>
+                <h2 class="text-4xl md:text-6xl font-black italic tracking-tighter uppercase italic text-center">Master Prompt Library</h2>
+                <p class="text-slate-500 mt-4 max-w-xl mx-auto text-center italic text-sm font-medium">Sao chép tư duy điều khiển AI cấp độ chuyên gia.</p>
             </div>
 
-            <div class="grid lg:grid-cols-5 gap-4">
-                <div class="glass-card p-6 rounded-2xl border-t-2 border-orange-500">
-                    <span class="text-[10px] font-black text-slate-600">BƯỚC 1</span>
-                    <h5 class="text-sm font-bold mt-2">DNA Lock</h5>
-                    <p class="text-[10px] text-slate-500 mt-2">Khóa bản sắc thương hiệu vào Project Context.</p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Prompt 1 -->
+                <div class="p-8 glass-card rounded-[32px] border-orange-500/10">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-orange-500/20 text-orange-500 flex items-center justify-center italic font-black">DNA</div>
+                        <h4 class="text-sm font-black uppercase tracking-widest text-white">DNA Extraction</h4>
+                    </div>
+                    <div class="code-block mono italic mb-4">
+                        "Đọc codebase hiện tại và screenshots/file thiết kế tôi vừa upload. Phân tích Design DNA: color palette, typography scale, spacing rules (8-point grid). Lưu vào project context để làm kim chỉ nam cho mọi UI component sắp tới."
+                    </div>
+                    <button class="text-[10px] font-black uppercase tracking-[0.2em] text-orange-500 hover:underline">Copy Prompt</button>
                 </div>
-                <div class="glass-card p-6 rounded-2xl border-t-2 border-blue-500">
-                    <span class="text-[10px] font-black text-slate-600">BƯỚC 2</span>
-                    <h5 class="text-sm font-bold mt-2">Semantic Chat</h5>
-                    <p class="text-[10px] text-slate-500 mt-2">Dựng Prototype qua hội thoại và Inline Comment.</p>
+
+                <!-- Prompt 2 -->
+                <div class="p-8 glass-card rounded-[32px] border-blue-500/10">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-blue-500/20 text-blue-500 flex items-center justify-center italic font-black">UI</div>
+                        <h4 class="text-sm font-black uppercase tracking-widest text-white">Semantic UI Intent</h4>
+                    </div>
+                    <div class="code-block mono italic mb-4">
+                        "Xây dựng Dashboard thống kê doanh thu. Yêu cầu: Data Table có filter thông minh, trạng thái Loading skeleton, và responsive hoàn hảo trên mobile. Hãy mô tả logic trạng thái Success/Error cụ thể."
+                    </div>
+                    <button class="text-[10px] font-black uppercase tracking-[0.2em] text-blue-500 hover:underline">Copy Prompt</button>
                 </div>
-                <div class="glass-card p-6 rounded-2xl border-t-2 border-purple-500">
-                    <span class="text-[10px] font-black text-slate-600">BƯỚC 3</span>
-                    <h5 class="text-sm font-bold mt-2">Handoff Sync</h5>
-                    <p class="text-[10px] text-slate-500 mt-2">Gửi Bundle sang Claude Code để scaffold môi trường.</p>
+
+                <!-- Prompt 3 -->
+                <div class="p-8 glass-card rounded-[32px] border-green-500/10">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center italic font-black">DEV</div>
+                        <h4 class="text-sm font-black uppercase tracking-widest text-white">The Finisher (Handoff)</h4>
+                    </div>
+                    <div class="code-block mono italic mb-4">
+                        "Gói toàn bộ Design Intent này sang Claude Code. Chuyển thành React + Tailwind production code. Tối ưu performance 60fps, sử dụng Framer Motion cho các micro-interactions và đảm bảo accessibility WCAG AA."
+                    </div>
+                    <button class="text-[10px] font-black uppercase tracking-[0.2em] text-green-500 hover:underline">Copy Prompt</button>
                 </div>
-                <div class="glass-card p-6 rounded-2xl border-t-2 border-green-500">
-                    <span class="text-[10px] font-black text-slate-600">BƯỚC 4</span>
-                    <h5 class="text-sm font-bold mt-2">Logic Build</h5>
-                    <p class="text-[10px] text-slate-500 mt-2">Code logic, kết nối API và xử lý dữ liệu thực tế.</p>
+
+                <!-- Prompt 4 -->
+                <div class="p-8 glass-card rounded-[32px] border-purple-500/10">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-purple-500/20 text-purple-500 flex items-center justify-center italic font-black">SOP</div>
+                        <h4 class="text-sm font-black uppercase tracking-widest text-white">Context Sync</h4>
+                    </div>
+                    <div class="code-block mono italic mb-4">
+                        "Đọc file claude.md của dự án [TÊN]. Tóm tắt tiến độ hiện tại, liệt kê các Todo còn lại và đề xuất các bước tiếp theo để hoàn thiện pha logic tương tác."
+                    </div>
+                    <button class="text-[10px] font-black uppercase tracking-[0.2em] text-purple-500 hover:underline">Copy Prompt</button>
                 </div>
-                <div class="glass-card p-6 rounded-2xl border-t-2 border-white">
-                    <span class="text-[10px] font-black text-slate-600">BƯỚC 5</span>
-                    <h5 class="text-sm font-bold mt-2">Instant Launch</h5>
-                    <p class="text-[10px] text-slate-500 mt-2">Deploy và bàn giao sản phẩm Live cho khách hàng.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Workflow -->
+    <section id="workflow" class="py-24 px-6 bg-[#000] border-y border-white/5 scroll-mt-20">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-black italic tracking-tighter uppercase mb-16 text-center">Master Workflow</h2>
+            
+            <div class="space-y-12 relative before:content-[''] before:absolute before:left-4 before:top-0 before:w-px before:h-full before:bg-slate-800">
+                <div class="relative pl-12 group">
+                    <div class="absolute left-0 top-0 w-8 h-8 bg-orange-500 rounded-full border-4 border-[#000] flex items-center justify-center text-[10px] font-black italic text-white shadow-xl transition-transform group-hover:scale-110">1</div>
+                    <h4 class="text-lg font-black italic text-orange-500 mb-2 uppercase tracking-tight">Design Intent Phase</h4>
+                    <p class="text-sm text-slate-400">Sử dụng Semantic Prompting để khóa bản sắc và dựng Prototype tương tác trong Claude Design.</p>
+                </div>
+                <div class="relative pl-12 group">
+                    <div class="absolute left-0 top-0 w-8 h-8 bg-blue-500 rounded-full border-4 border-[#000] flex items-center justify-center text-[10px] font-black italic text-white shadow-xl transition-transform group-hover:scale-110">2</div>
+                    <h4 class="text-lg font-black italic text-blue-500 mb-2 uppercase tracking-tight">Handoff to Claude Code</h4>
+                    <p class="text-sm text-slate-400">Gửi Handoff Bundle sang Terminal. Tự động Scaffold môi trường React/Tailwind chuẩn chỉ.</p>
+                </div>
+                <div class="relative pl-12 group">
+                    <div class="absolute left-0 top-0 w-8 h-8 bg-green-500 rounded-full border-4 border-[#000] flex items-center justify-center text-[10px] font-black italic text-white shadow-xl transition-transform group-hover:scale-110">3</div>
+                    <h4 class="text-lg font-black italic text-green-500 mb-2 uppercase tracking-tight">Logic Wiring & Launch</h4>
+                    <p class="text-sm text-slate-400">Kết nối APIs, logic nghiệp vụ và Deploy lên Vercel/Netlify trong chưa đầy 120 giây.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: SOP Deep Dive -->
+    <section id="sop" class="py-24 px-6 scroll-mt-20">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h3 class="text-orange-500 font-black text-sm uppercase tracking-widest mb-4 italic">Standard Operating Procedures</h3>
+                <h2 class="text-5xl font-black italic tracking-tighter uppercase leading-none">VẬN HÀNH <br>BẬC THẦY</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Rule 1 -->
+                <div class="glass-card p-8 rounded-[40px] flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-lg font-black italic text-white uppercase tracking-tight mb-4">01. Parallel Pipeline</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed mb-6">Phân phối 5 dự án vào các pha khác nhau (Design, Scaffold, Logic, Review) để tối ưu hóa công suất bộ não AI.</p>
+                    </div>
+                    <div class="p-4 bg-slate-900/50 rounded-2xl text-[9px] font-bold text-slate-400 border border-white/5 uppercase">Focus: Throughput</div>
+                </div>
+                <!-- Rule 2 -->
+                <div class="glass-card p-8 rounded-[40px] flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-lg font-black italic text-white uppercase tracking-tight mb-4">02. Context Sync</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed mb-6">Mỗi dự án phải có tệp <code class="text-orange-500">claude.md</code> cập nhật liên tục để AI nắm bắt được "linh hồn" và tiến độ thực tế.</p>
+                    </div>
+                    <div class="p-4 bg-slate-900/50 rounded-2xl text-[9px] font-bold text-slate-400 border border-white/5 uppercase">Focus: Continuity</div>
+                </div>
+                <!-- Rule 3 -->
+                <div class="glass-card p-8 rounded-[40px] flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-lg font-black italic text-white uppercase tracking-tight mb-4">03. DNA Reusability</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed mb-6">Tận dụng Master Design System để "thay máu" giao diện cho các dự án cùng ngành mà không cần vẽ lại logic interaction.</p>
+                    </div>
+                    <div class="p-4 bg-slate-900/50 rounded-2xl text-[9px] font-bold text-slate-400 border border-white/5 uppercase">Focus: Efficiency</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Section: Skills Matrix -->
-    <section id="skills" class="py-20 px-6 scroll-mt-20">
+    <section id="skills" class="py-24 px-6 bg-slate-950/40 scroll-mt-20">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-black italic tracking-tighter uppercase italic">Master Skills Matrix</h2>
-                <p class="text-slate-500 text-sm mt-2">Những kỹ năng sống còn để làm chủ kỷ nguyên Claude 4.7.</p>
+                <p class="text-slate-500 text-sm mt-2">Năng lực cần thiết để đứng trên vai người khổng lồ Claude 4.7.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-12">
-                <div class="space-y-6">
+                <div class="space-y-8">
                     <div class="space-y-2">
                         <div class="flex justify-between text-[11px] font-black uppercase tracking-widest text-slate-400">
                             <span>Semantic Prompting</span>
@@ -293,17 +365,24 @@
                     </div>
                     <div class="space-y-2">
                         <div class="flex justify-between text-[11px] font-black uppercase tracking-widest text-slate-400">
-                            <span>Logic Architecture</span>
-                            <span>82%</span>
+                            <span>AI Orchestration</span>
+                            <span>92%</span>
                         </div>
-                        <div class="skill-bar"><div class="skill-progress" style="width: 82%"></div></div>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-[11px] font-black uppercase tracking-widest text-slate-400">
+                            <span>Atomic Thinking</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
                     </div>
                 </div>
 
-                <div class="glass-card p-8 rounded-[40px] flex flex-col justify-center text-center">
-                    <div class="text-orange-500 text-5xl mb-6 italic font-black">MASTER</div>
+                <div class="glass-card p-10 rounded-[48px] flex flex-col justify-center text-center orange-glow">
+                    <div class="text-orange-500 text-5xl mb-6 italic font-black">ELITE</div>
                     <p class="text-xs text-slate-500 leading-relaxed italic">
-                        "Kỹ năng quan trọng nhất không phải là vẽ pixels, mà là <strong>Atomic Thinking</strong> — tư duy hệ thống để điều khiển AI Agent."
+                        "Một Master không vẽ bằng chuột, họ vẽ bằng <strong>Ngôn ngữ ngữ nghĩa</strong> và điều phối các AI Agent bằng <strong>Tư duy hệ thống</strong>."
                     </p>
                 </div>
             </div>
@@ -311,19 +390,20 @@
     </section>
 
     <!-- Footer Manifesto -->
-    <footer class="py-32 px-6 text-center border-t border-white/5 bg-slate-950">
-        <div class="max-w-4xl mx-auto">
-            <h3 class="text-orange-500 font-black uppercase tracking-[0.4em] text-[10px] mb-8 italic">The AI-Powered Agency Manifesto</h3>
-            <h2 class="text-4xl md:text-6xl font-black italic uppercase tracking-tighter leading-[0.95] mb-12">
-                AI KHÔNG <br>THAY THẾ BẠN. <br><span class="text-orange-500">BẠN LÀ SIÊU CẤP.</span>
+    <footer class="py-40 px-6 text-center border-t border-white/5 bg-slate-950 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h3 class="text-orange-500 font-black uppercase tracking-[0.4em] text-[10px] mb-8 italic">The TVT Agency Manifesto</h3>
+            <h2 class="text-5xl md:text-8xl font-black italic uppercase tracking-tighter leading-[0.85] mb-12 italic">
+                SÁNG TẠO <br>KHÔNG <br><span class="text-orange-500">GIỚI HẠN.</span>
             </h2>
             <div class="flex flex-col md:flex-row justify-center items-center gap-6">
                 <a href="https://toilatung.com" class="px-12 py-5 bg-orange-500 text-white font-black italic rounded-full orange-glow hover:scale-110 transition-all uppercase tracking-widest text-xs">
-                    toilatung.com
+                    Vào toilatung.com
                 </a>
-                <span class="text-slate-700 font-black text-[10px] uppercase tracking-widest">HCM, 19.04.2026 — MASTER RELEASE v4.0</span>
+                <span class="text-slate-700 font-black text-[10px] uppercase tracking-widest">HCM, 19.04.2026 — VERSION 4.0 MASTER</span>
             </div>
         </div>
+        <div class="absolute bottom-0 left-0 w-full opacity-[0.02] pointer-events-none select-none text-[250px] font-black italic leading-none -mb-20">TVT MASTER</div>
     </footer>
 
 </body>
