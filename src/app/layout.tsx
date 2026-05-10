@@ -59,6 +59,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    google: "6LY7AcGGOt9Jc3iiQeGhQjLMk7wsw73ajh2Y_4gA5HM",
+  },
 };
 
 export const viewport = {
