@@ -16,7 +16,7 @@ const firaCode = Fira_Code({
 export const metadata: Metadata = {
   metadataBase: new URL("https://toilatung.com"),
   title: {
-    default: "Tôi Là Tùng | Đào Tạo AI Thực Chiến & Xây Dựng Hệ Thống",
+    default: "Tôi Là Tùng | Chia sẻ AI Thực Chiến & Xây Dựng Hệ Thống",
     template: "%s | Tôi Là Tùng"
   },
   description: "Hệ thống hóa kiến thức AI để giải quyết các bài toán phức tạp nhất. Cung cấp khóa học Vibe Coding, Claude Masterclass và xây dựng Content OS tự động hóa.",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Tôi Là Tùng | Đào Tạo AI Thực Chiến & Xây Dựng Hệ Thống",
+    title: "Tôi Là Tùng | Chia sẻ AI Thực Chiến & Xây Dựng Hệ Thống",
     description: "Hệ thống hóa kiến thức AI để giải quyết các bài toán phức tạp nhất. Cung cấp khóa học Vibe Coding, Claude Masterclass và xây dựng Content OS tự động hóa.",
     url: "https://toilatung.com",
     siteName: "Tôi Là Tùng",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tôi Là Tùng | Đào Tạo AI Thực Chiến & Xây Dựng Hệ Thống",
+    title: "Tôi Là Tùng | Chia sẻ AI Thực Chiến & Xây Dựng Hệ Thống",
     description: "Hệ thống hóa kiến thức AI để giải quyết các bài toán phức tạp nhất. Cung cấp khóa học Vibe Coding, Claude Masterclass và xây dựng Content OS tự động hóa.",
     images: ["/images/home-og.webp"],
   },

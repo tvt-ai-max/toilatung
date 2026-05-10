@@ -2,14 +2,14 @@ import { Metadata } from 'next';
 import ToolsAISection from '@/components/shared/ToolsAISection';
 
 export const metadata: Metadata = {
-  title: 'Tôi Là Tùng | Đào Tạo AI Thực Chiến & Xây Dựng Hệ Thống',
+  title: 'Tôi Là Tùng | Chia sẻ AI Thực Chiến & Xây Dựng Hệ Thống',
   description: 'Hệ thống hóa kiến thức AI để giải quyết các bài toán phức tạp nhất. Cung cấp khóa học Vibe Coding, Claude Masterclass và xây dựng Content OS tự động hóa.',
   openGraph: {
-    images: ['/images/og-home.png'],
+    images: ['/images/home-og.webp'],
   },
   twitter: {
     card: "summary_large_image",
-    images: ['/images/og-home.png'],
+    images: ['/images/home-og.webp'],
   },
 };
 
@@ -29,7 +29,7 @@ export default function Page() {
                         style={{background: 'linear-gradient(135deg,var(--red),var(--indigo),var(--pink))'}}>
                         <div className="w-full h-full rounded-full overflow-hidden bg-[#0b0e14]" style={{border: '4px solid #000000'}}>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src="/images/tung-soc-son.webp"
+                            <img src="/images/tung-soc-son.webp?v=20260510"
                                 alt="Nguyễn Thanh Tùng — TVT Strategist"
                                 className="w-full h-full object-cover object-top block" />
                         </div>

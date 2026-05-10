@@ -85,7 +85,7 @@ export default function VeTungPage() {
             <div className="w-32 h-32 md:w-48 md:h-48 mx-auto mb-8 rounded-full p-1 bg-gradient-to-r from-[#ffb347] to-[#D97757] shadow-[0_0_40px_rgba(217,119,87,0.3)]">
               <div className="w-full h-full rounded-full overflow-hidden bg-black">
                 <img 
-                  src="/images/tung-soc-son.webp" 
+                  src="/images/tung-soc-son.webp?v=20260510" 
                   alt="Nguyễn Thanh Tùng (Tùng Sóc Sơn)" 
                   className="w-full h-full object-cover object-top"
                 />

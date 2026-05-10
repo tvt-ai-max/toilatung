@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: "profile",
     images: [
       {
-        url: "https://toilatung.com/images/tung-soc-son.webp",
+        url: "https://toilatung.com/images/tung-soc-son.webp?v=20260510",
         width: 1200,
         height: 630,
         alt: "Chân dung Nguyễn Thanh Tùng (Tùng Sóc Sơn)",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Về Tùng Sóc Sơn (Nguyễn Thanh Tùng)",
     description: "Chuyên gia AI Marketing Automation, Founder TVT Agency.",
-    images: ["https://toilatung.com/images/tung-soc-son.webp"],
+    images: ["https://toilatung.com/images/tung-soc-son.webp?v=20260510"],
   },
 };
 
@@ -61,7 +61,7 @@ const jsonLd = {
     "https://www.youtube.com/@toilatung"
   ],
   "url": "https://toilatung.com/ve-tung",
-  "image": "https://toilatung.com/images/tung-soc-son.webp"
+  "image": "https://toilatung.com/images/tung-soc-son.webp?v=20260510"
 };
 
 export default function VeTungLayout({

@@ -540,7 +540,7 @@ export default function Page() {
       <div style={{width: '168px', height: '168px', borderRadius: '50%', padding: '3px', background: 'linear-gradient(135deg,#ff375f,#D97757,#2997ff,#30d158)', flexShrink: '0'}}>
         <div style={{width: '100%', height: '100%', borderRadius: '50%', overflow: 'hidden', background: '#0a0a0a'}}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/tung-soc-son.webp"
+          <img src="/images/tung-soc-son.webp?v=20260510"
                alt="Nguyễn Thanh Tùng — AI Strategist, Founder TVT Agency"
                style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top'}} />
         </div>

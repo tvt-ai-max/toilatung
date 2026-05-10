@@ -479,7 +479,7 @@ export default function Page() {
                             <div className="w-full h-full rounded-full overflow-hidden bg-[#0b0e14] flex items-center justify-center" style={{border: '3px solid #0b0e14'}}>
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
-                                    src="/images/tung-soc-son.webp"
+                                    src="/images/tung-soc-son.webp?v=20260510"
                                     alt="Nguyễn Thanh Tùng — TVT Strategist"
                                     className="w-full h-full object-cover object-top block"
                                  />
