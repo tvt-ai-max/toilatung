@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import SearchModal from "@/components/shared/SearchModal";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -55,31 +56,21 @@ export default function Header() {
           <div className="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500 items-center">
             <Link href="/" className="hover:text-white transition">Home</Link>
             
-            <div className="relative group py-4">
-              <Link href="/course" className="hover:text-white transition flex items-center gap-1.5 uppercase font-black tracking-widest">
-                Khóa học <i className="fas fa-chevron-down text-[8px] opacity-70"></i>
-              </Link>
-              <div className="absolute top-[85%] left-0 w-56 rounded-2xl glass border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl overflow-hidden">
-                <Link href="/claude-master" className="block px-5 py-3.5 hover:bg-white/5 transition text-slate-300 hover:text-white border-b border-white/5">
-                  <div className="text-[11px] font-bold">Claude Code Mastery</div>
-                  <div className="text-[9px] text-slate-500 font-normal normal-case tracking-normal mt-0.5">Làm chủ AI để Code</div>
-                </Link>
-                <Link href="/claude-design" className="block px-5 py-3.5 hover:bg-white/5 transition text-slate-300 hover:text-white border-b border-white/5">
-                  <div className="text-[11px] font-bold">Claude Design v4</div>
-                  <div className="text-[9px] text-slate-500 font-normal normal-case tracking-normal mt-0.5">UI/UX thực chiến</div>
-                </Link>
-                <Link href="/course" className="block px-5 py-3.5 hover:bg-white/5 transition text-indigo-400 hover:text-indigo-300">
-                  <div className="text-[10px] font-bold">Xem tất cả khóa học <i className="fas fa-arrow-right ml-1"></i></div>
-                </Link>
-              </div>
-            </div>
-
+            <Link href="/course" className="hover:text-white transition">Khóa học</Link>
+            <Link href="/prompt" className="hover:text-white transition text-[var(--color-brand-indigo)]">Kho Prompt</Link>
             <Link href="/blog" className="hover:text-white transition">Blog</Link>
             <Link href="/ve-tung" className="hover:text-white transition">Về Tùng</Link>
             <Link href="/#contact" className="hover:text-white transition">Liên hệ</Link>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent('open-search'))}
+              className="w-9 h-9 md:w-10 md:h-10 rounded-xl glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition border border-white/5"
+              aria-label="Tìm kiếm (CMD+K)"
+            >
+              <i className="fas fa-search text-sm"></i>
+            </button>
             <Link
               href="/dashboard"
               className="hidden md:block px-5 py-2 text-white text-xs font-black uppercase tracking-widest rounded-xl transition hover:-translate-y-0.5"
@@ -135,34 +126,20 @@ export default function Header() {
             <i className="fas fa-home w-4 text-[var(--color-brand-red)]"></i> Home
           </Link>
           
-          <div className="py-2">
-            <Link href="/course" onClick={toggleDrawer} className="px-4 py-2 text-xs font-black uppercase tracking-widest text-slate-600 hover:text-white transition flex items-center gap-3">
-              <i className="fas fa-graduation-cap w-4"></i> Khóa học
-            </Link>
-            <div className="pl-4 border-l border-white/5 ml-6 space-y-1 mt-1">
-              <Link
-                href="/claude-master"
-                onClick={toggleDrawer}
-                className="block px-4 py-2.5 rounded-xl text-slate-400 text-sm font-bold hover:bg-white/5 hover:text-white transition"
-              >
-                Claude Code Mastery
-              </Link>
-              <Link
-                href="/claude-design"
-                onClick={toggleDrawer}
-                className="block px-4 py-2.5 rounded-xl text-slate-400 text-sm font-bold hover:bg-white/5 hover:text-white transition"
-              >
-                Claude Design v4
-              </Link>
-              <Link
-                href="/course"
-                onClick={toggleDrawer}
-                className="block px-4 py-2.5 rounded-xl text-indigo-400 text-sm font-bold hover:bg-indigo-500/10 transition"
-              >
-                Tất cả khóa học
-              </Link>
-            </div>
-          </div>
+          <Link
+            href="/course"
+            onClick={toggleDrawer}
+            className="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition"
+          >
+            <i className="fas fa-graduation-cap w-4 text-indigo-400"></i> Khóa học
+          </Link>
+          <Link
+            href="/prompt"
+            onClick={toggleDrawer}
+            className="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition"
+          >
+            <i className="fas fa-terminal w-4 text-purple-400"></i> Kho Prompt
+          </Link>
           <Link
             href="/blog"
             onClick={toggleDrawer}
@@ -194,6 +171,8 @@ export default function Header() {
           </Link>
         </nav>
       </div>
+      
+      <SearchModal />
     </>
   );
 }
