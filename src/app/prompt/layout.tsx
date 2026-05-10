@@ -2,10 +2,10 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Kho Prompt AI Thực Chiến | Tôi Là Tùng',
-  description: 'Bộ sưu tập 33+ Prompt AI cao cấp được kiểm chứng bởi Antigravity. Áp dụng Director Mindset để tạo kịch bản, hình ảnh, video chất lượng cao với ChatGPT, Claude, Midjourney.',
+  description: 'Bộ sưu tập 38+ Prompt AI cao cấp được kiểm chứng bởi Antigravity. Áp dụng Director Mindset để tạo kịch bản, hình ảnh, video chất lượng cao với ChatGPT, Claude, Midjourney.',
   openGraph: {
     title: 'Kho Prompt AI Thực Chiến | Tôi Là Tùng',
-    description: 'Bộ sưu tập 33+ Prompt AI cao cấp được kiểm chứng bởi Antigravity. Áp dụng Director Mindset để tạo kịch bản, hình ảnh, video chất lượng cao.',
+    description: 'Bộ sưu tập 38+ Prompt AI cao cấp được kiểm chứng bởi Antigravity. Áp dụng Director Mindset để tạo kịch bản, hình ảnh, video chất lượng cao.',
     url: 'https://toilatung.com/prompt',
     images: [
       {

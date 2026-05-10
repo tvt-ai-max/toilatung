@@ -11,6 +11,8 @@ const catColors: Record<string, string> = {
   "Phân tích & Remake": "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
   "Ảnh Kỹ thuật": "text-blue-400 bg-blue-400/10 border-blue-400/20",
   "Training Chatbot": "text-purple-400 bg-purple-400/10 border-purple-400/20",
+  "Master Prompt": "text-yellow-400 bg-yellow-400/10 border-yellow-400/20",
+  "Video Master": "text-rose-400 bg-rose-400/10 border-rose-400/20",
 };
 
 const catIcons: Record<string, string> = {
@@ -20,6 +22,8 @@ const catIcons: Record<string, string> = {
   "Phân tích & Remake": "fa-microscope",
   "Ảnh Kỹ thuật": "fa-microchip",
   "Training Chatbot": "fa-robot",
+  "Master Prompt": "fa-crown",
+  "Video Master": "fa-video",
 };
 
 export default function PromptLibraryPage() {
@@ -68,7 +72,7 @@ export default function PromptLibraryPage() {
   };
 
   const handleOpenModal = (p: PromptItem) => {
-    if (p.category === "Master Prompt" && !isUnlocked) {
+    if (p.category.includes("Master") && !isUnlocked) {
       setIsLeadModalOpen(true);
       return;
     }
@@ -111,7 +115,7 @@ export default function PromptLibraryPage() {
   const handleCopy = (p: PromptItem, e?: React.MouseEvent) => {
     if (e) e.stopPropagation();
     
-    if (p.category === "Master Prompt" && !isUnlocked) {
+    if (p.category.includes("Master") && !isUnlocked) {
       setIsLeadModalOpen(true);
       return;
     }
@@ -167,7 +171,7 @@ export default function PromptLibraryPage() {
         <header className="text-center mb-16 relative">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-xs font-bold uppercase tracking-widest text-purple-300 mb-6 shadow-[0_0_20px_rgba(168,85,247,0.15)]">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-            33 Prompts • Cập nhật 05/2026
+            38 Prompts • Cập nhật 05/2026
           </div>
           
           <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 leading-tight">
@@ -262,7 +266,7 @@ export default function PromptLibraryPage() {
                     className="relative group bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-xl p-6 rounded-3xl flex flex-col h-full border border-white/[0.08] hover:border-purple-500/30 hover:shadow-[0_10px_40px_rgba(168,85,247,0.15)] hover:-translate-y-1 transition-all duration-300 ease-out opacity-0 animate-[slideUp_0.5s_ease-out_forwards]"
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
-                    {p.category === "Master Prompt" && !isUnlocked && (
+                    {p.category.includes("Master") && !isUnlocked && (
                       <div className="absolute top-4 right-4 bg-purple-500/20 text-purple-400 border border-purple-500/30 text-[9px] font-black uppercase tracking-widest px-2 py-1 rounded-md flex items-center gap-1 backdrop-blur-md z-10 shadow-sm pointer-events-none">
                         <i className="fa-solid fa-lock text-xs"></i> Locked
                       </div>
@@ -292,7 +296,7 @@ export default function PromptLibraryPage() {
                         onClick={(e) => handleCopy(p, e)}
                         className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white text-sm font-bold rounded-xl transition shadow-[0_0_15px_rgba(168,85,247,0.3)] hover:shadow-[0_0_25px_rgba(168,85,247,0.5)]"
                       >
-                        {p.category === "Master Prompt" && !isUnlocked ? (
+                        {p.category.includes("Master") && !isUnlocked ? (
                           <><i className="fa-solid fa-lock"></i> Mở Khóa</>
                         ) : (
                           <><i className="fa-regular fa-copy"></i> Copy</>
@@ -302,7 +306,7 @@ export default function PromptLibraryPage() {
                         onClick={() => handleOpenModal(p)}
                         className="flex items-center justify-center w-12 py-2.5 bg-white/[0.02] backdrop-blur-md rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition border border-white/10"
                       >
-                        {p.category === "Master Prompt" && !isUnlocked ? (
+                        {p.category.includes("Master") && !isUnlocked ? (
                           <i className="fa-solid fa-key"></i>
                         ) : (
                           <i className="fa-solid fa-arrow-right"></i>
