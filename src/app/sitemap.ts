@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/course/vibe-coding',
     '/course/ai-coaching',
     '/blog',
+    '/ve-tung',
+    '/prompt',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
