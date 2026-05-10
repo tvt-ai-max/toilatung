@@ -1,0 +1,117 @@
+---
+title: "Claude 3.5 Sonnet vs Opus 4.7: Khi Nào Dùng Model Nào Cho Đúng?"
+description: "So sánh chi tiết Claude 3.5 Sonnet và Opus 4.7 — performance, chi phí, và use cases cụ thể để chọn đúng model cho từng loại task trong workflow AI."
+date: "2026-05-09"
+coverImage: "/images/blog/claude-3-5-sonnet-vs-opus-4-7-khi-nao-dung-model-nao.webp"
+tags: ["Claude", "AI", "Optimization", "Workflow"]
+author: "Tùng"
+---
+
+Một trong những câu hỏi phổ biến nhất tôi nhận được: "Tùng ơi, tôi nên dùng Claude Sonnet hay Opus? Và khi nào dùng cái nào?"
+
+Câu trả lời không phải "cái này tốt hơn cái kia" — mà là "**đúng model cho đúng task**". Dùng sai model vừa tốn tiền vừa tốn thời gian.
+
+---
+
+## Tóm tắt nhanh
+
+| Tiêu chí | Claude 3.5 Sonnet | Claude Opus 4.7 |
+|----------|------------------|-----------------|
+| Tốc độ | ⚡ Nhanh hơn | 🐢 Chậm hơn |
+| Chi phí API | 💰 Thấp hơn (~3x) | 💸 Cao hơn |
+| Reasoning phức tạp | ★★★★☆ | ★★★★★ |
+| Code generation | ★★★★★ | ★★★★★ |
+| Creative writing | ★★★★☆ | ★★★★★ |
+| Theo instruction phức tạp | ★★★★☆ | ★★★★★ |
+| Context window | 200K tokens | 200K tokens |
+
+---
+
+## Khi nào dùng Claude 3.5 Sonnet
+
+Sonnet là "workhorse" — model bạn nên dùng mặc định cho 80% tasks:
+
+### ✅ Dùng Sonnet cho:
+- **Code generation và editing**: Sonnet code rất tốt, gần ngang Opus nhưng nhanh hơn nhiều
+- **Content drafting**: Blog posts, email, social media copy
+- **Data extraction và summarization**: Tổng hợp tài liệu dài
+- **Q&A thông thường**: Hỏi về tech stack, debug lỗi, giải thích concept
+- **Tasks lặp đi lặp lại**: Khi bạn cần chạy nhiều lần trong automation
+
+### Ví dụ prompt cho Sonnet:
+```
+Review file này và fix tất cả TypeScript errors:
+[paste code]
+```
+
+---
+
+## Khi nào dùng Claude Opus 4.7
+
+Opus là "đại não" — dành cho tasks đòi hỏi reasoning sâu và phức tạp:
+
+### ✅ Dùng Opus cho:
+- **Thiết kế kiến trúc hệ thống**: Khi cần suy nghĩ về trade-offs phức tạp
+- **Code review toàn diện**: Khi cần phát hiện edge cases và security issues
+- **Strategic planning**: Business decisions, roadmap planning
+- **Ambiguous problem solving**: Khi vấn đề không có câu trả lời rõ ràng
+- **Long-form creative projects**: Khi cần tính nhất quán cao qua nhiều ngàn từ
+
+### Ví dụ prompt cho Opus:
+```
+Đây là hệ thống authentication hiện tại của tôi. Hãy thiết kế một architecture 
+mới có thể scale từ 1,000 lên 1,000,000 users, giải thích trade-offs của từng 
+quyết định thiết kế, và identify các potential security vulnerabilities.
+```
+
+---
+
+## Framework quyết định nhanh
+
+Trước khi gửi prompt, hỏi bản thân:
+
+1. **Task này có cần reasoning nhiều bước không?**
+   - Không → Sonnet
+   - Có → Opus
+
+2. **Tôi có cần chạy task này nhiều lần (trong loop) không?**
+   - Có → Sonnet (tiết kiệm chi phí)
+   - Không → Có thể dùng Opus
+
+3. **Quality có quan trọng hơn tốc độ không?**
+   - Tốc độ quan trọng → Sonnet
+   - Quality quan trọng → Opus
+
+---
+
+## Chiến lược "Cascade" — dùng cả hai
+
+Nhiều teams dùng strategy này:
+
+1. **Draft bằng Sonnet** (nhanh, rẻ)
+2. **Review và polish bằng Opus** (sâu, chính xác)
+
+Ví dụ trong coding:
+- Sonnet generate code nhanh
+- Opus review và catch architectural issues
+- Sonnet apply fixes
+
+Cách này tối ưu cả về cost lẫn quality.
+
+---
+
+## Lời khuyên về chi phí
+
+Nếu dùng API (không phải Claude Pro):
+- Opus đắt gấp ~5x Sonnet per token
+- Với một session coding 2 giờ: Sonnet tốn ~$0.50, Opus tốn ~$2.50
+
+Với Claude Pro subscription: Bạn có giới hạn usage. Dùng Sonnet cho bulk tasks, giữ Opus cho những decisions quan trọng.
+
+---
+
+## Kết luận
+
+Không có model nào "tốt hơn" tuyệt đối. Sonnet là default thông minh cho 80% tasks, Opus là vũ khí cho 20% tasks cần reasoning sâu và strategic thinking.
+
+Muốn optimize toàn bộ AI workflow của bạn — từ model selection đến prompt engineering? [Claude Code Mastery Pro](/claude-master) có đầy đủ hệ thống.

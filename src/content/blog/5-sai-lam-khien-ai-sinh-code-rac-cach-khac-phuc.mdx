@@ -1,0 +1,107 @@
+---
+title: "5 Sai Lầm Khiến AI Sinh Ra 'Code Rác' và Cách Khắc Phục Hiệu Quả"
+description: "Những sai lầm phổ biến khi dùng AI viết code và cách tối ưu prompt để AI lập trình sạch, chuẩn và hiệu quả hơn. Tránh code rác từ ngày đầu tiên."
+date: "2026-05-09"
+coverImage: "/images/blog/5-sai-lam-khien-ai-sinh-code-rac-cach-khac-phuc.webp"
+tags: ["AI", "Vibe Coding", "Claude", "Prompt Engineering"]
+author: "Tùng"
+---
+
+AI viết code nhanh — nhưng không phải lúc nào cũng viết code tốt. Nếu bạn đang nhận được output lộn xộn, deprecated, hoặc không nhất quán từ AI, thì 90% nguyên nhân nằm ở phía người dùng — không phải AI.
+
+Sau hàng trăm giờ làm việc với Claude, Cursor, và các AI coding tools, tôi đã nhận ra 5 sai lầm hệ thống khiến AI sinh ra "code rác" — và cách khắc phục cụ thể cho từng cái.
+
+---
+
+## 1. Prompt quá mơ hồ, thiếu context
+
+**Sai lầm**: "Viết cho tôi một button component."
+
+**Vấn đề**: AI không biết bạn đang dùng framework gì, Tailwind hay CSS module, TypeScript hay JavaScript, dark mode hay light mode, kích thước/variant thế nào.
+
+**Khắc phục**: Cung cấp đầy đủ context kỹ thuật trong mỗi prompt.
+
+```
+Tạo Button component cho Next.js 16 với TypeScript strict.
+Tech: Tailwind CSS v4, dark theme.
+Variants: primary (bg-violet-600), secondary (border outline), ghost.
+Props: children, variant, size (sm/md/lg), disabled, onClick.
+Style: rounded-lg, hover scale-105 transition, disabled:opacity-50.
+```
+
+**Kết quả**: AI có đủ thông tin để tạo ra component đúng ngay lần đầu.
+
+---
+
+## 2. Không có System Prompt / Rule File
+
+**Sai lầm**: Mỗi lần open IDE, chat với AI như người lạ hoàn toàn.
+
+**Vấn đề**: AI phải đoán tech stack, convention, và preferences của bạn. Nó điền vào đó bằng "best practices phổ biến nhất" — không phải những gì project bạn cần.
+
+**Khắc phục**: Tạo `CLAUDE.md` hoặc `.cursorrules` với toàn bộ context dự án (tech stack, conventions, rules không được phá vỡ). File này được AI đọc tự động và luôn nhớ.
+
+Xem hướng dẫn chi tiết: [Nghệ thuật viết System Prompt](/blog/nghe-thuat-viet-system-prompt-bien-claude-thanh-senior-developer)
+
+---
+
+## 3. Yêu cầu quá nhiều trong một prompt
+
+**Sai lầm**: "Tạo cho tôi một trang blog đầy đủ với listing, detail page, search, filter, pagination, dark mode, responsive, và SEO."
+
+**Vấn đề**: AI cố gắng làm tất cả → code dài, có nhiều bug, kiến trúc không nhất quán, thiếu sót edge cases.
+
+**Khắc phục**: Chia nhỏ thành các tasks độc lập. Mỗi prompt = một feature hoàn chỉnh.
+
+```
+Session 1: Tạo layout cơ bản + Header
+Session 2: Blog listing page với card component
+Session 3: Blog detail page + MDX rendering
+Session 4: Search functionality
+Session 5: Mobile responsive + animations
+```
+
+Mỗi session nhỏ hơn → AI làm tốt hơn → ít bug hơn → bạn review nhanh hơn.
+
+---
+
+## 4. Không review code trước khi accept
+
+**Sai lầm**: AI gen xong → Accept all → ship.
+
+**Vấn đề**: AI đôi khi:
+- Dùng deprecated API (ví dụ: `getServerSideProps` thay vì Server Components trong Next.js 16)
+- Hard-code values thay vì dùng env variables
+- Bỏ qua error handling
+- Tạo security vulnerabilities nhỏ (không sanitize input)
+
+**Khắc phục**: Dành 2-3 phút đọc lướt mỗi file AI tạo. Không cần hiểu 100% — chỉ cần nhận ra được "file này đang làm gì" và flag những thứ trông bất thường.
+
+Một checklist review nhanh:
+- [ ] Có dùng env variable cho secrets không?
+- [ ] Có TypeScript types đầy đủ không?
+- [ ] Có error handling cho async operations không?
+- [ ] Có dùng đúng API của framework hiện tại không?
+
+---
+
+## 5. Không reset context khi AI bắt đầu "ngáo"
+
+**Sai lầm**: Khi AI bắt đầu sinh code xung đột hoặc quên các rules đã thống nhất, bạn cố "giải thích lại" trong cùng conversation.
+
+**Vấn đề**: Context window đã bị fill bởi hàng nghìn tokens của conversation cũ. Thêm explanation chỉ càng push thêm tokens và làm AI càng confused hơn.
+
+**Khắc phục**: Nhận ra dấu hiệu AI "ngáo" sớm:
+- Lặp lại giải pháp cũ đã bị reject
+- Quên quy tắc đã thống nhất (ví dụ: dùng wrong import)
+- Sinh code ngắn, hời hợt hơn bình thường
+
+Khi thấy dấu hiệu này: **đóng session, mở session mới**, paste lại `CLAUDE.md` và file context liên quan, và tiếp tục. 5 phút reset sẽ tiết kiệm 30 phút frustrated debugging.
+
+---
+
+## Tổng kết
+
+"Code rác" từ AI hầu hết là kết quả của workflow kém, không phải AI kém. Fix 5 điểm trên và bạn sẽ thấy output AI của mình cải thiện đáng kể ngay lập tức.
+
+Muốn học toàn bộ hệ thống Vibe Coding từ nền tảng? Xem [Claude Code Mastery Pro](/claude-master) — khóa học thực chiến dạy đúng workflow, đúng prompt patterns, và đúng mindset để AI làm việc hiệu quả cho bạn.

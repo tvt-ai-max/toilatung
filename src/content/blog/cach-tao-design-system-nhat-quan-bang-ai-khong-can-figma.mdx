@@ -1,0 +1,133 @@
+---
+title: "Cách Tạo Design System Nhất Quán Bằng AI Mà Không Cần Figma"
+description: "Xây dựng design system nhất quán cho web app chỉ với AI và CSS — không cần Figma, không cần designer, không cần budget lớn. Phù hợp cho solo founder và small teams."
+date: "2026-05-09"
+coverImage: "/images/blog/cach-tao-design-system-nhat-quan-bang-ai-khong-can-figma.webp"
+tags: ["Design", "AI", "CSS", "Vibe Coding"]
+author: "Tùng"
+---
+
+Figma là công cụ tuyệt vời. Nhưng với solo founder hoặc small team chạy theo tốc độ AI, Figma đôi khi trở thành bottleneck thay vì enabler.
+
+Bạn phải thiết kế trong Figma, export specs, rồi mới code. Với AI, bạn có thể **thiết kế trực tiếp trong code** — và AI sẽ giúp bạn giữ design system nhất quán xuyên suốt cả project.
+
+---
+
+## Design System là gì và tại sao cần?
+
+Design System là bộ quy tắc về visual language của product:
+- **Colors**: Primary, secondary, semantic (success, error, warning)
+- **Typography**: Font family, scale, weight
+- **Spacing**: Khoảng cách nhất quán giữa các elements
+- **Components**: Button, Card, Input — chuẩn hóa một lần, dùng mọi nơi
+- **Motion**: Animation timing, easing functions
+
+Không có design system → mỗi developer làm theo ý riêng → UI nhìn như patchwork.
+
+---
+
+## Bước 1: Định nghĩa tokens trong CSS
+
+Với Tailwind CSS v4, design tokens được define trực tiếp trong CSS:
+
+```css
+@import "tailwindcss";
+
+@theme inline {
+  /* Colors */
+  --color-primary: #7b61ff;
+  --color-primary-hover: #6b4ff0;
+  --color-danger: #ff375f;
+  --color-success: #34d399;
+  --color-bg: #0a0a0a;
+  --color-surface: #141414;
+  --color-text: #f0f0f0;
+  --color-text-muted: #6b7280;
+  
+  /* Typography */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  
+  /* Spacing scale */
+  --spacing-section: 5rem;
+  --spacing-card: 1.5rem;
+  
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+}
+```
+
+---
+
+## Bước 2: Prompt Claude để tạo Component Library
+
+Sau khi có tokens, prompt Claude để build component:
+
+```
+Sử dụng design tokens đã define trong globals.css để tạo:
+
+1. Button component với variants: primary, secondary, ghost, danger
+   - Sizes: sm, md, lg
+   - States: default, hover, active, disabled, loading
+
+2. Card component: glass morphism style với shadow và border nhẹ
+
+3. Input/Form field: với label, placeholder, error state, success state
+
+Tất cả dùng Tailwind utility classes, TypeScript strict, 
+export từ src/components/ui/index.ts
+```
+
+---
+
+## Bước 3: Dùng AI để kiểm tra consistency
+
+Sau khi build được một số trang, prompt Claude để audit:
+
+```
+Review các file components trong src/components/ và kiểm tra:
+1. Có component nào đang dùng hardcoded colors thay vì design tokens không?
+2. Spacing có nhất quán không (chỉ dùng 4, 8, 12, 16, 24, 32, 48, 64px)?
+3. Border radius có nhất quán không?
+4. Font sizes có đúng typography scale không?
+
+List ra tất cả inconsistencies và cách fix.
+```
+
+---
+
+## Bước 4: Storybook thay thế bằng dev page
+
+Thay vì setup Storybook (phức tạp), tạo một `/dev` page chỉ show tất cả components:
+
+```tsx
+// src/app/dev/page.tsx
+export default function DevPage() {
+  return (
+    <div className="p-8 space-y-8">
+      <section>
+        <h2>Buttons</h2>
+        <div className="flex gap-4">
+          <Button variant="primary">Primary</Button>
+          <Button variant="secondary">Secondary</Button>
+          <Button variant="ghost">Ghost</Button>
+          <Button variant="danger">Danger</Button>
+        </div>
+      </section>
+      {/* Thêm cards, inputs, etc. */}
+    </div>
+  )
+}
+```
+
+Page này là "living style guide" — bạn có thể xem và test mọi component một chỗ.
+
+---
+
+## Kết luận
+
+Design System không cần Figma và không cần designer nếu bạn có AI và một workflow đúng. Define tokens một lần, prompt Claude build components, dùng dev page để review — đó là workflow đủ mạnh cho 80% web projects.
+
+Học thêm về quy trình thiết kế với AI: [Claude Code Mastery Pro](/claude-master).

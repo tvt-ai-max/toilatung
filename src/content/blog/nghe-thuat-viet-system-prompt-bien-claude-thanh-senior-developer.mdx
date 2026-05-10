@@ -1,0 +1,292 @@
+---
+title: "Nghệ Thuật Viết System Prompt: Biến Claude Thành Senior Developer Của Bạn"
+description: "Hướng dẫn thực chiến viết System Prompt chuẩn để Claude hoạt động như một Senior Developer — đúng phong cách, đúng convention, không sinh code rác."
+date: "2026-05-10"
+coverImage: "/images/blog/nghe-thuat-viet-system-prompt-bien-claude-thanh-senior-developer.webp"
+tags: ["Claude", "Prompt Engineering", "AI", "Vibe Coding"]
+author: "Tùng"
+---
+
+Đây là kịch bản quen thuộc với hầu hết người mới dùng AI để code:
+
+Bạn hỏi Claude "Viết cho tôi một component Button bằng React." Claude trả về một đoạn code hoạt động tốt. Bạn copy vào project. Nhưng component đó dùng Tailwind CSS v2 trong khi project của bạn đang dùng v4. Nó dùng `className` convention khác. Nó không có TypeScript strict types. Và format code trông hoàn toàn khác so với phần còn lại của codebase.
+
+Bạn mất thêm 15 phút để fix.
+
+Vấn đề không phải ở Claude — mà ở chỗ bạn chưa cho Claude biết **context** về dự án của mình. Claude đang làm việc trong khoảng trống thông tin, và nó điền vào đó bằng những gì "phổ biến nhất" trong training data — không phải bằng những gì bạn thực sự cần.
+
+**System Prompt** là cách bạn lấp đầy khoảng trống đó — và biến Claude từ một developer tổng quát thành **Senior Developer chuyên biệt cho đúng project của bạn**.
+
+---
+
+## Mục lục
+- [1. System Prompt là gì và tại sao quan trọng?](#1-system-prompt-la-gi-va-tai-sao-quan-trong)
+- [2. Cấu trúc System Prompt chuẩn](#2-cau-truc-system-prompt-chuan)
+- [3. Ví dụ thực tế: CLAUDE.md cho Next.js project](#3-vi-du-thuc-te-claudemd-cho-nextjs-project)
+- [4. 5 kỹ thuật nâng cao](#4-5-ky-thuat-nang-cao)
+- [5. Những lỗi phổ biến khi viết System Prompt](#5-nhung-loi-pho-bien-khi-viet-system-prompt)
+- [6. Template có thể dùng ngay](#6-template-co-the-dung-ngay)
+- [7. Kết luận](#7-ket-luan)
+
+---
+
+## 1. System Prompt là gì và tại sao quan trọng?
+
+**System Prompt** (còn gọi là System Instructions) là đoạn text bạn cung cấp cho AI **trước khi cuộc hội thoại bắt đầu**. Nó thiết lập:
+
+- **Vai trò (Role)**: AI đóng vai gì? Là Developer? Designer? Reviewer?
+- **Ngữ cảnh (Context)**: Tech stack gì? Coding convention thế nào? Project ở giai đoạn nào?
+- **Ràng buộc (Constraints)**: Không được dùng library X. Luôn dùng TypeScript strict. Không bao giờ dùng `any`.
+- **Phong cách output (Output Style)**: Code format thế nào? Comment bằng tiếng Việt hay tiếng Anh?
+
+Với **Cursor IDE**, System Prompt được đặt trong file `.cursorrules` hoặc trong folder `.cursor/rules/`. Với **Claude.ai**, bạn đặt trong Custom Instructions. Với **Claude Code CLI**, đặt trong `CLAUDE.md`.
+
+Sự khác biệt giữa có và không có System Prompt chuẩn:
+
+| Không có System Prompt | Có System Prompt |
+|------------------------|-----------------|
+| Claude đoán tech stack | Claude biết chính xác |
+| Code có thể không nhất quán | Code nhất quán với codebase |
+| Phải explain lại mỗi lần | Chỉ cần mô tả task |
+| Nhiều back-and-forth | Ít vòng lặp hơn |
+| Risk sinh deprecated API | Dùng đúng convention mới |
+
+---
+
+## 2. Cấu trúc System Prompt chuẩn
+
+Một System Prompt hiệu quả cần có **5 thành phần**:
+
+### Thành phần 1: Role Declaration
+```
+Bạn là một Senior Full-Stack Developer chuyên về Next.js 16 (App Router) và TypeScript. 
+Bạn ưu tiên code sạch, type-safe, và performant.
+```
+
+### Thành phần 2: Tech Stack Context
+```
+## Tech Stack
+- Framework: Next.js 16 (App Router) — KHÔNG dùng Pages Router
+- Styling: Tailwind CSS v4 — dùng `@import "tailwindcss"`, KHÔNG dùng `@tailwind directives`
+- Language: TypeScript strict mode
+- Database: Không có (sử dụng file-based storage)
+- Package Manager: npm
+```
+
+### Thành phần 3: Coding Conventions
+```
+## Conventions
+- Tên component: PascalCase (Button, UserCard)
+- Tên file: kebab-case (user-card.tsx)
+- Interface thay vì Type khi có thể extend
+- KHÔNG bao giờ dùng `any` — dùng `unknown` nếu cần
+- Comment bằng tiếng Việt cho logic phức tạp
+- Server Component là default — chỉ thêm 'use client' khi có hooks/events
+```
+
+### Thành phần 4: Project-Specific Rules
+```
+## Quy tắc cụ thể của project
+- Image: dùng <img> với eslint-disable cho blog covers (Next Image không phù hợp với dynamic MDX src)
+- Blog data: chỉ đọc qua src/lib/mdx.ts, không access content/blog/ trực tiếp
+- Environment: đọc từ .env.local, KHÔNG hardcode
+```
+
+### Thành phần 5: Output Format
+```
+## Format output
+- Luôn cho biết file nào cần thay đổi trước khi show code
+- Show full file content (không dùng "// ... existing code")
+- Nếu cần nhiều file, list tất cả trước rồi mới show từng file
+```
+
+---
+
+## 3. Ví dụ thực tế: CLAUDE.md cho Next.js project
+
+Đây là CLAUDE.md tôi đang dùng cho toilatung-platform:
+
+```markdown
+# Claude Code Rules — toilatung-platform
+
+## Role
+Senior Next.js Developer. Ưu tiên: correctness > performance > terseness.
+
+## Stack bắt buộc
+- Next.js 16 App Router (KHÔNG pages router)
+- TypeScript strict — không `any`, không `@ts-ignore`
+- Tailwind CSS v4 — `@import "tailwindcss"` only
+- MDX qua next-mdx-remote
+- Node.js 20+
+
+## File structure
+src/app/         → Route handlers + pages
+src/components/  → Reusable UI
+src/lib/         → Utilities (mdx.ts, utils.ts)
+src/content/     → MDX content (read-only)
+public/images/   → Static assets
+
+## Rules không được phá vỡ
+1. Server Components là default
+2. KHÔNG import client component vào server component
+3. generateStaticParams() cho mọi dynamic route
+4. coverImage trong MDX frontmatter phải là .webp
+5. Slug: kebab-case, không dấu tiếng Việt
+
+## Code style
+- Trailing comma: yes
+- Semicolon: yes
+- Quote: double
+- Comment ngắn bằng tiếng Anh, giải thích dài bằng tiếng Việt
+```
+
+File này được pin vào đầu mỗi session Cursor, đảm bảo Claude luôn nhớ context.
+
+---
+
+## 4. 5 kỹ thuật nâng cao
+
+### Kỹ thuật 1: Persona Layering (Phân tầng vai trò)
+
+Thay vì chỉ nói "bạn là developer", hãy phân tầng vai trò:
+
+```
+Khi review code: Đóng vai Security Auditor, tìm vulnerabilities.
+Khi viết code mới: Đóng vai Senior Developer, ưu tiên maintainability.
+Khi refactor: Đóng vai Tech Lead, cân bằng giữa cải tiến và risk.
+```
+
+### Kỹ thuật 2: Negative Instructions (Rõ ràng về những gì KHÔNG làm)
+
+Claude học rất tốt từ negative examples:
+
+```
+KHÔNG bao giờ:
+- Dùng useEffect cho data fetching (dùng React Server Components)
+- Tạo file CSS riêng (chỉ dùng Tailwind)
+- Import từ 'react' nếu không cần (Next.js tự inject)
+- Dùng <a href> (dùng next/link <Link>)
+```
+
+### Kỹ thuật 3: Example-Driven Context
+
+Cho Claude thấy ví dụ về "code đúng" của bạn:
+
+```
+## Ví dụ component chuẩn của project:
+
+// ✅ ĐÚNG
+export default function BlogCard({ post }: { post: Post }) {
+  return <article className="...">...</article>
+}
+
+// ❌ SAI  
+const BlogCard = (props: any) => {
+  return <div>...</div>
+}
+```
+
+### Kỹ thuật 4: Output Templates
+
+Cho Claude template để fill vào:
+
+```
+Khi tạo component mới, luôn dùng structure:
+1. Type definitions
+2. Default values / constants  
+3. Component function
+4. Export
+
+Mỗi component phải có JSDoc comment 1 dòng mô tả purpose.
+```
+
+### Kỹ thuật 5: Checkpoint Prompts
+
+Với tasks phức tạp, thêm checkpoint:
+
+```
+Sau khi hoàn thành mỗi bước, hãy:
+1. Liệt kê những gì đã làm
+2. Liệt kê những gì còn lại
+3. Hỏi nếu cần thêm thông tin trước khi tiếp tục
+```
+
+---
+
+## 5. Những lỗi phổ biến khi viết System Prompt
+
+### Lỗi 1: System Prompt quá dài và vô tổ chức
+
+System Prompt 5000 chữ không có cấu trúc rõ ràng sẽ khiến Claude bị "Lost in the Middle" — quên những rule quan trọng ở giữa.
+
+**Fix**: Dùng headers, bullet points, và **bold** cho những rule quan trọng nhất. Giữ tổng chiều dài dưới 1500 từ.
+
+### Lỗi 2: Rule mâu thuẫn
+
+```
+// Mâu thuẫn:
+Rule 1: "Luôn viết code ngắn gọn"
+Rule 2: "Luôn có full error handling"
+```
+
+**Fix**: Thiết lập thứ tự ưu tiên rõ ràng: "Correctness > Readability > Conciseness".
+
+### Lỗi 3: Không cập nhật khi project thay đổi
+
+Nếu bạn đổi từ Tailwind v3 sang v4 nhưng System Prompt vẫn nói v3, Claude sẽ sinh code lỗi thời.
+
+**Fix**: CLAUDE.md/System Prompt là "living document" — cập nhật khi stack thay đổi.
+
+### Lỗi 4: Thiếu context về "tại sao"
+
+"Không dùng `any`" — Claude sẽ tuân thủ. Nhưng "Không dùng `any` vì project có strict TypeScript mode và CI/CD sẽ fail" — Claude sẽ hiểu sâu hơn và tránh cả những edge cases.
+
+---
+
+## 6. Template có thể dùng ngay
+
+Copy và điền vào cho project của bạn:
+
+```markdown
+# [Project Name] — Claude/AI Rules
+
+## Role
+Senior [Framework] Developer. Ưu tiên: [correctness/performance/terseness].
+
+## Tech Stack
+- Framework: [Next.js / React / Vue]
+- Styling: [Tailwind / CSS Modules / Styled Components]  
+- Language: [TypeScript / JavaScript]
+- State: [Zustand / Redux / Context]
+- Database: [Prisma / Drizzle / None]
+
+## Project Structure
+[thư mục quan trọng và mục đích]
+
+## Rules (không được phá vỡ)
+1. [Rule 1]
+2. [Rule 2]
+3. [Rule 3]
+
+## KHÔNG bao giờ
+- [Thing to avoid 1]
+- [Thing to avoid 2]
+
+## Code style
+- Semicolon: [yes/no]
+- Trailing comma: [yes/no]
+- Quote: [single/double]
+- Comment: [Vietnamese/English]
+```
+
+---
+
+## 7. Kết luận
+
+System Prompt không phải là magic spell — nhưng nó là **đầu tư 30 phút một lần để tiết kiệm hàng giờ mỗi tuần**.
+
+Khi Claude biết chính xác project của bạn là gì, stack gì, convention gì — nó trở thành một thành viên team thực sự. Không phải một stranger bạn phải giải thích lại mọi thứ từ đầu mỗi lần.
+
+Hãy dành 30 phút hôm nay để tạo `CLAUDE.md` cho project của bạn. Nó sẽ là một trong những đầu tư có ROI cao nhất trong workflow Vibe Coding của bạn.
+
+Muốn học đầy đủ hệ thống Prompting từ cơ bản đến nâng cao, cùng các templates thực chiến đã được test trong hàng chục dự án thực tế? Xem ngay khóa học **[Claude Code Mastery Pro](/claude-master)**.

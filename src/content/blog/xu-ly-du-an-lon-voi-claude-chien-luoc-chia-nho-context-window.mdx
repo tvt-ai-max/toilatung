@@ -1,0 +1,162 @@
+---
+title: "Xử Lý Dự Án Lớn Với Claude: Chiến Lược Chia Nhỏ Context Window Hiệu Quả"
+description: "Cách quản lý token và chia nhỏ Context Window để Claude không bị 'ngáo' khi xử lý codebase khổng lồ — chiến lược thực chiến từ các dự án TVT Agency."
+date: "2026-05-09"
+coverImage: "/images/blog/xu-ly-du-an-lon-voi-claude-chien-luoc-chia-nho-context-window.webp"
+tags: ["AI", "Claude", "Context Window", "Optimization"]
+author: "Tùng"
+---
+
+Khi project lớn dần lên — hàng ngàn dòng code, nhiều components, nhiều files — bạn sẽ gặp một vấn đề đặc trưng: **Claude bắt đầu "quên" những gì đã làm trước đó, sinh code xung đột, hoặc repeat lại những lỗi đã sửa**.
+
+Đây không phải Claude "ngu hơn". Đây là giới hạn vật lý của Context Window — và có cách xử lý hệ thống để không bị chặn bởi giới hạn này.
+
+---
+
+## Hiểu vấn đề: Tại sao Claude "ngáo" với project lớn?
+
+Context Window là lượng thông tin AI có thể "ghi nhớ" và xử lý trong một phiên. Claude 3.5 Sonnet có 200,000 tokens — nghe rất nhiều, nhưng với codebase lớn:
+
+- 1 file TypeScript trung bình: ~2,000-5,000 tokens
+- 20 files: ~40,000-100,000 tokens
+- Thêm conversation history: có thể chiếm 50,000-100,000 tokens
+- Kết quả: Gần đầy context, AI bắt đầu "ảo giác"
+
+Dấu hiệu nhận biết context đang cạn:
+- AI đề xuất giải pháp đã được reject trước đó
+- Code mới xung đột với code cũ không giải thích được
+- AI "bịa" tên functions hoặc props không tồn tại
+- Phản hồi ngắn bất thường, bỏ qua details
+
+---
+
+## Chiến lược 1: Project Memory File
+
+Thay vì nhồi toàn bộ codebase vào context, tạo một file `MEMORY.md` tóm tắt project state:
+
+```markdown
+# Project Memory — [Project Name]
+*Updated: [date]*
+
+## Architecture Overview
+- Framework: Next.js 16 App Router
+- Database: None (file-based MDX)
+- Styling: Tailwind CSS v4
+- Deploy: Vercel
+
+## Completed Features
+- [x] Blog listing page với pagination
+- [x] Blog detail với MDX rendering
+- [x] SEO metadata system
+- [x] Cover image generation script
+
+## In Progress
+- [ ] Search functionality (pending)
+
+## Known Issues / Technical Debt
+- Blog listing không có infinite scroll (deferred)
+- Mobile nav đang dùng simple hamburger (cần redesign)
+
+## Key Files
+- src/lib/mdx.ts: Blog data access layer
+- src/app/blog/page.tsx: Blog listing
+- src/app/blog/[slug]/page.tsx: Blog detail
+
+## Conventions
+- Slug: kebab-case, Vietnamese no-diacritics
+- coverImage: must be .webp in /images/blog/
+```
+
+Bắt đầu mỗi session mới bằng cách paste `MEMORY.md` vào context thay vì toàn bộ code.
+
+---
+
+## Chiến lược 2: Task-Scoped Sessions
+
+Thay vì một session dài cho cả ngày, dùng **nhiều sessions ngắn, mỗi session cho một task cụ thể**:
+
+```
+Session A: "Tôi cần fix bug trong src/lib/mdx.ts" → chỉ paste file đó
+Session B: "Tôi cần thêm feature X vào blog page" → paste blog files liên quan
+Session C: "Review và optimize performance của homepage" → paste homepage files
+```
+
+Mỗi session tập trung → AI ít bị overwhelm hơn → output tốt hơn.
+
+---
+
+## Chiến lược 3: Hierarchical Summarization
+
+Khi conversation dài (>30 messages), trước khi bắt đầu task mới, hỏi Claude:
+
+```
+Trước khi chúng ta tiếp tục, hãy tóm tắt lại:
+1. Những gì chúng ta đã implement trong session này
+2. Decisions quan trọng đã được đưa ra
+3. Technical debt hoặc TODO còn lại
+
+Tóm tắt này sẽ dùng làm context cho session tiếp theo.
+```
+
+Copy summary đó vào đầu session tiếp theo. Cách này "nén" history dài thành context ngắn gọn.
+
+---
+
+## Chiến lược 4: Selective File Loading
+
+Đừng paste toàn bộ project. Chỉ paste những files Claude thực sự cần:
+
+**Luôn include**:
+- `CLAUDE.md` / `AGENTS.md` (rules file)
+- File đang được modify
+- Files import bởi file đang modify
+
+**Thường không cần**:
+- `node_modules/`
+- `.next/` build folder
+- Test files (trừ khi đang debug tests)
+- Unrelated components
+
+---
+
+## Chiến lược 5: Checkpoint Commits
+
+Sau mỗi feature hoàn thành, commit ngay:
+
+```bash
+git add .
+git commit -m "feat: [feature name]"
+```
+
+Lợi ích:
+- Bạn có thể revert nếu session tiếp theo AI làm hỏng
+- Clean working tree giúp dễ diff hơn
+- Tạo natural break point để reset context
+
+---
+
+## Template bắt đầu session mới
+
+```
+## Project Context
+[paste MEMORY.md]
+
+## Files trong scope hôm nay:
+[paste relevant files]
+
+## Task cho session này:
+[mô tả cụ thể một task, không nhiều hơn]
+
+## Constraints:
+- Không thay đổi files ngoài scope
+- Maintain existing code style
+- [any other relevant constraints]
+```
+
+---
+
+## Kết luận
+
+Context Window không phải là wall — nó là một resource cần quản lý thông minh. Với 5 chiến lược trên, bạn có thể làm việc với codebase hàng chục ngàn dòng mà AI vẫn coherent và accurate.
+
+Muốn học đầy đủ hệ thống quản lý AI workflow cho dự án lớn? [Claude Code Mastery Pro](/claude-master) dạy bạn toàn bộ framework thực chiến.

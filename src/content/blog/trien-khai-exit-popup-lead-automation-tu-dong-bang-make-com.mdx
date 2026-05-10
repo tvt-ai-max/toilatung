@@ -1,0 +1,152 @@
+---
+title: "Triển Khai Exit Popup và Lead Automation Tự Động Bằng Make.com Trong 1 Buổi"
+description: "Hướng dẫn setup exit-intent popup và lead automation hoàn chỉnh với Make.com — từ capture form, email sequence đến CRM integration chỉ trong một buổi làm việc."
+date: "2026-05-09"
+coverImage: "/images/blog/trien-khai-exit-popup-lead-automation-tu-dong-bang-make-com.webp"
+tags: ["Automation", "Make.com", "Lead Generation", "Marketing"]
+author: "Tùng"
+---
+
+Exit popup là một trong những công cụ lead generation có ROI cao nhất, đặc biệt với traffic đang có sẵn. Kết hợp với Make.com automation, bạn có thể biến những "khách sắp rời đi" thành leads được nurture tự động — tất cả setup trong 1 buổi.
+
+---
+
+## Tại sao Exit Popup vẫn hiệu quả?
+
+Exit popup bị ghét khi làm sai. Làm đúng, nó convert cực tốt:
+
+- **Trigger đúng thời điểm**: Chỉ hiện khi mouse di chuyển ra khỏi viewport (exit intent)
+- **Offer đủ compelling**: Không phải "Đăng ký newsletter" mà là "Nhận template miễn phí"
+- **Design không intrusive**: Có thể đóng dễ dàng, không block nội dung
+
+Conversion rate trung bình của exit popup tốt: 2-4% (so với 0.5-1% của hero CTA form).
+
+---
+
+## Phần 1: Build Exit Popup (HTML/JS + Claude)
+
+### Prompt Claude để tạo popup:
+
+```
+Tạo exit-intent popup cho landing page với:
+- Trigger: mouse leaves viewport (mouseleave trên document)
+- Design: dark modal, overlay mờ 60%, centered, max-width 480px
+- Content: offer box với headline + benefit list + form email
+- Animation: fade-in + slide-up 0.3s
+- Dismiss: click overlay, click X button, hoặc submit form
+- Prevent re-show: localStorage flag "popup_shown" expires 7 ngày
+- On submit: POST đến webhook URL (Make.com)
+- Mobile: full screen modal
+
+Style: dark (#0a0a0a), accent purple (#7b61ff)
+Framework: vanilla JS + Tailwind CSS
+```
+
+### Code structure:
+
+```javascript
+// exit-popup.js
+const POPUP_KEY = 'exit_popup_shown';
+const WEBHOOK_URL = 'https://hook.make.com/xxx';
+
+function initExitPopup() {
+  if (localStorage.getItem(POPUP_KEY)) return;
+  
+  document.addEventListener('mouseleave', (e) => {
+    if (e.clientY <= 0) showPopup();
+  });
+}
+
+async function handleSubmit(email) {
+  await fetch(WEBHOOK_URL, {
+    method: 'POST',
+    body: JSON.stringify({ email, source: 'exit_popup', timestamp: new Date() })
+  });
+  localStorage.setItem(POPUP_KEY, Date.now());
+  closePopup();
+  showThankYou();
+}
+```
+
+---
+
+## Phần 2: Setup Make.com Automation
+
+### Scenario 1: Lead Capture → Google Sheets + Welcome Email
+
+**Trigger**: Webhook (nhận data từ exit popup)
+
+**Actions**:
+1. **Google Sheets**: Add row với email, timestamp, source
+2. **Gmail** (hoặc Mailchimp): Gửi welcome email trong vòng 5 phút
+3. **Optional - Slack notification**: Notify team có lead mới
+
+### Cách setup:
+
+1. Tạo Scenario mới trong Make.com
+2. Module 1: **Webhooks > Custom Webhook** — copy URL này vào JS
+3. Module 2: **Google Sheets > Add a Row**
+   - Mapping: `email` → Column A, `timestamp` → Column B, `source` → Column C
+4. Module 3: **Email > Send an Email**
+   - To: `{{1.email}}`
+   - Subject: "Cảm ơn bạn đã đăng ký!"
+   - Body: Template welcome email
+
+### Email welcome template:
+
+```
+Chào [Tên],
+
+Cảm ơn bạn đã quan tâm đến [Product/Resource]!
+
+Đây là link tải/xem: [URL]
+
+Trong 3 ngày tới, tôi sẽ gửi thêm cho bạn:
+- Ngày 2: [Tip/Resource 2]
+- Ngày 3: [Tip/Resource 3]
+
+Nếu bạn có câu hỏi gì, reply email này nhé!
+
+— Tùng
+```
+
+### Scenario 2: Email Sequence (3-email nurture)
+
+Make.com có thể tự động gửi email theo schedule:
+
+1. **Day 0**: Welcome + Resource
+2. **Day 2**: Value email (tip hoặc case study)
+3. **Day 5**: Soft pitch (mention paid offer)
+
+Setup với **Sleep module** giữa các emails để tạo delay tự động.
+
+---
+
+## Phần 3: Testing Checklist
+
+Trước khi go-live, test:
+
+- [ ] Exit popup trigger khi mouse lên top browser bar
+- [ ] Form validation hoạt động (không submit email trống)
+- [ ] Webhook nhận data đúng format
+- [ ] Google Sheet row được tạo sau submit
+- [ ] Welcome email đến trong 5 phút
+- [ ] Popup không re-show sau 7 ngày (localStorage test)
+- [ ] Mobile UX: popup full screen, có thể đóng dễ
+
+---
+
+## Kết quả mong đợi
+
+Với traffic 1,000 visitors/tháng:
+- Exit popup show: ~700 lần (70% trigger rate)
+- Conversion 3%: ~21 leads/tháng
+- Email sequence 3 emails: nurture và warm up cho paid offer
+
+---
+
+## Kết luận
+
+Exit popup + Make.com automation là combo cực kỳ powerful và underutilized. Setup một lần, hoạt động 24/7, tự động nurture leads mà bạn không cần làm gì thêm.
+
+Muốn học marketing automation đầy đủ hơn kết hợp với AI? [Claude Code Mastery Pro](/claude-master) có module Automation và Growth chuyên sâu.

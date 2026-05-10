@@ -1,0 +1,100 @@
+---
+title: "Cursor vs VS Code + Copilot: Vũ Khí Tôi Chọn Cho Vibe Coding"
+description: "So sánh thực chiến giữa Cursor IDE và VS Code + GitHub Copilot — ai nên dùng gì cho workflow Vibe Coding trong năm 2026? Benchmark thực tế từ daily use."
+date: "2026-05-09"
+coverImage: "/images/blog/cursor-vs-vs-code-copilot-vu-khi-toi-thuong-cho-vibe-coding.webp"
+tags: ["Cursor", "VS Code", "Vibe Coding", "AI Tools"]
+author: "Tùng"
+---
+
+Câu hỏi này chia cộng đồng Vibe Coder thành hai phe. Và tôi đã ở cả hai phe — dùng VS Code + Copilot trong nhiều năm, sau đó chuyển sang Cursor và không nhìn lại.
+
+Nhưng câu trả lời đúng không phải "cái nào tốt hơn" — mà là "cái nào phù hợp với workflow của bạn".
+
+---
+
+## Tổng quan nhanh
+
+### VS Code + GitHub Copilot
+- **Ai phát triển**: Microsoft
+- **Giá**: VS Code miễn phí, Copilot $10/tháng ($100/năm)
+- **AI Engine**: Chủ yếu OpenAI models (GPT-4)
+- **Strength**: Ecosystem khổng lồ, extensions, enterprise features
+- **Weakness**: AI integration không seamless như Cursor
+
+### Cursor
+- **Ai phát triển**: Anysphere (startup)
+- **Giá**: Free tier có, Pro $20/tháng
+- **AI Engine**: Có thể chọn Claude, GPT-4, hoặc model riêng
+- **Strength**: AI-first từ ngày đầu, Composer mode rất mạnh
+- **Weakness**: Ecosystem extension nhỏ hơn, đôi khi unstable
+
+---
+
+## So sánh từng tính năng
+
+### Inline Code Completion
+**Copilot**: Rất tốt. Suggestions nhanh, chính xác, ít ghost text gây distraction.  
+**Cursor**: Tab completion mạnh hơn với context nhận biết nhiều hơn, nhưng đôi khi suggest quá nhiều.
+
+**Winner**: Tie — cả hai đều xuất sắc ở inline completion.
+
+### Chat/Ask AI
+**Copilot**: Chat tích hợp trong sidebar, hỗ trợ `@workspace`, `@file`.  
+**Cursor**: Chat panel với references `@file`, `@code`, `@docs`. Có thể pin specific symbols.
+
+**Winner**: Cursor — references system chi tiết hơn.
+
+### Multi-file Editing (Agent Mode)
+**Copilot**: Copilot Edits mode — có thể edit nhiều files, nhưng còn beta.  
+**Cursor**: Composer mode — đây là killer feature. Bạn mô tả task, Cursor tự động plan và edit nhiều files.
+
+**Winner**: Cursor significantly — Composer là lý do chính tôi chuyển sang Cursor.
+
+### Codebase Understanding
+**Copilot**: `@workspace` — hiểu codebase, nhưng indexing đôi khi chậm.  
+**Cursor**: `@codebase` với Cursor index — fast, accurate, ít hallucination hơn.
+
+**Winner**: Cursor nhẹ hơn.
+
+### Extension Ecosystem
+**VS Code**: 50,000+ extensions — mọi thứ bạn cần đều có.  
+**Cursor**: Chạy được hầu hết VS Code extensions, nhưng không phải tất cả.
+
+**Winner**: VS Code rõ ràng.
+
+---
+
+## Khi nào nên chọn Cursor
+
+- Bạn làm solo hoặc small team
+- Vibe Coding là primary workflow
+- Ưu tiên AI productivity hơn enterprise tooling
+- Không cần enterprise security/compliance features
+
+---
+
+## Khi nào nên chọn VS Code + Copilot
+
+- Bạn làm trong enterprise/corporate environment
+- Team đã setup VS Code workflow hoàn chỉnh
+- Cần specific extensions chỉ có trên VS Code
+- IT department có restrictions về tools được approve
+
+---
+
+## Workflow của tôi hiện tại
+
+Tôi dùng **Cursor** cho tất cả projects cá nhân và client projects. Lý do cốt lõi: **Composer mode tiết kiệm cho tôi 2-3 giờ mỗi ngày**.
+
+Thay vì edit từng file, tôi describe task → Cursor plan → execute → tôi review. Đó là Vibe Coding thực sự.
+
+---
+
+## Kết luận
+
+Nếu bạn đang bắt đầu và không có ràng buộc nào: **dùng Cursor**. Nó được build từ đầu cho AI-first workflow.
+
+Nếu bạn đang trong môi trường enterprise hoặc team đã có infrastructure: **VS Code + Copilot** vẫn là lựa chọn solid và ngày càng cải thiện.
+
+Học cách maximize bất kỳ tool nào bạn chọn với workflow thực chiến trong [Claude Code Mastery Pro](/claude-master).

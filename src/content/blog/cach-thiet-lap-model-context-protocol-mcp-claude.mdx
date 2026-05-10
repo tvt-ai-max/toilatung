@@ -1,0 +1,153 @@
+---
+title: "Cách Thiết Lập Model Context Protocol (MCP) Cho Claude: Hướng Dẫn Thực Chiến"
+description: "Hướng dẫn từng bước thiết lập Model Context Protocol (MCP) cho Claude — mở rộng khả năng AI với web search, file system, database và custom tools."
+date: "2026-05-09"
+coverImage: "/images/blog/cach-thiet-lap-model-context-protocol-mcp-claude.webp"
+tags: ["Claude", "MCP", "AI", "Tools"]
+author: "Tùng"
+---
+
+Model Context Protocol (MCP) là chuẩn giao tiếp mở do Anthropic phát triển, cho phép Claude kết nối với các công cụ bên ngoài — từ web search, file system, database, đến custom APIs của bạn.
+
+Nếu bạn thấy Claude bị giới hạn bởi context window hoặc thiếu thông tin real-time, MCP chính là giải pháp.
+
+---
+
+## MCP là gì và tại sao quan trọng?
+
+Trước MCP, Claude chỉ có thể làm việc với thông tin bạn cung cấp trực tiếp trong chat. Với MCP:
+
+- **Web search**: Claude tìm kiếm thông tin mới nhất khi cần
+- **File system**: Đọc/ghi file trực tiếp trong project
+- **Database**: Query Postgres, SQLite, hoặc bất kỳ DB nào
+- **Custom tools**: Kết nối với bất kỳ API nào bạn cần
+
+MCP biến Claude từ "AI biết nhiều" thành "AI có thể làm nhiều".
+
+---
+
+## Cài đặt MCP cơ bản
+
+### Bước 1: Cài Claude Desktop (nếu chưa có)
+
+Download từ `claude.ai/download`. MCP hiện hoạt động tốt nhất với Claude Desktop app.
+
+### Bước 2: Tạo file config MCP
+
+```json
+// ~/Library/Application Support/Claude/claude_desktop_config.json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/YourName/Projects"
+      ]
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+### Bước 3: Restart Claude Desktop
+
+Sau khi save config, restart Claude Desktop. Bạn sẽ thấy icon tool mới xuất hiện.
+
+---
+
+## MCP servers phổ biến nhất
+
+### Filesystem MCP
+Cho phép Claude đọc/ghi file trong thư mục được chỉ định:
+
+```bash
+npx @modelcontextprotocol/server-filesystem /path/to/project
+```
+
+Dùng khi: Review code, tạo files, đọc documentation local.
+
+### Brave Search MCP
+Web search real-time:
+
+```bash
+npx @modelcontextprotocol/server-brave-search
+```
+
+Dùng khi: Cần thông tin mới nhất về library, API docs, market research.
+
+### Postgres MCP
+Kết nối trực tiếp với database:
+
+```json
+{
+  "postgres": {
+    "command": "npx",
+    "args": ["-y", "@modelcontextprotocol/server-postgres", 
+             "postgresql://user:pass@localhost/dbname"]
+  }
+}
+```
+
+Dùng khi: Query data, debug database issues, generate reports.
+
+---
+
+## Workflow thực tế với MCP
+
+### Ví dụ 1: Review và fix codebase với Filesystem MCP
+
+```
+Claude, đọc file src/lib/mdx.ts và tìm potential bugs 
+hoặc performance issues. Sau đó fix và save lại file.
+```
+
+Claude sẽ dùng MCP filesystem để đọc file thực sự, phân tích, và write lại — không cần bạn paste code.
+
+### Ví dụ 2: Research trước khi code với Search MCP
+
+```
+Trước khi tôi implement authentication, hãy search xem 
+NextAuth.js v5 có breaking changes gì so với v4 không?
+```
+
+Claude sẽ tìm kiếm thông tin mới nhất và cho bạn biết trước khi bạn viết code.
+
+---
+
+## Tạo custom MCP server
+
+Nếu bạn cần Claude kết nối với API riêng của mình:
+
+```typescript
+// server.ts
+import { Server } from '@modelcontextprotocol/sdk/server/index.js';
+
+const server = new Server({
+  name: 'my-custom-server',
+  version: '1.0.0',
+});
+
+server.setRequestHandler('tools/call', async (request) => {
+  if (request.params.name === 'get-leads') {
+    // Fetch từ CRM của bạn
+    const leads = await fetchLeadsFromCRM();
+    return { content: [{ type: 'text', text: JSON.stringify(leads) }] };
+  }
+});
+```
+
+---
+
+## Kết luận
+
+MCP là một trong những bước tiến quan trọng nhất trong AI tooling. Nó biến Claude từ một chatbot thông minh thành một agent thực sự có thể hành động trong thế giới thực — đọc files, search web, query database.
+
+Muốn học cách integrate MCP vào Vibe Coding workflow của bạn? [Claude Code Mastery Pro](/claude-master) có module chuyên về advanced AI tooling và automation.

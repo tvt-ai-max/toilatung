@@ -1,0 +1,143 @@
+---
+title: "Handoff Bundle: Cách Xuất File Từ Claude Design Sang Claude Code Hoàn Hảo"
+description: "Quy trình Handoff chuẩn từ khâu thiết kế AI sang lập trình AI — cách đóng gói design specs, assets và instructions để Claude Code hiểu và build đúng 100%."
+date: "2026-05-09"
+coverImage: "/images/blog/handoff-bundle-cach-xuat-file-tu-claude-design-sang-claude-code.webp"
+tags: ["AI", "Claude", "Design", "Workflow"]
+author: "Tùng"
+---
+
+Một trong những điểm yếu lớn nhất của workflow Vibe Coding là **khoảng cách giữa design và code**. Design AI tạo ra một layout đẹp, nhưng khi bạn paste prompt vào coding AI, output lại trông khác hoàn toàn.
+
+Vấn đề không phải ở AI. Vấn đề ở chỗ **thông tin truyền đi không đủ** — AI coder không biết chính xác màu sắc, spacing, font, và interaction behavior của design.
+
+**Handoff Bundle** giải quyết vấn đề đó bằng cách đóng gói toàn bộ thông tin design theo format chuẩn mà coding AI có thể hiểu và implement chính xác.
+
+---
+
+## Handoff Bundle là gì?
+
+Handoff Bundle là một package gồm:
+
+1. **Design Spec file** (Markdown): Màu sắc, typography, spacing, component specs
+2. **Screenshot/mockup**: Reference visual cho từng screen
+3. **Component inventory**: Danh sách tất cả UI components cần build
+4. **Interaction notes**: Hover states, animations, responsive behavior
+5. **Asset list**: Images, icons cần có
+
+---
+
+## Bước 1: Tạo Design Spec từ Claude Design
+
+Sau khi prototype xong với Claude, hỏi Claude để generate spec:
+
+```
+Nhìn lại conversation design chúng ta vừa làm. Hãy tạo Design Spec document dạng Markdown với:
+
+## Colors
+- Primary: [hex]
+- Secondary: [hex]
+- Background: [hex]
+- Text: [hex]
+- Accent: [hex]
+
+## Typography
+- Heading font: [family, weights]
+- Body font: [family, size]
+- Scale: h1/h2/h3/p/small
+
+## Spacing System
+- Base unit: Npx
+- Common spacings: 
+
+## Components List
+[Liệt kê tất cả components với description ngắn]
+
+## Layout Notes
+[Responsive breakpoints, grid system]
+
+## Interactions
+[Hover states, transitions, animations]
+```
+
+---
+
+## Bước 2: Screenshot từng section
+
+Capture screenshot của từng phần quan trọng:
+- Hero section
+- Navigation
+- Each unique component
+- Mobile layout (nếu khác desktop)
+
+Đặt tên file rõ ràng: `hero-desktop.png`, `card-hover-state.png`
+
+---
+
+## Bước 3: Package Handoff Bundle
+
+Tạo thư mục `handoff/` trong project:
+
+```
+handoff/
+├── design-spec.md
+├── component-inventory.md
+├── screenshots/
+│   ├── hero-desktop.png
+│   ├── hero-mobile.png
+│   ├── nav.png
+│   └── ...
+└── assets/
+    ├── logo.svg
+    └── ...
+```
+
+---
+
+## Bước 4: Prompt Coding AI với Handoff Bundle
+
+Khi bắt đầu coding session:
+
+```
+Tôi cần build landing page theo design spec sau. 
+
+[paste design-spec.md]
+
+Screenshots của design: [attach images hoặc describe từng section]
+
+Component inventory: [paste list]
+
+Bắt đầu bằng cách:
+1. Setup globals.css với đúng design tokens từ spec
+2. Build Hero section trước (reference: hero-desktop.png)
+3. Sau đó tôi sẽ review và tiếp tục từng section
+
+Tech stack: Next.js 16, Tailwind CSS v4, TypeScript
+```
+
+---
+
+## Checklist Handoff hoàn chỉnh
+
+Trước khi chuyển từ design sang code, verify:
+
+- [ ] Tất cả màu sắc có hex code chính xác
+- [ ] Font families và weights được ghi rõ
+- [ ] Spacing system có base unit rõ ràng
+- [ ] Screenshots đủ resolution (ít nhất 1440px wide)
+- [ ] Component list đầy đủ không có component nào thiếu
+- [ ] Hover/active states được mô tả
+- [ ] Mobile breakpoints được xác định
+
+---
+
+## Kết quả
+
+Với Handoff Bundle chuẩn, coding AI sẽ:
+- Dùng đúng màu sắc (không phải "màu tím gần giống")
+- Spacing nhất quán ngay từ đầu
+- Build đúng component theo spec mà không cần nhiều vòng revision
+
+**Kết quả thực tế**: Số lần revision giảm từ 5-7 lần xuống còn 1-2 lần.
+
+Muốn học quy trình Design → Code AI workflow đầy đủ? [Claude Code Mastery Pro](/claude-master) có module Vibe Design chuyên sâu.
