@@ -41,11 +41,20 @@ export const metadata: Metadata = {
     siteName: "Tôi Là Tùng",
     locale: "vi_VN",
     type: "website",
+    images: [
+      {
+        url: "/images/og-home.webp",
+        width: 1200,
+        height: 630,
+        alt: "Tôi Là Tùng - Đào Tạo AI Thực Chiến",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Tôi Là Tùng | Đào Tạo AI Thực Chiến & Xây Dựng Hệ Thống",
     description: "Hệ thống hóa kiến thức AI để giải quyết các bài toán phức tạp nhất. Cung cấp khóa học Vibe Coding, Claude Masterclass và xây dựng Content OS tự động hóa.",
+    images: ["/images/og-home.webp"],
   },
   alternates: {
     canonical: "/",
