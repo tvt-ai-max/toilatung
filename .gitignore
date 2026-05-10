@@ -51,4 +51,10 @@ convert.mjs
 
 # env
 .env.local
-!.env.local.example
+.env.local.example
+
+# AI Logic & Docs
+/.claude/
+README.md
+AGENTS.md
+CLAUDE.md
