@@ -5,8 +5,33 @@ import TagFilter from '@/components/blog/TagFilter';
 import Pagination from '@/components/blog/Pagination';
 
 export const metadata = {
-  title: 'Blog — Tôi Là Tùng',
-  description: 'Góc chia sẻ kiến thức về AI Marketing, Vibe Coding và Tư duy phát triển sản phẩm.',
+  title: 'Blog AI Thực Chiến — Tôi Là Tùng',
+  description: 'Góc chia sẻ kiến thức về AI Marketing, Vibe Coding và Tư duy phát triển sản phẩm tự chiến. 28+ bài viết chuyên sâu, có case study thực tế.',
+  alternates: {
+    canonical: 'https://toilatung.com/blog',
+  },
+  openGraph: {
+    title: 'Blog AI Thực Chiến — Tôi Là Tùng',
+    description: 'Góc chia sẻ kiến thức về AI Marketing, Vibe Coding và Tư duy phát triển sản phẩm tự chiến. 28+ bài viết chuyên sâu, có case study thực tế.',
+    url: 'https://toilatung.com/blog',
+    siteName: 'Tôi Là Tùng',
+    locale: 'vi_VN',
+    type: 'website',
+    images: [
+      {
+        url: 'https://toilatung.com/images/home-og.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Blog Tôi Là Tùng',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog AI Thực Chiến — Tôi Là Tùng',
+    description: 'Góc chia sẻ kiến thức về AI Marketing, Vibe Coding và Tư duy phát triển sản phẩm.',
+    images: ['https://toilatung.com/images/home-og.webp'],
+  },
 };
 
 interface BlogIndexProps {

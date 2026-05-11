@@ -6,6 +6,8 @@ import TableOfContents from '@/components/blog/TableOfContents';
 import ReadingProgressBar from '@/components/blog/ReadingProgressBar';
 import PrevNextPost from '@/components/blog/PrevNextPost';
 import RelatedPosts from '@/components/blog/RelatedPosts';
+import JsonLd, { buildBlogPostSchema } from '@/components/seo/JsonLd';
+import PostCTA from '@/components/blog/PostCTA';
 
 export async function generateStaticParams() {
   const slugs = getPostSlugs();
@@ -17,19 +19,42 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = getPostBySlug(resolvedParams.slug);
   if (!post) return { title: 'Not Found' };
 
+  const canonicalUrl = `https://toilatung.com/blog/${resolvedParams.slug}`;
+  const imageUrl = post.meta.coverImage
+    ? `https://toilatung.com${post.meta.coverImage.startsWith('/') ? post.meta.coverImage : '/' + post.meta.coverImage}`
+    : 'https://toilatung.com/images/home-og.webp';
+
   return {
-    title: `${post.meta.title} — TVT Blog`,
+    title: `${post.meta.title} — Tôi Là Tùng`,
     description: post.meta.description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
-      title: `${post.meta.title} — TVT Blog`,
+      title: post.meta.title,
       description: post.meta.description,
-      images: post.meta.coverImage ? [post.meta.coverImage] : [],
+      url: canonicalUrl,
+      siteName: 'Tôi Là Tùng',
+      locale: 'vi_VN',
+      type: 'article',
+      publishedTime: post.meta.date,
+      modifiedTime: post.meta.date,
+      authors: ['Nguyễn Thanh Tùng'],
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.meta.title,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${post.meta.title} — TVT Blog`,
+      title: post.meta.title,
       description: post.meta.description,
-      images: post.meta.coverImage ? [post.meta.coverImage] : [],
+      images: [imageUrl],
+      creator: '@toilatung',
     },
   };
 }
@@ -134,8 +159,19 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const related = getRelatedPosts(post.meta.slug, post.meta.tags || [], 3);
   const { prev, next } = getPrevNextPost(post.meta.slug);
 
+  const blogSchema = buildBlogPostSchema({
+    title: post.meta.title,
+    description: post.meta.description,
+    slug: resolvedParams.slug,
+    coverImage: post.meta.coverImage,
+    datePublished: post.meta.date,
+  });
+
   return (
     <>
+      {/* JSON-LD Structured Data — Article + BreadcrumbList */}
+      <JsonLd data={blogSchema} />
+
       {/* Reading progress bar — client component */}
       <ReadingProgressBar />
 
@@ -214,6 +250,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <div className="prose prose-invert max-w-none">
               <MDXRemote source={post.content} components={components} />
             </div>
+
+            {/* ── Smart CTA block (auto-selected by cluster) ── */}
+            <PostCTA tags={post.meta.tags || []} />
 
             {/* Author footer */}
             <div className="mt-16 pt-10 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">

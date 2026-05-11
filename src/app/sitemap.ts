@@ -16,11 +16,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog',
     '/ve-tung',
     '/prompt',
+    '/booking',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
     changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
+    priority: route === '' ? 1 : route === '/booking' ? 0.9 : 0.8,
   }));
 
   const slugs = getPostSlugs();
