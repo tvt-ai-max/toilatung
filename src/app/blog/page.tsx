@@ -42,7 +42,7 @@ export default async function BlogIndex({ searchParams }: BlogIndexProps) {
   const { page, tag } = await searchParams;
   const currentPage = Math.max(1, parseInt(page || '1', 10));
   const activeTag = tag || undefined;
-  const POSTS_PER_PAGE = 6;
+  const POSTS_PER_PAGE = 10;
 
   const { posts, totalPosts, totalPages } = getPaginatedPosts(currentPage, POSTS_PER_PAGE, activeTag);
   const allTags = getAllTags();
@@ -133,7 +133,7 @@ export default async function BlogIndex({ searchParams }: BlogIndexProps) {
                       {/* Meta row */}
                       <div>
                         <div className="flex items-center gap-3 text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">
-                          <span>{new Date(post.date).toLocaleDateString('vi-VN')}</span>
+                          <span>{new Date(post.date).toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' })}</span>
                           <span className="w-1 h-1 rounded-full bg-slate-600" />
                           <span className="text-indigo-400">{post.author}</span>
                           {post.readingTime && (
@@ -182,8 +182,20 @@ export default async function BlogIndex({ searchParams }: BlogIndexProps) {
           </div>
         )}
 
+        {/* ── Pagination ── */}
+        <div className="mt-14">
+          <Pagination currentPage={currentPage} totalPages={totalPages} tag={activeTag} />
+        </div>
+
+        {/* ── Page info ── */}
+        {totalPages > 1 && (
+          <p className="text-center text-slate-600 text-xs mt-6">
+            Trang {currentPage} / {totalPages} — {totalPosts} bài viết
+          </p>
+        )}
+
         {/* ── Tag Filter (hashtags) ── */}
-        <div className="mt-14 pt-10 border-t border-white/8">
+        <div className="mt-10 pt-10 border-t border-white/8">
           <div className="flex items-center gap-3 mb-5">
             <span className="text-xs font-black uppercase tracking-widest text-slate-500">Lọc theo chủ đề</span>
             <div className="flex-1 h-px bg-white/8" />
@@ -200,16 +212,6 @@ export default async function BlogIndex({ searchParams }: BlogIndexProps) {
             <TagFilter tags={allTags} activeTag={activeTag} totalPosts={totalPosts} />
           </Suspense>
         </div>
-
-        {/* ── Pagination ── */}
-        <Pagination currentPage={currentPage} totalPages={totalPages} tag={activeTag} />
-
-        {/* ── Page info ── */}
-        {totalPages > 1 && (
-          <p className="text-center text-slate-600 text-xs mt-6">
-            Trang {currentPage} / {totalPages} — {totalPosts} bài viết
-          </p>
-        )}
 
       </div>
     </div>

@@ -96,7 +96,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
     return {
       meta: {
         title: data.title || 'Untitled',
-        date: data.date || '',
+        date: data.date || data.pubDate || '',
         description: data.description || '',
         slug: realSlug,
         coverImage: data.coverImage,

@@ -8,6 +8,7 @@ import PrevNextPost from '@/components/blog/PrevNextPost';
 import RelatedPosts from '@/components/blog/RelatedPosts';
 import JsonLd, { buildBlogPostSchema } from '@/components/seo/JsonLd';
 import PostCTA from '@/components/blog/PostCTA';
+import remarkGfm from 'remark-gfm';
 
 export async function generateStaticParams() {
   const slugs = getPostSlugs();
@@ -136,14 +137,14 @@ const components = {
   ),
   strong: (props: any) => <strong className="font-black text-white" {...props} />,
   table: (props: any) => (
-    <div className="overflow-x-auto mb-8 rounded-2xl border border-white/10">
-      <table className="w-full text-sm" {...props} />
+    <div className="overflow-x-auto my-8 rounded-xl border border-white/10 shadow-lg bg-white/[0.02]">
+      <table className="w-full text-sm text-left border-collapse" {...props} />
     </div>
   ),
-  thead: (props: any) => <thead className="bg-white/5" {...props} />,
-  th: (props: any) => <th className="px-4 py-3 text-left text-xs font-black text-white uppercase tracking-wider border-b border-white/10" {...props} />,
-  td: (props: any) => <td className="px-4 py-3 text-slate-300 border-b border-white/5" {...props} />,
-  tr: (props: any) => <tr className="hover:bg-white/3 transition-colors" {...props} />,
+  thead: (props: any) => <thead className="bg-white/[0.04] border-b border-white/10" {...props} />,
+  th: (props: any) => <th className="px-5 py-4 text-xs font-bold text-slate-200 uppercase tracking-wider whitespace-nowrap" {...props} />,
+  td: (props: any) => <td className="px-5 py-4 text-slate-300 border-t border-white/5 whitespace-normal" {...props} />,
+  tr: (props: any) => <tr className="hover:bg-white/[0.04] transition-colors group" {...props} />,
   hr: () => <div className="w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent my-10" />,
 };
 
@@ -248,7 +249,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
             {/* MDX Content */}
             <div className="prose prose-invert max-w-none">
-              <MDXRemote source={post.content} components={components} />
+              <MDXRemote 
+                source={post.content} 
+                components={components} 
+                options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+              />
             </div>
 
             {/* ── Smart CTA block (auto-selected by cluster) ── */}
