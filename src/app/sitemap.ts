@@ -1,36 +1,39 @@
 import { MetadataRoute } from 'next';
-import { getPostSlugs } from '@/lib/mdx';
+import { getAllPosts } from '@/lib/mdx';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://toilatung.com';
+  const now = new Date().toISOString();
 
-  const routes = [
-    '',
-    '/claude-master',
-    '/claude-design',
-    '/course',
-    '/course/landing-page',
-    '/course/phunulamchuai',
-    '/course/vibe-coding',
-    '/course/ai-coaching',
-    '/blog',
-    '/ve-tung',
-    '/prompt',
-    '/booking',
+  // ── Static pages ──
+  const staticRoutes = [
+    { path: '', priority: 1.0, changeFrequency: 'daily' as const },
+    { path: '/blog', priority: 0.9, changeFrequency: 'daily' as const },
+    { path: '/booking', priority: 0.9, changeFrequency: 'weekly' as const },
+    { path: '/course/ai-coaching', priority: 0.85, changeFrequency: 'weekly' as const },
+    { path: '/course/vibe-coding', priority: 0.85, changeFrequency: 'weekly' as const },
+    { path: '/course/phunulamchuai', priority: 0.85, changeFrequency: 'weekly' as const },
+    { path: '/course/landing-page', priority: 0.85, changeFrequency: 'weekly' as const },
+    { path: '/course/claude-masterclass', priority: 0.85, changeFrequency: 'weekly' as const },
+    { path: '/claude-master', priority: 0.8, changeFrequency: 'weekly' as const },
+    { path: '/claude-design', priority: 0.8, changeFrequency: 'weekly' as const },
+    { path: '/ve-tung', priority: 0.7, changeFrequency: 'monthly' as const },
+    { path: '/prompt', priority: 0.7, changeFrequency: 'weekly' as const },
   ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : route === '/booking' ? 0.9 : 0.8,
+    url: `${baseUrl}${route.path}`,
+    lastModified: now,
+    changeFrequency: route.changeFrequency,
+    priority: route.priority,
   }));
 
-  const slugs = getPostSlugs();
-  const blogRoutes = slugs.map((slug) => ({
-    url: `${baseUrl}/blog/${slug.replace(/\.mdx$/, '')}`,
-    lastModified: new Date().toISOString(),
+  // ── Blog posts (with actual dates) ──
+  const posts = getAllPosts();
+  const blogRoutes = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: post.date ? new Date(post.date).toISOString() : now,
     changeFrequency: 'weekly' as const,
-    priority: 0.6,
+    priority: 0.7,
   }));
 
-  return [...routes, ...blogRoutes];
+  return [...staticRoutes, ...blogRoutes];
 }
