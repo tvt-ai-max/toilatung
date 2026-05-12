@@ -36,13 +36,13 @@ export default function RelatedPosts({ posts }: RelatedPostsProps) {
 
             {/* Cover thumbnail */}
             {post.coverImage && (
-              <div className="w-full h-32 rounded-xl overflow-hidden border border-white/5 bg-black/50 flex-shrink-0">
+              <div className="w-full aspect-square rounded-xl overflow-hidden border border-white/5 bg-black/50 flex-shrink-0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={post.coverImage}
                   alt={post.title}
-                  width={400}
-                  height={210}
+                  width={800}
+                  height={800}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />

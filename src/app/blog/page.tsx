@@ -115,13 +115,13 @@ export default async function BlogIndex({ searchParams }: BlogIndexProps) {
                   <div className="flex flex-col md:flex-row gap-6 relative z-10">
                     {/* Cover image */}
                     {post.coverImage && (
-                      <div className="w-full md:w-52 h-32 md:h-auto flex-shrink-0 rounded-2xl overflow-hidden border border-white/5 bg-black/50">
+                      <div className="w-full md:w-52 aspect-square flex-shrink-0 rounded-2xl overflow-hidden border border-white/5 bg-black/50">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={post.coverImage}
                           alt={post.title}
-                          width={1200}
-                          height={630}
+                          width={800}
+                          height={800}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                           loading="lazy"
                         />
