@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import ToolsAISection from "@/components/shared/ToolsAISection";
 import { useLandingInteractions } from "@/lib/useLandingInteractions";
 import './landing-page.css';

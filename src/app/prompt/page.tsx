@@ -120,7 +120,7 @@ export default function PromptLibraryPage() {
       return;
     }
     
-    const textToCopy = `[${p.title}] - Tôi Là Tùng Prompt Library\n\n${p.fullPrompt}\n\nCách dùng: ${p.usage}\nNguồn: toilatung.com • 2026`;
+    const textToCopy = p.fullPrompt;
 
     navigator.clipboard.writeText(textToCopy).then(() => {
       triggerToast();

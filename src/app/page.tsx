@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import ToolsAISection from '@/components/shared/ToolsAISection';
 import { getAllPosts } from '@/lib/mdx';
 
@@ -105,7 +106,7 @@ export default function Page() {
                         <h3 className="text-lg font-black text-white">Hành trình của tôi</h3>
                     </div>
                     <p className="text-slate-300 leading-relaxed mb-4">
-                        Một người đam mê xê dịch, thích chinh phục trải nghiệm và theo đuổi triết lý "Marketing phượt". Hơn 16 năm thực chiến Branding và Marketing, tôi chọn cách đúc kết thành những quy trình gọn gàng (Agentic Workflow).
+                        Một người đam mê xê dịch, thích chinh phục trải nghiệm và theo đuổi triết lý &quot;Marketing phượt&quot;. Hơn 16 năm thực chiến Branding và Marketing, tôi chọn cách đúc kết thành những quy trình gọn gàng (Agentic Workflow).
                     </p>
                     <p className="text-slate-400 text-sm leading-relaxed">
                         Hiện tại tôi là Founder <strong className="text-white">TVT Agency</strong> và hành trình <strong className="text-white">Tôi là Tùng</strong>, nơi tôi chia sẻ lại kinh nghiệm xây dựng hệ thống kinh doanh tự động cho những người muốn làm chủ AI.
@@ -465,15 +466,15 @@ export default function Page() {
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Góc Chia Sẻ Về<br /><span className="gradient-indigo">AI & Branding</span></h2>
                 <p className="text-slate-500 max-w-2xl">Cập nhật những kiến thức mới nhất về AI, Vibe Coding và Marketing Automation từ kinh nghiệm thực chiến.</p>
             </div>
-            <a href="/blog"
+            <Link href="/blog"
                className="flex-shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 glass text-white font-bold rounded-2xl border border-white/10 hover:border-indigo-500/30 hover:bg-white/5 transition text-sm">
                 Đọc tất cả bài viết <i className="fas fa-arrow-right text-indigo-400"></i>
-            </a>
+            </Link>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {latestPosts.map((post) => (
-                <a key={post.slug} href={`/blog/${post.slug}`} className="group flex flex-col gap-3 p-5 rounded-3xl glass border border-white/8 hover:border-indigo-500/30 hover:bg-white/4 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(123,97,255,0.12)] transition-all duration-300 relative overflow-hidden">
+                <Link key={post.slug} href={`/blog/${post.slug}`} className="group flex flex-col gap-3 p-5 rounded-3xl glass border border-white/8 hover:border-indigo-500/30 hover:bg-white/4 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(123,97,255,0.12)] transition-all duration-300 relative overflow-hidden">
                     <div className="absolute -top-8 -right-8 w-24 h-24 bg-indigo-500/8 blur-2xl rounded-full group-hover:bg-indigo-500/15 transition-colors pointer-events-none" />
                     
                     {post.coverImage && (
@@ -504,7 +505,7 @@ export default function Page() {
                             </span>
                         ))}
                     </div>
-                </a>
+                </Link>
             ))}
         </div>
     </div>

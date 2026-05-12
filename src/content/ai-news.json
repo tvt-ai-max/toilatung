@@ -1,0 +1,202 @@
+[
+  {
+    "id": "claude-4-opus-agent",
+    "title": "Claude 4 Opus ra mắt – Agent mạnh nhất từ trước đến nay",
+    "tldr": "Claude 4 Opus có khả năng suy luận dài hạn vượt trội, hỗ trợ context 1 triệu token và tích hợp computer use mạnh mẽ hơn.",
+    "why_important": "- Đây là bước tiến lớn nhất của Anthropic từ đầu năm.\n- Với khả năng chạy agent tự động dài hạn, bạn có thể build workflow phức tạp mà không cần nhiều bước thủ công.\n- Rất phù hợp cho agency và SME muốn tự động hóa quy trình nội bộ.",
+    "source": "Anthropic",
+    "date": "2026-05-12",
+    "link": "https://www.anthropic.com/news",
+    "tags": ["Model", "Agent"]
+  },
+  {
+    "id": "openai-sora-public-api",
+    "title": "OpenAI chính thức mở API cho Sora Video Generation",
+    "tldr": "Sora API giờ đây đã mở cửa cho developer với khả năng tạo video 1080p dài 60s thông qua prompt văn bản.",
+    "why_important": "- Cơ hội lớn cho Content Creator và Agency tự động hóa sản xuất video quảng cáo ngắn.\n- Không cần studio đắt đỏ – chỉ cần prompt tốt.\n- Chi phí API vào khoảng $0.5/video, cần tính toán kỹ khi nhân rộng.",
+    "source": "OpenAI",
+    "date": "2026-05-10",
+    "link": "https://openai.com/news",
+    "tags": ["Model", "Tool", "Business"]
+  },
+  {
+    "id": "huggingface-smol-agents",
+    "title": "SmolAgents v2: Framework nhẹ nhất để build AI Agents",
+    "tldr": "Hugging Face phát hành bản cập nhật cho thư viện SmolAgents, giúp tạo Multi-Agent System chỉ với dưới 100 dòng code Python.",
+    "why_important": "- Giải quyết bài toán cấu trúc cồng kềnh của LangChain/AutoGen.\n- Developer có thể dễ dàng nhúng Agent vào ứng dụng hiện có mà không sợ phình to dependencies.\n- Rất hữu ích cho dự án SME cần triển khai nhanh.",
+    "source": "Hugging Face Blog",
+    "date": "2026-05-08",
+    "link": "https://huggingface.co/blog",
+    "tags": ["Tool", "Developer"]
+  },
+  {
+    "id": "gemini-2-5-pro-release",
+    "title": "Google ra mắt Gemini 2.5 Pro – Coding và reasoning đứng đầu bảng xếp hạng",
+    "tldr": "Gemini 2.5 Pro vượt GPT-4o trên các benchmark lập trình và suy luận toán học, đồng thời hỗ trợ context 2 triệu token.",
+    "why_important": "- Nếu bạn đang dùng Claude/GPT cho coding, đây là lựa chọn thứ ba đáng thử – đặc biệt vì có tier miễn phí rộng hơn.\n- Context 2 triệu token cho phép phân tích toàn bộ codebase lớn trong 1 lần.\n- Tích hợp sẵn với Google Workspace giúp các agency đang dùng G Suite hưởng lợi ngay.",
+    "source": "Google DeepMind",
+    "date": "2026-05-07",
+    "link": "https://deepmind.google/technologies/gemini",
+    "tags": ["Model", "Developer"]
+  },
+  {
+    "id": "cursor-agent-mode-v2",
+    "title": "Cursor 1.0 ra mắt chế độ Agent toàn diện – Tự viết, test và sửa lỗi",
+    "tldr": "Cursor 1.0 bổ sung chế độ Agent có thể tự chạy terminal, chỉnh sửa nhiều file, viết test và tự debug mà không cần can thiệp thủ công.",
+    "why_important": "- Vibe coding bước sang giai đoạn mới: AI không chỉ gợi ý mà tự hoàn thành cả feature.\n- Giảm 60-70% thời gian viết code lặp đi lặp lại cho các developer dùng thử.\n- Mô hình định giá $20/tháng vẫn cạnh tranh so với GitHub Copilot.",
+    "source": "Cursor Blog",
+    "date": "2026-05-06",
+    "link": "https://cursor.com/blog",
+    "tags": ["Tool", "Developer"]
+  },
+  {
+    "id": "midjourney-v7-launch",
+    "title": "Midjourney v7 ra mắt với khả năng tạo ảnh nhất quán và video ngắn",
+    "tldr": "Midjourney v7 cải thiện đáng kể tính nhất quán nhân vật, cho phép tạo clip video 5 giây từ ảnh tĩnh và hỗ trợ style reference tốt hơn.",
+    "why_important": "- Tính nhất quán nhân vật là vấn đề số 1 của các agency khi dùng AI cho branding – v7 giải quyết phần lớn vấn đề này.\n- Clip video 5 giây đủ dùng cho Instagram Reels và TikTok hook.\n- Giá vẫn giữ nguyên $10/tháng cho gói Basic.",
+    "source": "Midjourney",
+    "date": "2026-05-05",
+    "link": "https://www.midjourney.com",
+    "tags": ["Tool", "Business"]
+  },
+  {
+    "id": "meta-llama-4-open-source",
+    "title": "Meta phát hành Llama 4 Scout – Model mã nguồn mở nhỏ nhưng cực mạnh",
+    "tldr": "Llama 4 Scout với 17B tham số đạt hiệu suất ngang GPT-4o Mini trong khi có thể chạy trên máy cá nhân GPU 16GB.",
+    "why_important": "- Bước ngoặt cho developer muốn chạy AI local, không phụ thuộc API trả phí.\n- Phù hợp để build ứng dụng nội bộ cho doanh nghiệp cần bảo mật dữ liệu cao.\n- Có thể fine-tune với dataset riêng – mở ra hướng xây dựng AI chuyên ngành cho từng lĩnh vực.",
+    "source": "Meta AI",
+    "date": "2026-05-03",
+    "link": "https://ai.meta.com/blog",
+    "tags": ["Model", "Developer", "Research"]
+  },
+  {
+    "id": "elevenlabs-dubbing-studio",
+    "title": "ElevenLabs ra Dubbing Studio – Dịch và lồng tiếng video tự động",
+    "tldr": "ElevenLabs Dubbing Studio tự động dịch và lồng tiếng video sang 30+ ngôn ngữ, giữ nguyên giọng nói gốc và khẩu hình miệng.",
+    "why_important": "- Agency content có thể bán khóa học/video tiếng Việt ra thị trường quốc tế mà không cần record lại.\n- Chi phí lồng tiếng truyền thống giảm từ hàng triệu đồng xuống còn vài chục nghìn.\n- Giữ nguyên giọng gốc giúp duy trì brand identity của người sáng tạo nội dung.",
+    "source": "ElevenLabs",
+    "date": "2026-05-01",
+    "link": "https://elevenlabs.io/blog",
+    "tags": ["Tool", "Business"]
+  },
+  {
+    "id": "n8n-ai-agent-nodes",
+    "title": "n8n 1.50 bổ sung AI Agent Node tích hợp Memory và Tool Use",
+    "tldr": "n8n phiên bản 1.50 thêm node Agent mới với khả năng nhớ context giữa các cuộc hội thoại và gọi tool ngoài như Google Search, Calculator.",
+    "why_important": "- n8n giờ có thể thay thế hoàn toàn Make.com cho automation phức tạp cần AI reasoning.\n- Memory node giải quyết bài toán chatbot nhớ lịch sử khách hàng mà không cần database riêng.\n- Self-hosted = tiết kiệm 80% chi phí so với dùng Make.com ở plan cao.",
+    "source": "n8n Blog",
+    "date": "2026-04-29",
+    "link": "https://n8n.io/blog",
+    "tags": ["Tool", "Agent"]
+  },
+  {
+    "id": "perplexity-pro-search-api",
+    "title": "Perplexity mở API tìm kiếm thời gian thực với nguồn trích dẫn",
+    "tldr": "Perplexity API mới cho phép tích hợp tìm kiếm web thời gian thực vào ứng dụng, trả về kết quả kèm nguồn trích dẫn cụ thể.",
+    "why_important": "- Giải quyết điểm yếu lớn nhất của LLM: thông tin lỗi thời và hallucination.\n- Phù hợp để build chatbot tư vấn sản phẩm cần dữ liệu giá/tồn kho realtime.\n- Giá $5/1000 request – rẻ hơn nhiều so với tự xây pipeline RAG.",
+    "source": "Perplexity AI",
+    "date": "2026-04-28",
+    "link": "https://www.perplexity.ai/blog",
+    "tags": ["Tool", "Developer", "Research"]
+  },
+  {
+    "id": "runway-gen4-cinematic",
+    "title": "Runway Gen-4 tạo video điện ảnh chất lượng 4K từ ảnh tĩnh",
+    "tldr": "Runway Gen-4 cho phép tạo video 4K dài 10 giây với chuyển động camera mượt mà, ánh sáng cinematic từ một ảnh tĩnh đầu vào.",
+    "why_important": "- Chất lượng video đủ dùng cho TVC ngắn và pitch deck cho khách hàng doanh nghiệp.\n- Thời gian sản xuất video concept giảm từ 1 tuần xuống còn 30 phút.\n- Kết hợp với Midjourney v7, toàn bộ pipeline visual content có thể tự động hóa.",
+    "source": "Runway",
+    "date": "2026-04-25",
+    "link": "https://runwayml.com/blog",
+    "tags": ["Tool", "Business"]
+  },
+  {
+    "id": "openai-gpt5-pricing",
+    "title": "GPT-5 chính thức công bố giá – Rẻ hơn GPT-4o đến 3 lần",
+    "tldr": "OpenAI định giá GPT-5 ở mức $2.50/1M input token, thấp hơn 3 lần so với GPT-4o, với hiệu suất vượt trội trên mọi tác vụ.",
+    "why_important": "- Thay thế GPT-4o ngay lập tức nếu đang dùng cho production – cùng ngân sách nhưng kết quả tốt hơn nhiều.\n- Chi phí thấp mở ra khả năng chạy AI cho từng bước nhỏ trong workflow thay vì gom lại để tiết kiệm.\n- Cạnh tranh trực tiếp với Claude 4 Sonnet, người dùng sẽ được hưởng lợi từ cuộc đua giá.",
+    "source": "OpenAI",
+    "date": "2026-04-23",
+    "link": "https://openai.com/pricing",
+    "tags": ["Model", "Business"]
+  },
+  {
+    "id": "google-notebooklm-audio-video",
+    "title": "NotebookLM hỗ trợ tóm tắt video YouTube và xuất podcast AI",
+    "tldr": "Google NotebookLM cập nhật lớn: nhận link YouTube trực tiếp, tóm tắt nội dung và tạo podcast thảo luận AI dài 15-20 phút.",
+    "why_important": "- Biến mọi video dài thành tài liệu học có thể tra cứu – cực hữu ích cho việc nghiên cứu và tổng hợp kiến thức.\n- Tạo podcast AI từ tài liệu nghiên cứu giúp tiêu thụ nội dung khi đang lái xe hoặc tập gym.\n- Miễn phí hoàn toàn – đây là công cụ 0 đồng mạnh nhất hiện tại.",
+    "source": "Google Labs",
+    "date": "2026-04-21",
+    "link": "https://notebooklm.google.com",
+    "tags": ["Tool", "Research"]
+  },
+  {
+    "id": "adobe-firefly-3-inpainting",
+    "title": "Adobe Firefly 3 nâng cấp Generative Fill – Xóa/thêm vật thể cực tự nhiên",
+    "tldr": "Firefly 3 cải tiến đột phá tính năng Generative Fill trong Photoshop, xử lý shadow, reflection và texture tự nhiên hơn gấp đôi so với phiên bản cũ.",
+    "why_important": "- Designer trong agency giờ có thể retouch ảnh sản phẩm phức tạp trong 5 phút thay vì 2 giờ.\n- Kết quả đủ chất lượng cho ảnh e-commerce và catalogue mà không cần photographer chụp lại.\n- Tích hợp sẵn trong Creative Cloud – không cần học tool mới.",
+    "source": "Adobe",
+    "date": "2026-04-18",
+    "link": "https://www.adobe.com/products/firefly.html",
+    "tags": ["Tool", "Business"]
+  },
+  {
+    "id": "deepseek-r2-reasoning",
+    "title": "DeepSeek R2 ra mắt – Reasoning model mã nguồn mở đối thủ ngang o3",
+    "tldr": "DeepSeek R2 đạt điểm benchmark ngang OpenAI o3 trên các bài toán toán học và lập trình, được phát hành hoàn toàn mã nguồn mở.",
+    "why_important": "- Model reasoning mạnh nhất từ trước đến nay được phát hành miễn phí – thay đổi cuộc chơi cho developer toàn cầu.\n- Chi phí chạy tự host chỉ bằng 10% so với gọi API o3 của OpenAI.\n- Đặt câu hỏi lớn về bền vững của mô hình kinh doanh API AI subscription.",
+    "source": "DeepSeek",
+    "date": "2026-04-16",
+    "link": "https://deepseek.com/blog",
+    "tags": ["Model", "Research", "Developer"]
+  },
+  {
+    "id": "make-com-ai-router",
+    "title": "Make.com ra mắt AI Router – Tự động chọn model phù hợp cho từng tác vụ",
+    "tldr": "Make.com AI Router tự động phân tích task và điều phối sang model phù hợp nhất (GPT/Claude/Gemini), tối ưu chi phí và chất lượng.",
+    "why_important": "- Không cần tự code logic chọn model – Make.com lo phần này, tiết kiệm thời gian setup đáng kể.\n- Tự động dùng model rẻ hơn cho task đơn giản, model mạnh hơn cho task phức tạp – giảm chi phí API 40-60%.\n- Tích hợp ngay vào workflow hiện tại mà không cần rebuild từ đầu.",
+    "source": "Make.com",
+    "date": "2026-04-14",
+    "link": "https://www.make.com/en/blog",
+    "tags": ["Tool", "Agent", "Business"]
+  },
+  {
+    "id": "canva-ai-brand-kit",
+    "title": "Canva Dream Lab nâng cấp – Tạo toàn bộ Brand Kit từ một mô tả",
+    "tldr": "Canva Dream Lab mới cho phép nhập mô tả thương hiệu bằng văn bản và tự động tạo logo, bảng màu, font, template social media nhất quán.",
+    "why_important": "- Giảm chi phí thiết kế brand identity từ hàng chục triệu xuống dưới 1 triệu đồng cho SME.\n- Agency có thể onboard khách hàng mới và hoàn thiện brand guidelines trong 1 buổi làm việc.\n- Kết quả đủ dùng cho startup và SME Việt Nam ở giai đoạn đầu.",
+    "source": "Canva",
+    "date": "2026-04-12",
+    "link": "https://www.canva.com/newsroom",
+    "tags": ["Tool", "Business"]
+  },
+  {
+    "id": "notion-ai-database-agent",
+    "title": "Notion AI nâng cấp – Tự động điền database và viết báo cáo từ dữ liệu thô",
+    "tldr": "Notion AI mới có thể đọc database, tổng hợp dữ liệu và tự động tạo báo cáo tùy chỉnh dạng văn bản mà không cần công thức phức tạp.",
+    "why_important": "- Thay thế hoàn toàn việc viết báo cáo hàng tuần thủ công cho team.\n- Kết hợp với Notion database, tạo thành hệ thống quản lý dự án thông minh tự cập nhật.\n- Giúp agency và freelancer tiết kiệm 3-4 tiếng/tuần cho công việc báo cáo.",
+    "source": "Notion",
+    "date": "2026-04-10",
+    "link": "https://www.notion.so/blog",
+    "tags": ["Tool", "Agent"]
+  },
+  {
+    "id": "grok-3-multimodal-xai",
+    "title": "Grok 3 của xAI hỗ trợ multimodal – Phân tích ảnh, PDF và audio",
+    "tldr": "xAI phát hành Grok 3 với khả năng xử lý đa phương tiện: đọc PDF, phân tích ảnh chuyên sâu và chuyển đổi audio thành văn bản có cấu trúc.",
+    "why_important": "- Tích hợp thẳng vào X (Twitter) giúp phân tích real-time trend và viral content mà không cần rời khỏi nền tảng.\n- Khả năng đọc PDF với lý luận sâu phù hợp cho việc nghiên cứu tài liệu pháp lý và tài chính.\n- Miễn phí cho user X Premium – đây là đối thủ thực sự đầu tiên của ChatGPT Plus về giá trị/chi phí.",
+    "source": "xAI",
+    "date": "2026-04-08",
+    "link": "https://x.ai/blog",
+    "tags": ["Model", "Tool"]
+  },
+  {
+    "id": "microsoft-copilot-studio-agents",
+    "title": "Microsoft Copilot Studio cho phép build Agent không cần code",
+    "tldr": "Copilot Studio cập nhật lớn: drag-and-drop agent builder với 600+ connector, tích hợp Azure AI và deploy một click lên Teams/SharePoint.",
+    "why_important": "- Doanh nghiệp đang dùng Microsoft 365 có thể build agent nội bộ mà không cần thuê developer.\n- 600+ connector nghĩa là kết nối được với hầu hết phần mềm doanh nghiệp phổ biến.\n- Mô hình pay-per-use thay vì subscription cố định – phù hợp SME muốn thử nghiệm trước khi cam kết.",
+    "source": "Microsoft",
+    "date": "2026-04-06",
+    "link": "https://www.microsoft.com/en-us/microsoft-copilot/blog",
+    "tags": ["Tool", "Agent", "Business"]
+  }
+]

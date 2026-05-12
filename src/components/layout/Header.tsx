@@ -58,6 +58,7 @@ export default function Header() {
             
             <Link href="/course" className="hover:text-white transition">Khóa học</Link>
             <Link href="/prompt" className="hover:text-white transition text-[var(--color-brand-indigo)]">Kho Prompt</Link>
+            <Link href="/ai-new" className="hover:text-white transition text-[var(--color-brand-red)] flex items-center gap-1">AI New <i className="fas fa-bolt text-[8px]"></i></Link>
             <Link href="/blog" className="hover:text-white transition">Blog</Link>
             <Link href="/ve-tung" className="hover:text-white transition">Về Tùng</Link>
             <Link href="/#contact" className="hover:text-white transition">Liên hệ</Link>
@@ -139,6 +140,13 @@ export default function Header() {
             className="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition"
           >
             <i className="fas fa-terminal w-4 text-purple-400"></i> Kho Prompt
+          </Link>
+          <Link
+            href="/ai-new"
+            onClick={toggleDrawer}
+            className="flex items-center gap-3 px-4 py-3 rounded-xl text-[var(--color-brand-red)] text-sm font-bold uppercase tracking-widest hover:bg-white/5 transition"
+          >
+            <i className="fas fa-bolt w-4"></i> AI New
           </Link>
           <Link
             href="/blog"

@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ── Static pages ──
   const staticRoutes = [
     { path: '', priority: 1.0, changeFrequency: 'daily' as const },
+    { path: '/ai-new', priority: 0.9, changeFrequency: 'daily' as const },
     { path: '/blog', priority: 0.9, changeFrequency: 'daily' as const },
     { path: '/booking', priority: 0.9, changeFrequency: 'weekly' as const },
     { path: '/course/ai-coaching', priority: 0.85, changeFrequency: 'weekly' as const },
