@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import ToolsAISection from '@/components/shared/ToolsAISection';
+import { getAllPosts } from '@/lib/mdx';
 
 export const metadata: Metadata = {
   title: 'Tôi Là Tùng | Chia sẻ AI Thực Chiến & Xây Dựng Hệ Thống',
@@ -14,6 +15,8 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const latestPosts = getAllPosts().slice(0, 4);
+
   return (
     <>
 {/*  ===== HERO =====  */}
@@ -452,6 +455,60 @@ export default function Page() {
 
 {/*  ===== TOOLS =====  */}
 <ToolsAISection />
+
+{/*  ===== LATEST BLOG POSTS =====  */}
+<section id="latest-posts" className="py-24 px-4 md:px-6 border-t border-white/5">
+    <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+            <div>
+                <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3 text-indigo-400">TVT Blog</p>
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Góc Chia Sẻ Về<br /><span className="gradient-indigo">AI & Branding</span></h2>
+                <p className="text-slate-500 max-w-2xl">Cập nhật những kiến thức mới nhất về AI, Vibe Coding và Marketing Automation từ kinh nghiệm thực chiến.</p>
+            </div>
+            <a href="/blog"
+               className="flex-shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 glass text-white font-bold rounded-2xl border border-white/10 hover:border-indigo-500/30 hover:bg-white/5 transition text-sm">
+                Đọc tất cả bài viết <i className="fas fa-arrow-right text-indigo-400"></i>
+            </a>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {latestPosts.map((post) => (
+                <a key={post.slug} href={`/blog/${post.slug}`} className="group flex flex-col gap-3 p-5 rounded-3xl glass border border-white/8 hover:border-indigo-500/30 hover:bg-white/4 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(123,97,255,0.12)] transition-all duration-300 relative overflow-hidden">
+                    <div className="absolute -top-8 -right-8 w-24 h-24 bg-indigo-500/8 blur-2xl rounded-full group-hover:bg-indigo-500/15 transition-colors pointer-events-none" />
+                    
+                    {post.meta?.coverImage && (
+                        <div className="w-full aspect-square rounded-2xl overflow-hidden border border-white/5 bg-black/50 flex-shrink-0">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src={post.meta.coverImage} alt={post.meta.title} width={800} height={800} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                        </div>
+                    )}
+                    
+                    <div className="flex items-center gap-2 text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-2">
+                        <span>{new Date(post.meta?.date || '').toLocaleDateString('vi-VN')}</span>
+                        {post.meta?.readingTime && (
+                            <>
+                                <span className="w-1 h-1 rounded-full bg-slate-700" />
+                                <span className="text-slate-600">{post.meta.readingTime} phút</span>
+                            </>
+                        )}
+                    </div>
+                    
+                    <h3 className="text-white font-black text-base leading-snug line-clamp-3 group-hover:text-indigo-300 transition-colors">
+                        {post.meta?.title}
+                    </h3>
+                    
+                    <div className="flex flex-wrap gap-1.5 mt-auto pt-2">
+                        {post.meta?.tags?.slice(0, 2).map((tag: string) => (
+                            <span key={tag} className="px-2 py-0.5 rounded-md bg-black/40 border border-white/5 text-[9px] font-bold text-slate-500 uppercase tracking-wider">
+                                #{tag}
+                            </span>
+                        ))}
+                    </div>
+                </a>
+            ))}
+        </div>
+    </div>
+</section>
 
 
 {/*  ===== START GUIDE =====  */}
