@@ -476,29 +476,29 @@ export default function Page() {
                 <a key={post.slug} href={`/blog/${post.slug}`} className="group flex flex-col gap-3 p-5 rounded-3xl glass border border-white/8 hover:border-indigo-500/30 hover:bg-white/4 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(123,97,255,0.12)] transition-all duration-300 relative overflow-hidden">
                     <div className="absolute -top-8 -right-8 w-24 h-24 bg-indigo-500/8 blur-2xl rounded-full group-hover:bg-indigo-500/15 transition-colors pointer-events-none" />
                     
-                    {post.meta?.coverImage && (
+                    {post.coverImage && (
                         <div className="w-full aspect-square rounded-2xl overflow-hidden border border-white/5 bg-black/50 flex-shrink-0">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src={post.meta.coverImage} alt={post.meta.title} width={800} height={800} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                            <img src={post.coverImage} alt={post.title} width={800} height={800} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                         </div>
                     )}
                     
                     <div className="flex items-center gap-2 text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-2">
-                        <span>{new Date(post.meta?.date || '').toLocaleDateString('vi-VN')}</span>
-                        {post.meta?.readingTime && (
+                        <span>{new Date(post.date || '').toLocaleDateString('vi-VN')}</span>
+                        {post.readingTime && (
                             <>
                                 <span className="w-1 h-1 rounded-full bg-slate-700" />
-                                <span className="text-slate-600">{post.meta.readingTime} phút</span>
+                                <span className="text-slate-600">{post.readingTime} phút</span>
                             </>
                         )}
                     </div>
                     
                     <h3 className="text-white font-black text-base leading-snug line-clamp-3 group-hover:text-indigo-300 transition-colors">
-                        {post.meta?.title}
+                        {post.title}
                     </h3>
                     
                     <div className="flex flex-wrap gap-1.5 mt-auto pt-2">
-                        {post.meta?.tags?.slice(0, 2).map((tag: string) => (
+                        {post.tags?.slice(0, 2).map((tag: string) => (
                             <span key={tag} className="px-2 py-0.5 rounded-md bg-black/40 border border-white/5 text-[9px] font-bold text-slate-500 uppercase tracking-wider">
                                 #{tag}
                             </span>
