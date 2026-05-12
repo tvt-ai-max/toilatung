@@ -124,20 +124,20 @@ export default function BookingPage() {
             </p>
 
             {/* Price badge */}
-            <div className="inline-flex items-center gap-6 glass border border-white/10 rounded-3xl px-8 py-5 mb-10">
+            <div className="inline-flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 glass border border-white/10 rounded-3xl px-6 py-6 md:px-8 md:py-5 mb-10 mx-auto w-full md:w-auto">
               <div className="text-center">
-                <div className="text-3xl font-black text-white">5.000.000đ</div>
-                <div className="text-xs text-slate-500 mt-0.5">4 buổi × 90 phút</div>
+                <div className="text-4xl font-black text-white">5.000.000đ</div>
+                <div className="text-sm text-slate-500 mt-1">4 buổi × 90 phút</div>
               </div>
-              <div className="w-px h-12 bg-white/10" />
+              <div className="w-16 h-px md:w-px md:h-12 bg-white/10" />
               <div className="text-center">
                 <div className="text-3xl font-black text-emerald-400">FREE</div>
-                <div className="text-xs text-slate-500 mt-0.5">Discovery Call 30 phút</div>
+                <div className="text-sm text-slate-500 mt-1">Discovery Call 30 phút</div>
               </div>
-              <div className="w-px h-12 bg-white/10" />
+              <div className="w-16 h-px md:w-px md:h-12 bg-white/10" />
               <div className="text-center">
                 <div className="text-3xl font-black text-amber-400">30 ngày</div>
-                <div className="text-xs text-slate-500 mt-0.5">Follow-up Zalo</div>
+                <div className="text-sm text-slate-500 mt-1">Follow-up Zalo</div>
               </div>
             </div>
 
