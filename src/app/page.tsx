@@ -661,15 +661,15 @@ export default function Page() {
 <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden"
      style={{background: 'rgba(11,14,20,0.95)', backdropFilter: 'blur(12px)', borderTop: '1px solid rgba(255,255,255,0.07)'}}>
     <div className="grid grid-cols-2 gap-2 px-4 py-3">
-        <a href="/course/ai-coaching"
+        <a href="/prompt"
            className="flex items-center justify-center gap-2 py-3.5 text-white font-black rounded-xl text-xs uppercase tracking-widest"
            style={{background: 'var(--red)', boxShadow: '0 4px 16px var(--red-glow)'}}>
-            <i className="fas fa-user-tie"></i> Coaching 1-1
+            <i className="fas fa-layer-group"></i> Kho Prompt
         </a>
-        <a href="/course/vibe-coding"
+        <a href="/ai-new"
            className="flex items-center justify-center gap-2 py-3.5 text-white font-black rounded-xl text-xs uppercase tracking-widest"
            style={{background: 'linear-gradient(135deg,#6366f1,#34d399)', boxShadow: '0 4px 16px var(--indigo-glow)'}}>
-            <i className="fas fa-terminal"></i> Vibe Coding
+            <i className="fas fa-bolt"></i> AI New
         </a>
     </div>
 </div>
