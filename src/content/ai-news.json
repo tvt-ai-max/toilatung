@@ -1,5 +1,15 @@
 [
   {
+    "id": "openai-chatgpt-search-api",
+    "title": "OpenAI ra mắt ChatGPT Search API cho developer",
+    "tldr": "OpenAI chính thức phát hành Search API, cho phép các lập trình viên tích hợp khả năng tìm kiếm web thời gian thực của ChatGPT vào ứng dụng của mình.",
+    "why_important": "- Cạnh tranh trực tiếp với Perplexity API, giá cước rẻ hơn 20%.\n- Giúp tự động hóa việc lấy dữ liệu real-time từ web mà không cần tự build scraper.\n- Rất hữu ích cho các Agent tự động viết bài dựa trên tin tức mới nhất.",
+    "source": "OpenAI",
+    "date": "2026-05-13",
+    "link": "https://openai.com/news",
+    "tags": ["Tool", "Developer"]
+  },
+  {
     "id": "claude-4-opus-agent",
     "title": "Claude 4 Opus ra mắt – Agent mạnh nhất từ trước đến nay",
     "tldr": "Claude 4 Opus có khả năng suy luận dài hạn vượt trội, hỗ trợ context 1 triệu token và tích hợp computer use mạnh mẽ hơn.",
