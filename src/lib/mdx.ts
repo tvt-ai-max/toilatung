@@ -93,10 +93,17 @@ export function getPostBySlug(slug: string): BlogPost | null {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
 
+    let rawDate = data.date || data.pubDate || '';
+    if (rawDate instanceof Date) {
+      rawDate = rawDate.toISOString();
+    } else if (typeof rawDate !== 'string') {
+      rawDate = String(rawDate);
+    }
+
     return {
       meta: {
         title: data.title || 'Untitled',
-        date: data.date || data.pubDate || '',
+        date: rawDate,
         description: data.description || '',
         slug: realSlug,
         coverImage: data.coverImage,
@@ -113,10 +120,16 @@ export function getPostBySlug(slug: string): BlogPost | null {
 
 export function getAllPosts(): BlogPostMeta[] {
   const slugs = getPostSlugs();
+  const todayDateStr = new Date().toLocaleString('sv-SE', { timeZone: 'Asia/Ho_Chi_Minh' }).substring(0, 10);
+
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
     .filter((post): post is BlogPost => post !== null)
     .map((post) => post.meta)
+    .filter((meta) => {
+      const postDateStr = meta.date.substring(0, 10);
+      return postDateStr <= todayDateStr;
+    })
     .sort((a, b) => (a.date > b.date ? -1 : 1));
 
   return posts;
