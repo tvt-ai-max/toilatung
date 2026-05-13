@@ -58,7 +58,7 @@ export default function NewsCard({ item }: { item: AINewsItem }) {
           </span>
           <span className="w-1 h-1 rounded-full bg-slate-600"></span>
           <span className="flex items-center gap-1">
-            <i className="far fa-calendar-alt"></i> {new Date(item.date).toLocaleDateString('vi-VN')}
+            <i className="far fa-calendar-alt"></i> {(item.date || '').split('T')[0].split('-').reverse().join('/')}
           </span>
         </div>
         

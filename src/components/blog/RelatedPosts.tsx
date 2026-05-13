@@ -51,7 +51,7 @@ export default function RelatedPosts({ posts }: RelatedPostsProps) {
 
             {/* Meta */}
             <div className="flex items-center gap-2 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-              <span>{new Date(post.date).toLocaleDateString('vi-VN')}</span>
+              <span>{(post.date || '').split('T')[0].split('-').reverse().join('/')}</span>
               {post.readingTime && (
                 <>
                   <span className="w-1 h-1 rounded-full bg-slate-700" />

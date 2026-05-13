@@ -133,7 +133,7 @@ export default async function BlogIndex({ searchParams }: BlogIndexProps) {
                       {/* Meta row */}
                       <div>
                         <div className="flex items-center gap-3 text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">
-                          <span>{new Date(post.date).toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' })}</span>
+                          <span>{(post.date || '').split('T')[0].split('-').reverse().join('/')}</span>
                           <span className="w-1 h-1 rounded-full bg-slate-600" />
                           <span className="text-indigo-400">{post.author}</span>
                           {post.readingTime && (

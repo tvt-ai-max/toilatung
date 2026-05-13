@@ -200,7 +200,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               {/* Tags + date row */}
               <div className="flex flex-wrap items-center gap-3 mb-6">
                 <div className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-widest text-emerald-400">
-                  {new Date(post.meta.date).toLocaleDateString('vi-VN')}
+                  {(post.meta.date || '').split('T')[0].split('-').reverse().join('/')}
                 </div>
                 {post.meta.readingTime && (
                   <div className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold text-slate-400 flex items-center gap-1.5">

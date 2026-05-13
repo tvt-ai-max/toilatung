@@ -38,7 +38,7 @@ export default function NewsAccordionItem({ item, isBookmarked, onToggleBookmark
     .map(s => s.trim())
     .filter(Boolean);
 
-  const formattedDate = new Date(item.date + "T00:00:00").toLocaleDateString("vi-VN");
+  const formattedDate = (item.date || '').split('T')[0].split('-').reverse().join('/');
 
   return (
     <div className={`rounded-xl border transition-colors duration-150 ${

@@ -102,4 +102,4 @@ Page Title (Meta Title):
 textAI New – Cập nhật AI Thực Chiến Mỗi Tuần | Tôi Là Tùng
 Meta Description:
 textCập nhật tin tức AI mới nhất mỗi tuần với phân tích thực chiến. Những model, tool, agent quan trọng nhất được chọn lọc và giải thích rõ ràng để bạn áp dụng ngay vào công việc và kinh doanh.
-URL gợi ý: 
+URL gợi ý: https://.../ai-new
