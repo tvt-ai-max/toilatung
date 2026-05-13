@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Script from "next/script";
 
 export default function Footer() {
   return (
@@ -49,6 +50,22 @@ export default function Footer() {
               >
                 <i className="fas fa-comment-dots text-blue-400"></i> Zalo: 0972613455
               </a>
+              
+              <a 
+                href="//www.dmca.com/Protection/Status.aspx?ID=e7d270d7-1635-4541-a924-092b8578ee1f" 
+                title="DMCA.com Protection Status" 
+                className="dmca-badge"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img 
+                  src="https://images.dmca.com/Badges/dmca_protected_sml_120n.png?ID=e7d270d7-1635-4541-a924-092b8578ee1f" 
+                  alt="DMCA.com Protection Status" 
+                />
+              </a>
+              <Script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js" strategy="lazyOnload" />
+
               <p className="text-[9px] font-black text-slate-700 uppercase tracking-widest">
                 toilatung.com · 2026
               </p>
