@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   description: "Hệ thống hóa kiến thức AI để giải quyết các bài toán phức tạp nhất. Cung cấp khóa học Vibe Coding, Claude Masterclass và xây dựng Content OS tự động hóa.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.svg",
   },
   robots: {
     index: true,
