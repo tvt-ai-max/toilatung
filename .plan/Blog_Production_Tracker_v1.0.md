@@ -38,7 +38,7 @@
 | 12 | 2026-05-12 | ⚪ To Do | Vibe Coding | Context Window Là Gì? | ❌ Chưa | ❌ Chưa |
 | 13 | 2026-05-13 | ⚪ To Do | Vibe Coding | System Prompt: Bí Quyết Định Hướng | ❌ Chưa | ❌ Chưa |
 | 14 | 2026-05-14 | ⚪ To Do | Vibe Coding | Deploy Netlify/Vercel Cùng AI | ❌ Chưa | ❌ Chưa |
-| 15 | 2026-05-15 | 🟡 Scheduled | AI Tools | ChatGPT vs Claude vs Gemini 2026 | ✅ Xong | ✅ Xong |
+| 15 | 2026-05-15 | 🟢 Published | AI Tools | ChatGPT vs Claude vs Gemini 2026 | ✅ Xong | ✅ Xong |
 | 16 | 2026-05-16 | 🟡 Scheduled | AI Tools | ElevenLabs Podcast | ✅ Xong | ✅ Xong |
 | 17 | 2026-05-17 | 🟡 Scheduled | AI Tools | Make.com + n8n: Tự Động Hoá | ✅ Xong | ✅ Xong |
 | 18 | 2026-05-18 | 🟡 Scheduled | AI Tools | Content Marketing AI: Hàng Trăm Bài | ✅ Xong | ✅ Xong |

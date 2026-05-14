@@ -1,5 +1,35 @@
 [
   {
+    "id": "anthropic-surpasses-openai",
+    "title": "Anthropic vượt mặt OpenAI về mức độ áp dụng trong doanh nghiệp",
+    "tldr": "Theo dữ liệu từ Ramp AI Index, Anthropic lần đầu tiên vượt qua OpenAI về mức độ sử dụng trong môi trường doanh nghiệp tính đến tháng 4/2026, chiếm 34.4% thị phần (so với 32.3% của OpenAI).",
+    "why_important": "- Phản ánh xu hướng doanh nghiệp đang dần ưu tiên các mô hình AI có suy luận (reasoning) sâu, bảo mật dữ liệu tốt hơn và ít hallucination như Claude.\n- Cuộc đua B2B giữa Anthropic và OpenAI ngày càng khốc liệt.\n- Lời khuyên thực chiến cho agency và developer: Cần xây dựng hệ thống agnostic (không phụ thuộc vào 1 model duy nhất) để linh hoạt chuyển đổi giữa Claude và GPT.",
+    "source": "Ramp AI Index",
+    "date": "2026-05-15",
+    "link": "https://ramp.com/index",
+    "tags": ["Business", "Model", "Research"]
+  },
+  {
+    "id": "frontier-ai-cybersecurity",
+    "title": "Cảnh báo: Các mô hình AI tiên tiến có thể tự động thực hiện tấn công mạng",
+    "tldr": "Báo cáo mới nhất từ Viện An toàn AI Anh (UK AISI) cho thấy các mô hình Frontier AI như Claude Mythos Preview và GPT-5.5 đã có khả năng vượt qua các bài kiểm tra mô phỏng tấn công mạng (cyber-attack) phức tạp từ đầu đến cuối.",
+    "why_important": "- Tốc độ phát triển khả năng tấn công mạng của AI đang tăng gấp đôi mỗi 4 tháng, đặt ra rủi ro cực lớn cho an ninh hệ thống.\n- Các công ty công nghệ, SaaS và agency cần áp dụng các framework bảo vệ (Guardrails) ngay vào pipeline của mình.\n- Đây sẽ là mỏ vàng mới cho các chuyên gia và hệ thống AI Agent chuyên về Security Automation.",
+    "source": "UK AI Security Institute",
+    "date": "2026-05-15",
+    "link": "https://www.gov.uk/government/organisations/ai-safety-institute",
+    "tags": ["Security", "Model", "Update"]
+  },
+  {
+    "id": "quanta-ai-server-boom",
+    "title": "Sự bùng nổ hạ tầng AI: Quanta Computer tăng vốn đầu tư lên 30 tỷ Đài tệ",
+    "tldr": "Mảng máy chủ AI của Quanta Computer ghi nhận mức tăng trưởng doanh thu hai con số liên tiếp, buộc công ty phải tăng gấp chi phí đầu tư để mở rộng công suất sản xuất server AI tại Mỹ và Thái Lan.",
+    "why_important": "- Chứng minh nhu cầu về phần cứng và sức mạnh tính toán (compute power) để train/run AI vẫn đang ở mức cực thịnh, chưa hề có dấu hiệu bong bóng.\n- Doanh nghiệp muốn tự host mô hình AI mã nguồn mở nội bộ cần tranh thủ nguồn lực hạ tầng từ bây giờ.\n- Xu hướng chuyển dịch chuỗi cung ứng phần cứng sang Đông Nam Á (Thái Lan, Việt Nam) mở ra cơ hội lớn cho các đối tác gia công và công nghệ.",
+    "source": "Quanta Computer",
+    "date": "2026-05-15",
+    "link": "https://www.quantatw.com",
+    "tags": ["Business"]
+  },
+  {
     "id": "higgsfield-mcp-claude",
     "title": "Higgsfield ra mắt MCP: Tạo video AI trực tiếp từ Claude",
     "tldr": "Higgsfield vừa giới thiệu Model Context Protocol (MCP), cho phép người dùng viết prompt và render video AI chất lượng cao ngay bên trong giao diện Claude.",
