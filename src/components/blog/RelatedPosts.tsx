@@ -40,7 +40,7 @@ export default function RelatedPosts({ posts }: RelatedPostsProps) {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={post.coverImage}
-                  alt={post.title}
+                  alt={`${post.title} | Tôi là Tùng, toilatung, Nguyễn Thanh Tùng, Tùng Sóc Sơn`}
                   width={800}
                   height={800}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"

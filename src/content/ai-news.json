@@ -1,5 +1,45 @@
 [
   {
+    "id": "higgsfield-mcp-claude",
+    "title": "Higgsfield ra mắt MCP: Tạo video AI trực tiếp từ Claude",
+    "tldr": "Higgsfield vừa giới thiệu Model Context Protocol (MCP), cho phép người dùng viết prompt và render video AI chất lượng cao ngay bên trong giao diện Claude.",
+    "why_important": "- Tối ưu hóa luồng công việc: không cần copy-paste prompt giữa Claude và tool tạo video, mọi thứ được xử lý trong một cửa sổ.\n- Mở ra khả năng tự động hóa 100%: Agent AI có thể tự viết kịch bản và tự gọi API tạo video thành phẩm.\n- Cực kỳ hữu ích cho các team content và agency muốn scale số lượng video marketing ngắn (Shorts/Reels) một cách đồng bộ.",
+    "source": "Higgsfield",
+    "date": "2026-05-14",
+    "link": "https://higgsfield.ai/blog/Generate-AI-Videos-From-Claude-with-Higgsfield-MCP",
+    "tags": ["Tool", "Agent", "Developer"]
+  },
+  {
+    "id": "higgsfield-soul-cinema",
+    "title": "Soul Cinema Preview: Render video đậm chất điện ảnh chỉ với 1 click",
+    "tldr": "Higgsfield ra mắt model Soul Cinema Preview, tối ưu hóa cho chất lượng hình ảnh điện ảnh (cinematic) và duy trì tính nhất quán nhân vật hoàn hảo nhờ kết hợp Soul ID.",
+    "why_important": "- Tính nhất quán nhân vật luôn là bài toán khó nhất của AI video – Soul Cinema đã giải quyết được phần lớn vấn đề này.\n- Giúp các nhà làm phim độc lập và creative agency dễ dàng tạo concept storyboard, moodboard hoặc TVC ngắn với phong cách Hollywood.\n- Định vị Higgsfield trở thành đối thủ đáng gờm của Runway Gen-3 và Sora về khả năng điều phối nghệ thuật (Creative Direction).",
+    "source": "Higgsfield",
+    "date": "2026-03-04",
+    "link": "https://higgsfield.ai/blog/soul-cinema-preview",
+    "tags": ["Model", "Tool", "Business"]
+  },
+  {
+    "id": "ai-doxxing-real-phone-numbers",
+    "title": "Cảnh báo: Chatbot AI vô tình làm lộ số điện thoại thật",
+    "tldr": "Nhiều người dùng bị lộ số điện thoại cá nhân do các chatbot như Gemini và ChatGPT vô tình trích xuất thông tin từ tập dữ liệu huấn luyện, gây rủi ro quyền riêng tư lớn.",
+    "why_important": "- Cảnh báo thực tế cho freelancer và marketer: cần cẩn trọng với các thông tin cá nhân (PII) đã từng chia sẻ công khai trên mạng.\n- Rủi ro bị quấy rối tăng cao do AI có khả năng liên kết dữ liệu cũ cực tốt.\n- Doanh nghiệp khi triển khai chatbot CSKH cần chú ý áp dụng các biện pháp lọc thông tin cá nhân nghiêm ngặt.",
+    "source": "MIT Tech Review",
+    "date": "2026-05-14",
+    "link": "https://www.technologyreview.com/topic/artificial-intelligence/",
+    "tags": ["Update", "Security", "Research"]
+  },
+  {
+    "id": "openai-codex-windows-sandbox",
+    "title": "OpenAI ra mắt Sandbox bảo mật cho Codex trên Windows",
+    "tldr": "OpenAI giới thiệu môi trường sandbox an toàn cho Codex trên Windows, cho phép các AI Agent lập trình hoạt động với quyền truy cập hệ thống được kiểm soát nghiêm ngặt.",
+    "why_important": "- Giúp developer và các team IT yên tâm hơn khi cho phép AI Agent tự động thao tác code trên môi trường local.\n- Giải quyết bài toán bảo mật cốt lõi: hạn chế nguy cơ AI vô tình xóa file hoặc kết nối mạng trái phép.\n- Tạo tiền đề vững chắc cho việc ứng dụng AI Agent vào quy trình phát triển phần mềm nội bộ của agency và doanh nghiệp SME.",
+    "source": "OpenAI",
+    "date": "2026-05-14",
+    "link": "https://openai.com/index/building-codex-windows-sandbox",
+    "tags": ["Tool", "Developer", "Security"]
+  },
+  {
     "id": "openai-chatgpt-search-api",
     "title": "OpenAI ra mắt ChatGPT Search API cho developer",
     "tldr": "OpenAI chính thức phát hành Search API, cho phép các lập trình viên tích hợp khả năng tìm kiếm web thời gian thực của ChatGPT vào ứng dụng của mình.",

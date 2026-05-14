@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: post.meta.title,
+          alt: `${post.meta.title} | Tôi là Tùng, toilatung, Nguyễn Thanh Tùng, Tùng Sóc Sơn`,
         },
       ],
     },
@@ -236,7 +236,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={post.meta.coverImage}
-                  alt={post.meta.title}
+                  alt={`${post.meta.title} | Tôi là Tùng, toilatung, Nguyễn Thanh Tùng, Tùng Sóc Sơn`}
                   width={1200}
                   height={630}
                   className="w-full h-auto object-cover"

@@ -22,7 +22,7 @@ export const metadata = {
         url: 'https://toilatung.com/images/home-og.webp',
         width: 1200,
         height: 630,
-        alt: 'Blog Tôi Là Tùng',
+        alt: 'Blog Tôi Là Tùng | toilatung, Nguyễn Thanh Tùng, Tùng Sóc Sơn',
       },
     ],
   },
@@ -119,7 +119,7 @@ export default async function BlogIndex({ searchParams }: BlogIndexProps) {
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={post.coverImage}
-                          alt={post.title}
+                          alt={`${post.title} | Tôi là Tùng, toilatung, Nguyễn Thanh Tùng, Tùng Sóc Sơn`}
                           width={800}
                           height={800}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
