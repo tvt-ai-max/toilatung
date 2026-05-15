@@ -1,5 +1,55 @@
 [
   {
+    "id": "chatgpt-personal-finance",
+    "title": "ChatGPT biến thành cố vấn tài chính cá nhân – Kết nối trực tiếp tài khoản ngân hàng",
+    "tldr": "OpenAI ra mắt tính năng Personal Finance trong ChatGPT Pro, cho phép kết nối hơn 12.000 tổ chức tài chính qua Plaid để phân tích chi tiêu, lập ngân sách và lên kế hoạch tài chính dựa trên dữ liệu thực.",
+    "why_important": "- Đánh dấu bước đi chiến lược của OpenAI vào lĩnh vực fintech – cạnh tranh trực tiếp với Mint, YNAB và các app quản lý tài chính truyền thống.\n- Mô hình AI + dữ liệu tài chính thực mở ra cơ hội xây dựng các sản phẩm tương tự cho thị trường Việt Nam (kết nối ngân hàng nội địa).\n- Hiện chỉ dành cho Pro users ($200/tháng) tại Mỹ – nhưng sẽ mở rộng sang Plus và các quốc gia khác, agency nên theo dõi để tư vấn khách hàng tài chính.",
+    "source": "OpenAI",
+    "date": "2026-05-15",
+    "link": "https://openai.com/index/personal-finance-chatgpt",
+    "tags": ["Tool", "Business", "Update"]
+  },
+  {
+    "id": "anthropic-claude-small-business",
+    "title": "Anthropic ra mắt Claude for Small Business – AI tích hợp sẵn vào công cụ doanh nghiệp",
+    "tldr": "Claude for Small Business nhúng trực tiếp vào QuickBooks, HubSpot, Canva, DocuSign, Google Workspace và Microsoft 365 với các workflow tự động hóa sẵn cho tài chính, vận hành, bán hàng và nhân sự.",
+    "why_important": "- Giải quyết rào cản lớn nhất của SME khi dùng AI: không cần biết code, không cần tích hợp phức tạp – mọi thứ đã có sẵn.\n- Cạnh tranh trực tiếp với Microsoft Copilot Studio ở phân khúc doanh nghiệp nhỏ – cuộc đua giành quyền kiểm soát workflow doanh nghiệp đang nóng hơn bao giờ hết.\n- Agency và freelancer Việt Nam có thể dùng ngay để tự động hóa quy trình nội bộ: từ gửi hợp đồng DocuSign đến tổng hợp báo cáo HubSpot.",
+    "source": "Anthropic",
+    "date": "2026-05-15",
+    "link": "https://www.anthropic.com/news/claude-for-small-business",
+    "tags": ["Tool", "Business", "Agent"]
+  },
+  {
+    "id": "openai-codex-mobile-anywhere",
+    "title": "Codex lên mobile – Viết code, review và deploy từ điện thoại",
+    "tldr": "OpenAI mở Codex trên ứng dụng ChatGPT mobile, cho phép developer giám sát, điều phối và phê duyệt các tác vụ coding real-time từ bất kỳ thiết bị nào.",
+    "why_important": "- Phá bỏ rào cản \"phải ngồi trước máy tính\" – developer có thể review PR, chạy test và approve deployment ngay trên điện thoại.\n- Sea Limited (Shopee) đã triển khai Codex cho toàn bộ đội engineering ở châu Á, chứng minh công cụ này production-ready.\n- Xu hướng \"AI-native development\" đang tăng tốc: NVIDIA cũng đang dùng Codex với GPT-5.5 cho cả production systems và nghiên cứu.",
+    "source": "OpenAI",
+    "date": "2026-05-14",
+    "link": "https://openai.com/index/work-with-codex-from-anywhere",
+    "tags": ["Tool", "Developer", "Update"]
+  },
+  {
+    "id": "tanstack-supply-chain-attack",
+    "title": "Cảnh báo khẩn: Tấn công chuỗi cung ứng TanStack ảnh hưởng 170+ npm packages",
+    "tldr": "Nhóm hacker TeamPCP đã xâm nhập 84 phiên bản của 42 package TanStack trên npm, ảnh hưởng đến hơn 170 packages bao gồm cả Mistral AI và UiPath. OpenAI xác nhận 2 thiết bị nhân viên bị ảnh hưởng.",
+    "why_important": "- Đây là cuộc tấn công supply chain lớn nhất năm 2026 – nếu dự án của bạn dùng TanStack Query, TanStack Router hoặc TanStack Table, cần kiểm tra và cập nhật ngay.\n- OpenAI buộc phải xoay vòng chứng chỉ code-signing – user macOS phải cập nhật app trước 12/06/2026.\n- Bài học cho developer và agency: luôn lock version dependencies, enable npm audit, và sử dụng lockfile integrity check trong CI/CD pipeline.",
+    "source": "OpenAI",
+    "date": "2026-05-14",
+    "link": "https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack",
+    "tags": ["Security", "Developer", "Update"]
+  },
+  {
+    "id": "musk-vs-altman-trial-verdict",
+    "title": "Musk vs Altman: Phiên tòa 134 tỷ USD bước vào giai đoạn phán quyết",
+    "tldr": "Sau 3 tuần xét xử, bồi thẩm đoàn sẽ bắt đầu thảo luận từ tuần tới về vụ kiện Elon Musk đòi OpenAI bồi thường 134 tỷ USD. Musk muốn đảo ngược việc chuyển đổi OpenAI thành công ty vì lợi nhuận và sa thải Sam Altman.",
+    "why_important": "- Nếu Musk thắng, OpenAI có thể bị buộc quay lại mô hình nonprofit – ảnh hưởng trực tiếp đến kế hoạch IPO trị giá gần 1 nghìn tỷ USD.\n- Trong khi đó, xAI của Musk đang chuẩn bị IPO qua SpaceX với định giá 1.75 nghìn tỷ USD – cuộc đua AI chưa bao giờ mang tính chính trị hóa đến vậy.\n- Phiên tòa hé lộ nhiều thông tin nội bộ về quá trình phát triển AGI và mâu thuẫn giữa lợi nhuận vs. an toàn AI – bài học quản trị cho mọi startup AI.",
+    "source": "MIT Tech Review",
+    "date": "2026-05-16",
+    "link": "https://www.technologyreview.com/2026/05/15/1137357/musk-v-altman-week-3/",
+    "tags": ["Business", "Update"]
+  },
+  {
     "id": "anthropic-surpasses-openai",
     "title": "Anthropic vượt mặt OpenAI về mức độ áp dụng trong doanh nghiệp",
     "tldr": "Theo dữ liệu từ Ramp AI Index, Anthropic lần đầu tiên vượt qua OpenAI về mức độ sử dụng trong môi trường doanh nghiệp tính đến tháng 4/2026, chiếm 34.4% thị phần (so với 32.3% của OpenAI).",
