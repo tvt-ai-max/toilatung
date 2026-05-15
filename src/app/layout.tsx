@@ -88,23 +88,22 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         />
+        {/* ── Google Analytics 4 ─────────────────────────────────────────── */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E9CWW82EVC"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-E9CWW82EVC');
+            `,
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col font-sans">
         <ScrollReveal />
         <LayoutShell>{children}</LayoutShell>
-        {/* ── Google Analytics 4 ─────────────────────────────────────────── */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-E9CWW82EVC"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-E9CWW82EVC');
-          `}
-        </Script>
       </body>
     </html>
   );
