@@ -19,9 +19,6 @@ export default function AINewFeed({ initialNews, allTags }: Props) {
 
   const { bookmarks, toggleBookmark, isBookmarked } = useBookmarks();
 
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [searchTerm, selectedTag, selectedTime]);
 
   const filteredNews = useMemo(() => {
     let filtered = initialNews;
@@ -74,7 +71,7 @@ export default function AINewFeed({ initialNews, allTags }: Props) {
             type="text"
             placeholder="Tìm kiếm tin tức, công cụ..."
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={(e) => { setSearchTerm(e.target.value); setCurrentPage(1); }}
             className="w-full bg-white/5 border border-white/[0.08] rounded-xl py-2.5 pl-9 pr-4 text-sm text-white focus:outline-none focus:border-[#22D3EE]/40 focus:bg-white/[0.08] transition-all placeholder:text-slate-600"
           />
         </div>
@@ -84,7 +81,7 @@ export default function AINewFeed({ initialNews, allTags }: Props) {
         <div className="flex gap-2">
           <select
             value={selectedTime}
-            onChange={(e) => setSelectedTime(e.target.value)}
+            onChange={(e) => { setSelectedTime(e.target.value); setCurrentPage(1); }}
             className="bg-white/5 border border-white/[0.08] rounded-xl py-2.5 px-3 pr-8 text-sm text-white focus:outline-none focus:border-[#22D3EE]/40 transition-all appearance-none cursor-pointer min-w-[112px]"
             style={{ backgroundImage: chevronSvg, backgroundRepeat: "no-repeat", backgroundPosition: "right 0.6rem center", backgroundSize: "0.85em" }}
           >
@@ -95,7 +92,7 @@ export default function AINewFeed({ initialNews, allTags }: Props) {
 
           <select
             value={selectedTag}
-            onChange={(e) => setSelectedTag(e.target.value)}
+            onChange={(e) => { setSelectedTag(e.target.value); setCurrentPage(1); }}
             className="bg-white/5 border border-white/[0.08] rounded-xl py-2.5 px-3 pr-8 text-sm text-white focus:outline-none focus:border-[#22D3EE]/40 transition-all appearance-none cursor-pointer min-w-[140px]"
             style={{ backgroundImage: chevronSvg, backgroundRepeat: "no-repeat", backgroundPosition: "right 0.6rem center", backgroundSize: "0.85em" }}
           >

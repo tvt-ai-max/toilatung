@@ -79,7 +79,7 @@ export default function Page() {
 
 
     {/*  ===== HERO =====  */}
-    <header className="pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-6 relative overflow-hidden" reveal">
+    <header className="pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-6 relative overflow-hidden reveal">
         {/*  Background glows  */}
         <div
             className="absolute -top-32 -right-32 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-indigo-600/15 blur-[120px] md:blur-[140px] rounded-full pointer-events-none">
