@@ -1,5 +1,5 @@
 import React from 'react';
-
+import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Claude Design Master v4 — Thiết Kế AI Native',
   description: 'Chào mừng bạn đến với kỷ nguyên thiết kế AI-native. Claude Design cho phép bạn cộng tác với Claude để tạo ra các sản phẩm hình ảnh chuyên nghiệp.',
