@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "generate-covers": "node scripts/generate-cover.mjs",
-    "generate-cover": "node scripts/generate-cover.mjs"
+    "generate-cover": "node scripts/generate-cover.mjs",
+    "refresh-news": "node scripts/refresh-ai-news.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.0",
