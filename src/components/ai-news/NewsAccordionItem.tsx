@@ -41,15 +41,18 @@ export default function NewsAccordionItem({ item, isBookmarked, onToggleBookmark
   const formattedDate = (item.date || '').split('T')[0].split('-').reverse().join('/');
 
   return (
-    <div className={`rounded-xl border transition-colors duration-150 ${
-      isExpanded
-        ? "bg-white/[0.03] border-white/10"
-        : "border-white/[0.06] hover:bg-white/[0.02] hover:border-white/[0.09]"
-    }`}>
+    <div 
+      className={`rounded-xl border transition-colors duration-150 ${
+        isExpanded
+          ? "bg-white/[0.03] border-white/10"
+          : "border-white/[0.06] hover:bg-white/[0.02] hover:border-white/[0.09]"
+      }`}
+      onMouseEnter={() => setIsExpanded(true)}
+      onMouseLeave={() => setIsExpanded(false)}
+    >
       {/* Collapsed row */}
       <div
         className="flex items-center gap-3 px-4 py-3 cursor-pointer select-none"
-        onClick={() => setIsExpanded(!isExpanded)}
       >
         <i className={`fas fa-chevron-right text-[9px] text-slate-600 transition-transform duration-200 shrink-0 ${isExpanded ? "rotate-90 text-[#22D3EE]/60" : ""}`}></i>
 

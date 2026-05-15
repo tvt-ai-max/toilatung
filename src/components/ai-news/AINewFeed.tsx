@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { AINewsItem, groupNewsByDate } from "@/lib/ai-news-utils";
 import NewsAccordionItem from "./NewsAccordionItem";
 import { useBookmarks } from "@/lib/hooks/useBookmarks";
@@ -14,8 +14,14 @@ export default function AINewFeed({ initialNews, allTags }: Props) {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTag, setSelectedTag] = useState("all");
   const [selectedTime, setSelectedTime] = useState("all");
+  const [currentPage, setCurrentPage] = useState(1);
+  const ITEMS_PER_PAGE = 20;
 
   const { bookmarks, toggleBookmark, isBookmarked } = useBookmarks();
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, selectedTag, selectedTime]);
 
   const filteredNews = useMemo(() => {
     let filtered = initialNews;
@@ -47,7 +53,14 @@ export default function AINewFeed({ initialNews, allTags }: Props) {
     return filtered;
   }, [initialNews, searchTerm, selectedTag, selectedTime, bookmarks]);
 
-  const groupedNews = useMemo(() => groupNewsByDate(filteredNews), [filteredNews]);
+  const totalPages = Math.ceil(filteredNews.length / ITEMS_PER_PAGE);
+  
+  const paginatedNews = useMemo(() => {
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    return filteredNews.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  }, [filteredNews, currentPage]);
+
+  const groupedNews = useMemo(() => groupNewsByDate(paginatedNews), [paginatedNews]);
 
   const chevronSvg = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E\")";
 
@@ -97,7 +110,8 @@ export default function AINewFeed({ initialNews, allTags }: Props) {
 
       {/* News Feed */}
       {groupedNews.length > 0 ? (
-        <div className="space-y-8">
+        <>
+          <div className="space-y-8">
           {groupedNews.map((group) => (
             <div key={group.originalDate}>
               {/* Date divider — static header */}
@@ -123,7 +137,48 @@ export default function AINewFeed({ initialNews, allTags }: Props) {
               </div>
             </div>
           ))}
-        </div>
+          </div>
+          
+          {/* Pagination Controls */}
+          {totalPages > 1 && (
+            <div className="flex flex-wrap items-center justify-center gap-2 mt-12 mb-8">
+              <button
+                onClick={() => { setCurrentPage(p => Math.max(1, p - 1)); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                disabled={currentPage === 1}
+                className="w-10 h-10 flex items-center justify-center rounded-xl border bg-white/[0.03] border-white/[0.08] text-slate-400 hover:text-white hover:bg-white/[0.08] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+              >
+                <i className="fas fa-chevron-left text-[10px]"></i>
+              </button>
+              
+              <div className="flex flex-wrap items-center justify-center gap-1">
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                  <button
+                    key={page}
+                    onClick={() => {
+                      setCurrentPage(page);
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    className={`w-10 h-10 flex items-center justify-center rounded-xl text-xs font-bold transition-all ${
+                      currentPage === page
+                        ? "bg-[#22D3EE]/10 border border-[#22D3EE]/30 text-[#22D3EE]"
+                        : "border border-transparent text-slate-400 hover:bg-white/[0.05] hover:text-white"
+                    }`}
+                  >
+                    {page}
+                  </button>
+                ))}
+              </div>
+
+              <button
+                onClick={() => { setCurrentPage(p => Math.min(totalPages, p + 1)); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                disabled={currentPage === totalPages}
+                className="w-10 h-10 flex items-center justify-center rounded-xl border bg-white/[0.03] border-white/[0.08] text-slate-400 hover:text-white hover:bg-white/[0.08] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+              >
+                <i className="fas fa-chevron-right text-[10px]"></i>
+              </button>
+            </div>
+          )}
+        </>
       ) : (
         <div className="py-20 text-center border border-white/[0.06] rounded-2xl">
           <i className="fas fa-search text-2xl text-slate-700 mb-3"></i>

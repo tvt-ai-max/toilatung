@@ -79,7 +79,7 @@ export default function AINewPage() {
           </div>
           
           <div className="flex flex-wrap justify-center gap-3 md:gap-4 max-w-4xl mx-auto">
-            {["OpenAI", "Anthropic", "Hugging Face", "The Batch (Andrew Ng)", "arXiv cs.AI", "Ben's Bites", "The Rundown AI", "Latent Space", "Import AI", "FutureTools"].map((source) => (
+            {["OpenAI", "Anthropic", "Hugging Face", "The Batch (Andrew Ng)", "arXiv cs.AI", "Ben's Bites", "The Rundown AI", "Latent Space", "Import AI", "FutureTools", "Higgsfield"].map((source) => (
               <div key={source} className="px-4 py-2 rounded-lg bg-white/5 border border-white/5 text-slate-400 text-xs font-bold tracking-wider hover:border-[#00E5FF]/30 hover:text-[#00E5FF] transition-colors cursor-default">
                 {source}
               </div>
