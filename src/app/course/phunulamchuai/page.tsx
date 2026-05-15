@@ -808,7 +808,7 @@ export default function Page() {
                 "Công nghệ không phân biệt tuổi tác — chỉ phân biệt người bắt đầu và người chưa bắt đầu."
             </p>
             <div className="flex items-center gap-4 flex-shrink-0">
-                <a href="https://zalo.me/0972613455" target="_blank" rel="noopener"
+                <a href="https://zalo.me/0972613455" target="_blank" rel="noopener noreferrer"
                    className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-widest text-white transition"
                    style={{background: 'rgba(0,104,255,0.12)', border: '1px solid rgba(0,104,255,0.3)'}}
                     >
@@ -855,7 +855,7 @@ export default function Page() {
         <p style={{color: '#64748b', fontSize: '0.8rem', lineHeight: '1.6', marginBottom: '1.5rem'}}>Lộ trình này hoàn toàn miễn phí và được thiết kế riêng cho phụ nữ 8x, 9x — không cần kỹ thuật, không cần kinh nghiệm AI trước đó.</p>
 
         {/*  CTA 1: Zalo (primary)  */}
-        <a href="https://zalo.me/0972613455" target="_blank" rel="noopener"
+        <a href="https://zalo.me/0972613455" target="_blank" rel="noopener noreferrer"
            style={{display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem 1.25rem', background: 'rgba(244,114,182,0.1)', border: '1px solid rgba(244,114,182,0.35)', borderRadius: '1rem', textDecoration: 'none', marginBottom: '0.75rem', transition: 'border-color 0.2s'}}
             >
             <div style={{width: '2.75rem', height: '2.75rem', borderRadius: '0.75rem', background: '#0068ff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: '0'}}>

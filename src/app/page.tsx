@@ -74,7 +74,7 @@ export default function Page() {
                        className="px-8 py-4 glass text-white font-bold rounded-2xl border border-white/10 hover:border-white/20 transition text-sm text-center">
                         <i className="fas fa-compass mr-2 text-indigo-400"></i>Tôi nên bắt đầu từ đâu?
                     </a>
-                    <a href="https://zalo.me/0972613455" target="_blank" rel="noopener"
+                    <a href="https://zalo.me/0972613455" target="_blank" rel="noopener noreferrer"
                        className="px-8 py-4 glass text-white font-bold rounded-2xl text-sm text-center transition hover:border-blue-400/30"
                        style={{border: '1px solid rgba(0,104,255,0.25)'}}>
                         <i className="fas fa-comment-dots mr-2 text-blue-400"></i>Chat Zalo
@@ -496,7 +496,7 @@ export default function Page() {
                         <p className="text-slate-500 text-xs">AI Content System cho SME · AI Workflow for Sales · Automation & n8n Builder Sprint</p>
                     </div>
                 </div>
-                <a href="https://zalo.me/0972613455" target="_blank" rel="noopener"
+                <a href="https://zalo.me/0972613455" target="_blank" rel="noopener noreferrer"
                    className="flex-shrink-0 px-5 py-2.5 glass rounded-xl text-xs font-bold text-slate-400 hover:text-white transition border border-white/8 hover:border-amber-400/30">
                     <i className="fas fa-bell mr-2 text-amber-400"></i>Thông báo khi mở
                 </a>
@@ -653,7 +653,7 @@ export default function Page() {
             <i className="fas fa-comment-dots text-blue-400 text-3xl mb-4 block"></i>
             <h3 className="text-xl font-black text-white mb-2">Vẫn chưa chắc chương trình nào phù hợp?</h3>
             <p className="text-slate-400 text-sm mb-6 max-w-lg mx-auto">Nhắn Zalo cho tôi — kể mục tiêu và công việc bạn đang làm. Tôi sẽ giúp bạn xác định chương trình phù hợp nhất, không mất phí tư vấn.</p>
-            <a href="https://zalo.me/0972613455" target="_blank" rel="noopener"
+            <a href="https://zalo.me/0972613455" target="_blank" rel="noopener noreferrer"
                className="inline-flex items-center gap-3 px-8 py-4 text-white font-black rounded-2xl text-sm uppercase tracking-widest transition"
                style={{background: '#0068ff', boxShadow: '0 8px 30px rgba(0,104,255,0.3)'}}
                 >
@@ -700,7 +700,7 @@ export default function Page() {
             </div>
             <p className="text-slate-500 text-sm">
                 Hoặc nhắn trực tiếp:
-                <a href="https://zalo.me/0972613455" target="_blank" rel="noopener"
+                <a href="https://zalo.me/0972613455" target="_blank" rel="noopener noreferrer"
                    className="font-black hover:text-white transition ml-1" style={{color: '#60a5fa'}}>
                     <i className="fas fa-comment-dots mr-1"></i>Zalo 0972613455
                 </a>

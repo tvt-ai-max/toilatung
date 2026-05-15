@@ -622,7 +622,7 @@ export default function Page() {
         <div style={{display: 'flex', gap: '10px', alignItems: 'center', fontSize: '14px', color: 'var(--text-3)'}}><span style={{color: 'var(--text-3)'}}>–</span> Hỗ trợ Zalo 1-1</div>
         <div style={{display: 'flex', gap: '10px', alignItems: 'center', fontSize: '14px', color: 'var(--text-3)'}}><span style={{color: 'var(--text-3)'}}>–</span> Code review cá nhân</div>
       </div>
-      <a href="https://zalo.me/0972613455" target="_blank" rel="noopener"
+      <a href="https://zalo.me/0972613455" target="_blank" rel="noopener noreferrer"
          style={{display: 'block', textAlign: 'center', padding: '14px', borderRadius: '980px', fontSize: '15px', fontWeight: '500', color: 'var(--text-1)', border: '1px solid var(--border)', textDecoration: 'none', transition: 'background .2s,border-color .2s'}}
          
          >
@@ -646,7 +646,7 @@ export default function Page() {
         <div style={{display: 'flex', gap: '10px', alignItems: 'center', fontSize: '14px', color: 'var(--text-1)'}}><span style={{color: '#30d158'}}>✓</span> Audit Vibe Brief trực tiếp</div>
         <div style={{display: 'flex', gap: '10px', alignItems: 'center', fontSize: '14px', color: 'var(--text-1)'}}><span style={{color: '#30d158'}}>✓</span> Cập nhật khoá học trọn đời</div>
       </div>
-      <a href="https://zalo.me/0972613455" target="_blank" rel="noopener"
+      <a href="https://zalo.me/0972613455" target="_blank" rel="noopener noreferrer"
          className="btn-primary" style={{display: 'block', textAlign: 'center', fontSize: '15px', padding: '14px'}}>
         Đăng ký ngay
       </a>
@@ -658,7 +658,7 @@ export default function Page() {
   <div className="reveal visible" style={{textAlign: 'center', marginTop: '40px'}}>
     <p style={{fontSize: '14px', color: 'var(--text-3)'}}>
       🔒 Cam kết hoàn tiền 100% trong 7 ngày nếu không hài lòng.
-      <a href="https://zalo.me/0972613455" target="_blank" rel="noopener" style={{color: 'var(--blue)', textDecoration: 'none', marginLeft: '4px'}}>Câu hỏi? Chat Zalo ›</a>
+      <a href="https://zalo.me/0972613455" target="_blank" rel="noopener noreferrer" style={{color: 'var(--blue)', textDecoration: 'none', marginLeft: '4px'}}>Câu hỏi? Chat Zalo ›</a>
     </p>
   </div>
 </section>
@@ -690,7 +690,7 @@ export default function Page() {
         Đăng ký ngay
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
       </a>
-      <a href="https://zalo.me/0972613455" target="_blank" rel="noopener" className="btn-ghost" style={{fontSize: '17px', padding: '16px 0', color: 'var(--text-2)'}}>
+      <a href="https://zalo.me/0972613455" target="_blank" rel="noopener noreferrer" className="btn-ghost" style={{fontSize: '17px', padding: '16px 0', color: 'var(--text-2)'}}>
         Hỏi trước khi đăng ký <span className="arrow">›</span>
       </a>
     </div>

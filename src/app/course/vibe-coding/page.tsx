@@ -1173,7 +1173,7 @@ export default function Page() {
                     "Công nghệ thay đổi, tư duy Director là vĩnh viễn."
                 </p>
                 <div className="flex items-center gap-4 flex-shrink-0">
-                    <a href="https://zalo.me/0972613455" target="_blank" rel="noopener"
+                    <a href="https://zalo.me/0972613455" target="_blank" rel="noopener noreferrer"
                         className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-widest text-white transition"
                         style={{background: 'rgba(0,104,255,0.12)', border: '1px solid rgba(0,104,255,0.3)'}}
                         
@@ -1232,7 +1232,7 @@ export default function Page() {
                 hiện tại, mục tiêu dự án và hướng học phù hợp nhất — trước khi Bạn quyết định đăng ký.</p>
 
             {/*  CTA 1: Zalo (primary)  */}
-            <a href="https://zalo.me/0972613455" target="_blank" rel="noopener"
+            <a href="https://zalo.me/0972613455" target="_blank" rel="noopener noreferrer"
                 style={{display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem 1.25rem', background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.35)', borderRadius: '1rem', textDecoration: 'none', marginBottom: '0.75rem', transition: 'border-color 0.2s'}}
                 
                 >

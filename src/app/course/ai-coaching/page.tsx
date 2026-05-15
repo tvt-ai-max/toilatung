@@ -925,7 +925,7 @@ export default function Page() {
                 "Bạn không mua thêm một khóa học AI. Bạn đầu tư vào một lộ trình có hệ thống, có đầu ra để áp dụng ngay."
             </p>
             <div className="flex items-center gap-4 flex-shrink-0">
-                <a href="https://zalo.me/0972613455" target="_blank" rel="noopener"
+                <a href="https://zalo.me/0972613455" target="_blank" rel="noopener noreferrer"
                    className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-widest text-white transition"
                    style={{background: 'rgba(0,104,255,0.12)', border: '1px solid rgba(0,104,255,0.3)'}}
                     >
@@ -972,7 +972,7 @@ export default function Page() {
         <p style={{color: '#64748b', fontSize: '0.8rem', lineHeight: '1.6', marginBottom: '1.5rem'}}>Chương trình này không dạy đại trà. Tùng sẽ dựa trên công việc, mục tiêu và mức độ đang dùng AI của Bạn để xem hướng nào phù hợp nhất.</p>
 
         {/*  CTA 1: Zalo (primary)  */}
-        <a href="https://zalo.me/0972613455" target="_blank" rel="noopener"
+        <a href="https://zalo.me/0972613455" target="_blank" rel="noopener noreferrer"
            style={{display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem 1.25rem', background: 'rgba(255,45,45,0.12)', border: '1px solid rgba(255,45,45,0.35)', borderRadius: '1rem', textDecoration: 'none', marginBottom: '0.75rem', transition: 'border-color 0.2s'}}
             >
             <div style={{width: '2.75rem', height: '2.75rem', borderRadius: '0.75rem', background: '#0068ff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: '0'}}>
