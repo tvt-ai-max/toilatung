@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ScrollReveal, MouseTilt } from "./Effects";
+import { ScrollReveal, MouseTilt } from "@/components/ui/Effects";
 
 export const metadata: Metadata = {
   title: "AI Workflow Vault — Bộ Workflow AI Thực Chiến | Tôi Là Tùng",

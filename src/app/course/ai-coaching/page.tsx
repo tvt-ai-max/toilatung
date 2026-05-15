@@ -74,7 +74,7 @@ export default function Page() {
 
 
 {/*  ===== HERO =====  */}
-<header className="pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-6 relative overflow-hidden">
+<header className="pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-6 relative overflow-hidden" reveal">
     <div className="absolute -top-32 -right-32 w-[400px] md:w-[600px] h-[400px] md:h-[600px] blur-[120px] md:blur-[140px] rounded-full pointer-events-none" style={{background: 'rgba(255,45,45,0.12)'}}></div>
     <div className="absolute -bottom-32 -left-32 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-emerald-500/10 blur-[100px] md:blur-[120px] rounded-full pointer-events-none"></div>
 
@@ -128,33 +128,33 @@ export default function Page() {
 {/*  ===== PROBLEM / FOR WHO =====  */}
 <section id="problem" className="py-20 px-6 border-y border-white/5">
     <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 reveal">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3" style={{color: 'var(--red)'}}>Đây không phải khóa học AI phổ thông</p>
             <h2 className="text-3xl font-black text-white mb-3">Bạn đang gặp điều này không?</h2>
             <p className="text-slate-500 max-w-xl mx-auto">Phù hợp với người đã biết AI cơ bản nhưng muốn đưa nó vào công việc thật, thay vì tiếp tục học lan man mà chưa ra hệ.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+            <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover reveal">
                 <i className="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
                 <p className="text-sm text-slate-300 font-medium">Biết nhiều tool nhưng chưa khóa được tool chính — dùng rời rạc, thiếu trọng tâm?</p>
             </div>
-            <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+            <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover reveal">
                 <i className="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
                 <p className="text-sm text-slate-300 font-medium">Tạo được output nhưng chưa có workflow ổn định để lặp lại đều mỗi tuần?</p>
             </div>
-            <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+            <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover reveal">
                 <i className="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
                 <p className="text-sm text-slate-300 font-medium">Không biết áp AI vào đúng sản phẩm, đúng ngành, đúng mục tiêu kinh doanh?</p>
             </div>
-            <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+            <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover reveal">
                 <i className="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
                 <p className="text-sm text-slate-300 font-medium">Muốn dùng AI để tạo ảnh, video bán hàng nhưng kết quả chưa đủ chuyên nghiệp?</p>
             </div>
-            <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+            <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover reveal">
                 <i className="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
                 <p className="text-sm text-slate-300 font-medium">Học nhiều khóa AI nhưng vẫn loay hoay không biết bắt đầu từ đâu cho đúng?</p>
             </div>
-            <div className="glass p-6 rounded-2xl border-l-4 border-emerald-500/50 card-hover bg-emerald-500/5">
+            <div className="glass p-6 rounded-2xl border-l-4 border-emerald-500/50 card-hover bg-emerald-500/5 reveal">
                 <i className="fas fa-check-circle text-emerald-400 text-xl mb-3"></i>
                 <p className="text-sm text-emerald-300 font-bold">Nếu bạn gật đầu với 2+ điều trên — Coaching 1-1 này được thiết kế đặc biệt cho bạn.</p>
             </div>
@@ -166,49 +166,49 @@ export default function Page() {
 {/*  ===== VALUE (Giá trị nhận được) =====  */}
 <section id="value" className="py-24 px-6">
     <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
             <p className="text-[10px] font-black text-emerald-400 uppercase tracking-[0.3em] mb-3">Sau coaching</p>
             <h2 className="text-4xl font-black text-white mb-4">Bạn nhận được <span className="gradient-text">giá trị gì?</span></h2>
             <p className="text-slate-500 max-w-xl mx-auto">Không phải học thêm tool. Bạn sẽ có hệ thống làm việc với AI có thể vận hành ngay và lặp lại mỗi tuần.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="glass p-8 rounded-3xl card-hover group">
+            <div className="glass p-8 rounded-3xl card-hover group reveal">
                 <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 transition" style={{background: 'rgba(255,45,45,0.12)', border: '1px solid rgba(255,45,45,0.3)'}}>
                     <i className="fas fa-layer-group text-red-brand text-lg"></i>
                 </div>
                 <h3 className="text-lg font-black text-white mb-3">Tool stack cá nhân hóa</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">Chọn đúng công cụ cho đúng việc, gọn và đủ để vận hành — <strong className="text-white">không học thêm tool thừa</strong>.</p>
             </div>
-            <div className="glass p-8 rounded-3xl card-hover group">
+            <div className="glass p-8 rounded-3xl card-hover group reveal">
                 <div className="w-12 h-12 bg-emerald-500/20 border border-emerald-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-emerald-500/40 transition">
                     <i className="fas fa-images text-emerald-400 text-lg"></i>
                 </div>
                 <h3 className="text-lg font-black text-white mb-3">Workflow ảnh & video bán hàng</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">Từ brief → prompt → generate → chỉnh sửa → xuất bản thành <strong className="text-white">quy trình dễ lặp lại</strong> mỗi tuần.</p>
             </div>
-            <div className="glass p-8 rounded-3xl card-hover group">
+            <div className="glass p-8 rounded-3xl card-hover group reveal">
                 <div className="w-12 h-12 bg-amber-500/20 border border-amber-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-amber-500/40 transition">
                     <i className="fas fa-scroll text-amber-400 text-lg"></i>
                 </div>
                 <h3 className="text-lg font-black text-white mb-3">Bộ Prompt mẫu cá nhân</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">Prompt theo đúng case của bạn — không phải prompt chung chung. <strong className="text-white">Copy-paste và dùng ngay</strong>.</p>
             </div>
-            <div className="glass p-8 rounded-3xl card-hover group">
+            <div className="glass p-8 rounded-3xl card-hover group reveal">
                 <div className="w-12 h-12 bg-purple-500/20 border border-purple-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-purple-500/40 transition">
                     <i className="fas fa-pencil-alt text-purple-400 text-lg"></i>
                 </div>
                 <h3 className="text-lg font-black text-white mb-3">Hệ thống content AI</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">Viết idea, outline, caption, script và định hướng thông điệp theo <strong className="text-white">đúng sản phẩm đang bán</strong>.</p>
             </div>
-            <div className="glass p-8 rounded-3xl card-hover group">
+            <div className="glass p-8 rounded-3xl card-hover group reveal">
                 <div className="w-12 h-12 bg-blue-500/20 border border-blue-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-blue-500/40 transition">
                     <i className="fas fa-route text-blue-400 text-lg"></i>
                 </div>
                 <h3 className="text-lg font-black text-white mb-3">Kế hoạch áp dụng 30 ngày</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">Có thứ tự ưu tiên rõ để <strong className="text-white">tiếp tục tự vận hành</strong> sau coaching mà không bị mất nhịp.</p>
             </div>
-            <div className="glass p-8 rounded-3xl card-hover group">
+            <div className="glass p-8 rounded-3xl card-hover group reveal">
                 <div className="w-12 h-12 bg-rose-500/20 border border-rose-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-rose-500/40 transition">
                     <i className="fas fa-sync-alt text-rose-400 text-lg"></i>
                 </div>
@@ -231,27 +231,27 @@ export default function Page() {
 {/*  ===== ZOOM FORMAT =====  */}
 <section className="py-16 px-6 border-t border-white/5">
     <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 reveal">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3" style={{color: 'var(--red)'}}>Hình thức đào tạo</p>
             <h2 className="text-3xl font-black text-white">Coaching 1-1 qua <span className="gradient-text">Zoom</span></h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div className="glass p-6 rounded-2xl card-hover text-center">
+            <div className="glass p-6 rounded-2xl card-hover text-center reveal">
                 <i className="fas fa-video text-2xl mb-4" style={{color: 'var(--red)'}}></i>
                 <h3 className="font-black text-white text-sm uppercase mb-2">Format</h3>
                 <p className="text-xs text-slate-400 leading-relaxed">1 học viên, 1 chương trình, 1 lộ trình rõ. Học trực tiếp qua Zoom theo từng buổi có mục tiêu cụ thể.</p>
             </div>
-            <div className="glass p-6 rounded-2xl card-hover text-center">
+            <div className="glass p-6 rounded-2xl card-hover text-center reveal">
                 <i className="fas fa-search text-emerald-400 text-2xl mb-4"></i>
                 <h3 className="font-black text-white text-sm uppercase mb-2">Trước buổi học</h3>
                 <p className="text-xs text-slate-400 leading-relaxed">TVT audit nhu cầu, ngành, mục tiêu và tình trạng hiện tại để vào buổi học với hướng xử lý rõ ràng hơn.</p>
             </div>
-            <div className="glass p-6 rounded-2xl card-hover text-center">
+            <div className="glass p-6 rounded-2xl card-hover text-center reveal">
                 <i className="fas fa-desktop text-amber-400 text-2xl mb-4"></i>
                 <h3 className="font-black text-white text-sm uppercase mb-2">Trong buổi học</h3>
                 <p className="text-xs text-slate-400 leading-relaxed">Làm trực tiếp trên sản phẩm, nội dung, kênh thật. Share màn hình, sửa chi tiết và chốt quy trình ngay.</p>
             </div>
-            <div className="glass p-6 rounded-2xl card-hover text-center">
+            <div className="glass p-6 rounded-2xl card-hover text-center reveal">
                 <i className="fas fa-clipboard-list text-rose-400 text-2xl mb-4"></i>
                 <h3 className="font-black text-white text-sm uppercase mb-2">Sau buổi học</h3>
                 <p className="text-xs text-slate-400 leading-relaxed">Nhận recap, prompt, checklist hoặc plan tiếp theo để tiếp tục làm trước buổi sau mà không bị rơi nhịp.</p>
@@ -264,7 +264,7 @@ export default function Page() {
 {/*  ===== CURRICULUM (4 BUỔI ZOOM) =====  */}
 <section id="roadmap" className="py-24 px-6 border-t border-white/5">
     <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3" style={{color: 'var(--red)'}}>Lộ trình thực chiến</p>
             <h2 className="text-4xl font-black text-white mb-4">Coaching <span className="gradient-text">4 Buổi Zoom</span></h2>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
@@ -277,12 +277,12 @@ export default function Page() {
 
         <div className="space-y-8">
             {/*  Buổi 1  */}
-            <div className="relative pl-20">
+            <div className="relative pl-20 reveal">
                 <div className="absolute left-0 top-0 w-12 h-12 rounded-2xl flex flex-col items-center justify-center text-white" style={{background: 'var(--red)', boxShadow: '0 0 20px var(--red-glow)', border: '1px solid var(--red-light)'}}>
                     <span className="text-[9px] font-black uppercase leading-none">Buổi</span>
                     <span className="text-xl font-black leading-none">1</span>
                 </div>
-                <div className="glass p-8 rounded-3xl card-hover" style={{borderLeft: '4px solid var(--red)'}}>
+                <div className="glass p-8 rounded-3xl card-hover reveal" style={{borderLeft: '4px solid var(--red)'}}>
                     <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
                         <div>
                             <span className="text-[10px] font-black uppercase tracking-widest" style={{color: 'var(--red)'}}>Audit & Định hướng</span>
@@ -300,12 +300,12 @@ export default function Page() {
             </div>
 
             {/*  Buổi 2  */}
-            <div className="relative pl-20">
+            <div className="relative pl-20 reveal">
                 <div className="absolute left-0 top-0 w-12 h-12 bg-emerald-600 rounded-2xl flex flex-col items-center justify-center text-white shadow-[0_0_20px_rgba(52,211,153,0.4)] border border-emerald-400">
                     <span className="text-[9px] font-black uppercase leading-none">Buổi</span>
                     <span className="text-xl font-black leading-none">2</span>
                 </div>
-                <div className="glass p-8 rounded-3xl card-hover border-l-4 border-emerald-500">
+                <div className="glass p-8 rounded-3xl card-hover border-l-4 border-emerald-500 reveal">
                     <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
                         <div>
                             <span className="text-[10px] font-black text-emerald-400 uppercase tracking-widest">Tool Stack</span>
@@ -323,12 +323,12 @@ export default function Page() {
             </div>
 
             {/*  Buổi 3  */}
-            <div className="relative pl-20">
+            <div className="relative pl-20 reveal">
                 <div className="absolute left-0 top-0 w-12 h-12 bg-amber-500 rounded-2xl flex flex-col items-center justify-center text-white shadow-[0_0_20px_rgba(245,158,11,0.4)] border border-amber-400">
                     <span className="text-[9px] font-black uppercase leading-none">Buổi</span>
                     <span className="text-xl font-black leading-none">3</span>
                 </div>
-                <div className="glass p-8 rounded-3xl card-hover border-l-4 border-amber-500">
+                <div className="glass p-8 rounded-3xl card-hover border-l-4 border-amber-500 reveal">
                     <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
                         <div>
                             <span className="text-[10px] font-black text-amber-400 uppercase tracking-widest">Build + Workflow</span>
@@ -346,12 +346,12 @@ export default function Page() {
             </div>
 
             {/*  Buổi 4  */}
-            <div className="relative pl-20">
+            <div className="relative pl-20 reveal">
                 <div className="absolute left-0 top-0 w-12 h-12 bg-purple-600 rounded-2xl flex flex-col items-center justify-center text-white shadow-[0_0_20px_rgba(147,51,234,0.4)] border border-purple-400">
                     <span className="text-[9px] font-black uppercase leading-none">Buổi</span>
                     <span className="text-xl font-black leading-none">4</span>
                 </div>
-                <div className="glass p-8 rounded-3xl card-hover border-l-4 border-purple-500">
+                <div className="glass p-8 rounded-3xl card-hover border-l-4 border-purple-500 reveal">
                     <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
                         <div>
                             <span className="text-[10px] font-black text-purple-400 uppercase tracking-widest">System + Playbook</span>
@@ -375,13 +375,13 @@ export default function Page() {
 {/*  ===== TOOLS =====  */}
 <section className="py-20 px-6 border-t border-white/5">
     <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 reveal">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3" style={{color: 'var(--red)'}}>Hệ sinh thái công cụ</p>
             <h2 className="text-3xl font-black text-white mb-3">AI Tools <span className="gradient-text">đồng hành</span></h2>
             <p className="text-slate-500 max-w-xl mx-auto">Không dạy tràn lan. Chỉ giữ bộ công cụ đủ mạnh để hỗ trợ nội dung, hình ảnh, giọng nói và video trong công việc thực tế.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            <div className="glass p-6 rounded-2xl card-hover flex items-start gap-4">
+            <div className="glass p-6 rounded-2xl card-hover flex items-start gap-4 reveal">
                 <div className="w-12 h-12 rounded-2xl bg-[#10a37f]/20 border border-[#10a37f]/30 flex items-center justify-center flex-shrink-0">
                     <i className="fas fa-robot text-[#10a37f] text-lg"></i>
                 </div>
@@ -393,7 +393,7 @@ export default function Page() {
                     <p className="text-xs text-slate-400 leading-relaxed">Trợ lý viết kịch bản, lên kế hoạch Marketing và tư vấn chiến lược.</p>
                 </div>
             </div>
-            <div className="glass p-6 rounded-2xl card-hover flex items-start gap-4">
+            <div className="glass p-6 rounded-2xl card-hover flex items-start gap-4 reveal">
                 <div className="w-12 h-12 rounded-2xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0">
                     <i className="fas fa-gem text-blue-400 text-lg"></i>
                 </div>
@@ -405,7 +405,7 @@ export default function Page() {
                     <p className="text-xs text-slate-400 leading-relaxed">Tìm kiếm, phân tích dữ liệu và cập nhật xu hướng từ Google.</p>
                 </div>
             </div>
-            <div className="glass p-6 rounded-2xl card-hover flex items-start gap-4">
+            <div className="glass p-6 rounded-2xl card-hover flex items-start gap-4 reveal">
                 <div className="w-12 h-12 rounded-2xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center flex-shrink-0">
                     <i className="fas fa-terminal text-amber-400 text-lg"></i>
                 </div>
@@ -417,7 +417,7 @@ export default function Page() {
                     <p className="text-xs text-slate-400 leading-relaxed">Chuyên gia viết nội dung dài, chuyên sâu và xử lý tài liệu thông minh.</p>
                 </div>
             </div>
-            <div className="glass p-6 rounded-2xl card-hover flex items-start gap-4">
+            <div className="glass p-6 rounded-2xl card-hover flex items-start gap-4 reveal">
                 <div className="w-12 h-12 rounded-2xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center flex-shrink-0">
                     <i className="fas fa-microphone-alt text-purple-400 text-lg"></i>
                 </div>
@@ -429,7 +429,7 @@ export default function Page() {
                     <p className="text-xs text-slate-400 leading-relaxed">Đỉnh cao giọng nói AI, biến văn bản thành tiếng nói truyền cảm như người thật.</p>
                 </div>
             </div>
-            <div className="glass p-6 rounded-2xl card-hover flex items-start gap-4">
+            <div className="glass p-6 rounded-2xl card-hover flex items-start gap-4 reveal">
                 <div className="w-12 h-12 rounded-2xl bg-rose-500/20 border border-rose-500/30 flex items-center justify-center flex-shrink-0">
                     <i className="fas fa-magic text-rose-400 text-lg"></i>
                 </div>
@@ -441,7 +441,7 @@ export default function Page() {
                     <p className="text-xs text-slate-400 leading-relaxed">Sáng tạo hình ảnh chân thực với Imagen 3 và dựng video chuyên nghiệp với VEO 3.</p>
                 </div>
             </div>
-            <div className="glass p-6 rounded-2xl card-hover flex items-start gap-4">
+            <div className="glass p-6 rounded-2xl card-hover flex items-start gap-4 reveal">
                 <div className="w-12 h-12 rounded-2xl bg-fuchsia-500/20 border border-fuchsia-500/30 flex items-center justify-center flex-shrink-0">
                     <i className="fas fa-paint-brush text-fuchsia-400 text-lg"></i>
                 </div>
@@ -461,7 +461,7 @@ export default function Page() {
 {/*  ===== FOUNDER =====  */}
 <section id="founder" className="py-20 px-6 border-t border-white/5">
     <div className="max-w-4xl mx-auto">
-        <div className="glass rounded-3xl p-10 glow-indigo">
+        <div className="glass rounded-3xl p-10 glow-indigo reveal">
             <div className="flex flex-col lg:flex-row gap-10 items-center lg:items-start">
                 {/*  Avatar Column  */}
                 <div className="flex-shrink-0 flex flex-col items-center lg:items-start">
@@ -530,7 +530,7 @@ export default function Page() {
 {/*  ===== PRICING =====  */}
 <section id="pricing" className="py-24 px-6 border-t border-white/5">
     <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3" style={{color: 'var(--red)'}}>Đầu tư</p>
             <h2 className="text-4xl font-black text-white">Mức đầu tư <span className="gradient-text">minh bạch</span></h2>
         </div>
@@ -560,26 +560,26 @@ export default function Page() {
             </div>
 
             {/*  Bonus list  */}
-            <div className="glass p-10 rounded-3xl">
+            <div className="glass p-10 rounded-3xl reveal">
                 <h3 className="text-2xl font-black text-white mb-6">Bonus bộ quà tặng đi kèm</h3>
                 <div className="space-y-4">
-                    <div className="bonus-card p-4 rounded-2xl flex items-start gap-3">
+                    <div className="bonus-card p-4 rounded-2xl flex items-start gap-3 reveal">
                         <i className="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-0.5"></i>
                         <p className="text-sm text-slate-300">Bộ tài liệu tổng hợp dùng trong quá trình coaching</p>
                     </div>
-                    <div className="bonus-card p-4 rounded-2xl flex items-start gap-3">
+                    <div className="bonus-card p-4 rounded-2xl flex items-start gap-3 reveal">
                         <i className="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-0.5"></i>
                         <p className="text-sm text-slate-300">Prompt mẫu theo từng mục tiêu công việc của bạn</p>
                     </div>
-                    <div className="bonus-card p-4 rounded-2xl flex items-start gap-3">
+                    <div className="bonus-card p-4 rounded-2xl flex items-start gap-3 reveal">
                         <i className="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-0.5"></i>
                         <p className="text-sm text-slate-300">Checklist thao tác để tự làm lại sau buổi học</p>
                     </div>
-                    <div className="bonus-card p-4 rounded-2xl flex items-start gap-3">
+                    <div className="bonus-card p-4 rounded-2xl flex items-start gap-3 reveal">
                         <i className="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-0.5"></i>
                         <p className="text-sm text-slate-300">Bộ gợi ý workflow ảnh, video và nội dung</p>
                     </div>
-                    <div className="bonus-card p-4 rounded-2xl flex items-start gap-3">
+                    <div className="bonus-card p-4 rounded-2xl flex items-start gap-3 reveal">
                         <i className="fas fa-check-circle text-emerald-400 flex-shrink-0 mt-0.5"></i>
                         <p className="text-sm text-slate-300">Tài liệu định hướng áp dụng trong 30 ngày tiếp theo</p>
                     </div>
@@ -602,7 +602,7 @@ export default function Page() {
 {/*  ===== REGISTRATION FORM =====  */}
 <section id="apply" className="py-24 px-6 border-t border-white/5">
     <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 reveal">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3" style={{color: 'var(--red)'}}>
                 <i className="fas fa-lock mr-1"></i> Chương trình không thiết kế đại trà
             </p>
@@ -610,7 +610,7 @@ export default function Page() {
             <p className="text-slate-500">Điền thông tin bên dưới — TVT sẽ audit nhanh và liên hệ chốt lịch Zoom trong 24 giờ.</p>
         </div>
 
-        <div className="glass rounded-3xl p-10 glow-indigo">
+        <div className="glass rounded-3xl p-10 glow-indigo reveal">
             <form id="enrollForm" className="space-y-5" onSubmit={handleLeadSubmit}>
                 <div>
                     <label className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Họ và tên *</label>
@@ -689,7 +689,7 @@ export default function Page() {
 {/*  ===== FAQ =====  */}
 <section className="py-20 px-6 border-t border-white/5">
     <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 reveal">
             <h2 className="text-3xl font-black text-white">Câu hỏi <span className="gradient-text">thường gặp</span></h2>
         </div>
         <div className="space-y-4" id="faqList">

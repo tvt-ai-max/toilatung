@@ -1,44 +1,6 @@
-'use client';
-
-import React, { useEffect } from 'react';
+import { ScrollReveal, MouseTilt } from "@/components/ui/Effects";
 
 export default function CourseHubPage() {
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            const reveals = Array.from(document.querySelectorAll('.reveal'));
-            
-            const triggerInitial = () => {
-                reveals.forEach(reveal => {
-                    const windowHeight = window.innerHeight;
-                    const elementTop = reveal.getBoundingClientRect().top;
-                    if (elementTop < windowHeight + 100) {
-                        reveal.classList.add('visible');
-                    }
-                });
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { 
-                threshold: 0.05,
-                rootMargin: '0px 0px 50px 0px' 
-            });
-            
-            reveals.forEach(r => observer.observe(r));
-            triggerInitial();
-            
-            setTimeout(() => {
-                reveals.forEach(r => r.classList.add('visible'));
-            }, 2000);
-            
-        }, 100);
-
-        return () => clearTimeout(timer);
-    }, []);
 
     const courses = [
         {
@@ -141,6 +103,7 @@ export default function CourseHubPage() {
 
     return (
         <main className="bg-black min-h-screen">
+            <ScrollReveal />
             {/* HERO SECTION */}
             <section className="pt-32 pb-16 px-4 relative overflow-hidden">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-indigo-500/10 blur-[120px] rounded-full pointer-events-none"></div>
@@ -165,7 +128,7 @@ export default function CourseHubPage() {
                     {courses.map((course, index) => (
                         <a href={course.link} key={course.id} className="reveal card-hover group block glass rounded-[32px] overflow-hidden flex flex-col border border-white/10" style={{ transitionDelay: `${index * 100}ms` }}>
                             {/* Card Header: Image */}
-                            <div className="relative h-56 w-full overflow-hidden bg-[#111]">
+                            <MouseTilt className="relative h-56 w-full overflow-hidden bg-[#111] cursor-crosshair">
                                 <img src={course.cover} alt={course.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                                 <div className="absolute top-4 left-4">
@@ -173,7 +136,7 @@ export default function CourseHubPage() {
                                         {course.badge}
                                     </span>
                                 </div>
-                            </div>
+                            </MouseTilt>
 
                             {/* Card Body */}
                             <div className="p-8 flex-1 flex flex-col">

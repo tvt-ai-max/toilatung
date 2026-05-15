@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import ToolsAISection from '@/components/shared/ToolsAISection';
 import { getAllPosts } from '@/lib/mdx';
+import { MouseTilt } from '@/components/ui/Effects';
 
 export const metadata: Metadata = {
   title: 'Tôi Là Tùng | Chia sẻ AI Thực Chiến & Xây Dựng Hệ Thống',
@@ -20,11 +21,12 @@ export default function Page() {
 
   return (
     <>
+
 {/*  ===== HERO =====  */}
 <header className="hero-glow pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-6 relative overflow-hidden">
 
     <div className="max-w-5xl mx-auto relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 reveal">
 
             {/*  Avatar  */}
             <div className="flex-shrink-0 flex flex-col items-center">
@@ -87,7 +89,7 @@ export default function Page() {
 {/*  ===== ABOUT =====  */}
 <section id="about" className="py-24 px-4 md:px-6 border-y border-white/5">
     <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14">
+        <div className="text-center mb-14 reveal">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3" style={{color: 'var(--red)'}}>Về Tùng</p>
             <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Tôi đến đây từ <span className="gradient-text">thực chiến</span></h2>
             <p className="text-slate-500 max-w-2xl mx-auto">16 năm làm branding và xây dựng thương hiệu — nay tập trung hoàn toàn vào AI ứng dụng thực tế.</p>
@@ -97,7 +99,7 @@ export default function Page() {
 
             {/*  Left: Story  */}
             <div className="space-y-6">
-                <div className="glass rounded-3xl p-8">
+                <div className="glass rounded-3xl p-8 reveal">
                     <div className="flex items-center gap-3 mb-5">
                         <div className="w-10 h-10 rounded-2xl flex items-center justify-center flex-shrink-0"
                             style={{background: 'rgba(255,45,45,0.15)', border: '1px solid rgba(255,45,45,0.3)'}}>
@@ -113,7 +115,7 @@ export default function Page() {
                     </p>
                 </div>
 
-                <div className="glass rounded-3xl p-8">
+                <div className="glass rounded-3xl p-8 reveal">
                     <div className="flex items-center gap-3 mb-5">
                         <div className="w-10 h-10 rounded-2xl flex items-center justify-center flex-shrink-0"
                             style={{background: 'rgba(129,140,248,0.15)', border: '1px solid rgba(129,140,248,0.3)'}}>
@@ -132,7 +134,7 @@ export default function Page() {
 
             {/*  Right: Credentials  */}
             <div className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4 reveal">
                     <div className="glass rounded-3xl p-6 text-center card-hover">
                         <p className="text-4xl font-black mb-2" style={{color: 'var(--red)'}}>16</p>
                         <p className="text-xs font-black text-white uppercase tracking-widest">Năm kinh nghiệm</p>
@@ -155,7 +157,7 @@ export default function Page() {
                     </div>
                 </div>
 
-                <div className="glass rounded-3xl p-8">
+                <div className="glass rounded-3xl p-8 reveal">
                     <h3 className="text-base font-black text-white mb-5">Cách tiếp cận ở đây khác như thế nào?</h3>
                     <div className="space-y-4">
                         <div className="flex items-start gap-3">
@@ -185,7 +187,7 @@ export default function Page() {
 {/*  ===== PROGRAMS =====  */}
 <section id="programs" className="py-24 px-4 md:px-6">
     <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-14">
+        <div className="text-center mb-14 reveal">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3 text-slate-500">Chương trình học</p>
             <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Chọn chương trình <span className="gradient-text">phù hợp với bạn</span></h2>
             <p className="text-slate-500 max-w-2xl mx-auto">Mỗi chương trình phục vụ một mục tiêu khác nhau. Đọc mô tả bên dưới để tìm chương trình đúng với giai đoạn và nhu cầu hiện tại của bạn.</p>
@@ -194,8 +196,9 @@ export default function Page() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
             {/*  Program 1: Coaching 1-1  */}
-            <a href="/course/ai-coaching"
-               className="block rounded-3xl p-8 card-hover program-card"
+            <MouseTilt className="rounded-3xl h-full reveal">
+                <a href="/course/ai-coaching"
+                   className="block rounded-3xl p-8 card-hover program-card h-full"
                style={{background: 'linear-gradient(to bottom,rgba(255,45,45,0.1),rgba(255,255,255,0.01))', border: '1px solid rgba(255,45,45,0.22)'}}>
                 <div className="flex items-start justify-between mb-6">
                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center"
@@ -226,10 +229,12 @@ export default function Page() {
                     </span>
                 </div>
             </a>
+            </MouseTilt>
 
             {/*  Program 2: Vibe Coding  */}
-            <a href="/course/vibe-coding"
-               className="block rounded-3xl p-8 card-hover program-card"
+            <MouseTilt className="rounded-3xl h-full reveal">
+                <a href="/course/vibe-coding"
+                   className="block rounded-3xl p-8 card-hover program-card h-full"
                style={{background: 'linear-gradient(to bottom,rgba(129,140,248,0.1),rgba(255,255,255,0.01))', border: '1px solid rgba(129,140,248,0.22)'}}>
                 <div className="flex items-start justify-between mb-6">
                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center"
@@ -260,10 +265,12 @@ export default function Page() {
                     </span>
                 </div>
             </a>
+            </MouseTilt>
 
             {/*  Program 3: Phụ Nữ Làm Chủ AI  */}
-            <a href="/course/phunulamchuai"
-               className="block rounded-3xl p-8 card-hover program-card"
+            <MouseTilt className="rounded-3xl h-full reveal">
+                <a href="/course/phunulamchuai"
+                   className="block rounded-3xl p-8 card-hover program-card h-full"
                style={{background: 'linear-gradient(to bottom,rgba(244,114,182,0.1),rgba(255,255,255,0.01))', border: '1px solid rgba(244,114,182,0.22)'}}>
                 <div className="flex items-start justify-between mb-6">
                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center"
@@ -294,10 +301,12 @@ export default function Page() {
                     </span>
                 </div>
             </a>
+            </MouseTilt>
 
             {/*  Program 4: Landing Page AI  */}
-            <a href="/course/landing-page"
-               className="block rounded-3xl p-8 card-hover program-card"
+            <MouseTilt className="rounded-3xl h-full reveal">
+                <a href="/course/landing-page"
+                   className="block rounded-3xl p-8 card-hover program-card h-full"
                style={{background: 'linear-gradient(to bottom,rgba(41,151,255,0.1),rgba(255,255,255,0.01))', border: '1px solid rgba(41,151,255,0.22)'}}>
                 <div className="flex items-start justify-between mb-6">
                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center"
@@ -328,10 +337,12 @@ export default function Page() {
                     </span>
                 </div>
             </a>
+            </MouseTilt>
 
             {/*  Program 5: Claude Masterclass 2026  */}
-            <a href="/course/claude-masterclass"
-               className="block rounded-3xl p-8 card-hover program-card"
+            <MouseTilt className="rounded-3xl h-full reveal">
+                <a href="/course/claude-masterclass"
+                   className="block rounded-3xl p-8 card-hover program-card h-full"
                style={{background: 'linear-gradient(to bottom,rgba(251,191,36,0.1),rgba(255,255,255,0.01))', border: '1px solid rgba(251,191,36,0.22)'}}>
                 <div className="flex items-start justify-between mb-6">
                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center"
@@ -362,10 +373,12 @@ export default function Page() {
                     </span>
                 </div>
             </a>
+            </MouseTilt>
 
             {/*  Program 6: Claude Code Master 2026  */}
-            <a href="/claude-master"
-               className="block rounded-3xl p-8 card-hover program-card"
+            <MouseTilt className="rounded-3xl h-full reveal">
+                <a href="/claude-master"
+                   className="block rounded-3xl p-8 card-hover program-card h-full"
                style={{background: 'linear-gradient(to bottom,rgba(167,139,250,0.1),rgba(255,255,255,0.01))', border: '1px solid rgba(167,139,250,0.22)'}}>
                 <div className="flex items-start justify-between mb-6">
                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center"
@@ -396,10 +409,12 @@ export default function Page() {
                     </span>
                 </div>
             </a>
+            </MouseTilt>
 
             {/*  Program 7: Claude Design Master  */}
-            <a href="/claude-design"
-               className="block rounded-3xl p-8 card-hover program-card"
+            <MouseTilt className="rounded-3xl h-full reveal">
+                <a href="/claude-design"
+                   className="block rounded-3xl p-8 card-hover program-card h-full"
                style={{background: 'linear-gradient(to bottom,rgba(251,146,60,0.1),rgba(255,255,255,0.01))', border: '1px solid rgba(251,146,60,0.22)'}}>
                 <div className="flex items-start justify-between mb-6">
                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center"
@@ -430,10 +445,12 @@ export default function Page() {
                     </span>
                 </div>
             </a>
+            </MouseTilt>
 
             {/*  Program 8: Workflow Vault  */}
-            <a href="/workflow-vault"
-               className="block rounded-3xl p-8 card-hover program-card"
+            <MouseTilt className="rounded-3xl h-full reveal">
+                <a href="/workflow-vault"
+                   className="block rounded-3xl p-8 card-hover program-card h-full"
                style={{background: 'linear-gradient(to bottom,rgba(251,146,60,0.1),rgba(255,255,255,0.01))', border: '1px solid rgba(251,146,60,0.22)'}}>
                 <div className="flex items-start justify-between mb-6">
                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center"
@@ -464,10 +481,11 @@ export default function Page() {
                     </span>
                 </div>
             </a>
+            </MouseTilt>
         </div>
 
         {/*  Coming soon  */}
-        <div className="mt-8 glass rounded-3xl p-6 border border-white/5">
+        <div className="mt-8 glass rounded-3xl p-6 border border-white/5 reveal">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
                     <div className="w-10 h-10 rounded-2xl flex items-center justify-center bg-white/5 border border-white/8 flex-shrink-0">
@@ -494,7 +512,7 @@ export default function Page() {
 {/*  ===== LATEST BLOG POSTS =====  */}
 <section id="latest-posts" className="py-24 px-4 md:px-6 border-t border-white/5">
     <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 reveal">
             <div>
                 <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3 text-indigo-400">TVT Blog</p>
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Góc Chia Sẻ Về<br /><span className="gradient-indigo">AI & Branding</span></h2>
@@ -549,7 +567,7 @@ export default function Page() {
 {/*  ===== START GUIDE =====  */}
 <section id="start" className="py-24 px-4 md:px-6 border-t border-white/5">
     <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14">
+        <div className="text-center mb-14 reveal">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3 text-emerald-400">Hướng dẫn chọn lộ trình</p>
             <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Bạn đang ở đâu<br /><span className="gradient-text">trong hành trình AI?</span></h2>
             <p className="text-slate-500 max-w-2xl mx-auto">Đọc 3 mô tả dưới đây và chọn chương trình phù hợp nhất với giai đoạn và mục tiêu hiện tại của bạn.</p>
@@ -631,7 +649,7 @@ export default function Page() {
         </div>
 
         {/*  Unsure CTA  */}
-        <div className="mt-8 glass rounded-3xl p-8 text-center border border-white/5">
+        <div className="mt-8 glass rounded-3xl p-8 text-center border border-white/5 reveal">
             <i className="fas fa-comment-dots text-blue-400 text-3xl mb-4 block"></i>
             <h3 className="text-xl font-black text-white mb-2">Vẫn chưa chắc chương trình nào phù hợp?</h3>
             <p className="text-slate-400 text-sm mb-6 max-w-lg mx-auto">Nhắn Zalo cho tôi — kể mục tiêu và công việc bạn đang làm. Tôi sẽ giúp bạn xác định chương trình phù hợp nhất, không mất phí tư vấn.</p>

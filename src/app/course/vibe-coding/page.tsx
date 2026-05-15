@@ -79,7 +79,7 @@ export default function Page() {
 
 
     {/*  ===== HERO =====  */}
-    <header className="pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-6 relative overflow-hidden">
+    <header className="pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-6 relative overflow-hidden" reveal">
         {/*  Background glows  */}
         <div
             className="absolute -top-32 -right-32 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-indigo-600/15 blur-[120px] md:blur-[140px] rounded-full pointer-events-none">
@@ -147,38 +147,38 @@ export default function Page() {
     {/*  ===== FOR WHO =====  */}
     <section className="py-20 px-6 border-y border-white/5">
         <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
+            <div className="text-center mb-12 reveal">
                 <p className="text-[10px] font-black text-indigo-400 uppercase tracking-[0.3em] mb-3">Khóa học này dành cho
                 </p>
                 <h2 className="text-3xl font-black text-white">Bạn có đang gặp những điều này?</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+                <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover reveal">
                     <i className="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
                     <p className="text-sm text-slate-300 font-medium">Dùng ChatGPT / Claude để "hỏi vặt" mà chưa thực sự
                         build được sản phẩm hoàn chỉnh?</p>
                 </div>
-                <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+                <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover reveal">
                     <i className="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
                     <p className="text-sm text-slate-300 font-medium">Copy code từ AI về rồi không biết chỉnh, lỗi một cái
                         là bó tay?</p>
                 </div>
-                <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+                <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover reveal">
                     <i className="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
                     <p className="text-sm text-slate-300 font-medium">Muốn build tool, automation cho công việc nhưng không
                         có background kỹ thuật?</p>
                 </div>
-                <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+                <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover reveal">
                     <i className="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
                     <p className="text-sm text-slate-300 font-medium">AI cho ra code nhưng context bị "ngáo" sau vài lần
                         chat, phải bắt đầu lại từ đầu?</p>
                 </div>
-                <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+                <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover reveal">
                     <i className="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
                     <p className="text-sm text-slate-300 font-medium">Thấy người ta "Vibe Coding" build app trong vài giờ
                         còn mình cả ngày chưa xong?</p>
                 </div>
-                <div className="glass p-6 rounded-2xl border-l-4 border-emerald-500/50 card-hover bg-emerald-500/5">
+                <div className="glass p-6 rounded-2xl border-l-4 border-emerald-500/50 card-hover bg-emerald-500/5 reveal">
                     <i className="fas fa-check-circle text-emerald-400 text-xl mb-3"></i>
                     <p className="text-sm text-emerald-300 font-bold">Nếu bạn gật đầu với 2+ điều trên — khóa học này được
                         thiết kế đặc biệt cho bạn.</p>
@@ -191,7 +191,7 @@ export default function Page() {
     {/*  ===== WHAT YOU GET (VALUE) =====  */}
     <section id="value" className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 reveal">
                 <p className="text-[10px] font-black text-emerald-400 uppercase tracking-[0.3em] mb-3">Sau khóa học</p>
                 <h2 className="text-4xl font-black text-white mb-4">Bạn nhận được <span className="gradient-text">giá trị
                         gì?</span></h2>
@@ -201,7 +201,7 @@ export default function Page() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/*  Value 1  */}
-                <div className="glass p-8 rounded-3xl card-hover group">
+                <div className="glass p-8 rounded-3xl card-hover group reveal">
                     <div
                         className="w-12 h-12 bg-indigo-600/20 border border-indigo-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-indigo-600/40 transition">
                         <i className="fas fa-brain text-indigo-400 text-lg"></i>
@@ -212,7 +212,7 @@ export default function Page() {
                 </div>
 
                 {/*  Value 2  */}
-                <div className="glass p-8 rounded-3xl card-hover group">
+                <div className="glass p-8 rounded-3xl card-hover group reveal">
                     <div
                         className="w-12 h-12 bg-emerald-500/20 border border-emerald-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-emerald-500/40 transition">
                         <i className="fas fa-rocket text-emerald-400 text-lg"></i>
@@ -224,7 +224,7 @@ export default function Page() {
                 </div>
 
                 {/*  Value 3  */}
-                <div className="glass p-8 rounded-3xl card-hover group">
+                <div className="glass p-8 rounded-3xl card-hover group reveal">
                     <div
                         className="w-12 h-12 bg-amber-500/20 border border-amber-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-amber-500/40 transition">
                         <i className="fas fa-robot text-amber-400 text-lg"></i>
@@ -236,7 +236,7 @@ export default function Page() {
                 </div>
 
                 {/*  Value 4  */}
-                <div className="glass p-8 rounded-3xl card-hover group">
+                <div className="glass p-8 rounded-3xl card-hover group reveal">
                     <div
                         className="w-12 h-12 bg-purple-500/20 border border-purple-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-purple-500/40 transition">
                         <i className="fas fa-file-code text-purple-400 text-lg"></i>
@@ -248,7 +248,7 @@ export default function Page() {
                 </div>
 
                 {/*  Value 5  */}
-                <div className="glass p-8 rounded-3xl card-hover group">
+                <div className="glass p-8 rounded-3xl card-hover group reveal">
                     <div
                         className="w-12 h-12 bg-blue-500/20 border border-blue-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-blue-500/40 transition">
                         <i className="fas fa-bolt text-blue-400 text-lg"></i>
@@ -260,7 +260,7 @@ export default function Page() {
                 </div>
 
                 {/*  Value 6  */}
-                <div className="glass p-8 rounded-3xl card-hover group">
+                <div className="glass p-8 rounded-3xl card-hover group reveal">
                     <div
                         className="w-12 h-12 bg-rose-500/20 border border-rose-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-rose-500/40 transition">
                         <i className="fas fa-infinity text-rose-400 text-lg"></i>
@@ -289,7 +289,7 @@ export default function Page() {
     {/*  ===== CURRICULUM (3 BUỔI ZOOM) =====  */}
     <section id="curriculum" className="py-24 px-6 border-t border-white/5">
         <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 reveal">
                 <p className="text-[10px] font-black text-indigo-400 uppercase tracking-[0.3em] mb-3">Hình thức học</p>
                 <h2 className="text-4xl font-black text-white mb-4">Lộ trình <span className="gradient-text">3 Buổi Zoom</span>
                 </h2>
@@ -316,13 +316,13 @@ export default function Page() {
             <div className="space-y-8">
 
                 {/*  Buổi 1  */}
-                <div className="relative pl-20 timeline-line">
+                <div className="relative pl-20 timeline-line reveal">
                     <div
                         className="absolute left-0 top-0 w-12 h-12 bg-indigo-600 rounded-2xl flex flex-col items-center justify-center text-white shadow-[0_0_20px_rgba(79,70,229,0.5)] border border-indigo-400">
                         <span className="text-[9px] font-black uppercase leading-none">Buổi</span>
                         <span className="text-xl font-black leading-none">1</span>
                     </div>
-                    <div className="glass p-8 rounded-3xl card-hover border-l-4 border-indigo-500">
+                    <div className="glass p-8 rounded-3xl card-hover border-l-4 border-indigo-500 reveal">
                         <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
                             <div>
                                 <span
@@ -368,13 +368,13 @@ export default function Page() {
                 </div>
 
                 {/*  Buổi 2  */}
-                <div className="relative pl-20 timeline-line">
+                <div className="relative pl-20 timeline-line reveal">
                     <div
                         className="absolute left-0 top-0 w-12 h-12 bg-emerald-600 rounded-2xl flex flex-col items-center justify-center text-white shadow-[0_0_20px_rgba(52,211,153,0.4)] border border-emerald-400">
                         <span className="text-[9px] font-black uppercase leading-none">Buổi</span>
                         <span className="text-xl font-black leading-none">2</span>
                     </div>
-                    <div className="glass p-8 rounded-3xl card-hover border-l-4 border-emerald-500">
+                    <div className="glass p-8 rounded-3xl card-hover border-l-4 border-emerald-500 reveal">
                         <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
                             <div>
                                 <span className="text-[10px] font-black text-emerald-400 uppercase tracking-widest">Build +
@@ -421,13 +421,13 @@ export default function Page() {
                 </div>
 
                 {/*  Buổi 3  */}
-                <div className="relative pl-20">
+                <div className="relative pl-20 reveal">
                     <div
                         className="absolute left-0 top-0 w-12 h-12 bg-amber-500 rounded-2xl flex flex-col items-center justify-center text-white shadow-[0_0_20px_rgba(245,158,11,0.4)] border border-amber-400">
                         <span className="text-[9px] font-black uppercase leading-none">Buổi</span>
                         <span className="text-xl font-black leading-none">3</span>
                     </div>
-                    <div className="glass p-8 rounded-3xl card-hover border-l-4 border-amber-500">
+                    <div className="glass p-8 rounded-3xl card-hover border-l-4 border-amber-500 reveal">
                         <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
                             <div>
                                 <span className="text-[10px] font-black text-amber-400 uppercase tracking-widest">Deploy +
@@ -478,7 +478,7 @@ export default function Page() {
     {/*  ===== BONUS & GIFTS =====  */}
     <section id="bonus" className="py-24 px-6 border-t border-white/5">
         <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 reveal">
                 <p className="text-[10px] font-black text-amber-400 uppercase tracking-[0.3em] mb-3">Không chỉ là khóa học
                 </p>
                 <h2 className="text-4xl font-black text-white mb-4">Combo <span className="gradient-text-gold">Quà tặng</span>
@@ -490,7 +490,7 @@ export default function Page() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
 
                 {/*  Gift 1 - Prompt Vault  */}
-                <div className="bonus-card p-8 rounded-3xl card-hover relative overflow-hidden">
+                <div className="bonus-card p-8 rounded-3xl card-hover relative overflow-hidden reveal">
                     <div
                         className="absolute top-4 right-4 px-2 py-0.5 bg-amber-500/20 border border-amber-500/40 text-amber-400 text-[9px] font-black uppercase rounded-full">
                         Trị giá 800.000đ
@@ -512,7 +512,7 @@ export default function Page() {
                 </div>
 
                 {/*  Gift 2 - CLAUDE.md Templates  */}
-                <div className="bonus-card p-8 rounded-3xl card-hover relative overflow-hidden">
+                <div className="bonus-card p-8 rounded-3xl card-hover relative overflow-hidden reveal">
                     <div
                         className="absolute top-4 right-4 px-2 py-0.5 bg-amber-500/20 border border-amber-500/40 text-amber-400 text-[9px] font-black uppercase rounded-full">
                         Trị giá 600.000đ
@@ -534,7 +534,7 @@ export default function Page() {
                 </div>
 
                 {/*  Gift 3 - Skills Pack  */}
-                <div className="bonus-card p-8 rounded-3xl card-hover relative overflow-hidden">
+                <div className="bonus-card p-8 rounded-3xl card-hover relative overflow-hidden reveal">
                     <div
                         className="absolute top-4 right-4 px-2 py-0.5 bg-amber-500/20 border border-amber-500/40 text-amber-400 text-[9px] font-black uppercase rounded-full">
                         Trị giá 700.000đ
@@ -556,7 +556,7 @@ export default function Page() {
                 </div>
 
                 {/*  Gift 4 - Community  */}
-                <div className="bonus-card p-8 rounded-3xl card-hover relative overflow-hidden">
+                <div className="bonus-card p-8 rounded-3xl card-hover relative overflow-hidden reveal">
                     <div
                         className="absolute top-4 right-4 px-2 py-0.5 bg-amber-500/20 border border-amber-500/40 text-amber-400 text-[9px] font-black uppercase rounded-full">
                         Trị giá 1.400.000đ
@@ -598,14 +598,14 @@ export default function Page() {
     {/*  ===== PRICING =====  */}
     <section id="pricing" className="py-24 px-6 border-t border-white/5">
         <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 reveal">
                 <p className="text-[10px] font-black text-indigo-400 uppercase tracking-[0.3em] mb-3">Đầu tư</p>
                 <h2 className="text-4xl font-black text-white">Học phí <span className="gradient-text">minh bạch</span></h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/*  Basic  */}
-                <div className="glass p-10 rounded-3xl">
+                <div className="glass p-10 rounded-3xl reveal">
                     <div className="mb-8">
                         <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-2">Cơ bản</p>
                         <h3 className="text-2xl font-black text-white mb-1">Early Bird</h3>
@@ -680,7 +680,7 @@ export default function Page() {
             </div>
 
             {/*  Guarantee  */}
-            <div className="mt-10 flex flex-col md:flex-row items-center gap-5 glass p-8 rounded-3xl">
+            <div className="mt-10 flex flex-col md:flex-row items-center gap-5 glass p-8 rounded-3xl reveal">
                 <div className="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center flex-shrink-0">
                     <i className="fas fa-shield-alt text-emerald-400 text-2xl"></i>
                 </div>
@@ -697,7 +697,7 @@ export default function Page() {
     {/*  ===== REGISTER FORM =====  */}
     <section id="register" className="py-24 px-6 border-t border-white/5">
         <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-12">
+            <div className="text-center mb-12 reveal">
                 <p className="text-[10px] font-black text-rose-400 uppercase tracking-[0.3em] mb-3">
                     <i className="fas fa-fire mr-1"></i> Chỉ còn 12 suất
                 </p>
@@ -707,7 +707,7 @@ export default function Page() {
                     giờ.</p>
             </div>
 
-            <div className="glass rounded-3xl p-10 glow-indigo">
+            <div className="glass rounded-3xl p-10 glow-indigo reveal">
                 <form id="enrollForm" className="space-y-5" onSubmit={handleLeadSubmit}>
 
                     {/*  Name  */}
@@ -815,11 +815,11 @@ export default function Page() {
     {/*  ===== FOUNDER / INSTRUCTOR =====  */}
     <section id="instructor" className="py-20 px-6 border-t border-white/5">
         <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
+            <div className="text-center mb-12 reveal">
                 <p className="text-[10px] font-black text-indigo-400 uppercase tracking-[0.3em] mb-3">Người hướng dẫn</p>
                 <h2 className="text-3xl font-black text-white">Ai hướng dẫn bạn?</h2>
             </div>
-            <div className="glass rounded-3xl p-10 glow-indigo">
+            <div className="glass rounded-3xl p-10 glow-indigo reveal">
                 <div className="flex flex-col lg:flex-row gap-10 items-center lg:items-start">
                     {/*  Avatar Column  */}
                     <div className="flex-shrink-0 flex flex-col items-center lg:items-start">
@@ -913,7 +913,7 @@ export default function Page() {
     {/*  ===== FAQ =====  */}
     <section className="py-20 px-6 border-t border-white/5">
         <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
+            <div className="text-center mb-12 reveal">
                 <h2 className="text-3xl font-black text-white">Câu hỏi <span className="gradient-text">thường gặp</span></h2>
             </div>
             <div className="space-y-4" id="faqList">

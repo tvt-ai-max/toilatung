@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
@@ -9,10 +8,11 @@ export const metadata: Metadata = {
 export default function ClaudeDesignPage() {
   return (
     <main className="bg-black min-h-screen">
+      
       {/* HERO SECTION */}
       <section className="pt-32 pb-16 px-4 relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-orange-500/10 blur-[120px] rounded-full pointer-events-none"></div>
-        <div className="max-w-4xl mx-auto relative z-10 text-center reveal visible">
+        <div className="max-w-4xl mx-auto relative z-10 text-center reveal">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-6 badge-pulse"
                style={{background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', color: '#94a3b8'}}>
             <span className="w-1.5 h-1.5 rounded-full bg-orange-400"></span>
@@ -36,7 +36,7 @@ export default function ClaudeDesignPage() {
       {/* PRICING & ACCESS SECTION */}
       <section id="pricing" className="py-16 px-4 md:px-6 border-t border-white/5 relative z-10 scroll-mt-20">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 reveal visible">
+          <div className="text-center mb-16 reveal">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3 text-orange-400">Research Preview</p>
             <h2 className="text-3xl md:text-4xl font-black text-white mb-6 tracking-tight">Trải nghiệm Thiết kế <span className="text-orange-400">AI-Native Đột phá</span></h2>
             <p className="text-slate-400 max-w-2xl mx-auto leading-relaxed">
@@ -46,7 +46,7 @@ export default function ClaudeDesignPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {/* Cá nhân */}
-            <div className="glass rounded-[32px] p-8 border border-white/10 flex flex-col reveal visible">
+            <div className="glass rounded-[32px] p-8 border border-white/10 flex flex-col reveal">
               <h4 className="text-xl font-black text-white mb-6 flex items-center gap-2">
                 <i className="fa-solid fa-user text-slate-500 text-sm"></i> Dành cho Cá nhân
               </h4>
@@ -71,7 +71,7 @@ export default function ClaudeDesignPage() {
             </div>
 
             {/* Doanh nghiệp */}
-            <div className="glass rounded-[32px] p-8 border border-white/10 flex flex-col reveal visible">
+            <div className="glass rounded-[32px] p-8 border border-white/10 flex flex-col reveal">
               <h4 className="text-xl font-black text-white mb-6 flex items-center gap-2">
                 <i className="fa-solid fa-users text-slate-500 text-sm"></i> Dành cho Doanh nghiệp
               </h4>
@@ -101,13 +101,13 @@ export default function ClaudeDesignPage() {
       {/* THE JOURNEY SECTION */}
       <section id="levels" className="py-16 px-4 md:px-6 border-t border-white/5 relative z-10 scroll-mt-20 bg-white/[0.02]">
         <div className="max-w-4xl mx-auto space-y-8">
-          <div className="text-center mb-12 reveal visible">
+          <div className="text-center mb-12 reveal">
             <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">Lộ Trình 4 Cấp Độ</h2>
             <p className="text-slate-400 max-w-2xl mx-auto">Từ người mới bắt đầu đến mức độ khép kín quy trình (Handoff to Code).</p>
           </div>
 
           {/* LEVEL 1 */}
-          <div className="glass rounded-[32px] p-6 md:p-10 border border-white/10 reveal visible">
+          <div className="glass rounded-[32px] p-6 md:p-10 border border-white/10 reveal">
             <div className="flex items-center gap-4 mb-6 border-b border-white/5 pb-6">
               <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-black text-xl border border-emerald-500/20">L1</div>
               <div>
@@ -132,7 +132,7 @@ export default function ClaudeDesignPage() {
           </div>
 
           {/* LEVEL 2 */}
-          <div className="glass rounded-[32px] p-6 md:p-10 border border-white/10 reveal visible">
+          <div className="glass rounded-[32px] p-6 md:p-10 border border-white/10 reveal">
             <div className="flex items-center gap-4 mb-6 border-b border-white/5 pb-6">
               <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-black text-xl border border-amber-500/20">L2</div>
               <div>
@@ -157,7 +157,7 @@ export default function ClaudeDesignPage() {
           </div>
 
           {/* LEVEL 3 */}
-          <div className="glass rounded-[32px] p-6 md:p-10 border border-white/10 reveal visible">
+          <div className="glass rounded-[32px] p-6 md:p-10 border border-white/10 reveal">
             <div className="flex items-center gap-4 mb-6 border-b border-white/5 pb-6">
               <div className="w-12 h-12 rounded-2xl bg-orange-500/10 text-orange-400 flex items-center justify-center font-black text-xl border border-orange-500/20">L3</div>
               <div>
@@ -182,7 +182,7 @@ export default function ClaudeDesignPage() {
           </div>
 
           {/* LEVEL 4 */}
-          <div className="glass rounded-[32px] p-6 md:p-10 border border-white/10 reveal visible">
+          <div className="glass rounded-[32px] p-6 md:p-10 border border-white/10 reveal">
             <div className="flex items-center gap-4 mb-6 border-b border-white/5 pb-6">
               <div className="w-12 h-12 rounded-2xl bg-red-500/10 text-red-400 flex items-center justify-center font-black text-xl border border-red-500/20">L4</div>
               <div>
@@ -215,7 +215,7 @@ export default function ClaudeDesignPage() {
       {/* 10 SKILLS SECTION */}
       <section className="py-16 px-4 md:px-6 border-t border-white/5 relative z-10 scroll-mt-20">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 reveal visible">
+          <div className="text-center mb-12 reveal">
             <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">10 Kỹ Năng Thiết Yếu</h2>
             <p className="text-slate-400 max-w-2xl mx-auto leading-relaxed">
               Trang bị tư duy đúng đắn để làm chủ Claude Design.
@@ -224,7 +224,7 @@ export default function ClaudeDesignPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Skill 1 */}
-            <div className="glass rounded-[24px] p-8 border border-white/10 flex flex-col group reveal visible">
+            <div className="glass rounded-[24px] p-8 border border-white/10 flex flex-col group reveal">
               <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-slate-300 mb-6 border border-white/10 group-hover:bg-orange-500/10 group-hover:text-orange-400 group-hover:border-orange-500/20 transition-all">
                 <i className="fa-solid fa-file-import"></i>
               </div>
@@ -232,7 +232,7 @@ export default function ClaudeDesignPage() {
               <p className="text-sm text-slate-400 flex-1">"Mồi" dữ liệu nguồn cho Claude bằng files văn bản, bảng biểu, thay vì chỉ dùng text prompt đơn thuần.</p>
             </div>
             {/* Skill 2 */}
-            <div className="glass rounded-[24px] p-8 border border-white/10 flex flex-col group reveal visible">
+            <div className="glass rounded-[24px] p-8 border border-white/10 flex flex-col group reveal">
               <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-slate-300 mb-6 border border-white/10 group-hover:bg-orange-500/10 group-hover:text-orange-400 group-hover:border-orange-500/20 transition-all">
                 <i className="fa-solid fa-crop-simple"></i>
               </div>
@@ -240,7 +240,7 @@ export default function ClaudeDesignPage() {
               <p className="text-sm text-slate-400 flex-1">Chụp giao diện thực tế để duy trì độ trung thực cao nhất (high-fidelity) trong bản thảo mới.</p>
             </div>
             {/* Skill 3 */}
-            <div className="glass rounded-[24px] p-8 border border-white/10 flex flex-col group reveal visible">
+            <div className="glass rounded-[24px] p-8 border border-white/10 flex flex-col group reveal">
               <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-slate-300 mb-6 border border-white/10 group-hover:bg-orange-500/10 group-hover:text-orange-400 group-hover:border-orange-500/20 transition-all">
                 <i className="fa-solid fa-swatchbook"></i>
               </div>
@@ -248,7 +248,7 @@ export default function ClaudeDesignPage() {
               <p className="text-sm text-slate-400 flex-1">Tự động hóa việc giữ chuẩn thương hiệu: bảng màu, quy tắc spacing, typography.</p>
             </div>
             {/* Skill 4 */}
-            <div className="glass rounded-[24px] p-8 border border-white/10 flex flex-col group reveal visible">
+            <div className="glass rounded-[24px] p-8 border border-white/10 flex flex-col group reveal">
               <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-slate-300 mb-6 border border-white/10 group-hover:bg-orange-500/10 group-hover:text-orange-400 group-hover:border-orange-500/20 transition-all">
                 <i className="fa-solid fa-sliders"></i>
               </div>
@@ -256,7 +256,7 @@ export default function ClaudeDesignPage() {
               <p className="text-sm text-slate-400 flex-1">Kiểm soát thị giác một cách trực quan, chỉnh sửa thông số giao diện qua thanh kéo (sliders).</p>
             </div>
             {/* Skill 5 */}
-            <div className="glass rounded-[24px] p-8 border border-white/10 flex flex-col group reveal visible">
+            <div className="glass rounded-[24px] p-8 border border-white/10 flex flex-col group reveal">
               <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-slate-300 mb-6 border border-white/10 group-hover:bg-orange-500/10 group-hover:text-orange-400 group-hover:border-orange-500/20 transition-all">
                 <i className="fa-solid fa-mobile-screen-button"></i>
               </div>
@@ -264,7 +264,7 @@ export default function ClaudeDesignPage() {
               <p className="text-sm text-slate-400 flex-1">Thao tác mượt mà với Viewport Switcher để đảm bảo giao diện đẹp trên mọi thiết bị.</p>
             </div>
             {/* Skill 6 */}
-            <div className="glass rounded-[24px] p-8 border border-white/10 flex flex-col group reveal visible">
+            <div className="glass rounded-[24px] p-8 border border-white/10 flex flex-col group reveal">
               <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-slate-300 mb-6 border border-white/10 group-hover:bg-orange-500/10 group-hover:text-orange-400 group-hover:border-orange-500/20 transition-all">
                 <i className="fa-solid fa-code"></i>
               </div>
@@ -278,7 +278,7 @@ export default function ClaudeDesignPage() {
       {/* CTA SECTION */}
       <section className="py-16 px-4 md:px-6 border-t border-white/5 relative z-10 bg-white/[0.02]">
         <div className="max-w-4xl mx-auto">
-          <div className="glass rounded-[32px] p-8 md:p-12 flex flex-col items-center text-center border border-orange-500/20 relative overflow-hidden reveal visible">
+          <div className="glass rounded-[32px] p-8 md:p-12 flex flex-col items-center text-center border border-orange-500/20 relative overflow-hidden reveal">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-full bg-orange-500/5 blur-[80px] pointer-events-none"></div>
             <p className="text-[10px] font-black uppercase tracking-[0.2em] mb-4 text-orange-400 relative z-10">Lộ trình tiếp theo</p>
             <h3 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight relative z-10">Claude Masterclass 2026</h3>

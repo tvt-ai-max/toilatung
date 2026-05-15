@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Fira_Code } from "next/font/google";
 import Script from "next/script";
 import LayoutShell from "@/components/layout/LayoutShell";
+import { ScrollReveal } from "@/components/ui/Effects";
 import "./globals.css";
 
 const inter = Inter({
@@ -89,6 +90,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col font-sans">
+        <ScrollReveal />
         <LayoutShell>{children}</LayoutShell>
         {/* ── Google Analytics 4 ─────────────────────────────────────────── */}
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (

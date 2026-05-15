@@ -1,46 +1,5 @@
-'use client';
-
-import React, { useEffect } from 'react';
 
 export default function ClaudeMasterclassLandingPage() {
-        useEffect(() => {
-        // Small delay to ensure React has fully painted the DOM
-        const timer = setTimeout(() => {
-            const reveals = Array.from(document.querySelectorAll('.reveal'));
-            
-            const triggerInitial = () => {
-                reveals.forEach(reveal => {
-                    const windowHeight = window.innerHeight;
-                    const elementTop = reveal.getBoundingClientRect().top;
-                    if (elementTop < windowHeight + 100) {
-                        reveal.classList.add('visible');
-                    }
-                });
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { 
-                threshold: 0.05,
-                rootMargin: '0px 0px 50px 0px' 
-            });
-            
-            reveals.forEach(r => observer.observe(r));
-            triggerInitial();
-            
-            // Fallback: If elements are still opacity 0 after 2s, force them active
-            setTimeout(() => {
-                reveals.forEach(r => r.classList.add('visible'));
-            }, 2000);
-            
-        }, 100);
-
-        return () => clearTimeout(timer);
-    }, []);
 
     return (
         <>
@@ -258,6 +217,7 @@ export default function ClaudeMasterclassLandingPage() {
             `}</style>
 
             <main id="main-content" className="bg-transparent claude-theme font-sans">
+                
                 
     {/* HERO SECTION */}
     <section className="reveal relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden border-b border-white/10">

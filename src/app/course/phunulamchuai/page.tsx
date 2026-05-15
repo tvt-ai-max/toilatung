@@ -74,7 +74,7 @@ export default function Page() {
 
 
 {/*  ===== HERO =====  */}
-<header className="pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-6 relative overflow-hidden">
+<header className="pt-24 md:pt-32 pb-16 md:pb-24 px-4 md:px-6 relative overflow-hidden" reveal">
     <div className="absolute -top-32 -right-32 w-[400px] md:w-[600px] h-[400px] md:h-[600px] blur-[120px] md:blur-[140px] rounded-full pointer-events-none" style={{background: 'rgba(244,114,182,0.12)'}}></div>
     <div className="absolute -bottom-32 -left-32 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-amber-500/10 blur-[100px] md:blur-[120px] rounded-full pointer-events-none"></div>
 
@@ -130,32 +130,32 @@ export default function Page() {
 {/*  ===== FOR WHO =====  */}
 <section id="problem" className="py-20 px-4 md:px-6 border-y border-white/5">
     <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 reveal">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3" style={{color: 'var(--pink)'}}>Khóa học này dành cho</p>
             <h2 className="text-3xl md:text-4xl font-black text-white">Bạn có đang cảm thấy thế này?</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+            <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover reveal">
                 <i className="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
                 <p className="text-sm text-slate-300 font-medium">Thấy AI "đáng sợ", phức tạp — sợ mình không theo kịp thế hệ trẻ?</p>
             </div>
-            <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+            <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover reveal">
                 <i className="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
                 <p className="text-sm text-slate-300 font-medium">Có 20+ năm kinh nghiệm sống thực tế nhưng không biết kiếm tiền từ internet?</p>
             </div>
-            <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+            <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover reveal">
                 <i className="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
                 <p className="text-sm text-slate-300 font-medium">Bận chăm gia đình, không có 8 tiếng/ngày để học — muốn có lộ trình vừa vặn?</p>
             </div>
-            <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+            <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover reveal">
                 <i className="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
                 <p className="text-sm text-slate-300 font-medium">Đã thử học nhiều nơi nhưng quá kỹ thuật, quá trừu tượng — bỏ giữa chừng?</p>
             </div>
-            <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover">
+            <div className="glass p-6 rounded-2xl border-l-4 border-rose-500/50 card-hover reveal">
                 <i className="fas fa-times-circle text-rose-400 text-xl mb-3"></i>
                 <p className="text-sm text-slate-300 font-medium">Muốn tạo thu nhập thụ động Online nhưng không biết bắt đầu từ đâu?</p>
             </div>
-            <div className="glass p-6 rounded-2xl border-l-4 border-emerald-500/50 card-hover bg-emerald-500/5">
+            <div className="glass p-6 rounded-2xl border-l-4 border-emerald-500/50 card-hover bg-emerald-500/5 reveal">
                 <i className="fas fa-check-circle text-emerald-400 text-xl mb-3"></i>
                 <p className="text-sm text-emerald-300 font-bold">Nếu bạn gật đầu với 2+ điều trên — lộ trình 21 ngày này được thiết kế đặc biệt cho bạn.</p>
             </div>
@@ -167,7 +167,7 @@ export default function Page() {
 {/*  ===== 21-DAY JOURNEY =====  */}
 <section id="journey" className="py-24 px-4 md:px-6">
     <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3" style={{color: 'var(--pink)'}}>Lộ trình thực chiến</p>
             <h2 className="text-3xl md:text-4xl font-black text-white mb-4">21 Ngày <span className="gradient-text">Thay Đổi Bản Thân</span></h2>
             <p className="text-slate-500 max-w-xl mx-auto">Chia thành 3 giai đoạn rõ ràng — mỗi ngày một nhiệm vụ cụ thể, không mơ hồ, không lạc lối.</p>
@@ -176,12 +176,12 @@ export default function Page() {
         <div className="space-y-8">
 
             {/*  Giai đoạn 1  */}
-            <div className="relative pl-20 timeline-line">
+            <div className="relative pl-20 timeline-line reveal">
                 <div className="absolute left-0 top-0 w-12 h-12 rounded-2xl flex flex-col items-center justify-center text-white border" style={{background: 'var(--pink)', boxShadow: '0 0 20px var(--pink-glow)', borderColor: 'rgba(244,114,182,0.5)'}}>
                     <span className="text-[9px] font-black uppercase leading-none">GĐ</span>
                     <span className="text-xl font-black leading-none">1</span>
                 </div>
-                <div className="glass p-6 md:p-8 rounded-3xl card-hover border-l-4" style={{borderLeftColor: 'var(--pink)'}}>
+                <div className="glass p-6 md:p-8 rounded-3xl card-hover border-l-4 reveal" style={{borderLeftColor: 'var(--pink)'}}>
                     <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
                         <div>
                             <span className="text-[10px] font-black uppercase tracking-widest" style={{color: 'var(--pink)'}}>Ngày 1–7 · Xây nền tảng</span>
@@ -218,12 +218,12 @@ export default function Page() {
             </div>
 
             {/*  Giai đoạn 2  */}
-            <div className="relative pl-20 timeline-line">
+            <div className="relative pl-20 timeline-line reveal">
                 <div className="absolute left-0 top-0 w-12 h-12 bg-amber-500 rounded-2xl flex flex-col items-center justify-center text-white shadow-[0_0_20px_rgba(245,158,11,0.4)] border border-amber-400">
                     <span className="text-[9px] font-black uppercase leading-none">GĐ</span>
                     <span className="text-xl font-black leading-none">2</span>
                 </div>
-                <div className="glass p-6 md:p-8 rounded-3xl card-hover border-l-4 border-amber-500">
+                <div className="glass p-6 md:p-8 rounded-3xl card-hover border-l-4 border-amber-500 reveal">
                     <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
                         <div>
                             <span className="text-[10px] font-black text-amber-400 uppercase tracking-widest">Ngày 8–14 · Quan trọng nhất</span>
@@ -256,12 +256,12 @@ export default function Page() {
             </div>
 
             {/*  Giai đoạn 3  */}
-            <div className="relative pl-20">
+            <div className="relative pl-20 reveal">
                 <div className="absolute left-0 top-0 w-12 h-12 bg-emerald-600 rounded-2xl flex flex-col items-center justify-center text-white shadow-[0_0_20px_rgba(52,211,153,0.4)] border border-emerald-400">
                     <span className="text-[9px] font-black uppercase leading-none">GĐ</span>
                     <span className="text-xl font-black leading-none">3</span>
                 </div>
-                <div className="glass p-6 md:p-8 rounded-3xl card-hover border-l-4 border-emerald-500">
+                <div className="glass p-6 md:p-8 rounded-3xl card-hover border-l-4 border-emerald-500 reveal">
                     <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
                         <div>
                             <span className="text-[10px] font-black text-emerald-400 uppercase tracking-widest">Ngày 15–21 · Thu hoạch</span>
@@ -299,11 +299,11 @@ export default function Page() {
         </div>
 
         {/*  Daily schedule  */}
-        <div className="mt-16 glass rounded-3xl p-6 md:p-10">
+        <div className="mt-16 glass rounded-3xl p-6 md:p-10 reveal">
             <h3 className="text-2xl font-black text-white mb-2 text-center">⏰ Thời Gian Biểu Mỗi Ngày <span style={{color: 'var(--pink)'}}>(Chỉ 3 Tiếng!)</span></h3>
             <p className="text-center text-slate-500 text-sm mb-8">Phù hợp cho chị em vừa lo gia đình, vừa kinh doanh</p>
             <div className="grid md:grid-cols-2 gap-6">
-                <div className="glass rounded-2xl p-6 border-l-4" style={{borderLeftColor: 'var(--gold)'}}>
+                <div className="glass rounded-2xl p-6 border-l-4 reveal" style={{borderLeftColor: 'var(--gold)'}}>
                     <p className="font-black text-amber-400 mb-3 text-sm uppercase tracking-wider">🌅 Buổi Sáng — 60 phút (Tư duy)</p>
                     <ul className="space-y-2 text-sm text-slate-400">
                         <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-400 text-xs"></i> 15 phút — Xem nội dung truyền cảm hứng</li>
@@ -311,7 +311,7 @@ export default function Page() {
                         <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-400 text-xs"></i> 15 phút — Lưu ý tưởng vào sổ tay số</li>
                     </ul>
                 </div>
-                <div className="glass rounded-2xl p-6 border-l-4" style={{borderLeftColor: 'var(--pink)'}}>
+                <div className="glass rounded-2xl p-6 border-l-4 reveal" style={{borderLeftColor: 'var(--pink)'}}>
                     <p className="font-black mb-3 text-sm uppercase tracking-wider" style={{color: 'var(--pink)'}}>🌙 Chiều/Tối — 120 phút (Thực thi)</p>
                     <ul className="space-y-2 text-sm text-slate-400">
                         <li className="flex items-center gap-2"><i className="fas fa-check text-emerald-400 text-xs"></i> 30 phút — Thiết kế ảnh (Canva)</li>
@@ -328,14 +328,14 @@ export default function Page() {
 {/*  ===== AI TOOLS =====  */}
 <section id="tools" className="py-24 px-4 md:px-6 border-t border-white/5">
     <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3 text-amber-400">Công cụ hỗ trợ</p>
             <h2 className="text-3xl md:text-4xl font-black text-white mb-4">Hệ Sinh Thái AI <span className="gradient-text">Đồng Hành</span></h2>
             <p className="text-slate-500 max-w-xl mx-auto">Những "người bạn trợ lý" giúp bạn tối ưu công việc, sáng tạo nội dung và tạo thu nhập — tất cả miễn phí hoặc rất rẻ.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="glass p-8 rounded-3xl card-hover group">
+            <div className="glass p-8 rounded-3xl card-hover group reveal">
                 <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 group-hover:opacity-80 transition" style={{background: 'rgba(244,114,182,0.15)', border: '1px solid rgba(244,114,182,0.3)'}}>
                     <i className="fas fa-robot text-lg" style={{color: 'var(--pink)'}}></i>
                 </div>
@@ -344,7 +344,7 @@ export default function Page() {
                 <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest">Miễn phí</span>
             </div>
 
-            <div className="glass p-8 rounded-3xl card-hover group">
+            <div className="glass p-8 rounded-3xl card-hover group reveal">
                 <div className="w-12 h-12 bg-amber-500/20 border border-amber-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-amber-500/40 transition">
                     <i className="fas fa-file-alt text-amber-400 text-lg"></i>
                 </div>
@@ -353,7 +353,7 @@ export default function Page() {
                 <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest">Miễn phí</span>
             </div>
 
-            <div className="glass p-8 rounded-3xl card-hover group">
+            <div className="glass p-8 rounded-3xl card-hover group reveal">
                 <div className="w-12 h-12 bg-blue-500/20 border border-blue-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-blue-500/40 transition">
                     <i className="fas fa-microphone-alt text-blue-400 text-lg"></i>
                 </div>
@@ -362,7 +362,7 @@ export default function Page() {
                 <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Freemium</span>
             </div>
 
-            <div className="glass p-8 rounded-3xl card-hover group">
+            <div className="glass p-8 rounded-3xl card-hover group reveal">
                 <div className="w-12 h-12 bg-purple-500/20 border border-purple-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-purple-500/40 transition">
                     <i className="fas fa-palette text-purple-400 text-lg"></i>
                 </div>
@@ -371,7 +371,7 @@ export default function Page() {
                 <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest">Miễn phí</span>
             </div>
 
-            <div className="glass p-8 rounded-3xl card-hover group">
+            <div className="glass p-8 rounded-3xl card-hover group reveal">
                 <div className="w-12 h-12 bg-rose-500/20 border border-rose-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-rose-500/40 transition">
                     <i className="fas fa-video text-rose-400 text-lg"></i>
                 </div>
@@ -380,7 +380,7 @@ export default function Page() {
                 <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest">Miễn phí</span>
             </div>
 
-            <div className="glass p-8 rounded-3xl card-hover group">
+            <div className="glass p-8 rounded-3xl card-hover group reveal">
                 <div className="w-12 h-12 bg-emerald-500/20 border border-emerald-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-emerald-500/40 transition">
                     <i className="fas fa-magic text-emerald-400 text-lg"></i>
                 </div>
@@ -396,13 +396,13 @@ export default function Page() {
 {/*  ===== WHAT YOU GET =====  */}
 <section className="py-24 px-4 md:px-6 border-t border-white/5">
     <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3 text-emerald-400">Bạn nhận được gì?</p>
             <h2 className="text-3xl md:text-4xl font-black text-white mb-4">Giá Trị Từ Lộ Trình <span className="gradient-text">100% Miễn Phí</span></h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="glass p-8 rounded-3xl card-hover group">
+            <div className="glass p-8 rounded-3xl card-hover group reveal">
                 <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 group-hover:opacity-80 transition" style={{background: 'rgba(244,114,182,0.15)', border: '1px solid rgba(244,114,182,0.3)'}}>
                     <i className="fas fa-brain text-lg" style={{color: 'var(--pink)'}}></i>
                 </div>
@@ -410,7 +410,7 @@ export default function Page() {
                 <p className="text-sm text-slate-400 leading-relaxed">Biến 20+ năm kinh nghiệm thực tế thành kho nội dung vô tận — không cần tìm đề tài từ trên trời rơi xuống.</p>
             </div>
 
-            <div className="glass p-8 rounded-3xl card-hover group">
+            <div className="glass p-8 rounded-3xl card-hover group reveal">
                 <div className="w-12 h-12 bg-amber-500/20 border border-amber-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-amber-500/40 transition">
                     <i className="fas fa-rocket text-amber-400 text-lg"></i>
                 </div>
@@ -418,7 +418,7 @@ export default function Page() {
                 <p className="text-sm text-slate-400 leading-relaxed">TikTok, Facebook Page, YouTube — có mặt đúng nơi khách hàng của bạn đang ở, trong tuần đầu tiên.</p>
             </div>
 
-            <div className="glass p-8 rounded-3xl card-hover group">
+            <div className="glass p-8 rounded-3xl card-hover group reveal">
                 <div className="w-12 h-12 bg-emerald-500/20 border border-emerald-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-emerald-500/40 transition">
                     <i className="fas fa-video text-emerald-400 text-lg"></i>
                 </div>
@@ -426,7 +426,7 @@ export default function Page() {
                 <p className="text-sm text-slate-400 leading-relaxed">Thực hành ngay từ ngày 1 — không chờ "sẵn sàng". Video hoàn chỉnh CapCut trong 60 phút.</p>
             </div>
 
-            <div className="glass p-8 rounded-3xl card-hover group">
+            <div className="glass p-8 rounded-3xl card-hover group reveal">
                 <div className="w-12 h-12 bg-blue-500/20 border border-blue-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-blue-500/40 transition">
                     <i className="fas fa-dollar-sign text-blue-400 text-lg"></i>
                 </div>
@@ -434,7 +434,7 @@ export default function Page() {
                 <p className="text-sm text-slate-400 leading-relaxed">Kỹ thuật bán hàng kiểu "chia sẻ" — không giống quảng cáo, phụ nữ 8x làm cực tốt vì sự chân thật.</p>
             </div>
 
-            <div className="glass p-8 rounded-3xl card-hover group">
+            <div className="glass p-8 rounded-3xl card-hover group reveal">
                 <div className="w-12 h-12 bg-purple-500/20 border border-purple-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-purple-500/40 transition">
                     <i className="fas fa-infinity text-purple-400 text-lg"></i>
                 </div>
@@ -442,7 +442,7 @@ export default function Page() {
                 <p className="text-sm text-slate-400 leading-relaxed">Framework 21 ngày này áp dụng cho mọi chủ đề khác — một lần học, dùng cả đời.</p>
             </div>
 
-            <div className="glass p-8 rounded-3xl card-hover group">
+            <div className="glass p-8 rounded-3xl card-hover group reveal">
                 <div className="w-12 h-12 bg-rose-500/20 border border-rose-500/30 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-rose-500/40 transition">
                     <i className="fas fa-users text-rose-400 text-lg"></i>
                 </div>
@@ -466,11 +466,11 @@ export default function Page() {
 {/*  ===== FOUNDER (Instructor) =====  */}
 <section id="founder" className="py-20 px-4 md:px-6 border-t border-white/5">
     <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 reveal">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3" style={{color: 'var(--pink)'}}>Người hướng dẫn</p>
             <h2 className="text-3xl font-black text-white">Ai hướng dẫn bạn?</h2>
         </div>
-        <div className="glass rounded-3xl p-8 md:p-10" style={{boxShadow: '0 0 40px rgba(244,114,182,0.15)'}}>
+        <div className="glass rounded-3xl p-8 md:p-10 reveal" style={{boxShadow: '0 0 40px rgba(244,114,182,0.15)'}}>
             <div className="flex flex-col lg:flex-row gap-10 items-center lg:items-start">
                 {/*  Avatar Column  */}
                 <div className="flex-shrink-0 flex flex-col items-center lg:items-start">
@@ -541,7 +541,7 @@ export default function Page() {
 {/*  ===== REGISTER FORM =====  */}
 <section id="register" className="py-24 px-4 md:px-6 border-t border-white/5">
     <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 reveal">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3 text-emerald-400">
                 <i className="fas fa-gift mr-1"></i> 100% Miễn phí
             </p>
@@ -549,7 +549,7 @@ export default function Page() {
             <p className="text-slate-500">Điền thông tin bên dưới — bạn sẽ nhận link tài liệu & vào group hỗ trợ trong 24 giờ.</p>
         </div>
 
-        <div className="glass rounded-3xl p-8 md:p-10" style={{boxShadow: '0 0 40px rgba(244,114,182,0.15)'}}>
+        <div className="glass rounded-3xl p-8 md:p-10 reveal" style={{boxShadow: '0 0 40px rgba(244,114,182,0.15)'}}>
 
             {/*  Free badge  */}
             <div className="flex items-center justify-center gap-3 mb-8 px-6 py-4 rounded-2xl" style={{background: 'rgba(52,211,153,0.08)', border: '1px solid rgba(52,211,153,0.2)'}}>

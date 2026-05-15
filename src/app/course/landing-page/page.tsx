@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ToolsAISection from "@/components/shared/ToolsAISection";
 import { useLandingInteractions } from "@/lib/useLandingInteractions";
 import './landing-page.css';
@@ -19,34 +19,11 @@ export default function Page() {
       successId: "successMsgLP",
     });
 
-  // Intersection Observer for .reveal
-  useEffect(() => {
-      const timer = setTimeout(() => {
-          const reveals = Array.from(document.querySelectorAll(".reveal"));
-          const triggerInitial = () => {
-              reveals.forEach(reveal => {
-                  if (reveal.getBoundingClientRect().top < window.innerHeight + 100) {
-                      reveal.classList.add("visible");
-                  }
-              });
-          };
-          const observer = new IntersectionObserver((entries) => {
-              entries.forEach(entry => {
-                  if (entry.isIntersecting) entry.target.classList.add("visible");
-              });
-          }, { threshold: 0.05, rootMargin: "0px 0px 50px 0px" });
-          
-          reveals.forEach(r => observer.observe(r));
-          triggerInitial();
-          
-          // Fallback an toàn
-          setTimeout(() => reveals.forEach(r => r.classList.add("visible")), 2000);
-      }, 100);
-      return () => clearTimeout(timer);
-  }, []);
+
 
   return (
     <main className="bg-black text-slate-200 overflow-hidden lp-theme">
+      
 
 
 

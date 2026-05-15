@@ -1,7 +1,10 @@
 'use client';
 import { useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 
 export function ScrollReveal() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const triggerInitial = () => {
       document.querySelectorAll('.reveal').forEach(el => {
@@ -19,16 +22,21 @@ export function ScrollReveal() {
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     
-    document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
-    triggerInitial();
+    const timeout = setTimeout(() => {
+      document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
+      triggerInitial();
+    }, 100);
 
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      clearTimeout(timeout);
+      observer.disconnect();
+    };
+  }, [pathname]);
   
   return null;
 }
 
-export function MouseTilt({ children, className = '' }: { children: React.ReactNode, className?: string }) {
+export function MouseTilt({ children, className = '', style }: { children: React.ReactNode, className?: string, style?: React.CSSProperties }) {
   const ref = useRef<HTMLDivElement>(null);
   
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -69,7 +77,7 @@ export function MouseTilt({ children, className = '' }: { children: React.ReactN
       className={`group relative overflow-hidden ${className}`} 
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ transition: 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)', willChange: 'transform' }}
+      style={{ transition: 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)', willChange: 'transform', ...style }}
     >
       <div className="glare absolute pointer-events-none w-64 h-64 bg-white/10 blur-[50px] rounded-full -top-32 -left-32 opacity-0 transition-opacity duration-300 z-50"></div>
       {children}
