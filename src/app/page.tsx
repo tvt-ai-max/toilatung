@@ -430,6 +430,40 @@ export default function Page() {
                     </span>
                 </div>
             </a>
+
+            {/*  Program 8: Workflow Vault  */}
+            <a href="/workflow-vault"
+               className="block rounded-3xl p-8 card-hover program-card"
+               style={{background: 'linear-gradient(to bottom,rgba(251,146,60,0.1),rgba(255,255,255,0.01))', border: '1px solid rgba(251,146,60,0.22)'}}>
+                <div className="flex items-start justify-between mb-6">
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center"
+                        style={{background: 'rgba(251,146,60,0.15)', border: '1px solid rgba(251,146,60,0.35)'}}>
+                        <i className="fas fa-bolt text-white text-xl"></i>
+                    </div>
+                    <span className="text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full"
+                        style={{background: 'rgba(251,146,60,0.1)', color: '#fed7aa', border: '1px solid rgba(251,146,60,0.2)'}}>Hot 2026</span>
+                </div>
+                <h3 className="text-2xl font-black text-white mb-2">AI Workflow<br />Vault</h3>
+                <p className="text-[10px] font-bold uppercase tracking-widest mb-4" style={{color: '#fb923c'}}>10 Quy trình thực chiến</p>
+                <p className="text-sm text-slate-300 leading-relaxed mb-5">
+                    Bộ 10 workflow AI tự động hóa đã được kiểm chứng. Đầy đủ prompt, hướng dẫn SOP và ví dụ thực tế. Chỉ cần copy vào là chạy được.
+                </p>
+                <div className="space-y-2 text-sm text-slate-400 mb-6">
+                    <div className="flex items-center gap-2"><i className="fas fa-check text-emerald-400 text-xs"></i>10 SOP Workflow cho Marketing & CRO</div>
+                    <div className="flex items-center gap-2"><i className="fas fa-check text-emerald-400 text-xs"></i>50 Prompt phân loại ứng dụng cao</div>
+                    <div className="flex items-center gap-2"><i className="fas fa-check text-emerald-400 text-xs"></i>Tiết kiệm ngay 3-4 giờ làm việc mỗi ngày</div>
+                    <div className="flex items-center gap-2"><i className="fas fa-check text-emerald-400 text-xs"></i>Truy cập vĩnh viễn, cập nhật miễn phí 3 tháng</div>
+                </div>
+                <div className="flex items-center justify-between pt-4 border-t border-white/5">
+                    <div>
+                        <p className="text-white font-black text-xl" style={{background: 'linear-gradient(90deg,#fb923c,#f97316)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>799.000đ</p>
+                        <p className="text-[10px] text-slate-500 uppercase tracking-widest">Truy cập vĩnh viễn</p>
+                    </div>
+                    <span className="flex items-center gap-1 text-sm font-black uppercase tracking-widest text-orange-300">
+                        Mua ngay <i className="fas fa-arrow-right text-xs"></i>
+                    </span>
+                </div>
+            </a>
         </div>
 
         {/*  Coming soon  */}

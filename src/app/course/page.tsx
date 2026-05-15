@@ -42,6 +42,18 @@ export default function CourseHubPage() {
 
     const courses = [
         {
+            id: 'workflow-vault',
+            title: 'AI Workflow Vault',
+            description: '10 workflow AI thực chiến đã được kiểm chứng. Prompt đầy đủ, SOP từng bước. Copy vào là chạy được ngay.',
+            badge: 'Hot 2026',
+            badgeColor: 'text-orange-300',
+            badgeBg: 'bg-orange-400/10 border-orange-400/20',
+            price: '799.000đ',
+            link: '/workflow-vault',
+            cover: '/images/courses/cover_workflow_vault.png',
+            theme: 'orange'
+        },
+        {
             id: 'claude-masterclass',
             title: 'Claude Masterclass 2026',
             description: 'Làm chủ token, xây dựng sub-agent, thiết lập AI Director mindset. Toàn bộ tài liệu hướng dẫn kỹ thuật chi tiết nhất.',
