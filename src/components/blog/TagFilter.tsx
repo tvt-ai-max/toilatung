@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
 interface TagFilterProps {
   tags: string[];
@@ -12,6 +12,15 @@ interface TagFilterProps {
 export default function TagFilter({ tags, activeTag, totalPosts }: TagFilterProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
+
+  const INITIAL_COUNT = 14;
+  const hasMore = tags.length > INITIAL_COUNT;
+  
+  // Tự động mở rộng nếu tag đang chọn nằm ngoài top 14
+  const activeIndex = activeTag ? tags.indexOf(activeTag) : -1;
+  const [isExpanded, setIsExpanded] = useState(activeIndex >= INITIAL_COUNT);
+
+  const visibleTags = isExpanded ? tags : tags.slice(0, INITIAL_COUNT);
 
   const handleTag = useCallback(
     (tag: string | null) => {
@@ -39,7 +48,7 @@ export default function TagFilter({ tags, activeTag, totalPosts }: TagFilterProp
       >
         Tất cả
       </button>
-      {tags.map((tag) => (
+      {visibleTags.map((tag) => (
         <button
           key={tag}
           onClick={() => handleTag(tag)}
@@ -52,6 +61,15 @@ export default function TagFilter({ tags, activeTag, totalPosts }: TagFilterProp
           #{tag}
         </button>
       ))}
+      
+      {hasMore && (
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200 border bg-transparent text-slate-500 border-dashed border-white/20 hover:border-white/40 hover:text-white ml-2"
+        >
+          {isExpanded ? 'Thu gọn ↑' : `+${tags.length - INITIAL_COUNT} chủ đề khác ↓`}
+        </button>
+      )}
     </div>
   );
 }
