@@ -120,17 +120,28 @@ export function getPostBySlug(slug: string): BlogPost | null {
 
 export function getAllPosts(): BlogPostMeta[] {
   const slugs = getPostSlugs();
-  const todayDateStr = new Date().toLocaleString('sv-SE', { timeZone: 'Asia/Ho_Chi_Minh' }).substring(0, 10);
+  const now = new Date();
 
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
     .filter((post): post is BlogPost => post !== null)
     .map((post) => post.meta)
     .filter((meta) => {
-      const postDateStr = meta.date.substring(0, 10);
-      return postDateStr <= todayDateStr;
+      let dateString = meta.date;
+      // If only YYYY-MM-DD is provided, assume midnight Vietnam time
+      if (dateString.length === 10) {
+        dateString += 'T00:00:00+07:00';
+      }
+      const postDate = new Date(dateString);
+      return postDate <= now;
     })
-    .sort((a, b) => (a.date > b.date ? -1 : 1));
+    .sort((a, b) => {
+      let dateA = a.date;
+      if (dateA.length === 10) dateA += 'T00:00:00+07:00';
+      let dateB = b.date;
+      if (dateB.length === 10) dateB += 'T00:00:00+07:00';
+      return new Date(dateB).getTime() - new Date(dateA).getTime();
+    });
 
   return posts;
 }
