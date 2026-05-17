@@ -830,7 +830,7 @@ export default function Page() {
                                 <div className="w-full h-full rounded-full overflow-hidden bg-[#0b0e14] flex items-center justify-center" style={{border: '3px solid #0b0e14'}}>
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img src="/images/tung-soc-son.webp?v=20260510"
-                                        alt="Nguyễn Thanh Tùng — TVT Strategist"
+                                        alt="Nguyễn Thanh Tùng — AI System Designer"
                                         className="w-full h-full object-cover object-top block" />
                                 </div>
                             </div>
@@ -868,7 +868,7 @@ export default function Page() {
                     {/*  Content Column  */}
                     <div className="flex-1 text-center lg:text-left">
                         <p className="text-slate-300 leading-relaxed mb-4">
-                            Một người đam mê xê dịch, thích chinh phục trải nghiệm và theo đuổi triết lý "Marketing phượt". Hơn 16 năm thực chiến Branding và Marketing, tôi chọn cách đúc kết thành những quy trình gọn gàng (Agentic Workflow) để chia sẻ lại cho cộng đồng.
+                            Hơn 16 năm thực chiến Branding và Marketing, tôi tập trung thiết kế các hệ thống AI (Agentic Workflow) giúp doanh nghiệp SME tối ưu hóa vận hành, tĩnh lặng nhưng mang lại kết quả thực tế.
                         </p>
                         <p className="text-slate-400 text-sm leading-relaxed mb-6">
                             Hành trình của chúng ta không phải là học thuộc các tính năng công cụ. Tôi sẽ đồng hành cùng bạn ứng dụng <strong className="text-white">Director Mindset</strong> — tự mình làm đạo diễn, điều phối AI và thiết kế luồng công việc để mỗi ngày làm việc đều là một trải nghiệm thú vị.

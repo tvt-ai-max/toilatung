@@ -517,7 +517,7 @@ export default function Page() {
         <div style={{width: '100%', height: '100%', borderRadius: '50%', overflow: 'hidden', background: '#0a0a0a'}}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/tung-soc-son.webp?v=20260510"
-               alt="Nguyễn Thanh Tùng — AI Strategist, Founder TVT Agency"
+               alt="Nguyễn Thanh Tùng — AI System Designer, Founder TVT Agency"
                style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top'}} />
         </div>
       </div>
@@ -528,7 +528,7 @@ export default function Page() {
       <h2 className="reveal visible delay-1" style={{fontSize: 'clamp(28px,4vw,40px)', fontWeight: '700', letterSpacing: '-.03em', marginBottom: '12px'}}>Nguyễn Thanh Tùng</h2>
       <p className="reveal visible delay-2" style={{fontSize: '14px', fontWeight: '500', color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: '24px'}}>Founder TVT Agency · Hành trình Tôi là Tùng</p>
       <p className="reveal visible delay-3" style={{fontSize: '17px', color: 'var(--text-2)', lineHeight: '1.65', fontWeight: '300', marginBottom: '20px'}}>
-        Một người đam mê xê dịch, thích chinh phục trải nghiệm và theo đuổi triết lý "Marketing phượt". Hơn 16 năm thực chiến Branding và Marketing, đúc kết thành những quy trình gọn gàng.
+        Hơn 16 năm thực chiến Branding và Marketing, tôi tập trung thiết kế các hệ thống AI (Agentic Workflow) giúp doanh nghiệp SME tối ưu hóa vận hành, tĩnh lặng nhưng mang lại kết quả thực tế.
       </p>
       <p className="reveal visible delay-4" style={{fontSize: '15px', color: 'var(--text-3)', lineHeight: '1.6', fontStyle: 'italic'}}>
         "Hành trình của chúng ta không phải là học thuộc các tính năng công cụ. Mọi chia sẻ đều được đúc kết từ những chuyến đi và trải nghiệm thực chiến của chính tôi. Không lý thuyết suông, chỉ có hành động."

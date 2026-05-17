@@ -24,7 +24,7 @@ export default function Page() {
                 <span className="block text-[9px] font-bold text-slate-600 uppercase tracking-widest leading-none mb-0.5 group-hover:text-slate-400 transition">
                     <i className="fas fa-arrow-left mr-1 text-[8px]"></i>Tôi Là Tùng
                 </span>
-                <span className="block font-black text-white tracking-tighter uppercase text-sm leading-none">TVT <span style={{color: 'var(--red)'}}>Strategist</span></span>
+                <span className="block font-black text-white tracking-tighter uppercase text-sm leading-none">TVT <span style={{color: 'var(--red)'}}>System Designer</span></span>
             </div>
         </a>
         {/*  Desktop links  */}
@@ -55,7 +55,7 @@ export default function Page() {
 {/* Mobile Drawer */}
 <div className={`fixed top-0 right-0 h-full w-[280px] bg-[#0b0e14] z-[101] border-l border-white/10 transform transition-transform duration-300 ease-in-out md:hidden ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}>
   <div className="p-6 border-b border-white/10 flex items-center justify-between">
-    <span className="font-black text-white tracking-tighter uppercase text-sm">TVT <span style={{color: 'var(--red)'}}>Strategist</span></span>
+    <span className="font-black text-white tracking-tighter uppercase text-sm">TVT <span style={{color: 'var(--red)'}}>System Designer</span></span>
     <button onClick={() => setIsMobileMenuOpen(false)} className="w-8 h-8 glass rounded-xl flex items-center justify-center text-slate-400">
       <i className="fas fa-times text-sm"></i>
     </button>
@@ -472,7 +472,7 @@ export default function Page() {
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     src="/images/tung-soc-son.webp?v=20260510"
-                                    alt="Nguyễn Thanh Tùng — TVT Strategist"
+                                    alt="Nguyễn Thanh Tùng — AI System Designer"
                                     className="w-full h-full object-cover object-top block"
                                  />
                             </div>
@@ -498,7 +498,7 @@ export default function Page() {
                 </div>
                 <div className="flex-1 text-center lg:text-left">
                     <p className="text-slate-300 leading-relaxed mb-4">
-                        Một người đam mê xê dịch, thích chinh phục trải nghiệm và theo đuổi triết lý "Marketing phượt". Hơn 16 năm thực chiến Branding và Marketing, tôi chọn cách đúc kết thành những quy trình gọn gàng (Agentic Workflow).
+                        Hơn 16 năm thực chiến Branding và Marketing, tôi tập trung thiết kế các hệ thống AI (Agentic Workflow) giúp doanh nghiệp SME tối ưu hóa vận hành, tĩnh lặng nhưng mang lại kết quả thực tế.
                     </p>
                     <p className="text-slate-400 text-sm leading-relaxed mb-6">
                         Hành trình của chúng ta không phải là học thuộc các tính năng công cụ. Tôi sẽ đồng hành cùng bạn ứng dụng <strong className="text-white">Director Mindset</strong> — tự mình làm đạo diễn, điều phối AI và thiết kế luồng công việc để mỗi ngày làm việc đều là một trải nghiệm thú vị.
@@ -891,7 +891,7 @@ export default function Page() {
                     <i className="fas fa-user-tie text-white"></i>
                 </div>
                 <div>
-                    <span className="block text-lg font-black text-white tracking-tighter uppercase">TVT <span style={{color: 'var(--red)'}}>Strategist</span></span>
+                    <span className="block text-lg font-black text-white tracking-tighter uppercase">TVT <span style={{color: 'var(--red)'}}>System Designer</span></span>
                     <span className="text-[10px] font-bold text-slate-600 uppercase tracking-widest">AI Coaching 1-1 Framework</span>
                 </div>
             </div>
@@ -931,7 +931,7 @@ export default function Page() {
                     >
                     <i className="fas fa-comment-dots text-blue-400"></i> Zalo: 0972613455
                 </a>
-                <p className="text-[9px] font-black text-slate-700 uppercase tracking-widest">TVT Strategist · 2026</p>
+                <p className="text-[9px] font-black text-slate-700 uppercase tracking-widest">TVT System Designer · 2026</p>
             </div>
         </div>
     </div>
