@@ -209,7 +209,7 @@ export default async function BlogIndex({ searchParams }: BlogIndexProps) {
               </div>
             }
           >
-            <TagFilter tags={allTags} activeTag={activeTag} totalPosts={totalPosts} />
+            <TagFilter tags={allTags} activeTag={activeTag} />
           </Suspense>
         </div>
 
