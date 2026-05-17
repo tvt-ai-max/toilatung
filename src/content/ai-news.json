@@ -1,5 +1,25 @@
 [
   {
+    "id": "openai-codex-business-operations",
+    "title": "Cách các nhóm Vận hành Kinh doanh (Ops) sử dụng Codex",
+    "tldr": "OpenAI công bố tài liệu hướng dẫn cách các đội ngũ vận hành sử dụng Codex để tạo nhanh các bản tóm tắt chiến lược, báo cáo tiến độ và quyết định lãnh đạo từ dữ liệu thô.",
+    "why_important": "- Codex không chỉ dành cho lập trình viên mà đang mở rộng sang nhóm phân tích và vận hành doanh nghiệp.\n- Giúp các agency và công ty dịch vụ tự động hóa việc viết báo cáo, soạn thảo tài liệu nội bộ, giảm 70% thời gian xử lý thủ công.\n- Cơ hội để triển khai mô hình 'AI Ops' trong tổ chức, tối ưu hóa quy trình làm việc không cần code.",
+    "source": "OpenAI",
+    "date": "2026-05-15",
+    "link": "https://openai.com/academy/codex-for-work/how-business-operations-teams-use-codex",
+    "tags": ["Tool", "Business"]
+  },
+  {
+    "id": "deepmind-alphaevolve-gemini",
+    "title": "AlphaEvolve: Agent lập trình từ DeepMind đang mở rộng ứng dụng đa ngành",
+    "tldr": "Google DeepMind giới thiệu AlphaEvolve, một AI Agent lập trình sức mạnh bởi Gemini, đang được triển khai mạnh mẽ để giải quyết các bài toán trong kinh doanh, hạ tầng và nghiên cứu khoa học.",
+    "why_important": "- Cho thấy tham vọng của Google trong việc đưa Agentic Workflow vượt ra ngoài lĩnh vực phần mềm, áp dụng thẳng vào giải quyết vấn đề thực tế.\n- Các thuật toán tự tối ưu hóa từ AlphaEvolve có thể sớm được tích hợp vào Google Cloud, mở ra cơ hội lớn cho các team dữ liệu và R&D.\n- Lại thêm một minh chứng cho thấy xu hướng 'AI thay thế con người viết thuật toán tối ưu hóa' đang đến rất gần.",
+    "source": "Google DeepMind",
+    "date": "2026-05-06",
+    "link": "https://deepmind.google/blog/alphaevolve-impact/",
+    "tags": ["Agent", "Research", "Update"]
+  },
+  {
     "id": "openai-malta-partnership",
     "title": "OpenAI và Malta hợp tác cung cấp ChatGPT Plus cho toàn dân",
     "tldr": "OpenAI hợp tác với chính phủ Malta nhằm phổ cập AI, cung cấp ChatGPT Plus và các chương trình đào tạo để giúp người dân xây dựng kỹ năng AI thực tiễn.",
