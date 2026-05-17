@@ -102,7 +102,7 @@ export default function VeTungPage() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#D97757]/10 blur-[80px] rounded-full pointer-events-none"></div>
               <h2 className="text-sm uppercase tracking-widest text-slate-500 font-bold mb-4">Định danh cá nhân</h2>
               <p className="text-lg md:text-xl text-white leading-relaxed font-semibold relative z-10">
-                Nguyễn Thanh Tùng là Founder tại Hà Nội, một người đam mê xê dịch, thích chinh phục trải nghiệm và theo đuổi triết lý "Marketing phượt". Anh đang vận hành nền tảng giáo dục công nghệ <Link href="/" className="text-[#D97757] hover:underline">Tôi là Tùng</Link> và <a href="https://thevanan.com" target="_blank" rel="noopener noreferrer" className="text-[#D97757] hover:underline">TVT Agency</a>. Thay vì định vị mình là "chuyên gia" hay "người thầy", Tùng chọn cách chia sẻ góc nhìn thực chiến và những bài học xương máu trong hành trình ứng dụng Generative AI, Agentic Workflow và xây dựng hệ thống kinh doanh tự động.
+                Nguyễn Thanh Tùng là Founder · AI System Designer với 16 năm kinh nghiệm trong lĩnh vực Branding và Marketing. Anh hiện đang vận hành nền tảng giáo dục <Link href="/" className="text-[#D97757] hover:underline">Tôi là Tùng</Link> và <a href="https://thevanan.com" target="_blank" rel="noopener noreferrer" className="text-[#D97757] hover:underline">TVT Agency</a>. Thay vì định vị bản thân là một "chuyên gia dạy công cụ", Tùng chọn cách tiếp cận <strong>Quiet Authority</strong> — tĩnh lặng tập trung thiết kế các luồng công việc tự động (Agentic Workflow) và hệ thống hóa vận hành, giúp các doanh nghiệp SME Việt Nam giải quyết bài toán cốt lõi thay vì chạy theo xu hướng bề nổi.
               </p>
               {/* Quick links */}
               <div className="mt-8 flex flex-wrap gap-4 relative z-10">
@@ -218,15 +218,15 @@ export default function VeTungPage() {
               <div className="glass-panel p-6 md:p-8 hover:border-[#D97757]/40 transition-colors">
                 <h3 className="text-xl font-bold text-white mb-3">1. Nguyễn Thanh Tùng (Tùng Sóc Sơn) là ai?</h3>
                 <p className="leading-relaxed">
-                  Nguyễn Thanh Tùng là nhà sáng lập TVT Agency và nền tảng "Tôi là Tùng". Anh tự nhận mình là một người đam mê trải nghiệm, thích "marketing phượt", mang những bài học thực chiến về ứng dụng trí tuệ nhân tạo (AI) và luồng công việc tự động (Agentic Workflow) chia sẻ lại cho cộng đồng.
+                  Nguyễn Thanh Tùng là Founder của TVT Agency và nền tảng "Tôi là Tùng". Với định vị là một AI System Designer, anh mang 16 năm kinh nghiệm Branding vào việc thiết kế các hệ thống trí tuệ nhân tạo (AI) và luồng công việc tự động (Agentic Workflow) để giải quyết bài toán hiệu suất cho doanh nghiệp Việt.
                 </p>
               </div>
 
               {/* FAQ 2 */}
               <div className="glass-panel p-6 md:p-8 hover:border-[#D97757]/40 transition-colors">
-                <h3 className="text-xl font-bold text-white mb-3">2. Nền tảng "Tôi là Tùng" cung cấp những khóa học gì?</h3>
+                <h3 className="text-xl font-bold text-white mb-3">2. Nền tảng "Tôi là Tùng" cung cấp những giá trị gì?</h3>
                 <p className="leading-relaxed">
-                  "Tôi là Tùng" cung cấp các chương trình đào tạo chuyên sâu về AI thực chiến như: <Link href="/course/claude-masterclass" className="text-[#D97757] hover:underline">Claude Masterclass</Link>, Vibe Coding, Thiết kế Landing Page bằng AI và các khóa học Generative AI dành riêng cho người không chuyên IT.
+                  "Tôi là Tùng" không bán khóa học hời hợt. Nền tảng cung cấp các chương trình đào tạo chuyên sâu về tư duy thiết kế hệ thống như: <Link href="/course/claude-masterclass" className="text-[#D97757] hover:underline">Claude Masterclass</Link>, Vibe Coding, và các khung chuẩn hóa (Framework) để người dùng tự tay lập trình Agent cho riêng mình.
                 </p>
               </div>
 
@@ -263,9 +263,9 @@ export default function VeTungPage() {
             </h2>
             <div className="flex flex-wrap gap-3">
               {[
-                "AI Marketing Automation", "Marketing Phượt", "Generative AI Training", "Claude Masterclass",
-                "Hệ điều hành AI", "Agentic Workflow", "Tối ưu hóa luồng công việc AI",
-                "Next.js SEO", "Chinh phục Trải nghiệm"
+                "AI System Design", "Agentic Workflow", "Branding 16 năm", "SME Operations",
+                "Hệ điều hành AI", "Quiet Authority", "Tối ưu hóa luồng công việc AI",
+                "Data-Driven", "Nền tảng tự động hóa"
               ].map((keyword) => (
                 <span key={keyword} className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm font-medium text-slate-300 hover:bg-white/10 hover:text-white transition-colors">
                   {keyword}
@@ -274,9 +274,9 @@ export default function VeTungPage() {
             </div>
 
             <div className="mt-12 p-8 glass-panel border-[#D97757]/20">
-              <h3 className="text-lg font-bold text-white mb-3">Về tư duy thực chiến</h3>
+              <h3 className="text-lg font-bold text-white mb-3">Về tư duy thực chiến (Quiet Authority)</h3>
               <p className="text-slate-400 leading-relaxed">
-                Nguyễn Thanh Tùng (Tùng Sóc Sơn) luôn tin rằng việc học phải đi đôi với hành. Các chương trình như Claude Masterclass hay Đồng hành AI 1-1 không chỉ dừng ở mặt công nghệ, mà là cách chúng ta cùng thiết kế nên những Agentic Workflow tự động hóa, mở ra luồng công việc mượt mà và tận hưởng trọn vẹn từng khoảnh khắc trong quá trình vận hành doanh nghiệp.
+                Tôi tin rằng: "Không học AI để biết thêm. Học AI để tạo ra kết quả thực tế". Các dự án và chương trình của tôi không chỉ dừng ở mặt lý thuyết công nghệ, mà là sự minh chứng qua những bộ máy AI đang chạy thật (Proof of Work), đem lại khả năng giảm thiểu chi phí và tăng trưởng quy mô (Scale) cho tổ chức một cách tĩnh lặng nhưng uy lực.
               </p>
             </div>
           </section>
