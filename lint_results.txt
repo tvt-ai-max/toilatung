@@ -1,0 +1,54 @@
+
+> toilatung-platform@0.1.0 lint
+> eslint
+
+
+/Volumes/SSD BIG/Project/DICH VU KH 2026/TVT AGENCY/Antigravity/06_TOOLS/landing-page-builder/toilatung-platform/scripts/generate-cover.mjs
+  37:7  warning  'BRAND' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Volumes/SSD BIG/Project/DICH VU KH 2026/TVT AGENCY/Antigravity/06_TOOLS/landing-page-builder/toilatung-platform/src/app/course/claude-masterclass/page.tsx
+  252:25   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  336:106  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  383:106  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  466:106  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  484:111  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  515:111  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  539:17   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Volumes/SSD BIG/Project/DICH VU KH 2026/TVT AGENCY/Antigravity/06_TOOLS/landing-page-builder/toilatung-platform/src/app/course/landing-page/page.tsx
+   9:10  warning  'isMobileMenuOpen' is assigned a value but never used     @typescript-eslint/no-unused-vars
+   9:28  warning  'setIsMobileMenuOpen' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  12:9   warning  'toggleFaq' is assigned a value but never used            @typescript-eslint/no-unused-vars
+  16:11  warning  'handleLeadSubmit' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  16:29  warning  'isSubmitting' is assigned a value but never used         @typescript-eslint/no-unused-vars
+  16:43  warning  'submitError' is assigned a value but never used          @typescript-eslint/no-unused-vars
+
+/Volumes/SSD BIG/Project/DICH VU KH 2026/TVT AGENCY/Antigravity/06_TOOLS/landing-page-builder/toilatung-platform/src/app/course/page.tsx
+  132:33  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Volumes/SSD BIG/Project/DICH VU KH 2026/TVT AGENCY/Antigravity/06_TOOLS/landing-page-builder/toilatung-platform/src/app/layout.tsx
+  1:1  warning  Unused eslint-disable directive (no problems were reported from '@next/next/no-sync-scripts')
+
+/Volumes/SSD BIG/Project/DICH VU KH 2026/TVT AGENCY/Antigravity/06_TOOLS/landing-page-builder/toilatung-platform/src/app/page.tsx
+  68:21  error  Do not use an `<a>` element to navigate to `/blog/toi-dang-xay-gi-va-tai-sao/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+/Volumes/SSD BIG/Project/DICH VU KH 2026/TVT AGENCY/Antigravity/06_TOOLS/landing-page-builder/toilatung-platform/src/app/ve-tung/page.tsx
+  87:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Volumes/SSD BIG/Project/DICH VU KH 2026/TVT AGENCY/Antigravity/06_TOOLS/landing-page-builder/toilatung-platform/src/components/ai-news/AINewFeed.tsx
+  3:29  warning  'useEffect' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Volumes/SSD BIG/Project/DICH VU KH 2026/TVT AGENCY/Antigravity/06_TOOLS/landing-page-builder/toilatung-platform/src/components/blog/TagFilter.tsx
+  12:54  warning  'totalPosts' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Volumes/SSD BIG/Project/DICH VU KH 2026/TVT AGENCY/Antigravity/06_TOOLS/landing-page-builder/toilatung-platform/src/components/shared/SearchModal.tsx
+   3:46  warning  'useMemo' is defined but never used          @typescript-eslint/no-unused-vars
+  22:9   warning  'router' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Volumes/SSD BIG/Project/DICH VU KH 2026/TVT AGENCY/Antigravity/06_TOOLS/landing-page-builder/toilatung-platform/src/lib/ai-news-utils.ts
+  33:9  warning  'todayStr' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  34:9  warning  'yesterdayStr' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+✖ 24 problems (1 error, 23 warnings)
+  0 errors and 1 warning potentially fixable with the `--fix` option.
+

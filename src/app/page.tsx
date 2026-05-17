@@ -5,8 +5,8 @@ import { getAllPosts } from '@/lib/mdx';
 import { MouseTilt } from '@/components/ui/Effects';
 
 export const metadata: Metadata = {
-  title: 'Tôi Là Tùng | Chia sẻ AI Thực Chiến & Xây Dựng Hệ Thống',
-  description: 'Hệ thống hóa kiến thức AI để giải quyết các bài toán phức tạp nhất. Cung cấp khóa học Vibe Coding, Claude Masterclass và xây dựng Content OS tự động hóa.',
+  title: 'Tôi Là Tùng | Xây Hệ Thống AI Thực Chiến cho Doanh Nghiệp Việt',
+  description: '16 năm Branding + AI System Design. Không dạy tool — thiết kế Agentic Workflow, Director Mindset và hệ thống AI vận hành thật cho SME Việt Nam.',
   openGraph: {
     images: ['/images/home-og.webp'],
   },
@@ -44,9 +44,9 @@ export default function Page() {
                 </div>
                 <div className="text-center">
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.15em] badge-pulse"
-                        style={{background: 'rgba(255,45,45,0.1)', border: '1px solid rgba(255,45,45,0.25)', color: '#ff8f8f'}}>
-                        <span className="w-1.5 h-1.5 rounded-full bg-red-400 flex-shrink-0"></span>
-                        AI Coach · Educator · Strategist
+                        style={{background: 'rgba(52,211,153,0.1)', border: '1px solid rgba(52,211,153,0.25)', color: '#6ee7b7'}}>
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"></span>
+                        Founder · AI System Designer
                     </div>
                 </div>
             </div>
@@ -58,26 +58,22 @@ export default function Page() {
                     Nguyễn<br /><span className="gradient-text">Thanh Tùng</span>
                 </h1>
                 <p className="text-base md:text-xl text-slate-400 max-w-xl mb-4 font-medium leading-relaxed mx-auto lg:mx-0">
-                    Tôi đồng hành cùng cá nhân và doanh nghiệp trong việc <strong className="text-white">học AI, ứng dụng AI</strong> và xây hệ làm việc thực chiến — phù hợp với công việc và mục tiêu thực tế của từng người.
+                    Tôi đang xây hạ tầng tư duy AI cho doanh nghiệp Việt.<br/>
+                    16 năm Branding. <strong className="text-white">Không dạy tool — thiết kế hệ thống.</strong>
                 </p>
                 <p className="text-sm text-slate-500 max-w-lg mb-8 italic mx-auto lg:mx-0">
-                    &quot;Không học AI để biết thêm. Học AI để tạo ra kết quả cụ thể cho công việc và kinh doanh.&quot;
+                    "Không học AI để biết thêm. Học AI để tạo ra kết quả."
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                    <a href="#programs"
+                    <Link href="/blog/toi-dang-xay-gi-va-tai-sao"
                        className="px-8 py-4 text-white font-black rounded-2xl text-sm uppercase tracking-widest text-center"
                        style={{background: 'var(--red)', boxShadow: '0 8px 30px var(--red-glow)'}}
                         >
-                        <i className="fas fa-graduation-cap mr-2"></i>Xem các chương trình
-                    </a>
-                    <a href="#start"
+                        <i className="fas fa-arrow-right mr-2"></i>Xem tôi đang xây gì
+                    </Link>
+                    <a href="#programs"
                        className="px-8 py-4 glass text-white font-bold rounded-2xl border border-white/10 hover:border-white/20 transition text-sm text-center">
-                        <i className="fas fa-compass mr-2 text-indigo-400"></i>Tôi nên bắt đầu từ đâu?
-                    </a>
-                    <a href="https://zalo.me/0972613455" target="_blank" rel="noopener noreferrer"
-                       className="px-8 py-4 glass text-white font-bold rounded-2xl text-sm text-center transition hover:border-blue-400/30"
-                       style={{border: '1px solid rgba(0,104,255,0.25)'}}>
-                        <i className="fas fa-comment-dots mr-2 text-blue-400"></i>Chat Zalo
+                        <i className="fas fa-layer-group mr-2 text-indigo-400"></i>Chọn chương trình phù hợp
                     </a>
                 </div>
             </div>
@@ -93,6 +89,22 @@ export default function Page() {
             <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3" style={{color: 'var(--red)'}}>Về Tùng</p>
             <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Tôi đến đây từ <span className="gradient-text">thực chiến</span></h2>
             <p className="text-slate-500 max-w-2xl mx-auto">16 năm làm branding và xây dựng thương hiệu — nay tập trung hoàn toàn vào AI ứng dụng thực tế.</p>
+        </div>
+
+        {/* PROOF BAR */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 reveal">
+            <div className="glass rounded-3xl p-6 text-center border-t-4 border-t-red-500">
+                <p className="text-4xl font-black text-white mb-2">16 năm</p>
+                <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">Branding &<br/>Marketing</p>
+            </div>
+            <div className="glass rounded-3xl p-6 text-center border-t-4 border-t-indigo-500">
+                <p className="text-4xl font-black text-white mb-2">8 tiếng/tuần</p>
+                <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">tiết kiệm với<br/>Content Pipeline tự động</p>
+            </div>
+            <div className="glass rounded-3xl p-6 text-center border-t-4 border-t-pink-500">
+                <p className="text-4xl font-black text-white mb-2">4 workflow</p>
+                <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">agency đang<br/>chạy thật</p>
+            </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
@@ -123,11 +135,11 @@ export default function Page() {
                         </div>
                         <h3 className="text-lg font-black text-white">Triết lý làm việc với AI</h3>
                     </div>
+                    <p className="text-slate-300 leading-relaxed mb-4 font-semibold italic border-l-4 border-indigo-500 pl-4">
+                        "Tôi không dạy tool. Tôi thiết kế hệ thống — audit quy trình thật của doanh nghiệp bạn, xác định bottleneck, và build Agentic Workflow phù hợp với đặc thù vận hành của từng tổ chức."
+                    </p>
                     <p className="text-slate-300 leading-relaxed mb-4">
                         Hành trình của chúng ta không phải là học thuộc các tính năng công cụ. Tôi đồng hành cùng bạn ứng dụng <strong className="text-white">Director Mindset</strong> — tự mình làm đạo diễn, điều phối AI và thiết kế luồng công việc để mỗi ngày làm việc đều là một trải nghiệm thú vị.
-                    </p>
-                    <p className="text-slate-400 text-sm leading-relaxed">
-                        Mọi chia sẻ đều được đúc kết từ những chuyến đi và trải nghiệm thực chiến của chính tôi. Không lý thuyết suông, chỉ có hành động.
                     </p>
                 </div>
             </div>
@@ -193,7 +205,10 @@ export default function Page() {
             <p className="text-slate-500 max-w-2xl mx-auto">Mỗi chương trình phục vụ một mục tiêu khác nhau. Đọc mô tả bên dưới để tìm chương trình đúng với giai đoạn và nhu cầu hiện tại của bạn.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="mb-8 mt-12 text-center lg:text-left reveal">
+            <h3 className="text-2xl font-black text-white border-l-4 border-red-500 pl-4 inline-block">Chương trình chính (Coaching & Đồng hành)</h3>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
 
             {/*  Program 1: Coaching 1-1  */}
             <MouseTilt className="rounded-3xl h-full reveal">
@@ -302,6 +317,12 @@ export default function Page() {
                 </div>
             </a>
             </MouseTilt>
+        </div>
+
+        <div className="mb-8 mt-12 text-center lg:text-left reveal">
+            <h3 className="text-2xl font-black text-white border-l-4 border-indigo-500 pl-4 inline-block">Tài liệu thực chiến (Mua & Tự triển khai)</h3>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
             {/*  Program 4: Landing Page AI  */}
             <MouseTilt className="rounded-3xl h-full reveal">
@@ -512,6 +533,30 @@ export default function Page() {
 {/*  ===== LATEST BLOG POSTS =====  */}
 <section id="latest-posts" className="py-24 px-4 md:px-6 border-t border-white/5">
     <div className="max-w-7xl mx-auto">
+        
+        {/* FEATURED BANNER */}
+        <div className="mb-20 reveal">
+            <Link href="/blog/toi-dang-xay-gi-va-tai-sao" className="block w-full rounded-3xl overflow-hidden relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-500 opacity-90 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-[url('/images/grid.svg')] bg-center opacity-30 mix-blend-overlay"></div>
+                <div className="relative z-10 p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div className="flex-1 text-center md:text-left">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-4 bg-black/30 border border-white/20 text-white">
+                            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                            📌 Building In Public
+                        </div>
+                        <h3 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">"Tôi đang xây gì và tại sao<br/>— Góc nhìn thật từ Founder"</h3>
+                        <p className="text-white/80 text-lg md:text-xl font-medium max-w-2xl">Bài đầu tiên trong chuỗi chia sẻ công khai hành trình xây hệ sinh thái Tôi Là Tùng bằng AI.</p>
+                    </div>
+                    <div className="flex-shrink-0">
+                        <span className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-purple-900 font-black rounded-2xl hover:bg-slate-100 transition-colors shadow-[0_0_40px_rgba(255,255,255,0.3)]">
+                            Đọc ngay <i className="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </div>
+            </Link>
+        </div>
+
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 reveal">
             <div>
                 <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3 text-indigo-400">TVT Blog</p>

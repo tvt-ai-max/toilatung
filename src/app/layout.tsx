@@ -18,10 +18,10 @@ const firaCode = Fira_Code({
 export const metadata: Metadata = {
   metadataBase: new URL("https://toilatung.com"),
   title: {
-    default: "Tôi Là Tùng | Chia sẻ AI Thực Chiến & Xây Dựng Hệ Thống",
+    default: "Tôi Là Tùng | Xây Hệ Thống AI Thực Chiến cho Doanh Nghiệp Việt",
     template: "%s | Tôi Là Tùng"
   },
-  description: "Hệ thống hóa kiến thức AI để giải quyết các bài toán phức tạp nhất. Cung cấp khóa học Vibe Coding, Claude Masterclass và xây dựng Content OS tự động hóa.",
+  description: "16 năm Branding + AI System Design. Không dạy tool — thiết kế Agentic Workflow, Director Mindset và hệ thống AI vận hành thật cho SME Việt Nam.",
   icons: {
     icon: "/favicon.svg",
   },
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Tôi Là Tùng | Chia sẻ AI Thực Chiến & Xây Dựng Hệ Thống",
-    description: "Hệ thống hóa kiến thức AI để giải quyết các bài toán phức tạp nhất. Cung cấp khóa học Vibe Coding, Claude Masterclass và xây dựng Content OS tự động hóa.",
+    title: "Tôi Là Tùng | Xây Hệ Thống AI Thực Chiến cho Doanh Nghiệp Việt",
+    description: "16 năm Branding + AI System Design. Không dạy tool — thiết kế Agentic Workflow, Director Mindset và hệ thống AI vận hành thật cho SME Việt Nam.",
     url: "https://toilatung.com",
     siteName: "Tôi Là Tùng",
     locale: "vi_VN",
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tôi Là Tùng | Chia sẻ AI Thực Chiến & Xây Dựng Hệ Thống",
-    description: "Hệ thống hóa kiến thức AI để giải quyết các bài toán phức tạp nhất. Cung cấp khóa học Vibe Coding, Claude Masterclass và xây dựng Content OS tự động hóa.",
+    title: "Tôi Là Tùng | Xây Hệ Thống AI Thực Chiến cho Doanh Nghiệp Việt",
+    description: "16 năm Branding + AI System Design. Không dạy tool — thiết kế Agentic Workflow, Director Mindset và hệ thống AI vận hành thật cho SME Việt Nam.",
     images: ["/images/home-og.webp"],
   },
   alternates: {
