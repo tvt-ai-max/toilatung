@@ -33,14 +33,6 @@ const WIDTH = 1200;
 const HEIGHT = 630;
 const WEBP_QUALITY = 90;
 
-// Brand palette cho prompt
-const BRAND = {
-  bg: '#000000',
-  accent: '#7b61ff',
-  red: '#ff375f',
-  emerald: '#34d399',
-};
-
 // ── Helpers ────────────────────────────────────────────────────────────────
 function loadEnv() {
   const envPath = path.join(ROOT, '.env.local');

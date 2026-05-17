@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useMemo } from "react";
-import { useRouter } from "next/navigation";
+import React, { useState, useEffect, useRef } from "react";
 import Fuse from "fuse.js";
 import Link from "next/link";
 
@@ -19,7 +18,7 @@ export default function SearchModal() {
   const [allItems, setAllItems] = useState<SearchItem[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
-  const router = useRouter();
+
 
   // Load data and listen for CMD+K and custom event
   useEffect(() => {

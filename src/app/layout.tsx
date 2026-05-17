@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/next-script-for-ga, @next/next/no-sync-scripts */
 import type { Metadata } from "next";
 import { Inter, Fira_Code } from "next/font/google";
 import LayoutShell from "@/components/layout/LayoutShell";

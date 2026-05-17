@@ -29,9 +29,6 @@
 /Volumes/SSD BIG/Project/DICH VU KH 2026/TVT AGENCY/Antigravity/06_TOOLS/landing-page-builder/toilatung-platform/src/app/layout.tsx
   1:1  warning  Unused eslint-disable directive (no problems were reported from '@next/next/no-sync-scripts')
 
-/Volumes/SSD BIG/Project/DICH VU KH 2026/TVT AGENCY/Antigravity/06_TOOLS/landing-page-builder/toilatung-platform/src/app/page.tsx
-  68:21  error  Do not use an `<a>` element to navigate to `/blog/toi-dang-xay-gi-va-tai-sao/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
-
 /Volumes/SSD BIG/Project/DICH VU KH 2026/TVT AGENCY/Antigravity/06_TOOLS/landing-page-builder/toilatung-platform/src/app/ve-tung/page.tsx
   87:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
 
@@ -49,6 +46,6 @@
   33:9  warning  'todayStr' is assigned a value but never used      @typescript-eslint/no-unused-vars
   34:9  warning  'yesterdayStr' is assigned a value but never used  @typescript-eslint/no-unused-vars
 
-✖ 24 problems (1 error, 23 warnings)
+✖ 23 problems (0 errors, 23 warnings)
   0 errors and 1 warning potentially fixable with the `--fix` option.
 

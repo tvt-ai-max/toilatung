@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { AINewsItem, groupNewsByDate } from "@/lib/ai-news-utils";
 import NewsAccordionItem from "./NewsAccordionItem";
 import { useBookmarks } from "@/lib/hooks/useBookmarks";

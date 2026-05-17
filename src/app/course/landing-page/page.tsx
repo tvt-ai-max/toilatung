@@ -6,18 +6,7 @@ import { useLandingInteractions } from "@/lib/useLandingInteractions";
 import './landing-page.css';
 
 export default function Page() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-  
-  const toggleFaq = (index: number) => {
-    setOpenFaq(openFaq === index ? null : index);
-  };
 
-  const { handleLeadSubmit, isSubmitting, submitError } =
-    useLandingInteractions({
-      source: "course-landing-page",
-      successId: "successMsgLP",
-    });
 
 
 

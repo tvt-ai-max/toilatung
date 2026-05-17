@@ -6,10 +6,9 @@ import { useCallback, useState } from 'react';
 interface TagFilterProps {
   tags: string[];
   activeTag?: string;
-  totalPosts: number;
 }
 
-export default function TagFilter({ tags, activeTag, totalPosts }: TagFilterProps) {
+export default function TagFilter({ tags, activeTag }: TagFilterProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
