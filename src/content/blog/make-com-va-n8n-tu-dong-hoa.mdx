@@ -23,6 +23,8 @@ Năm 2026, các [AI Agent](/blog/ai-agent-la-gi) đã rất thông minh. Nhưng 
 
 ## Thế Nào Là "Automation" Trong Thời Đại AI?
 
+![Mô hình kết nối AI vào tay máy cơ khí tự động hóa quy trình Make.com và n8n | Tôi là Tùng, toilatung, Nguyễn Thanh Tùng, Tùng Sóc Sơn](/images/blog/make-com-va-n8n-tu-dong-hoa-section1.webp)
+
 Trước đây (thời của Zapier đời đầu), tự động hoá mang tính tĩnh (Static). 
 - *Rule cũ:* Khách điền Form $\rightarrow$ Gửi Email xác nhận mẫu số 1.
 Điều này khá cứng nhắc và vô hồn.
@@ -33,6 +35,8 @@ Nhưng khi AI xuất hiện, tự động hoá trở nên "động" (Dynamic).
 Bạn [Tư vấn AI cho doanh nghiệp](/blog/tu-van-ai-cho-doanh-nghiep) chính là bán những quy trình thông minh này.
 
 ## So Sánh Nhanh: Make.com vs n8n
+
+![So sánh trực quan giao diện kéo thả của Make.com và mã nguồn phức tạp của n8n | Tôi là Tùng, toilatung, Nguyễn Thanh Tùng, Tùng Sóc Sơn](/images/blog/make-com-va-n8n-tu-dong-hoa-section2.webp)
 
 Nếu bạn là người mới, bạn sẽ bị rối giữa hai ông lớn này. Đây là cách tôi chọn:
 
@@ -46,6 +50,8 @@ Nếu bạn là người mới, bạn sẽ bị rối giữa hai ông lớn này
 
 ## Workflow #1: Tự Động Phân Loại Phản Hồi Khách Hàng (Make.com)
 
+![Workflow Make.com tự động phân loại phản hồi khách hàng bằng AI Agent | Tôi là Tùng, toilatung, Nguyễn Thanh Tùng, Tùng Sóc Sơn](/images/blog/make-com-va-n8n-tu-dong-hoa-section3.webp)
+
 Đây là quy trình tôi hay setup cho các Spa:
 1. **Trigger:** Nhận tin nhắn mới từ Fanpage.
 2. **Action 1 (Make):** Đẩy nội dung tin nhắn qua OpenAI API.
@@ -58,6 +64,8 @@ Toàn bộ quy trình mất 3 giây. Không cần nhân viên trực 24/7.
 
 ## Workflow #2: Trích Xuất Hoá Đơn Khổng Lồ (n8n)
 
+![Luồng n8n trích xuất dữ liệu hóa đơn PDF tự động đưa vào database | Tôi là Tùng, toilatung, Nguyễn Thanh Tùng, Tùng Sóc Sơn](/images/blog/make-com-va-n8n-tu-dong-hoa-section4.webp)
+
 Phòng kế toán thường chết ngập trong hàng đống file PDF hóa đơn lộn xộn.
 1. **Trigger:** Kế toán chuyển tiếp (forward) các email chứa hoá đơn vào một hòm mail riêng (VD: hoadon@congty.com).
 2. **Action 1 (n8n):** Tải các file đính kèm PDF xuống.
@@ -67,6 +75,8 @@ Phòng kế toán thường chết ngập trong hàng đống file PDF hóa đơ
 Quy trình này trước đây tốn 2 giờ/ngày của 1 kế toán. Giờ nó tốn 0 giây.
 
 ## Đừng Biến Tự Động Hóa Thành "Đống Rác Tự Động"
+
+![Cơ chế xử lý lỗi Error Handling trong luồng tự động hóa Make.com và n8n | Tôi là Tùng, toilatung, Nguyễn Thanh Tùng, Tùng Sóc Sơn](/images/blog/make-com-va-n8n-tu-dong-hoa-section5.webp)
 
 Sai lầm lớn nhất của người dùng Make/n8n là nối lằng nhằng quá nhiều bước vào nhau mà không có cơ chế **Xử lý lỗi (Error Handling)**.
 - Lỡ API OpenAI sập thì sao?

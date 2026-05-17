@@ -1,5 +1,25 @@
 [
   {
+    "id": "openai-malta-partnership",
+    "title": "OpenAI và Malta hợp tác cung cấp ChatGPT Plus cho toàn dân",
+    "tldr": "OpenAI hợp tác với chính phủ Malta nhằm phổ cập AI, cung cấp ChatGPT Plus và các chương trình đào tạo để giúp người dân xây dựng kỹ năng AI thực tiễn.",
+    "why_important": "- Đánh dấu bước tiến lớn trong việc đưa AI vào chiến lược chuyển đổi số quốc gia.\n- Mở ra cơ hội cho các agency tham gia đấu thầu hoặc cung cấp dịch vụ đào tạo AI cho khối chính phủ tại các quốc gia khác.\n- Chứng minh xu hướng phổ cập AI đến cấp độ toàn dân, tạo ra thị trường lớn cho các sản phẩm giáo dục và dịch vụ công tích hợp AI.",
+    "source": "OpenAI",
+    "date": "2026-05-16",
+    "link": "https://openai.com/index/malta-chatgpt-plus-partnership",
+    "tags": ["Business", "Update"]
+  },
+  {
+    "id": "databricks-gpt5-5-agents",
+    "title": "Databricks đưa GPT-5.5 vào workflow Agent doanh nghiệp",
+    "tldr": "Databricks tích hợp mô hình GPT-5.5 mới nhất cho các quy trình AI Agent cấp doanh nghiệp, sau khi mô hình này đạt kỷ lục mới trên benchmark OfficeQA Pro.",
+    "why_important": "- Khẳng định sức mạnh của GPT-5.5 trong việc giải quyết các bài toán dữ liệu phức tạp cho doanh nghiệp lớn.\n- Các công ty dùng Databricks có thể xây dựng Agent mạnh mẽ hơn, giảm thiểu lỗi và nâng cao hiệu suất xử lý dữ liệu tự động.\n- Dấu hiệu cho thấy xu hướng tích hợp sâu LLM vào các nền tảng dữ liệu lớn đang tăng tốc.",
+    "source": "OpenAI",
+    "date": "2026-05-15",
+    "link": "https://openai.com/index/databricks",
+    "tags": ["Model", "Agent", "Business"]
+  },
+  {
     "id": "chatgpt-personal-finance",
     "title": "ChatGPT biến thành cố vấn tài chính cá nhân – Kết nối trực tiếp tài khoản ngân hàng",
     "tldr": "OpenAI ra mắt tính năng Personal Finance trong ChatGPT Pro, cho phép kết nối hơn 12.000 tổ chức tài chính qua Plaid để phân tích chi tiêu, lập ngân sách và lên kế hoạch tài chính dựa trên dữ liệu thực.",
