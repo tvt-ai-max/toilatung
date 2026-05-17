@@ -1,5 +1,25 @@
 [
   {
+    "id": "mit-chinese-short-dramas-ai",
+    "title": "Phim ngắn Trung Quốc lột xác thành cỗ máy sản xuất nội dung bằng AI",
+    "tldr": "Ngành công nghiệp phim ngắn tỷ đô của Trung Quốc đang ứng dụng triệt để AI tạo sinh (GenAI) vào mọi khâu từ viết kịch bản, lồng tiếng đến tạo hiệu ứng hình ảnh, giúp cắt giảm chi phí và thời gian sản xuất đáng kể.",
+    "why_important": "- Cho thấy mô hình sản xuất nội dung siêu tốc (hyper-production) đã sẵn sàng để áp dụng vào các agency truyền thông và marketing.\n- Đây là case study hoàn hảo về việc dùng AI để sản xuất content video thương mại quy mô lớn mà không cần đội ngũ làm phim truyền thống.\n- Cơ hội lớn cho các nhà sáng tạo nội dung tự do (freelancer) tại Việt Nam áp dụng quy trình tương tự để đánh chiếm thị trường nội dung ngắn (Shorts/Reels/TikTok).",
+    "source": "MIT Tech Review",
+    "date": "2026-05-15",
+    "link": "https://www.technologyreview.com/2026/05/15/1137326/chinese-short-dramas-ai/",
+    "tags": ["Business", "Research"]
+  },
+  {
+    "id": "hf-granite-embedding-multilingual-r2",
+    "title": "Hugging Face giới thiệu Granite Embedding Multilingual R2: Xử lý đa ngôn ngữ 32K Context",
+    "tldr": "Mô hình Granite Embedding mã nguồn mở mới nhất đạt chất lượng truy xuất dữ liệu (retrieval) tốt nhất trong phân khúc dưới 100M tham số, hỗ trợ xử lý ngữ cảnh đa ngôn ngữ lên đến 32K token.",
+    "why_important": "- Đặc biệt hữu ích cho các doanh nghiệp xây dựng hệ thống RAG (Retrieval-Augmented Generation) yêu cầu xử lý tài liệu đa ngôn ngữ (bao gồm tiếng Việt) với độ chính xác cao.\n- Kích thước siêu nhỏ (dưới 100M tham số) giúp các công ty dễ dàng tự host trên hạ tầng riêng với chi phí thấp mà không cần cấu hình GPU khủng.\n- Giải pháp hoàn hảo cho các dự án nội bộ cần bảo mật dữ liệu tuyệt đối.",
+    "source": "Hugging Face Blog",
+    "date": "2026-05-14",
+    "link": "https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2",
+    "tags": ["Model", "Developer"]
+  },
+  {
     "id": "openai-codex-business-operations",
     "title": "Cách các nhóm Vận hành Kinh doanh (Ops) sử dụng Codex",
     "tldr": "OpenAI công bố tài liệu hướng dẫn cách các đội ngũ vận hành sử dụng Codex để tạo nhanh các bản tóm tắt chiến lược, báo cáo tiến độ và quyết định lãnh đạo từ dữ liệu thô.",
