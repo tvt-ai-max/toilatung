@@ -4,6 +4,21 @@ import matter from 'gray-matter';
 
 const contentDirectory = path.join(process.cwd(), 'src/content/blog');
 
+export type BlogCategory =
+  | 'Vibe Coding'
+  | 'AI System Design'
+  | 'AI Tools'
+  | 'Marketing & Growth'
+  | 'Business & Monetization';
+
+export const BLOG_CATEGORIES: BlogCategory[] = [
+  'Vibe Coding',
+  'AI System Design',
+  'AI Tools',
+  'Marketing & Growth',
+  'Business & Monetization',
+];
+
 export interface BlogPostMeta {
   title: string;
   date: string;
@@ -11,6 +26,7 @@ export interface BlogPostMeta {
   slug: string;
   coverImage?: string;
   tags?: string[];
+  category?: BlogCategory;
   author?: string;
   readingTime?: number; // minutes
 }
@@ -108,6 +124,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
         slug: realSlug,
         coverImage: data.coverImage,
         tags: data.tags || [],
+        category: data.category as BlogCategory | undefined,
         author: data.author || 'Tùng',
         readingTime: estimateReadingTime(content),
       },
@@ -156,14 +173,28 @@ export function getAllTags(): string[] {
     .map(([tag]) => tag);
 }
 
+// ─── Posts by category ────────────────────────────────────────────────────────
+export function getPostsByCategory(category: BlogCategory): BlogPostMeta[] {
+  return getAllPosts().filter((p) => p.category === category);
+}
+
+export function getAllCategories(): BlogCategory[] {
+  const posts = getAllPosts();
+  const seen = new Set<BlogCategory>();
+  posts.forEach((p) => { if (p.category) seen.add(p.category); });
+  return BLOG_CATEGORIES.filter((c) => seen.has(c));
+}
+
 // ─── Paginated posts (with optional tag filter) ───────────────────────────────
 export function getPaginatedPosts(
   page = 1,
   perPage = 6,
   tag?: string,
+  category?: BlogCategory,
 ): PaginatedPosts {
   const all = getAllPosts();
-  const filtered = tag ? all.filter((p) => p.tags?.includes(tag)) : all;
+  let filtered = tag ? all.filter((p) => p.tags?.includes(tag)) : all;
+  if (category) filtered = filtered.filter((p) => p.category === category);
   const totalPosts = filtered.length;
   const totalPages = Math.ceil(totalPosts / perPage);
   const safePage = Math.min(Math.max(1, page), Math.max(1, totalPages));

@@ -4,12 +4,14 @@ interface PaginationProps {
   currentPage: number;
   totalPages: number;
   tag?: string;
+  category?: string;
 }
 
-function buildUrl(page: number, tag?: string): string {
+function buildUrl(page: number, tag?: string, category?: string): string {
   const params = new URLSearchParams();
   if (page > 1) params.set('page', String(page));
   if (tag) params.set('tag', tag);
+  if (category) params.set('category', category);
   const qs = params.toString();
   return `/blog${qs ? `?${qs}` : ''}`;
 }
@@ -26,7 +28,7 @@ function getPageRange(current: number, total: number): (number | '...')[] {
   return pages;
 }
 
-export default function Pagination({ currentPage, totalPages, tag }: PaginationProps) {
+export default function Pagination({ currentPage, totalPages, tag, category }: PaginationProps) {
   if (totalPages <= 1) return null;
 
   const pages = getPageRange(currentPage, totalPages);
@@ -52,7 +54,7 @@ export default function Pagination({ currentPage, totalPages, tag }: PaginationP
         {/* Prev */}
         {prevPage ? (
           <Link
-            href={buildUrl(prevPage, tag)}
+            href={buildUrl(prevPage, tag, category)}
             className={`${arrowBtn} bg-white/5 text-slate-400 border-white/10 hover:border-indigo-500/40 hover:text-white hover:bg-indigo-500/10`}
             aria-label="Trang trước"
           >
@@ -75,7 +77,7 @@ export default function Pagination({ currentPage, totalPages, tag }: PaginationP
           ) : (
             <Link
               key={p}
-              href={buildUrl(p, tag)}
+              href={buildUrl(p, tag, category)}
               className={`${baseBtn} ${p === currentPage ? activeBtn : inactiveBtn}`}
               aria-current={p === currentPage ? 'page' : undefined}
             >
@@ -87,7 +89,7 @@ export default function Pagination({ currentPage, totalPages, tag }: PaginationP
         {/* Next */}
         {nextPage ? (
           <Link
-            href={buildUrl(nextPage, tag)}
+            href={buildUrl(nextPage, tag, category)}
             className={`${arrowBtn} bg-white/5 text-slate-400 border-white/10 hover:border-indigo-500/40 hover:text-white hover:bg-indigo-500/10`}
             aria-label="Trang tiếp"
           >

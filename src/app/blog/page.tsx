@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import { Suspense } from 'react';
-import { getAllTags, getPaginatedPosts } from '@/lib/mdx';
+import { getAllTags, getAllCategories, getPaginatedPosts } from '@/lib/mdx';
+import type { BlogCategory } from '@/lib/mdx';
 import TagFilter from '@/components/blog/TagFilter';
+import CategoryFilter from '@/components/blog/CategoryFilter';
 import Pagination from '@/components/blog/Pagination';
 
 export const metadata = {
@@ -35,17 +37,19 @@ export const metadata = {
 };
 
 interface BlogIndexProps {
-  searchParams: Promise<{ page?: string; tag?: string }>;
+  searchParams: Promise<{ page?: string; tag?: string; category?: string }>;
 }
 
 export default async function BlogIndex({ searchParams }: BlogIndexProps) {
-  const { page, tag } = await searchParams;
+  const { page, tag, category } = await searchParams;
   const currentPage = Math.max(1, parseInt(page || '1', 10));
   const activeTag = tag || undefined;
+  const activeCategory = (category as BlogCategory) || undefined;
   const POSTS_PER_PAGE = 10;
 
-  const { posts, totalPosts, totalPages } = getPaginatedPosts(currentPage, POSTS_PER_PAGE, activeTag);
+  const { posts, totalPosts, totalPages } = getPaginatedPosts(currentPage, POSTS_PER_PAGE, activeTag, activeCategory);
   const allTags = getAllTags();
+  const allCategories = getAllCategories();
 
   return (
     <div className="min-h-screen bg-black pt-28 pb-20 px-6">
@@ -64,11 +68,32 @@ export default async function BlogIndex({ searchParams }: BlogIndexProps) {
           </p>
         </header>
 
+        {/* ── Category Filter ── */}
+        <div className="mb-8">
+          <Suspense
+            fallback={
+              <div className="flex flex-wrap gap-2 animate-pulse">
+                {[...Array(6)].map((_, i) => (
+                  <div key={i} className="h-8 w-28 rounded-xl bg-white/5" />
+                ))}
+              </div>
+            }
+          >
+            <CategoryFilter categories={allCategories} activeCategory={activeCategory} />
+          </Suspense>
+        </div>
+
         {/* ── Post Count (header area) ── */}
         <div className="flex items-center gap-2 mb-8 justify-center">
           <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
           <span className="text-slate-500 text-sm">
-            {activeTag ? (
+            {activeCategory ? (
+              <>
+                <span className="text-indigo-300 font-bold">{activeCategory}</span>
+                {' — '}<span className="text-white font-bold">{totalPosts} bài</span>
+                {activeTag && <> về <span className="text-pink-400 font-bold">#{activeTag}</span></>}
+              </>
+            ) : activeTag ? (
               <>
                 Tìm thấy <span className="text-white font-bold">{totalPosts} bài</span>{' '}
                 về <span className="text-indigo-400 font-bold">#{activeTag}</span>
@@ -132,6 +157,13 @@ export default async function BlogIndex({ searchParams }: BlogIndexProps) {
                     <div className="flex-1 py-1 flex flex-col justify-between">
                       {/* Meta row */}
                       <div>
+                        {post.category && (
+                          <div className="mb-3">
+                            <span className="inline-flex items-center px-2.5 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-[10px] font-bold tracking-wider">
+                              {post.category}
+                            </span>
+                          </div>
+                        )}
                         <div className="flex items-center gap-3 text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">
                           <span>{(post.date || '').split('T')[0].split('-').reverse().join('/')}</span>
                           <span className="w-1 h-1 rounded-full bg-slate-600" />
@@ -184,7 +216,7 @@ export default async function BlogIndex({ searchParams }: BlogIndexProps) {
 
         {/* ── Pagination ── */}
         <div className="mt-14">
-          <Pagination currentPage={currentPage} totalPages={totalPages} tag={activeTag} />
+          <Pagination currentPage={currentPage} totalPages={totalPages} tag={activeTag} category={activeCategory} />
         </div>
 
         {/* ── Page info ── */}
