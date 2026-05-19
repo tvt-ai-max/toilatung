@@ -1,5 +1,85 @@
 [
   {
+    "id": "anthropic-acquires-stainless-sdk",
+    "title": "Anthropic mua lại Stainless — Startup SDK được OpenAI, Google và Cloudflare tin dùng",
+    "tldr": "Anthropic đã mua lại Stainless, startup New York chuyên tự động hóa việc tạo và duy trì SDK — thư viện mà các developer dùng để tương tác với API. Stainless đang được dùng bởi OpenAI, Google và Cloudflare.",
+    "why_important": "- Đây là động thái chiến lược giúp Anthropic kiểm soát toàn bộ vòng đời developer: từ API đến SDK, giúp việc tích hợp Claude vào sản phẩm trở nên dễ hơn nhiều.\n- Với Stainless, Anthropic có thể tự động tạo SDK cho Claude bằng nhiều ngôn ngữ (Python, TypeScript, Go...) và cập nhật ngay khi API thay đổi — không còn lag giữa API version và SDK version.\n- Một tín hiệu rõ ràng: Anthropic đang cạnh tranh trực tiếp với OpenAI không chỉ về model mà còn về toàn bộ hệ sinh thái developer tools.",
+    "source": "TechCrunch",
+    "date": "2026-05-18",
+    "link": "https://techcrunch.com/2026/05/18/anthropic-has-acquired-the-dev-tools-startup-used-by-openai-google-and-cloudflare/",
+    "tags": ["Business", "Update", "Developer"]
+  },
+  {
+    "id": "sandboxaq-claude-drug-discovery",
+    "title": "SandboxAQ tích hợp mô hình khám phá thuốc vào Claude — không cần bằng tiến sĩ khoa học máy tính",
+    "tldr": "SandboxAQ mang các mô hình AI khám phá thuốc của mình lên nền tảng Claude của Anthropic, với mục tiêu cho phép các nhà khoa học sinh học tiếp cận công cụ AI tiên tiến mà không cần kiến thức lập trình chuyên sâu.",
+    "why_important": "- Minh chứng cho thấy AI không chỉ là công cụ cho lập trình viên — nó đang xâm nhập sâu vào lĩnh vực nghiên cứu khoa học chuyên ngành như bào chế dược phẩm.\n- SandboxAQ đặt cược vào tiếp cận (access) thay vì hiệu suất model — họ tin rằng rào cản thực sự không phải là công nghệ mà là tính dễ dùng.\n- Xu hướng 'AI as Interface' đang thay thế giao diện terminal/code cho các chuyên gia phi kỹ thuật — cơ hội lớn để phát triển sản phẩm SaaS cho chuyên ngành.",
+    "source": "TechCrunch",
+    "date": "2026-05-18",
+    "link": "https://techcrunch.com/2026/05/18/sandboxaq-brings-its-drug-discovery-models-to-claude-no-phd-in-computing-required/",
+    "tags": ["Research", "Business", "Tool"]
+  },
+  {
+    "id": "amazon-alexa-ai-podcast-generator",
+    "title": "Amazon Alexa+ có thể tạo podcast theo yêu cầu bằng AI — bước tiến mới của AI content platform",
+    "tldr": "Amazon ra mắt tính năng tạo podcast AI cá nhân hóa theo yêu cầu trên Alexa+, mở rộng trợ lý thông minh của mình thành nền tảng nội dung AI cá nhân hóa.",
+    "why_important": "- Đây là bước đi táo bạo biến voice assistant thành AI content creator — từ trả lời câu hỏi sang chủ động sản xuất nội dung audio theo sở thích người dùng.\n- Mở ra cuộc cạnh tranh mới trong thị trường podcast: AI-generated vs human-created content, đe dọa trực tiếp các podcast nhỏ nếu người dùng chọn nội dung tùy chỉnh thay vì nghe cố định.\n- Cơ hội lớn cho các thương hiệu tạo 'branded podcast' tự động bằng AI — từ news digest đến nội dung marketing, không cần studio hay host thật sự.",
+    "source": "TechCrunch",
+    "date": "2026-05-18",
+    "link": "https://techcrunch.com/2026/05/18/amazons-new-alexa-powered-feature-can-generate-podcast-episodes/",
+    "tags": ["Tool", "Business", "Update"]
+  },
+  {
+    "id": "context-architecture-replacing-rag",
+    "title": "Context Architecture đang thay thế RAG khi AI Agent vượt giới hạn của Vector Search doanh nghiệp",
+    "tldr": "Các hệ thống truy xuất dữ liệu truyền thống (RAG) đang chạm trần khi Agentic AI đặt ra yêu cầu phức tạp hơn nhiều. Xu hướng mới là 'Context Architecture' — một cách thiết kế toàn diện hơn về cách AI hiểu và truy cập thông tin.",
+    "why_important": "- RAG (Retrieval-Augmented Generation) là công nghệ phổ biến nhất hiện tại cho các chatbot doanh nghiệp, nhưng nó đang không đủ đáp ứng khi AI Agent cần lý luận đa bước và kết nối thông tin phức tạp.\n- Context Architecture mở ra hướng mới cho các công ty xây dựng AI Agent mạnh hơn — không chỉ tìm văn bản, mà hiểu ngữ cảnh theo thời gian và nhiều nguồn dữ liệu khác nhau.\n- Đây là xu hướng quan trọng để theo dõi nếu bạn đang xây dựng hệ thống AI cho doanh nghiệp trong năm 2026.",
+    "source": "VentureBeat",
+    "date": "2026-05-18",
+    "link": "https://venturebeat.com/data/context-architecture-is-replacing-rag-as-agentic-ai-pushes-enterprise-retrieval-to-its-limits",
+    "tags": ["Agent", "Research", "Developer"]
+  },
+  {
+    "id": "ai-supply-chain-attacks-50-days",
+    "title": "4 cuộc tấn công chuỗi cung ứng AI trong 50 ngày: OpenAI, Anthropic và Meta đều bị ảnh hưởng",
+    "tldr": "Chỉ trong vòng 50 ngày, bốn sự cố tấn công supply chain AI đã xảy ra với OpenAI, Anthropic và Meta — gồm cả tấn công từ kẻ xấu lẫn lỗi tự gây ra từ bên trong. Không có sự cố nào được phát hiện bởi quá trình review bảo mật truyền thống.",
+    "why_important": "- Chuỗi cung ứng phần mềm AI (AI supply chain) đang trở thành mặt trận bảo mật mới nhất — và ngay cả các công ty hàng đầu cũng bị tấn công.\n- Các đội kỹ thuật cần bổ sung kiểm tra bảo mật supply chain vào quy trình phát hành sản phẩm AI, đặc biệt là với các thư viện và dependency bên thứ ba.\n- Đây là cảnh báo rõ ràng cho các công ty Việt Nam đang tích hợp AI vào sản phẩm: không chỉ bảo mật model mà phải bảo mật toàn bộ pipeline tích hợp.",
+    "source": "VentureBeat",
+    "date": "2026-05-18",
+    "link": "https://venturebeat.com/security/supply-chain-incidents-openai-anthropic-meta-release-surface-vendor-questionnaire-matrix",
+    "tags": ["Research", "Update"]
+  },
+  {
+    "id": "langsmith-engine-agent-debugging",
+    "title": "LangSmith Engine tự động hóa vòng lặp debug AI Agent — nhưng doanh nghiệp đa-model vẫn cần lớp trung gian trung lập",
+    "tldr": "LangSmith ra mắt Engine mới giúp tự động phát hiện và khép kín vòng lặp debug cho các AI Agent, giải quyết bài toán lớn mà các kỹ sư phải mất quá nhiều thời gian để phát hiện lỗi Agent.",
+    "why_important": "- Debug AI Agent là một trong những thách thức khó nhất khi triển khai production — LangSmith Engine hướng đến tự động hóa phần lớn công đoạn này.\n- Giúp các team rút ngắn đáng kể thời gian từ lúc Agent lỗi đến khi phát hiện và sửa — quan trọng khi doanh nghiệp chạy Agent trong môi trường thực.\n- Tuy nhiên, các doanh nghiệp dùng nhiều model khác nhau (multi-model) vẫn cần một lớp orchestration trung lập để tránh vendor lock-in vào LangChain ecosystem.",
+    "source": "VentureBeat",
+    "date": "2026-05-18",
+    "link": "https://venturebeat.com/orchestration/langsmith-engine-closes-the-agent-debugging-loop-automatically-but-multi-model-enterprises-still-need-a-neutral-layer",
+    "tags": ["Agent", "Developer", "Tool"]
+  },
+  {
+    "id": "apple-siri-privacy-auto-delete",
+    "title": "Apple Siri thế hệ mới sẽ tự động xóa lịch sử chat để bảo vệ quyền riêng tư",
+    "tldr": "Apple đang phát triển phiên bản Siri mới với tính năng tự động xóa lịch sử trò chuyện như một điểm nhấn bảo mật chủ đạo, theo thông tin rò rỉ trước WWDC 2026.",
+    "why_important": "- Apple đang đặt cược vào privacy-by-design như lợi thế cạnh tranh so với ChatGPT, Gemini và các AI assistant khác — phản ánh rõ sự khác biệt về triết lý sản phẩm.\n- Người dùng ngày càng lo ngại dữ liệu hội thoại bị lưu trữ và khai thác — tính năng này có thể là 'bộ lọc quyết định' cho nhóm người dùng coi trọng privacy.\n- Gợi ý rằng cuộc đua AI không chỉ là về tính năng mà còn về niềm tin — cơ hội để các sản phẩm AI nhỏ hơn cạnh tranh bằng cam kết rõ ràng về dữ liệu người dùng.",
+    "source": "TechCrunch",
+    "date": "2026-05-17",
+    "link": "https://techcrunch.com/2026/05/17/apples-siri-revamp-could-include-auto-deleting-chats/",
+    "tags": ["Update", "Business"]
+  },
+  {
+    "id": "google-io-2026-ai-expectations",
+    "title": "Google I/O 2026: Những gì cộng đồng AI đang mong chờ trong tuần này",
+    "tldr": "MIT Technology Review phân tích những kỳ vọng lớn từ Google I/O 2026 — sự kiện thường niên của Google nơi các công bố về AI, Gemini, Android và Cloud thường đặt tone cho cả ngành.",
+    "why_important": "- Google I/O là một trong những sự kiện tech quan trọng nhất năm — những gì Google công bố tại đây thường ảnh hưởng trực tiếp đến chiến lược của các công ty muốn cạnh tranh hay hợp tác với Google.\n- Dự kiến Google sẽ công bố các bản nâng cấp lớn cho Gemini và tích hợp AI sâu hơn vào Android, Workspace và Cloud — ảnh hưởng đến hàng triệu developer và doanh nghiệp.\n- Các marketer và product manager nên theo dõi sát để cập nhật chiến lược SEO, quảng cáo Google và sản phẩm tích hợp AI ngay sau sự kiện.",
+    "source": "MIT Tech Review",
+    "date": "2026-05-18",
+    "link": "https://www.technologyreview.com/2026/05/18/1137439/what-to-expect-from-google-this-week/",
+    "tags": ["Update", "Business", "Research"]
+  },
+  {
     "id": "mit-chinese-short-dramas-ai",
     "title": "Phim ngắn Trung Quốc lột xác thành cỗ máy sản xuất nội dung bằng AI",
     "tldr": "Ngành công nghiệp phim ngắn tỷ đô của Trung Quốc đang ứng dụng triệt để AI tạo sinh (GenAI) vào mọi khâu từ viết kịch bản, lồng tiếng đến tạo hiệu ứng hình ảnh, giúp cắt giảm chi phí và thời gian sản xuất đáng kể.",
