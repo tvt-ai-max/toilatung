@@ -13,6 +13,8 @@ const catColors: Record<string, string> = {
   "Training Chatbot": "text-purple-400 bg-purple-400/10 border-purple-400/20",
   "Master Prompt": "text-yellow-400 bg-yellow-400/10 border-yellow-400/20",
   "Video Master": "text-rose-400 bg-rose-400/10 border-rose-400/20",
+  "Marketing & Copy": "text-orange-400 bg-orange-400/10 border-orange-400/20",
+  "Kinh doanh & Ops": "text-teal-400 bg-teal-400/10 border-teal-400/20",
 };
 
 const catIcons: Record<string, string> = {
@@ -24,6 +26,8 @@ const catIcons: Record<string, string> = {
   "Training Chatbot": "fa-robot",
   "Master Prompt": "fa-crown",
   "Video Master": "fa-video",
+  "Marketing & Copy": "fa-bullhorn",
+  "Kinh doanh & Ops": "fa-briefcase",
 };
 
 export default function PromptLibraryPage() {
@@ -171,7 +175,7 @@ export default function PromptLibraryPage() {
         <header className="text-center mb-16 relative">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-xs font-bold uppercase tracking-widest text-purple-300 mb-6 shadow-[0_0_20px_rgba(168,85,247,0.15)]">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-            38 Prompts • Cập nhật 05/2026
+            48 Prompts • Cập nhật 05/2026
           </div>
           
           <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 leading-tight">
